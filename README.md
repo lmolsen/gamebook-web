@@ -60,23 +60,32 @@ My app provides a fun, free, and not overly time-intensive experience that doesn
 ### Mockups
 
 Visuals are from a proof of concept.
-![](./Mockups/landing-page.jpg)
+![](./Images/landing-page.jpg)
 
-![](./Mockups/landing-page-hover.jpg)
+![](./Images/landing-page-hover.jpg)
 
-![](./Mockups/drawers.jpg)
+![](./Images/drawers.jpg)
 
-![](./Mockups/story-page-example.jpg)
+![](./Images/story-page-example.jpg)
 
-![](./Mockups/simple-puzzle.jpg)
+![](./Images/simple-puzzle.jpg)
 
-![](./Mockups/simple-puzzle-solved.jpg)
+![](./Images/simple-puzzle-solved.jpg)
 
-![](./Mockups/wall-of-fame.jpg)
+![](./Images/wall-of-fame.jpg)
 
 ### Data
 
-Describe your data and the relationships between the data points. You can show this visually using diagrams, or write it out. 
+- All of the story pages are in routes, linked to via the choices on each page
+- A non-successful ending will prompt the user to restart, sending them back to the landing page
+- A successful ending will prompt the user to enter their name, POSTING it and the associated accomplishment (every success ending has text associated with it) to the server
+- The client GETS the data for the Wall of Fame from the server, which includes all previous posts
+- Each page has a narrate button which reads the text on the page aloud
+- Each page with a puzzle has an associated hint, and some text pages have an associated comment
+- Each puzzle that imparts information upon completion has an associated note
+- Music starts once the user enters the first story page, and the volume can be changed via audio controls
+
+![](./Images/flowchart.jpg) 
 
 ### Endpoints
 
@@ -142,6 +151,8 @@ Describe your data and the relationships between the data points. You can show t
 - Demo day
 
 ## Future Implementations
+- Add responsive design (it's being designed desktop first)
+- Let users enter their own notes instead of auto-filling noteworthy info
 - Use WebGL to have an animated flame to frame the text
 - Use Motion animation library and other libraries for interactive puzzles and animations
 - Add additional gamebooks with different themes for the user to choose from
