@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+  // scrollbar-gutter: stable both-edges;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+body {
+  background-color: black;
+  font-family: Verdana, sans-serif;
+}
+
+.main {
+  height: calc(100vh - 10rem);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+}
+
+.screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.toolbar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.drawer {
+  display: flex;
+
+}
+
+.hint-drawer {
+  width: 25%;
+  background-color: rgb(156, 156, 156);
+  color: black;
+  height: 5rem;
+  padding: 1rem;
+  align-content: center;
+}
+
+.notes-drawer {
+  width: 25%;
+  background-color:rgb(156, 156, 156);
+  color: black;
+  height: 5rem;
+  padding: 1rem;
+  align-content: center;
+}
+.audio-drawer {
+  width: 25%;
+  background-color:rgb(156, 156, 156);
+  color: black;
+  height: 5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spacer {
+  visibility: hidden;
+  width: 25%;
+  height: 5rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.blocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 5rem;
+  border: 2px solid white;
+
+  &:hover {
+      background-color: white;
+      color: black;
+  }
+}
+
+.highlight {
+  animation: select 4s infinite linear;
+}
+
+.label {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.slider {
+  width: 80%;
+}
+
+@keyframes select {
+  0% {
+    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
+  }
+
+  50% {
+    box-shadow: inset 0px 0px 40px rgba(200, 200, 200, 0.8);
+  }
+
+  100% {
+    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.restart {
+  cursor: pointer;
+}
+
+.torch {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.4);
+  clip-path: polygon(50% 0%, 40% 30%, 38% 55%, 50% 75%, 62% 55%, 60% 30%);
+  animation: flickerEffect 1.5s infinite alternate;
+  z-index: 2;
+
+  &.left {
+      left: 10%;
+  }
+
+  &.right {
+      right: 10%;
+  }
+
+
+}
+
+@keyframes flickerEffect {
+  0% {
+      background-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3);
+  }
+
+  25% {
+      background-color: rgba(220, 220, 220, 0.6);
+      box-shadow: 0 0 45px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 255, 255, 0.4);
+      clip-path: polygon(55% 0%, 40% 30%, 38% 55%, 50% 75%, 62% 55%, 60% 30%);
+  }
+
+  50% {
+      background-color: rgba(200, 200, 200, 0.4);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+
+  75% {
+      background-color: rgba(220, 220, 220, 0.7);
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.7), 0 0 100px rgba(255, 255, 255, 0.5);
+      clip-path: polygon(45% 0%, 40% 30%, 38% 55%, 50% 75%, 62% 55%, 60% 30%);
+  }
+
+  100% {
+      background-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3);
+  }
+}
