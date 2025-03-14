@@ -15,7 +15,7 @@ export default function TextToSpeech( ) {
 
     speechSynthesis.cancel();
 
-    const pageElements = document.querySelectorAll(".page > *:not(.page__scrap)");
+    const pageElements = document.querySelectorAll(".page > *:not(.ignore)");
 
     const text = [...pageElements].map((element) => element.innerText.trim()).join(" ");
 

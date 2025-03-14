@@ -1,0 +1,369 @@
+{
+  "page1": {
+    "text": [
+      "You stand before the entrance to the mad wizard's tower. You are an adventurer, the latest in a long line of treasure hunters who seek the priceless magical relics said to be housed within the spire. Some might call you a thief, but you take umbrage with that. Really, you're doing a public service by removing potentially dangerous artifacts.",
+      "The tower is tall and cylindrical, going up for many stories before ending in a pointed roof. The once-vibrant facade is now dark and choked with clinging ivy. Thick, thorny brambles circle the foot of the tower. The door in front of you is solid oak with no discernible handle or locking mechanism. Lacking in explosives as you are, you'd be unable to force your way through. ",
+      "You see only two paths available to you: climbing the ivy or checking for hidden entrances amongst the brambles."
+    ],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Check for hidden entrances.]",
+        "link": "/page2"
+      },
+      {
+        "text": "[Risk the climb up the ivy.]",
+        "link": "/page3"
+      },
+      {
+        "text": "[Break down the front door.]",
+        "link": "/page4"
+      }
+    ]
+  },
+  "page2": {
+    "text": [
+      "You begrudgingly walk around the circumfrence of the tower, hacking at the brambles with your hatchet as you go. You curse as your clothes snag and the thorns scratch at your hands. Luckily, as you reach the back of the tower, you spot something through a gap in the  accursed shrubs.",
+      "It's a cellar door! You chop at the plants with renewed vigor. After a few minutes of work, the padlocked door is fully visible. You whack at the aged, rusted lock and it falls away easily. You throw the door open, revealing a staircase descending into the darkness of the earth.",
+      "You see only two paths available to you: climbing the ivy or checking for hidden entrances amongst the brambles."
+    ],
+    "prompt": "What will you do next?",
+    "choices": [
+      {
+        "text": "[There's no time to lose. Rush down the stairs!]",
+        "link": "/page5"
+      },
+      {
+        "text": "[Take the stealthy approach. Feel your way down carefully.]",
+        "link": "/page6"
+      },
+      {
+        "text": "[See what you're up against. Light a torch and make your way down.]",
+        "link": "/page7"
+      }
+    ]
+  },
+  "page3": {
+    "text": [
+      "You roll your shoulders in preparation for the climb. The ivy stretches all the way up the tower, and you can see that it curls into some windows set high above you. You never did very well in gym class, but you feel a surge of unearned confidence. You're the main character, after all.",
+      "Setting the balls of your feet against the side of the tower, you grasp a fistful of ivy in both hands and lean back to test your weight. Some tendrils come loose, but most of it holds. Thus assured, you slowly begin to pull yourself up. It's difficult work, but eventually you reach one of the windows. Through the glass, you can see a closed latch, but it doesn't look particularly sturdy. You're sure you can break in.",
+      "As you're pondering this, you glance down. Bad idea. You suddenly feel a rush of vertigo and jerk backwards in surprise. Really bad idea. With your rapid movement, the ivy you're holding is ripped from the wall, and you have a moment to ponder your foolishness before the ground rushes up to meet you. This is what you get for ignoring basic safety procedures."
+    ],
+    "prompt": "You die.",
+    "choices": [],
+    "dead": true
+  },
+  "page4": {
+    "text": [
+      "You attempt to force the door open through sheer stubbornness. Neither kicking the door nor slamming your shoulder repeatedly into the solid wood causes it to yield. You attempt to hack at the door with your hatchet, but only manage to chip off a few splinters of wood.",
+      "   Exhausted and sore, you consider your options. You expect that the door can only be opened by uttering the correct magic phrase. In desperation, you try what your mother always said was the magic word ('Please') and something you once heard in a story ('Open sesame!'). Neither works, and you're left standing sheepishly before the unopened portal.",
+      "I told you that wouldn't work."
+    ],
+    "prompt": "Which path will you choose?",
+    "choices": [
+      {
+        "text": "[Check for hidden entrances.]",
+        "link": "/page2"
+      },
+      {
+        "text": "[Risk the climb up the ivy.]",
+        "link": "/page3"
+      }
+    ]
+  },
+  "page5": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page6"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page7"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page8"
+      }
+    ]
+  },
+  "page6": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page5"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page7"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page8"
+      }
+    ]
+  },
+  "page7": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page5"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page6"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page8"
+      }
+    ]
+  },
+  "page8": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page5"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page6"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page7"
+      }
+    ]
+  },
+  "page9": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page10"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page11"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page12"
+      }
+    ]
+  },
+  "page10": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page9"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page11"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page12"
+      }
+    ]
+  },
+  "page11": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page9"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page10"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page12"
+      }
+    ]
+  },
+  "page12": {
+    "text": ["Before you is a curious puzzle. You're sure solving it will reveal some secret."],
+    "prompt": "What will you do next?",
+    "choices": [
+      {
+        "text": "[Continue on - this puzzle is too difficult.]",
+        "link": "/page13"
+      }
+    ],
+    "slide": true,
+    "puzzleSolved": false,
+    "solvedText": "You did it! Upon seeing the symbol, a word enters your mind: Edoc'sv.",
+    "solvedChoices": [
+        {
+          "text": "[Move on to the next challenge.]",
+          "link": "/page16"
+        }
+    ]
+  },
+  "page13": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page14"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page15"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page16"
+      }
+    ]
+  },
+  "page14": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page13"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page15"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page16"
+      }
+    ]
+  },
+  "page15": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page13"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page14"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page16"
+      }
+    ]
+  },
+  "page16": {
+    "text": ["You spend the better part of an hour sifting through tomes and sheafs of parchment. Most of the writing is incomprehensible, penned in lost languages or depicting strange magic runes. Right as you're about to give up, you find a small scrap of paper with a promising word written across half of it: 'Passphrase:'.",
+    "The other half of the paper is blank. You're sure there must be something written there. Perhaps in invisible ink? Unfortunately you can't make anything out in the low light of the dusty room. If only there were a way for you to get a highlight on the paper."],
+    "prompt": "What will you do next?",
+    "choices": [
+      {
+        "text": "[Continue on in frustration.]",
+        "link": "/page17"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page18"
+      }
+    ],
+    "highlight": true,
+    "puzzleSolved": false,
+    "solvedText": "You've done it! You're sure this will come in handy later.",
+    "solvedChoices": [
+      {
+        "text": "[Continue on happily.]",
+        "link": "/page14"
+      }
+  ]
+  },
+  "page17": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page18"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page19"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page20"
+      }
+    ]
+  },
+  "page18": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page17"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page19"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page20"
+      }
+    ]
+  },
+  "page19": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page17"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page18"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page20"
+      }
+    ]
+  },
+  "page20": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page17"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page18"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page19"
+      }
+    ]
+  }
+}
