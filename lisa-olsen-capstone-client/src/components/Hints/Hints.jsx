@@ -11,6 +11,7 @@ export default function Hints() {
               {location.pathname === "/page2" && <p>Fools rush in.</p>}
               {location.pathname === "/page3" && <p>Use some common sense.</p>}
               {location.pathname === "/page4" && <p>You should listen to the narrator.</p>}
+              {location.pathname === "/page11" && <p>All that glitters is not gold.</p>}
               {location.pathname === "/page12" && <p>Sorry, I'm no good at these puzzles either.</p>}
               {location.pathname === "/page16" && <p>Perhaps if a mouse ran across the paper...</p>}
             </div>

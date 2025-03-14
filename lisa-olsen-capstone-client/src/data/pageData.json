@@ -180,22 +180,12 @@
     ]
   },
   "page11": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": ["You reach for the the treasure chest, ignoring the prickly feeling on the back of your neck, and work your thumbs under the lid on either side. At that moment, you draw back with a hiss of pain. Something sharp has pricked your fingers.",
+  "Looking down at the blood that's slowly welling up, you take a moment to register the movement at the edge of your vision. The treasure chest has opened its lid to reveal rows of sharp teeth and a whipping tongue. Oh! A mimic. You can't believe you fell for that."],
+    "prompt": "You die.",
     "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page9"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page10"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page12"
-      }
-    ]
+    ],
+    "dead": true
   },
   "page12": {
     "text": ["Before you is a curious puzzle. You're sure solving it will reveal some secret."],
@@ -241,33 +231,37 @@
       {
         "text": "[Choice 1]",
         "link": "/page13"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page15"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page16"
       }
+    ],
+    "speak" : true,
+    "puzzleSolved": false,
+    "solvedText": "You did it! The wall slides open to reveal a room filled with treasure.",
+    "solvedChoices": [
+        {
+          "text": "[Enter the treasure room.]",
+          "link": "/page15"
+        }
     ]
   },
   "page15": {
-    "text": [],
+    "text": ["You marvel at the glittering riches laid out before you. There's enough here to make you wealthier than any merchant, but your eyes can't help but be drawn to the gold-encrusted door at the back of the room.",
+  "The door to the inner treasure chamber. You can only imagine what would be worth defending more than this hoard of treasure. It won't be that simple to enter, however. You see no handle or lock, and the door holds fast against your attempts to push it open.",
+"You look closer at the curious symbol on the door. Something tickles the back of your mind. What's the name of this glyph...?"],
     "prompt": "What would you like to do next?",
     "choices": [
       {
-        "text": "[Choice 1]",
-        "link": "/page13"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page14"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page16"
+        "text": "[Take the treasure - it's enough for you.]",
+        "link": "/page19"
       }
+    ],
+    "form" : true,
+    "puzzleSolved": false,
+    "solvedText": "You did it! The door opens slowly.",
+    "solvedChoices": [
+        {
+          "text": "[Enter the final chamber.]",
+          "link": "/page18"
+        }
     ]
   },
   "page16": {
@@ -296,74 +290,30 @@
   },
   "page17": {
     "text": [],
-    "prompt": "What would you like to do next?",
+    "prompt": "Congratulations! You can tell that the owlbear cub will make a wonderful companion for your adventures.",
     "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page18"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page19"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page20"
-      }
-    ]
+    ],
+      "accomplishment": "You made a new friend."
   },
   "page18": {
     "text": [],
-    "prompt": "What would you like to do next?",
+    "prompt": "Congratulations! You now have possession of the world's most powerful magical artifact. Your future is yours to decide.",
     "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page17"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page19"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page20"
-      }
-    ]
+    ],
+    "accomplishment": "You found the ultimate secret of the wizard's tower."
   },
   "page19": {
     "text": [],
-    "prompt": "What would you like to do next?",
+    "prompt": "Congratulations! This will make you rich beyond your wildest dreams.",
     "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page17"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page18"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page20"
-      }
-    ]
+    ],
+    "accomplishment": "You found the wizard's treasure."
   },
   "page20": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": [""],
+    "prompt": "Congratulations! You survived.",
     "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page17"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page18"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page19"
-      }
-    ]
+    ],
+    "accomplishment": "You escaped the wizard's tower with your life."
   }
 }

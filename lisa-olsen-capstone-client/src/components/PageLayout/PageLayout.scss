@@ -86,6 +86,32 @@
   
 }
 
+.form {
+    width: 50%;
+}
+
+.speak {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.speak-button {
+    width: 12rem;
+    padding: 1rem 0;
+    &:not(.speak-button--disabled):hover  {
+        background-color: rgb(206, 175, 0);
+    }
+  
+}
+
+.input {
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+}
+
 ::selection {
     // background-color: rgba(245, 225, 184, 0.8); 
     background-color: #F3E0C2;
