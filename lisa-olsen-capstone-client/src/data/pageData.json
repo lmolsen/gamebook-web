@@ -90,21 +90,23 @@
     ]
   },
   "page6": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": ["You stumble blindly through the dark. After what seems like hours of wandering, you find what feels like a door. You fumble for the doorknob, and feel your hand knock into something. You hear it drop to the floor with a metallic clink.",
+  "You scramble to grab it, sure it's a key, but in your rush you kick it further down the hall. You can't see anything; you'll have to crawl along the floor and try to find it via touch."],
+    "prompt": "What will you do next?",
     "choices": [
       {
-        "text": "[Choice 1]",
-        "link": "/page5"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page7"
-      },
-      {
-        "text": "[Choice 3]",
+        "text": "[This is hopeless -- search for another way out.]",
         "link": "/page8"
       }
+    ],
+    "maze": true,
+    "puzzleSolved": false,
+    "solvedText": "You did it! You made your way out of the maze.",
+    "solvedChoices": [
+        {
+          "text": "[Exit the maze.]",
+          "link": "/page7"
+        }
     ]
   },
   "page7": {
@@ -300,7 +302,11 @@
     "prompt": "Congratulations! You now have possession of the world's most powerful magical artifact. Your future is yours to decide.",
     "choices": [
     ],
-    "accomplishment": "You found the ultimate secret of the wizard's tower."
+    
+    "accomplishment": "You found the ultimate secret of the wizard's tower.",
+    "solvedText": "You've done it! You're sure this will come in handy later.",
+    "solvedChoices": [
+  ]
   },
   "page19": {
     "text": [],

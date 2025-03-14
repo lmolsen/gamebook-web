@@ -24,7 +24,7 @@ function App() {
   const navigate = useNavigate();
   const isTitlePage = location.pathname === "/";
   const [isSolved, setIsSolved] = useState(false);
-  
+
   // util hooks
   const { musicPlay, volume, handleVolumeChange } = useAudio();
   const {
@@ -36,8 +36,13 @@ function App() {
     toggleAudio,
   } = useToggles();
 
-  const { isTextSelected, hasTextBeenHighlighted, handleTextSelection, setIsTextSelected, setHasTextBeenHighlighted } =
-    useTextSelection();
+  const {
+    isTextSelected,
+    hasTextBeenHighlighted,
+    handleTextSelection,
+    setIsTextSelected,
+    setHasTextBeenHighlighted,
+  } = useTextSelection();
 
   const [isDead, setIsDead] = useState(false);
 
@@ -54,39 +59,21 @@ function App() {
           {!isTitlePage && <TextToSpeech />}
           <Routes>
             <Route path="/" element={<TitlePage musicPlay={musicPlay} />} />
-            <Route path="/:pageId" element={<PageLayout  setIsDead={setIsDead} setIsSolved={setIsSolved} isSolved={isSolved} hasTextBeenHighlighted={hasTextBeenHighlighted} setIsTextSelected={setIsTextSelected} setHasTextBeenHighlighted={setHasTextBeenHighlighted}/>} />
-            {/* <Route path="/page1" element={<Page1 />} />
-            <Route path="/page2" element={<Page2 setIsDead={setIsDead} />} />
-            <Route path="/page3" element={<Page3 />} />
-            <Route path="/page4" element={<Page4 />} />
-            <Route path="/page5" element={<Page5 />} />
-            <Route path="/page6" element={<Page6 />} />
-            <Route path="/page7" element={<Page7 />} />
-            <Route path="/page8" element={<Page8 />} />
-            <Route path="/page9" element={<Page9 />} />
-            <Route path="/page10" element={<Page10 />} />
-            <Route path="/page11" element={<Page11 />} />
-
             <Route
-              path="/page12"
+              path="/:pageId"
               element={
-                <Page12
-                  setIsTextSelected={handleTextSelection}
+                <PageLayout
+                  setIsDead={setIsDead}
+                  setIsSolved={setIsSolved}
+                  isSolved={isSolved}
                   hasTextBeenHighlighted={hasTextBeenHighlighted}
+                  setIsTextSelected={setIsTextSelected}
+                  setHasTextBeenHighlighted={setHasTextBeenHighlighted}
                 />
               }
             />
-            <Route path="/page13" element={<Page13 />} />
-            <Route path="/page14" element={<Page14 />} />
-            <Route path="/page15" element={<Page15 />} />
-            <Route path="/page16" element={<Page16 />} />
-            <Route path="/page17" element={<Page17 />} />
-            <Route path="/page18" element={<Page18 />} />
-            <Route path="/page19" element={<Page19 />} />
-            <Route path="/page20" element={<Page20 />} /> */}
             <Route path="/walloffame" element={<WallOfFame />} />
           </Routes>
-
           <div className="torch right"></div>
         </main>
         {!isTitlePage && (
@@ -105,7 +92,10 @@ function App() {
                   areNotesVisible ? "visible" : "hidden"
                 }`}
               >
-                <Notes hasTextBeenHighlighted={hasTextBeenHighlighted} isSolved={isSolved} />
+                <Notes
+                  hasTextBeenHighlighted={hasTextBeenHighlighted}
+                  isSolved={isSolved}
+                />
               </div>
               <div
                 className={`audio-drawer ${

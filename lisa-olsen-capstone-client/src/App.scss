@@ -5,7 +5,7 @@
   font-family: Verdana, sans-serif;
   // scrollbar-gutter: stable both-edges;
   text-decoration: none;
-  overflow: hidden;
+  // overflow:hidden;
 }
 
 body {
@@ -20,6 +20,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 60%;
+  // overflow-y: scroll;
 }
 
 .screen {
@@ -34,6 +35,9 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
 }
 
 .drawer {

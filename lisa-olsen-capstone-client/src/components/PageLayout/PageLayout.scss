@@ -2,18 +2,30 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     &__text {
         color: white;
         padding-top: 1rem;
         text-indent: 1rem;
         font-size: 1.5rem;
-        user-select: none; /* Prevent text selection */
-        -webkit-user-select: none; /* Prevent text selection in WebKit-based browsers */
+        user-select: none; 
+        -webkit-user-select: none;
         outline: none;
         // line-height: 2rem;
+
+        &--solved {
+            color: rgb(0, 192, 128);
+            animation: fadeIn 0.2s ease-in forwards;
+        }
     }
 
     &__prompt {
@@ -22,8 +34,8 @@
         // margin-bottom: 2rem;
         font-size: 1.25rem;
         font-weight: bold;
-        user-select: none; /* Prevent text selection */
-        -webkit-user-select: none; /* Prevent text selection in WebKit-based browsers */
+        user-select: none;
+        -webkit-user-select: none; 
         outline: none;
     }
 
@@ -31,8 +43,8 @@
         padding-top: 2rem;
         font-size: 1.5rem;
         color: rgb(156, 156, 156);
-        user-select: none; /* Prevent text selection */
-        -webkit-user-select: none; /* Prevent text selection in WebKit-based browsers */
+        user-select: none;
+        -webkit-user-select: none;
         outline: none;
         // color: blue;
         cursor: pointer;
@@ -40,6 +52,11 @@
         &:hover {
             font-weight: bold;;
             color: rgb(206, 175, 0);
+        }
+
+        &--solved {
+            color: rgb(0, 192, 128);
+            animation: fadeIn 0.2s ease-in forwards;
         }
     }
 
@@ -74,8 +91,8 @@
         justify-content: flex-start;
         background-color: #F3E0C2;
         font-family: "Lucida Handwriting", cursive;
-        user-select:auto; /* Prevent text selection */
-        -webkit-user-select: auto; /* Prevent text selection in WebKit-based browsers */
+        user-select:auto; 
+        -webkit-user-select: auto;
    cursor: text;
 
         &__secret {
@@ -87,7 +104,7 @@
 }
 
 .form {
-    width: 50%;
+    width: 30%;
 }
 
 .speak {
@@ -117,3 +134,16 @@
     background-color: #F3E0C2;
     color: #000;
   }
+
+  @keyframes fadeIn {
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1; 
+    }
+}
+
+// .maze {
+//     width: 100%;
+// }

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import pageData from "./../../data/pageData.json";
 import SlidingPuzzle from "../SlidingPuzzle/SlidingPuzzle";
 import { Filter } from "bad-words";
+import LightPuzzle from "../LightPuzzle/LightPuzzle";
+import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 
 export default function PageLayout({
   setIsDead,
@@ -21,6 +23,14 @@ export default function PageLayout({
   const [hasSpoken, setHasSpoken] = useState(false);
 
   const filter = new Filter();
+
+  
+  const location = useLocation();
+
+  useEffect(() => {
+    setPuzzleSolved(false);
+  }, [location]);
+
 
   useEffect(() => {
     const handleSelection = () => {
@@ -159,6 +169,12 @@ export default function PageLayout({
         </div>
       )}
 
+{pageContent.maze&& (
+        <div className="maze puzzle ignore">
+      <LightPuzzle puzzleSolved={puzzleSolved}   setPuzzleSolved={setPuzzleSolved}/>
+        </div>
+      )}
+
       {pageContent.speak && (
         <div className="speak puzzle ignore">
           <button
@@ -194,18 +210,20 @@ export default function PageLayout({
       )}
 
       {puzzleSolved && pageContent.solvedText && (
-        <p className="page__text">{pageContent.solvedText}</p>
+        <p className="page__text page__text--solved">{pageContent.solvedText}</p>
       )}
       <div className="choices">
         <p className="page__prompt">{pageContent.prompt}</p>
         {(puzzleSolved ? pageContent.solvedChoices : pageContent.choices).map(
           (choice, index) => (
             <Link key={index} to={choice.link}>
-              <p className="page__choices">{choice.text}</p>
+              <p className={`page__choices ${puzzleSolved ? "page__choices--solved" : ""} `}>{choice.text}</p>
             </Link>
           )
         )}
       </div>
+
+      <ScrollIndicator />
     </div>
   );
 }
