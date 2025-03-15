@@ -6,6 +6,7 @@ import SlidingPuzzle from "../SlidingPuzzle/SlidingPuzzle";
 import { Filter } from "bad-words";
 import LightPuzzle from "../LightPuzzle/LightPuzzle";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
+import Dice from "../Dice/Dice";
 
 export default function PageLayout({
   setIsDead,
@@ -21,6 +22,7 @@ export default function PageLayout({
   const [isSilent, setIsSilent] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [hasSpoken, setHasSpoken] = useState(false);
+  const [feat, setFeat] = useState(false);
 
   const filter = new Filter();
 
@@ -171,9 +173,16 @@ export default function PageLayout({
 
 {pageContent.maze&& (
         <div className="maze puzzle ignore">
-      <LightPuzzle puzzleSolved={puzzleSolved}   setPuzzleSolved={setPuzzleSolved}/>
+      <LightPuzzle puzzleSolved={puzzleSolved} setPuzzleSolved={setPuzzleSolved}/>
         </div>
       )}
+
+{pageContent.dice&& (
+        <div className="dice puzzle ignore">
+    <Dice puzzleSolved={puzzleSolved} setPuzzleSolved={setPuzzleSolved} setFeat={setFeat} />
+        </div>
+      )}
+
 
       {pageContent.speak && (
         <div className="speak puzzle ignore">

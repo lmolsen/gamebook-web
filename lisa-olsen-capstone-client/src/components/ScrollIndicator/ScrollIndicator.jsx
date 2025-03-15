@@ -12,6 +12,7 @@ export default function ScrollIndicator() {
       if (pageElement) {
         setIsScrollable(pageElement.scrollHeight > pageElement.clientHeight);
         checkIfAtBottom();
+        
       }
     };
 
@@ -36,11 +37,23 @@ export default function ScrollIndicator() {
     };
   }, []);
 
+  useEffect(() => {
+    const pageElement = document.querySelector(".page");
+    if (pageElement) {
+      if (isScrollable) {
+        pageElement.classList.add("page--scrollable");
+      } else {
+        pageElement.classList.remove("page--scrollable");
+      }
+    }
+  }, [isScrollable]);
+
   return (
     <>
       {isScrollable && !atBottom && (
-        <div className="scroll-indicator">
-          <div className="scroll-indicator__icon">⌄</div>
+        <div className="scroll">
+          <div className="scroll__indicator"><p className="scroll__text">Choices below</p>
+            ⌄</div>
         </div>
       )}
     </>

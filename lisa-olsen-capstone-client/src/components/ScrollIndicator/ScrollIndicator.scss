@@ -1,34 +1,38 @@
-.scroll-indicator {
-    position: fixed;
-    bottom: 6.25rem;
-    left: 50%;
-    transform: translateX(-50%);
+.scroll {
+  position: fixed;
+  bottom: 6.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 2.8125rem;
+  opacity: 0.8;
+  pointer-events: none;
+
+  &__indicator {
+    width: fit-content;
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 2.8125rem;
-    height: 2.8125rem;
-    opacity: 0.8;
-    pointer-events: none;
-    
-    &__icon {
-        color: white;
-        font-size: 1.5rem;
-        font-weight: bold;
-        animation: bounce 1.5s infinite;
-      }
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: .625rem;
+    font-weight: bold;
+    animation: bounce 1.5s infinite;
   }
-  
-  
-  @keyframes bounce {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(8px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
   }
-  
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

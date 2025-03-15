@@ -31,15 +31,11 @@
     "choices": [
       {
         "text": "[There's no time to lose. Rush down the stairs!]",
-        "link": "/page5"
-      },
-      {
-        "text": "[Take the stealthy approach. Feel your way down carefully.]",
         "link": "/page6"
       },
       {
-        "text": "[See what you're up against. Light a torch and make your way down.]",
-        "link": "/page7"
+        "text": "[Take the cautious approach. Feel your way down carefully.]",
+        "link": "/page5"
       }
     ]
   },
@@ -56,7 +52,7 @@
   "page4": {
     "text": [
       "You attempt to force the door open through sheer stubbornness. Neither kicking the door nor slamming your shoulder repeatedly into the solid wood causes it to yield. You attempt to hack at the door with your hatchet, but only manage to chip off a few splinters of wood.",
-      "   Exhausted and sore, you consider your options. You expect that the door can only be opened by uttering the correct magic phrase. In desperation, you try what your mother always said was the magic word ('Please') and something you once heard in a story ('Open sesame!'). Neither works, and you're left standing sheepishly before the unopened portal.",
+      " Exhausted and sore, you consider your options. You expect that the door can only be opened by uttering the correct magic phrase. In desperation, you try what your mother always said was the magic word ('Please') and something you once heard in a story ('Open sesame!'). Neither works, and you're left standing sheepishly before the unopened portal.",
       "I told you that wouldn't work."
     ],
     "prompt": "Which path will you choose?",
@@ -72,26 +68,28 @@
     ]
   },
   "page5": {
-    "text": [],
+    "text": [
+      "You start down carefully, running your hand along the wall so as not to lose your bearings. The light from above is quickly swallowed up. Soon, it is pitch black.",
+      "Luckily, your hand soon runs over what feels like a torch mounted on the wall. You grasp it firmly, and as if by magic (or rather, definitely by magic), the torch bursts into flames. You feel much more confident with the light to guide you. Soon, you find yourself in a corridor with a door to your left and a small opening on the right, through which you can see what appears to be a small storage room. ",
+      "You place your torch in a sconce by the door. With delight, you note that there is a key in the doorknob. With even greater delight, you spy what appears to be a chest in the room across from it. Sturdy and decked in gold trimmings, the chest practically screams 'TREASURE'! Past your excitement, you register the dark stain that spreads on the floor around the chest."
+    ],
     "prompt": "What would you like to do next?",
     "choices": [
       {
-        "text": "[Choice 1]",
-        "link": "/page6"
-      },
-      {
-        "text": "[Choice 2]",
+        "text": "[Ignore the chest and go through the door.]",
         "link": "/page7"
       },
       {
-        "text": "[Choice 3]",
-        "link": "/page8"
+        "text": "[Open the treasure chest, of course!]",
+        "link": "/page11"
       }
     ]
   },
   "page6": {
-    "text": ["You stumble blindly through the dark. After what seems like hours of wandering, you find what feels like a door. You fumble for the doorknob, and feel your hand knock into something. You hear it drop to the floor with a metallic clink.",
-  "You scramble to grab it, sure it's a key, but in your rush you kick it further down the hall. You can't see anything; you'll have to crawl along the floor and try to find it via touch."],
+    "text": [
+      "You rush eagerly down the stairs, but soon find yourself stumbling blindly through the dark. After what seems like hours of wandering, you encounter what feels like a door. You fumble for the doorknob, and feel your hand knock into something. You hear it drop to the floor with a metallic clink.",
+      "You scramble to grab it, sure it's a key, but in your rush you kick it further down the hall. You can't see anything; you'll have to crawl along the floor and try to find it via touch."
+    ],
     "prompt": "What will you do next?",
     "choices": [
       {
@@ -101,49 +99,38 @@
     ],
     "maze": true,
     "puzzleSolved": false,
-    "solvedText": "You did it! You made your way out of the maze.",
+    "solvedText": "You did it! You found the key.",
     "solvedChoices": [
-        {
-          "text": "[Exit the maze.]",
-          "link": "/page7"
-        }
+      {
+        "text": "[Open the door with the key.]",
+        "link": "/page9"
+      }
     ]
   },
   "page7": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": ["You turn the key and push open the door, entering a medium-sized room filled with cobwebs. Torches flicker into life on the wall. It appears to be some kind of pantry, with dusty shelves lining the walls and sacks of flour or grains. In the center of the room you notice a square hole in the ceiling that goes up and up. At the far end of the room is an open door, beyond which you can see a staircase leading up.",
+  "As there is nothing much of interest, you start toward the door. However, you hesitate for a moment. Something is compelling you to move the sacks to the center of the room, beneath the hole."],
+    "prompt": "What will you do next?",
     "choices": [
       {
-        "text": "[Choice 1]",
-        "link": "/page5"
+        "text": "[Try to move the heavy sacks into a pile in the center of the room.]",
+        "link": "/page26"
       },
       {
-        "text": "[Choice 2]",
-        "link": "/page6"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page8"
+        "text": "[You're tired from chopping brambles -- continue up the stairs.]",
+        "link": "/page27"
       }
     ]
   },
   "page8": {
-    "text": [],
-    "prompt": "What would you like to do next?",
-    "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page5"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page6"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page7"
-      }
-    ]
+    "text": [
+      "You abandon your fruitless search for the key and continue down the corridor. Though you try to keep your bearings in the dark, you find yourself turning corners again and again, hopelessly lost.",
+      "You wander for hours, then days. You begin to hear things you're not entirely sure are really there. Eventually, you sink to the ground and can no longer find the strength to rise. You succumb to your thirst and exhaustion, alone in the darkness.",
+      "Well, at least you didn't waste your time looking for that key!"
+    ],
+    "prompt": "You die.",
+    "choices": [],
+    "dead": true
   },
   "page9": {
     "text": [],
@@ -182,15 +169,18 @@
     ]
   },
   "page11": {
-    "text": ["You reach for the the treasure chest, ignoring the prickly feeling on the back of your neck, and work your thumbs under the lid on either side. At that moment, you draw back with a hiss of pain. Something sharp has pricked your fingers.",
-  "Looking down at the blood that's slowly welling up, you take a moment to register the movement at the edge of your vision. The treasure chest has opened its lid to reveal rows of sharp teeth and a whipping tongue. Oh! A mimic. You can't believe you fell for that."],
-    "prompt": "You die.",
-    "choices": [
+    "text": [
+      "You reach for the the treasure chest, ignoring the prickly feeling on the back of your neck, and work your thumbs under the lid on either side. At that moment, you draw back with a hiss of pain. Something sharp has pricked your fingers.",
+      "Looking down at the blood that's slowly welling up, you take a moment to register the movement at the edge of your vision. The treasure chest has opened its lid to reveal rows of sharp teeth and a whipping tongue. Oh! A mimic. You can't believe you fell for that."
     ],
+    "prompt": "You die.",
+    "choices": [],
     "dead": true
   },
   "page12": {
-    "text": ["Before you is a curious puzzle. You're sure solving it will reveal some secret."],
+    "text": [
+      "Before you is a curious puzzle. You're sure solving it will reveal some secret."
+    ],
     "prompt": "What will you do next?",
     "choices": [
       {
@@ -202,10 +192,10 @@
     "puzzleSolved": false,
     "solvedText": "You did it! Upon seeing the symbol, a word enters your mind: Edoc'sv.",
     "solvedChoices": [
-        {
-          "text": "[Move on to the next challenge.]",
-          "link": "/page16"
-        }
+      {
+        "text": "[Move on to the next challenge.]",
+        "link": "/page16"
+      }
     ]
   },
   "page13": {
@@ -235,20 +225,22 @@
         "link": "/page13"
       }
     ],
-    "speak" : true,
+    "speak": true,
     "puzzleSolved": false,
     "solvedText": "You did it! The wall slides open to reveal a room filled with treasure.",
     "solvedChoices": [
-        {
-          "text": "[Enter the treasure room.]",
-          "link": "/page15"
-        }
+      {
+        "text": "[Enter the treasure room.]",
+        "link": "/page15"
+      }
     ]
   },
   "page15": {
-    "text": ["You marvel at the glittering riches laid out before you. There's enough here to make you wealthier than any merchant, but your eyes can't help but be drawn to the gold-encrusted door at the back of the room.",
-  "The door to the inner treasure chamber. You can only imagine what would be worth defending more than this hoard of treasure. It won't be that simple to enter, however. You see no handle or lock, and the door holds fast against your attempts to push it open.",
-"You look closer at the curious symbol on the door. Something tickles the back of your mind. What's the name of this glyph...?"],
+    "text": [
+      "You marvel at the glittering riches laid out before you. There's enough here to make you wealthier than any merchant, but your eyes can't help but be drawn to the gold-encrusted door at the back of the room.",
+      "The door to the inner treasure chamber. You can only imagine what would be worth defending more than this hoard of treasure. It won't be that simple to enter, however. You see no handle or lock, and the door holds fast against your attempts to push it open.",
+      "You look closer at the curious symbol on the door. Something tickles the back of your mind. What's the name of this glyph...?"
+    ],
     "prompt": "What would you like to do next?",
     "choices": [
       {
@@ -256,19 +248,21 @@
         "link": "/page19"
       }
     ],
-    "form" : true,
+    "form": true,
     "puzzleSolved": false,
     "solvedText": "You did it! The door opens slowly.",
     "solvedChoices": [
-        {
-          "text": "[Enter the final chamber.]",
-          "link": "/page18"
-        }
+      {
+        "text": "[Enter the final chamber.]",
+        "link": "/page18"
+      }
     ]
   },
   "page16": {
-    "text": ["You spend the better part of an hour sifting through tomes and sheafs of parchment. Most of the writing is incomprehensible, penned in lost languages or depicting strange magic runes. Right as you're about to give up, you find a small scrap of paper with a promising word written across half of it: 'Passphrase:'.",
-    "The other half of the paper is blank. You're sure there must be something written there. Perhaps in invisible ink? Unfortunately you can't make anything out in the low light of the dusty room. If only there were a way for you to get a highlight on the paper."],
+    "text": [
+      "You spend the better part of an hour sifting through tomes and sheafs of parchment. Most of the writing is incomprehensible, penned in lost languages or depicting strange magic runes. Right as you're about to give up, you find a small scrap of paper with a promising word written across half of it: 'Passphrase:'.",
+      "The other half of the paper is blank. You're sure there must be something written there. Perhaps in invisible ink? Unfortunately you can't make anything out in the low light of the dusty room. If only there were a way for you to get a highlight on the paper."
+    ],
     "prompt": "What will you do next?",
     "choices": [
       {
@@ -288,38 +282,154 @@
         "text": "[Continue on happily.]",
         "link": "/page14"
       }
-  ]
+    ]
   },
   "page17": {
     "text": [],
     "prompt": "Congratulations! You can tell that the owlbear cub will make a wonderful companion for your adventures.",
-    "choices": [
-    ],
-      "accomplishment": "You made a new friend."
+    "choices": [],
+    "accomplishment": "You made a new friend."
   },
   "page18": {
     "text": [],
     "prompt": "Congratulations! You now have possession of the world's most powerful magical artifact. Your future is yours to decide.",
-    "choices": [
-    ],
-    
+    "choices": [],
+
     "accomplishment": "You found the ultimate secret of the wizard's tower.",
     "solvedText": "You've done it! You're sure this will come in handy later.",
-    "solvedChoices": [
-  ]
+    "solvedChoices": []
   },
   "page19": {
     "text": [],
     "prompt": "Congratulations! This will make you rich beyond your wildest dreams.",
-    "choices": [
-    ],
+    "choices": [],
     "accomplishment": "You found the wizard's treasure."
   },
   "page20": {
     "text": [""],
     "prompt": "Congratulations! You survived.",
+    "choices": [],
+    "accomplishment": "You escaped the wizard's tower with your life."
+  },
+  "page21": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page14"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page15"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page16"
+      }
+    ]
+  },
+  "page22": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page14"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page15"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page16"
+      }
+    ]
+  },
+  "page23": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page14"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page15"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page16"
+      }
+    ]
+  },
+  "page24": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page14"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page15"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page16"
+      }
+    ]
+  },
+  "page25": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page14"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page15"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page16"
+      }
+    ]
+  },   "page26": {
+    "text": ["You roll up your sleeves in preparation for some heavy labour. You really are tired, though. Whether or not you manage this will be a roll of the dice."],
+    "prompt": "",
     "choices": [
     ],
-    "accomplishment": "You escaped the wizard's tower with your life."
+    "dice": true,
+    "puzzleSolved": false,
+    "solvedText": "Phew! It was a lot of work, but you managed it.",
+    "solvedChoices": [
+      {
+        "text": "[Continue up the stairs.]",
+        "link": "/page27"
+      }
+    ]
+  },   "page27": {
+    "text": [],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Choice 1]",
+        "link": "/page14"
+      },
+      {
+        "text": "[Choice 2]",
+        "link": "/page15"
+      },
+      {
+        "text": "[Choice 3]",
+        "link": "/page16"
+      }
+    ]
   }
 }

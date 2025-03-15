@@ -68,13 +68,13 @@ export default function SlidingPuzzle({ setPuzzleSolved, setIsSolved, isSolved }
     setIsSolved(false);
   };
 
-  const autoSolve = () => {
-    setGrid(solvedState);
-    setIsSolved(true);
-    setTimeout(() => {
-      setImageVisible(true);
-    }, 200);
-  };
+  // const autoSolve = () => {
+  //   setGrid(solvedState);
+  //   setIsSolved(true);
+  //   setTimeout(() => {
+  //     setImageVisible(true);
+  //   }, 200);
+  // };
 
   return (
     <div className="sliding-puzzle">
@@ -91,7 +91,7 @@ export default function SlidingPuzzle({ setPuzzleSolved, setIsSolved, isSolved }
               } ${isSolved ? "sliding-puzzle__tile--solved" : ""} ${moving ? "sliding-puzzle__tile--moving" : ""}`}
               onClick={() => handleMove(index)}
               layout 
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
               style={{
                 backgroundImage: num !== MISSING_TILE ? `url(${IMAGE_URL})` : "none",
                 backgroundPosition: `${-col * 6.25}rem ${-row * 6.25}rem`,
@@ -110,13 +110,13 @@ export default function SlidingPuzzle({ setPuzzleSolved, setIsSolved, isSolved }
 
       {!isSolved && (
         <>
-          <button
+          {/* <button
             className="sliding-puzzle__button"
             onClick={autoSolve}
             disabled={isSolved}
           >
             Auto-solve
-          </button>
+          </button> */}
           <button
             className="sliding-puzzle__button"
             onClick={reshuffle}

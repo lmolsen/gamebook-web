@@ -13,8 +13,8 @@ export default function LightPuzzle({
   useEffect(() => {
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
-      const newX = Math.random() * (rect.width - 40) + 20;
-      const newY = Math.random() * (rect.height - 40) + 20;
+      const newX = Math.random() * (rect.width - 48 - 30) + 30;
+      const newY = Math.random() * (rect.height - 48- 30) + 30;
       setTargetPosition({ x: newX, y: newY });
     }
   }, []);
@@ -30,7 +30,7 @@ export default function LightPuzzle({
   return (
     <div
       ref={containerRef}
-      className="box"
+      className={`box ${puzzleSolved ? "box--squished" : ""}`}
       onMouseMove={handleMouseMove}
     >
       <motion.div
@@ -42,7 +42,11 @@ export default function LightPuzzle({
       <motion.div
         onClick={() => setPuzzleSolved(true)}
         className={`key ${puzzleSolved ? "key--revealed" : ""}`}
-        style={{ left: targetPosition.x, top: targetPosition.y }}
+        style={
+          puzzleSolved
+            ? {} 
+            : { left: targetPosition.x, top: targetPosition.y }
+        }
         whileHover={!puzzleSolved ? { scale: 1.2 } : {}}
       >
         🔑
