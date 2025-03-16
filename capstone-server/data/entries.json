@@ -8,5 +8,15 @@
     "id": "8f86c7f4-bd18-4e4a-9328-a54a189dd5ba",
     "name": "Drizzt Do'Urden",
     "accomplishment": "Became a legend."
+  },
+  {
+    "name": "Katie Lagace",
+    "accomplishment": "Made a new friend.",
+    "id": "93a1b26f-0676-467a-89e9-7407ad919145"
+  },
+  {
+    "name": "Todd",
+    "accomplishment": "Recovered the wizard's journal.",
+    "id": "c41d3f82-39be-454d-b80b-56b13572fd02"
   }
 ]

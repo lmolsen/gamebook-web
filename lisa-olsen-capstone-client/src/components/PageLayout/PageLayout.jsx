@@ -321,7 +321,7 @@ export default function PageLayout({
       {pageContent.accomplishment && !isDead && (
         <form className="name" onSubmit={handleFormSubmit}>
           <input
-            className="name__input"
+            className="name__input ignore"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your name for the wall of fame"

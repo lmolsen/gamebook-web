@@ -283,8 +283,11 @@
     ]
   },
   "page17": {
-    "text": [],
-    "prompt": "Congratulations! You can tell that the owlbear cub will make a wonderful companion for your adventures.",
+    "text": ["You complete the spell, waiting breathlessly for the results. After a moment, the owlbear cub stirs with a feeble chirp. You've heard that owlbears are fierce creatures, not to be trifled with, but this one is just so darn cute. It blinks up at you with trust in its eyes.",
+  "Making up your mind to take it with you, you bundle it into your pack. With the cub inside, there's absolutely no room for the hefty journal. You'll need both hands free to slide safely down the pole, so you won't be able to take anything else with you. Oh well, there's nothing to be done for it.",
+"You grip the pole tightly and step into the hole, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.", 
+"From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pet the owlbear, who chirps happily. You can tell that this is the start of a long and wonderful friendship."],
+    "prompt": "Congratulations! You have a wonderful new companion for your adventures.",
     "choices": [],
     "accomplishment": "Made a new friend."
   },
@@ -332,20 +335,25 @@
     ]
   },
   "page22": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": ["You stride through the center door. You've definitely chosen the correct door to answer the riddle... probably. Coins have tails, right? And they fly through the air when you flip them? Right? Anyway, coin equals treasure. It just makes sense.",
+  "Lost in thought, you don't notice the door closing behind you. You whirl around as you hear it slam shut. You try the handle. Locked. Of course. You shake your head and take a look around you.",
+"You're in some kind of laboratory. There are tables and shelves filled with equipment and bottles containing mysterious liquids and subtances. You notice what appears to be a cage with a blanket thrown over it. On top of the cage rests a journal. Flipping through it, you see that it contains pages and pages of notes on spells and magical experiments. This could be very valuable.",
+"You cast around for a means of escape. You manage to open the room's window, but it's a long way down. You're quite sure you'd fail to survive the fall into the thorny brambles. Poking around some more, you discover a metal pole in an alcove behind a curtain. It continues down through a hole in the floor, potentially all the way to the base of the tower. This could be your way out, though you'd need both hands to slide down it.",
+"Before you go, there's one more thing you're curious about. You peek under the blanket. You're shocked to see what appears to be a sleeping owlbear cub. How could it have survived all this time? Looking more closely at the journal's notes, you read about an experiment that can put creatures in a sort of magical stasis, wherein they do not require food or water.Underneath this passage are the steps to break the spell, though the last part is too smudged to read. If you can complete the sequence, you should be able to awaken the poor creature.",
+"The sequence reads as follows: 1 11 21 1211 111221..."],
+    "prompt": "What will you do next?",
     "choices": [
       {
-        "text": "[Choice 1]",
-        "link": "/page14"
+        "text": "[Complete the sequence -- the answer is 13112211.]",
+        "link": "/page24"
       },
       {
-        "text": "[Choice 2]",
-        "link": "/page15"
+        "text": "[Complete the sequence -- the answer is 312211.]",
+        "link": "/page17"
       },
       {
-        "text": "[Choice 3]",
-        "link": "/page16"
+        "text": "[Forget about the owlbear -- take the journal and leave.]",
+        "link": "/page25"
       }
     ]
   },
@@ -368,40 +376,22 @@
     ]
   },
   "page24": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": ["You finish the spell with the final sequence of numbers. You watch the owlbear cub closely, waiting for it stir. After a moment, a purple fog begins to spill from the journal. Oh dear. Instead of lifting the spell, you seem to have activated it. You may not be as clever as you thought you were.",
+  "Your eyelids grow heavy, and you sink slowly to the floor. It looks like you'll be stuck here, 'asleep', until the next adventurer stumbles across this room. Based on the thick layer of dust that coats the floor, that could be a very long time indeed. You fall into a magical slumber."],
+    "prompt": "You die... sort of.",
     "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page14"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page15"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page16"
-      }
-    ]
+    ],
+    "dead": true
   },
   "page25": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": ["You think it's a bad idea to mess with magic spells and wild beasts. Instead, you grab the journal and various trinkets of a (hopefully) magical nature, stuffing them into your pack. It's not what you were hoping for, but the journal alone should fetch a hefty sum.",
+  "Laden with your prizes, you grip the pole tightly and step into the hole, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.",
+"From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pull out the journal, turning it over in your hands. You don't fancy yourself a wizard, but maybe you'll read through it before selling it, just in case there's anything useful in there.",
+"You'll decide what to do after a good meal and a long rest. Sliding the journal back into your pack, you start the long trek back to town. This will make a great story at the tavern."],
+    "prompt": "Congratulations! You recovered a valuable journal belonging to the mad wizard himself.",
     "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page14"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page15"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page16"
-      }
-    ]
+    ],
+    "accomplishment": "Recovered the wizard's journal."
   },
   "page26": {
     "text": [
