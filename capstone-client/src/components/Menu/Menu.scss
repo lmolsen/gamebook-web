@@ -1,50 +1,61 @@
-.toolbar {
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.menu {
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  user-select: none;
-  -webkit-user-select: none;
-  outline: none;
-}
+  z-index: 20;
+  margin-top: 1rem;
+  @include flex-orientation(column, center);
+  @include select-none;
 
-.drawer {
-  display: flex;
-}
+  &__blocks {
+    @include flex-position(center, center);
+  }
+  
+  &__block {
+    width: 25%;
+    height: 5rem;
+    border: 0.125rem solid $light-color;
+    @include flex-position(center, center);
+  
+    &:hover {
+      background-color: $light-color;
+      color: $dark-color;
+    }
+  }
 
-.hint-drawer {
-  width: 25%;
-  background-color: rgb(156, 156, 156);
-  color: black;
-  height: 5rem;
-  padding: 1rem;
-  align-content: center;
-}
+  &__spacer {
+    visibility: hidden;
+    width: 25%;
+    height: 5rem;
+  }
 
-.notes-drawer {
-  width: 25%;
-  background-color: rgb(156, 156, 156);
-  color: black;
-  height: 5rem;
-  padding: 1rem;
-  align-content: center;
-}
-.audio-drawer {
-  width: 25%;
-  background-color: rgb(156, 156, 156);
-  color: black;
-  height: 5rem;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
+  &__drawers {
+    display: flex;
+  }
 
-.spacer {
-  visibility: hidden;
-  width: 25%;
-  height: 5rem;
+  &__hint-drawer {
+    @include drawer;
+  }
+
+  &__notes-drawer {
+    @include drawer;
+    background-color: $medium-dark-color;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  &__slider {
+    width: 80%;
+  }
+
+  &__audio-drawer {
+    @include drawer;
+    @include flex-full(column, center, center);
+  }
 }
 
 .hidden {
@@ -55,39 +66,8 @@
   visibility: visible;
 }
 
-.blocks {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.block {
-  color: white;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  height: 5rem;
-  border: 2px solid white;
-
-  &:hover {
-    background-color: white;
-    color: black;
-  }
-}
-
 .highlight {
   animation: select 4s infinite linear;
-}
-
-.label {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.slider {
-  width: 80%;
 }
 
 @keyframes select {

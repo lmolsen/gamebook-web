@@ -3,7 +3,7 @@
 @use "./styles/partials/mixins" as *;
 
 .main {
-  height: calc(100vh - 10rem);
+  height: calc(100vh - 11rem);
   width: 60%;
   @include flex-alignment(column, center);
   // overflow-y: scroll;

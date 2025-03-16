@@ -48,3 +48,16 @@
     -webkit-user-select: none;
     outline: none;
   }
+
+  @mixin drawer {
+    background-color: $medium-color;
+    color: $dark-color;
+    width: 25%;
+    height: 5rem;
+    padding: 0.5rem 1rem;
+    align-content: center;
+  }
+
+  @mixin puzzle {
+    margin: 2rem 0;
+  }

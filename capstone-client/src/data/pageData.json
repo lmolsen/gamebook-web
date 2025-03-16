@@ -92,7 +92,7 @@
     "prompt": "What will you do next?",
     "choices": [
       {
-        "text": "[This is hopeless -- search for another way out.]",
+        "text": "[This is hopeless - search for another way out.]",
         "link": "/page8"
       }
     ],
@@ -118,7 +118,7 @@
         "link": "/page26"
       },
       {
-        "text": "[You're tired from chopping brambles -- continue up the stairs.]",
+        "text": "[You're tired from chopping brambles - continue up the stairs.]",
         "link": "/page27"
       }
     ]
@@ -151,7 +151,7 @@
     "prompt": "What would you like to do next?",
     "choices": [
       {
-        "text": "[I hate spelling -- leave and go up the stairs.]",
+        "text": "[I hate spelling - leave and go up the stairs.]",
         "link": "/page21"
       }
     ],
@@ -205,7 +205,7 @@
     "prompt": "What will you do?",
     "choices": [
       {
-        "text": "[Step through the portal as is -- how unstable can it be?]",
+        "text": "[Step through the portal as is - how unstable can it be?]",
         "link": "/page23"
       }
     ],
@@ -224,14 +224,14 @@
       "You walk confidently through the door on the left, sure the comet graven above the door is the answer to the circular room's riddle.",
       "You are in a wide but shallow room, with magically burning braziers on either side of a massive stone disc. Carved on the face of the disc is, well, a face. You imagine that the fearsome visage is that of the mad wizard. Its mouth hangs open, as if bidding you to speak."
     ],
-    "prompt": "",
+    "prompt": "What will you do?",
     "choices": [
       {
-        "text": "[You don't know any passphrases -- go through the right door instead.]",
+        "text": "[You're drawing a blank - go through the right door instead.]",
         "link": "/page13"
       },
       {
-        "text": "[You don't know any passphrases -- go through the center door instead.]",
+        "text": "[You've got nothing - go through the center door instead.]",
         "link": "/page13"
       }
     ],
@@ -291,7 +291,7 @@
       "You complete the spell, waiting breathlessly for the results. After a moment, the owlbear cub stirs with a feeble chirp. You've heard that owlbears are fierce creatures, not to be trifled with, but this one is just so darn cute. It blinks up at you with trust in its eyes.",
       "Making up your mind to take it with you, you bundle it into your pack. With the cub inside, there's absolutely no room for the hefty journal. You'll need both hands free to slide safely down the pole, so you won't be able to take anything else with you. Oh well, there's nothing to be done for it.",
       "You grip the pole tightly and step into the hole, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.",
-      "From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pet the owlbear, who chirps happily. You can tell that this is the start of a long and wonderful friendship."
+      "From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pet the owlbear, who chirps happily. You can tell that this is the start of a long and beautiful friendship."
     ],
     "prompt": "Congratulations! You have a wonderful new companion for your adventures.",
     "choices": [],
@@ -359,15 +359,15 @@
     "prompt": "What will you do next?",
     "choices": [
       {
-        "text": "[Complete the sequence -- the answer is 13112211.]",
+        "text": "[Complete the sequence - the answer is 13112211.]",
         "link": "/page24"
       },
       {
-        "text": "[Complete the sequence -- the answer is 312211.]",
+        "text": "[Complete the sequence - the answer is 312211.]",
         "link": "/page17"
       },
       {
-        "text": "[Forget about the owlbear -- take the journal and leave.]",
+        "text": "[Forget about the owlbear - take the journal and leave.]",
         "link": "/page25"
       }
     ]

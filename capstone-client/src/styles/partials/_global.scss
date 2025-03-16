@@ -3,34 +3,39 @@
 @use "./typography";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Verdana, sans-serif;
-    text-decoration: none;
-     // scrollbar-gutter: stable both-edges;
-    // overflow:hidden;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+  text-decoration: none;
+  // scrollbar-gutter: stable both-edges;
+  // overflow:hidden;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 body {
-    color: $text-color;
-    background-color: black;
+  color: $light-color;
+  background-color: $dark-color;
 }
 
 h1 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 a {
-    color: $alt-text-color;
-    font-size: 1.5rem; 
-    cursor: pointer; 
-    &:hover {
-        font-weight: bold;
-        color: $hover-color;
-    }
+  color: $medium-color;
+  font-size: 1.5rem;
+  cursor: pointer;
+  &:hover {
+    font-weight: bold;
+    color: $hover-color;
+  }
 }

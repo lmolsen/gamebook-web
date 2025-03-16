@@ -1,27 +1,26 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
 .scroll {
   position: fixed;
   bottom: 6.25rem;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 6rem;
   height: 2.8125rem;
   opacity: 0.8;
   pointer-events: none;
+  @include flex-position(center, center);
+  @include select-none;
 
   &__indicator {
     width: fit-content;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     text-transform: uppercase;
-    color: white;
-    font-size: .625rem;
+    color: $light-color;
+    font-size: 0.625rem;
     font-weight: bold;
     animation: bounce 1.5s infinite;
+    @include flex-full(column, center, center);
   }
 }
 

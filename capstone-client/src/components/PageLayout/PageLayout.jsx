@@ -4,7 +4,6 @@ import { useLocation, useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Filter } from "bad-words";
 import { postName } from "../../utils/apiUtils";
-import { useTextSelection } from "../../utils/puzzleUtils";
 
 import rune from "../../assets/images/rune.png";
 import pageData from "./../../data/pageData.json";
@@ -22,6 +21,7 @@ export default function PageLayout({
   setIsSolved,
   isSolved,
   setIsSpelled,
+  setWasHighlighted
 }) {
   const { pageId } = useParams();
   const pageContent = pageData[pageId] || {};
@@ -39,11 +39,6 @@ export default function PageLayout({
   const location = useLocation();
   const navigate = useNavigate();
 
-  const {
-    setIsTextSelected,
-    setHasTextBeenHighlighted,
-  } = useTextSelection();
-
   useEffect(() => {
     setPuzzleSolved(false);
   }, [location]);
@@ -52,12 +47,12 @@ export default function PageLayout({
     const handleSelection = () => {
       const selection = window.getSelection();
       const selectedText = selection ? selection.toString() : "";
+
       if (selectedText.includes("rootroot")) {
-        setIsTextSelected(true);
         setPuzzleSolved(true);
-        setHasTextBeenHighlighted(true);
+        setWasHighlighted(true);
       } else {
-        setIsTextSelected(false);
+        setWasHighlighted(false);  
       }
     };
 
@@ -65,7 +60,7 @@ export default function PageLayout({
 
     return () =>
       document.removeEventListener("selectionchange", handleSelection);
-  }, [setIsTextSelected]);
+  }, [setWasHighlighted]);
 
   useEffect(() => {
     if (pageContent.dead || (pageContent.drop && !feat)) {
@@ -171,7 +166,7 @@ export default function PageLayout({
 
   return (
     <div className="page">
-      <div className="story">
+      <div className="page__story">
         {pageContent.text && pageContent.text.length > 0 ? (
           pageContent.text.map((paragraph, index) => (
             <p key={index} className="page__text">
@@ -184,7 +179,7 @@ export default function PageLayout({
       </div>
 
       {pageContent.slide && (
-        <div className="puzzle ignore">
+        <div className="slide ignore">
           <Slide
             setPuzzleSolved={setPuzzleSolved}
             setIsSolved={setIsSolved}
@@ -192,27 +187,28 @@ export default function PageLayout({
           />
         </div>
       )}
+
       {pageContent.highlight && (
-        <div className="paper puzzle ignore">
-          <p>
-            Passphrase: <span className="paper__secret">rootroot</span>
+        <div className="paper ignore">
+          <p className="paper__text">
+            Passphrase:<span className="paper__secret">rootroot</span>
           </p>
         </div>
       )}
 
       {pageContent.form && (
-        <div className="form puzzle ignore">
+        <div className="form ignore">
           <img className="form__image" src={rune} alt="Magic rune" />
           <input
             onChange={handleInput}
-            className="input"
+            className="form__input"
             placeholder="Write the name of the magic rune."
           ></input>
         </div>
       )}
 
       {pageContent.maze && (
-        <div className="maze puzzle ignore">
+        <div className="maze ignore">
           <Light
             puzzleSolved={puzzleSolved}
             setPuzzleSolved={setPuzzleSolved}
@@ -221,7 +217,7 @@ export default function PageLayout({
       )}
 
       {pageContent.portal && (
-        <div className="sequence puzzle ignore">
+        <div className="sequence ignore">
           <Sequence
             puzzleSolved={puzzleSolved}
             setPuzzleSolved={setPuzzleSolved}
@@ -229,7 +225,7 @@ export default function PageLayout({
         </div>
       )}
       {pageContent.dice && (
-        <div className="dice puzzle ignore">
+        <div className="dice ignore">
           <Dice
             puzzleSolved={puzzleSolved}
             setPuzzleSolved={setPuzzleSolved}
@@ -239,39 +235,39 @@ export default function PageLayout({
       )}
 
       {pageContent.cube && (
-        <div className="cube-puzzle">
+        <div className="cubic">
           <Cube />
           <input
             placeholder="Enter the word on the cube."
             onChange={handleInput}
-            className="cube-puzzle__input ignore"
+            className="cubic__input ignore"
           ></input>
         </div>
       )}
 
       {pageContent.speak && (
-        <div className="speak puzzle ignore">
+        <div className="speak ignore">
           <button
-            className={`speak-button ${
-              puzzleSolved ? "speak-button--disabled" : ""
+            className={`speak__button ${
+              puzzleSolved ? "speak__button--disabled" : ""
             }`}
             onClick={startListening}
             disabled={isListening || puzzleSolved}
           >
             {puzzleSolved
-              ? "Passphrase accepted"
+              ? "Accepted"
               : isListening
               ? "Listening..."
-              : "Speak the passphrase"}
+              : "Speak"}
           </button>
-          <p className="page__prompt">
+          <p className="page__result">
             {`You have spoken: ${
               transcript
                 ? transcript.toLowerCase() === "route route"
                   ? "rootroot."
                   : transcript.toLowerCase() === "send text"
                   ? "syntax."
-                  : transcript + "."
+                  : transcript + ". Nothing happens."
                 : "..."
             }`}
           </p>
@@ -290,14 +286,14 @@ export default function PageLayout({
         </p>
       )}
 
-      <div className="choices">
+      <div className="page__choices">
         <p className="page__prompt">{pageContent.prompt}</p>
         {(puzzleSolved ? pageContent.solvedChoices : pageContent.choices)?.map(
           (choice, index) => (
             <Link key={index} to={choice.link}>
               <p
-                className={`page__choices ${
-                  puzzleSolved ? "page__choices--solved" : ""
+                className={`page__choice ${
+                  puzzleSolved ? "page__choice--solved" : ""
                 } `}
               >
                 {choice.text}
@@ -308,17 +304,17 @@ export default function PageLayout({
       </div>
 
       {pageContent.speak && puzzleSolved && (
-        <div className="choices">
+        <div className="page__choices">
           {correctAnswer.includes(transcript) && (
             <Link to="/page15">
-              <p className="page__choices page__choices--solved">
+              <p className="page__choice page__choice--solved">
                 [Proceed to the ultimate treasure room.]
               </p>
             </Link>
           )}
           {alternateAnswer.includes(transcript) && (
             <Link to="/page9">
-              <p className="page__choices page__choices--solved">
+              <p className="page__choice page__choice--solved">
                 [Proceed to the treasure room.]
               </p>
             </Link>

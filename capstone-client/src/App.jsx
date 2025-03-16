@@ -8,8 +8,6 @@ import Menu from "./components/Menu/Menu";
 import WallOfFame from "./pages/WallOfFame/WallOfFame";
 import TextToSpeech from "./components/TextToSpeech/TextToSpeech";
 
-import { useAudio } from "./utils/audioUtils";
-
 function App() {
   const location = useLocation();
   const isTitlePage = location.pathname === "/";
@@ -17,8 +15,7 @@ function App() {
   const [isSolved, setIsSolved] = useState(false);
   const [isSpelled, setIsSpelled] = useState(false);
   const [isDead, setIsDead] = useState(false);
-
-  const { musicPlay } = useAudio();
+  const [wasHighlighted, setWasHighlighted] = useState(false);
 
   return (
       <div className="screen">
@@ -26,7 +23,7 @@ function App() {
           <div className="torch torch--left"></div>
           {!isTitlePage && <TextToSpeech />}
           <Routes>
-            <Route path="/" element={<TitlePage musicPlay={musicPlay} />} />
+            <Route path="/" element={<TitlePage />} />
             <Route
               path="/:pageId"
               element={
@@ -36,6 +33,7 @@ function App() {
                   isSolved={isSolved}
                   setIsSolved={setIsSolved}
                   setIsSpelled={setIsSpelled}
+                  setWasHighlighted={setWasHighlighted}
                 />
               }
             />
@@ -44,7 +42,7 @@ function App() {
           <div className="torch torch--right"></div>
         </main>
         {!isTitlePage && (
-          <Menu isSolved={isSolved} isSpelled={isSpelled} isDead={isDead} />
+          <Menu wasHighlighted={wasHighlighted} isSolved={isSolved} isSpelled={isSpelled} isDead={isDead} />
         )}
       </div>
   );
