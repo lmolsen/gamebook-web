@@ -10,6 +10,7 @@ import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 import Dice from "../Dice/Dice";
 import Cube from "../Cube/Cube";
 import Sequence from "../Sequence/Sequence";
+import rune from "../../assets/images/rune.png";
 
 export default function PageLayout({
   isDead,
@@ -29,7 +30,7 @@ export default function PageLayout({
   const [hasSpoken, setHasSpoken] = useState(false);
   const [feat, setFeat] = useState(false);
   const correctAnswer = ["root root", "route route", "rootroot", "routeroute"];
-  const alternateAnswer = ["syntax", "sin tax"];
+  const alternateAnswer = ["syntax", "sin tax", "send text", "send tax"];
   const [name, setName] = useState("");
 
   const filter = new Filter();
@@ -77,7 +78,10 @@ export default function PageLayout({
         value === "Edocsv")
     ) {
       setPuzzleSolved(true);
-    } else if (pageContent.cube & (value === "syntax" || value === "Syntax")) {
+    } else if (
+      pageContent.cube &
+      (value === "syntax" || value === "Syntax" || value === "send tax")
+    ) {
       setPuzzleSolved(true);
       setIsSpelled(true);
     }
@@ -206,6 +210,7 @@ export default function PageLayout({
 
       {pageContent.form && (
         <div className="form puzzle ignore">
+         <img className="form__image" src={rune} alt="Magic rune" />
           <input
             onChange={handleInput}
             className="input"
@@ -226,7 +231,7 @@ export default function PageLayout({
       {pageContent.portal && (
         <div className="sequence puzzle ignore">
           <Sequence
-          puzzleSolved={puzzleSolved}
+            puzzleSolved={puzzleSolved}
             setPuzzleSolved={setPuzzleSolved}
           />
         </div>
@@ -268,13 +273,15 @@ export default function PageLayout({
               : "Speak the passphrase"}
           </button>
           <p className="page__prompt">
-            <>{`You have spoken: ${
+            {`You have spoken: ${
               transcript
-                ? (transcript.toLowerCase() === "route route"
-                    ? "rootroot"
-                    : transcript) + "."
+                ? transcript.toLowerCase() === "route route"
+                  ? "rootroot."
+                  : transcript.toLowerCase() === "send text"
+                  ? "syntax."
+                  : transcript + "."
                 : "..."
-            }`}</>
+            }`}
           </p>
 
           {isSilent && !puzzleSolved && !hasSpoken && !transcript ? (
@@ -350,6 +357,7 @@ export default function PageLayout({
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your name for the wall of fame"
+            maxLength={50}
           ></input>
           <button className="name__button" type="Submit">
             Submit

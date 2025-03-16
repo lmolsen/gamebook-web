@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import puzzleImage from "./../../assets/images/puzzle-light.jpg";
+import puzzleImage from "./../../assets/images/rune-light.jpg";
 import "./SlidingPuzzle.scss";
 
 export default function SlidingPuzzle({ setPuzzleSolved, setIsSolved, isSolved }) {

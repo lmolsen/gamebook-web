@@ -124,7 +124,7 @@ function App() {
 
             <div className="blocks">
               <div
-                className={`block restart ${isDead ? "highlight" : ""}`}
+                className={`block restart ${isDead || location.pathname === "/wall-of-fame" ? "highlight" : ""}`}
                 onClick={handleRestart}
               >
                 Restart

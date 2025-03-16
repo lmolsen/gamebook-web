@@ -24,8 +24,7 @@
   "page2": {
     "text": [
       "You begrudgingly walk around the circumfrence of the tower, hacking at the brambles with your hatchet as you go. You curse as your clothes snag and the thorns scratch at your hands. Luckily, as you reach the back of the tower, you spot something through a gap in the  accursed shrubs.",
-      "It's a cellar door! You chop at the plants with renewed vigor. After a few minutes of work, the padlocked door is fully visible. You whack at the aged, rusted lock and it falls away easily. You throw the door open, revealing a staircase descending into the darkness of the earth.",
-      "You see only two paths available to you: climbing the ivy or checking for hidden entrances amongst the brambles."
+      "It's a cellar door! You chop at the plants with renewed vigor. After a few minutes of work, the padlocked door is fully visible. You whack at the aged, rusted lock and it falls away easily. You throw the door open, revealing a staircase descending into the darkness of the earth."
     ],
     "prompt": "What will you do next?",
     "choices": [
@@ -142,11 +141,11 @@
     "prompt": "",
     "choices": [],
     "drop": true,
-    "accomplishment": "Found the Seven-League Boots."
+    "accomplishment": "Earned the Seven-League Boots."
   },
   "page10": {
-    "text": ["You open the door, somewhat surprised that it's unlocked. You find yourself in an austere room with nothing but a large, rotating cube floating in the centre and an open exit leading out of the room. Eyeing the cube suspiciously, you edge along the wall until you reach the exit and the hallway beyond.",
-     "You walk down it a ways, eventually coming to a platform with a closed door on the opposite die and stairs leading up. Thus informed, you return to the room. The mysterious cube is covered in letters. It seems to whisper in your mind: 'passphrase'. I wonder what it spells?"],
+    "text": ["You open the door, somewhat surprised that it's unlocked. You find yourself in an austere room with nothing but a large, rotating cube floating in the centre and an open exit past it. Eyeing the cube suspiciously, you edge along the wall until you reach the exit and the hallway beyond.",
+     "You walk down it a ways, eventually coming to a platform with a closed door on the opposite side and stairs leading up. Thus informed, you return to the room. The mysterious cube is covered in letters. It seems to whisper in your mind: 'passphrase'. I wonder what it spells?"],
     "prompt": "What would you like to do next?",
     "choices": [
       {
@@ -305,7 +304,7 @@
   "The tower seems to clear the way for you, unlocking doors so that you can retrace your steps all the way back out through the cellar. With this vast hoard of wealth, you can finally pay off your student debt! And have a little left over besides."],
     "prompt": "Congratulations! You are now rich beyond your wildest dreams.",
     "choices": [],
-    "accomplishment": "Found the wizard's treasure."
+    "accomplishment": "Discovered the wizard's treasure."
   },
   "page20": {
     "text": ["You step through the portal and instantly find yourself outside. You fall a short distance into the cursed patch of brambles that surrounds the tower. You struggle out, pulling thorns from your skin. You've escaped with your life, but with nothing else to show for your misadventure.",
@@ -316,9 +315,9 @@
   },
   "page21": {
     "text": [
-      "Reaching the top of the stairs, you come to a large, circular room. It must take up most of this floor. The floor is covered with a luxurious carpet, rich with detail. Tapestries festoon the wall, and three doors are splayed across from you.",
+      "Reaching the top of the stairs, you come to a large, circular room. The floor is covered with a luxurious carpet, rich with detail. Tapestries festoon the wall, and three doors are splayed across from you.",
       "Above the door in the center is an engraving of an hourglass. Above the left door is the likeness of a comet, and above the right is what could be a coin. High on the wall you see words painted in a meticulous script.",
-      "'NO WINGS BUT TAIL HAVE I / STILL I TRAVEL THROUGH THE SKY.'"
+      "'NO WINGS BUT TAIL HAVE I / YET STILL I TRAVEL THROUGH THE SKY.'"
     ],
     "prompt": "Which door will you enter?",
     "choices": [
@@ -341,7 +340,7 @@
   "Lost in thought, you don't notice the door closing behind you. You whirl around as you hear it slam shut. You try the handle. Locked. Of course. You shake your head and take a look around you.",
 "You're in some kind of laboratory. There are tables and shelves filled with equipment and bottles containing mysterious liquids and subtances. You notice what appears to be a cage with a blanket thrown over it. On top of the cage rests a journal. Flipping through it, you see that it contains pages and pages of notes on spells and magical experiments. This could be very valuable.",
 "You cast around for a means of escape. You manage to open the room's window, but it's a long way down. You're quite sure you'd fail to survive the fall into the thorny brambles. Poking around some more, you discover a metal pole in an alcove behind a curtain. It continues down through a hole in the floor, potentially all the way to the base of the tower. This could be your way out, though you'd need both hands to slide down it.",
-"Before you go, there's one more thing you're curious about. You peek under the blanket. You're shocked to see what appears to be a sleeping owlbear cub. How could it have survived all this time? Looking more closely at the journal's notes, you read about an experiment that can put creatures in a sort of magical stasis, wherein they do not require food or water.Underneath this passage are the steps to break the spell, though the last part is too smudged to read. If you can complete the sequence, you should be able to awaken the poor creature.",
+"Before you go, there's one more thing you're curious about. You peek under the blanket. You're shocked to see what appears to be a sleeping owlbear cub. How could it have survived all this time? Looking more closely at the journal's notes, you read about an experiment that can put creatures in a sort of magical stasis, wherein they do not require food or water. Underneath this passage are the steps to break the spell, though the last part is too smudged to read. If you can complete the sequence, you should be able to awaken the poor creature.",
 "The sequence reads as follows: 1 11 21 1211 111221..."],
     "prompt": "What will you do next?",
     "choices": [
@@ -383,7 +382,7 @@
     "prompt": "Congratulations! You recovered a valuable journal belonging to the mad wizard himself.",
     "choices": [
     ],
-    "accomplishment": "Recovered the wizard's journal."
+    "accomplishment": "Recovered the wizard's journal and fled the tower."
   },
   "page26": {
     "text": [

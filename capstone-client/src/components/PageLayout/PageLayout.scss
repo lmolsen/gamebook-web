@@ -126,6 +126,13 @@
 
 .form {
     width: 30%;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    gap: 1rem;
+    &__image {
+        width: 10rem
+    }
 }
 
 .speak {

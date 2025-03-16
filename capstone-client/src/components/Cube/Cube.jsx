@@ -75,7 +75,7 @@ export default function Cube (){
 
     animate(
         cube.rotation,
-        { y: rad(360), z: rad(360) },
+        {  y: rad(720), z: rad(360) },
         { duration: 10, repeat: Infinity, ease: "linear" }
     )
     

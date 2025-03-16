@@ -10,23 +10,23 @@
     "accomplishment": "Became a legend."
   },
   {
-    "name": "Katie Lagace",
-    "accomplishment": "Made a new friend.",
-    "id": "93a1b26f-0676-467a-89e9-7407ad919145"
-  },
-  {
-    "name": "Todd",
-    "accomplishment": "Recovered the wizard's journal.",
-    "id": "c41d3f82-39be-454d-b80b-56b13572fd02"
-  },
-  {
-    "name": "Sad",
+    "name": "Katie",
     "accomplishment": "Escaped the wizard's tower with your life.",
-    "id": "fa59d813-83d3-4293-99a6-182e209994bf"
+    "id": "6d5af8e7-4602-4552-9ecc-1479699e05ef"
+  },
+  {
+    "name": "Katie the GREAT",
+    "accomplishment": "Discovered the wizard's treasure.",
+    "id": "9d0fff49-8c96-460c-88a2-3e33c52bf6ff"
   },
   {
     "name": "Lisa",
-    "accomplishment": "Found the ultimate secret of the wizard's tower.",
-    "id": "d2959afb-e157-46c0-9c41-fdb2b7b86265"
+    "accomplishment": "Made a new friend.",
+    "id": "8b0ede82-60f8-4bae-848a-9c69e3940d5a"
+  },
+  {
+    "name": "Lisa Olsen",
+    "accomplishment": "Escaped the wizard's tower with your life.",
+    "id": "ca43262d-bfc3-40db-9a56-ca46a33bce68"
   }
 ]
