@@ -145,20 +145,22 @@
     "accomplishment": "Found the Seven-League Boots."
   },
   "page10": {
-    "text": [],
+    "text": ["You open the door, somewhat surprised that it's unlocked. You find yourself in an austere room with nothing but a large, rotating cube floating in the centre and an open exit leading out of the room. Eyeing the cube suspiciously, you edge along the wall until you reach the exit and the hallway beyond.",
+     "You walk down it a ways, eventually coming to a platform with a closed door on the opposite die and stairs leading up. Thus informed, you return to the room. The mysterious cube is covered in letters. It seems to whisper in your mind: 'passphrase'. I wonder what it spells?"],
     "prompt": "What would you like to do next?",
     "choices": [
       {
-        "text": "[Choice 1]",
-        "link": "/page9"
-      },
+        "text": "[I hate spelling -- leave and go up the stairs.]",
+        "link": "/page21"
+      }
+    ],
+    "cube": true,
+    "puzzleSolved": false,
+    "solvedText": "Yes! You knew your English teacher was wrong to fail you. Take that, Mrs. Inkpen!",
+    "solvedChoices": [
       {
-        "text": "[Choice 2]",
-        "link": "/page11"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page12"
+        "text": "[Swagger past the cube and up the stairs.]",
+        "link": "/page21"
       }
     ]
   },

@@ -8,12 +8,14 @@ import { Filter } from "bad-words";
 import LightPuzzle from "../LightPuzzle/LightPuzzle";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 import Dice from "../Dice/Dice";
+import Cube from "../Cube/Cube";
 
 export default function PageLayout({
   isDead,
   setIsDead,
   setIsSolved,
   isSolved,
+  setIsSpelled,
   setIsTextSelected,
   setHasTextBeenHighlighted,
 }) {
@@ -67,12 +69,16 @@ export default function PageLayout({
     const value = e.target.value.trim();
 
     if (
-      value === "Edoc'sv" ||
-      value === "edoc'sv" ||
-      value === "edocsv" ||
-      value === "Edocsv"
+      pageContent.slide &
+      (value === "Edoc'sv" ||
+        value === "edoc'sv" ||
+        value === "edocsv" ||
+        value === "Edocsv")
     ) {
       setPuzzleSolved(true);
+    } else if (pageContent.cube & (value === "syntax" || value === "Syntax")) {
+      setPuzzleSolved(true);
+      setIsSpelled(true);
     }
   };
 
@@ -134,8 +140,7 @@ export default function PageLayout({
     };
 
     try {
-    await axios.post(`${baseUrl}/wall-of-fame`, newPost);
-
+      await axios.post(`${baseUrl}/wall-of-fame`, newPost);
     } catch (error) {
       console.error("There was a problem with posting your name.", error);
     }
@@ -146,9 +151,9 @@ export default function PageLayout({
 
     if (!name) {
       alert("Please enter your name.");
-      return; 
+      return;
     }
-  
+
     if (filter.isProfane(name)) {
       alert("Let's be adults here. Try again.");
       return;
@@ -224,6 +229,17 @@ export default function PageLayout({
             setPuzzleSolved={setPuzzleSolved}
             setFeat={setFeat}
           />
+        </div>
+      )}
+
+      {pageContent.cube && (
+        <div className="cube-puzzle">
+          <Cube />
+          <input
+            placeholder="Enter the word on the cube."
+            onChange={handleInput}
+            className="cube-puzzle__input ignore"
+          ></input>
         </div>
       )}
 

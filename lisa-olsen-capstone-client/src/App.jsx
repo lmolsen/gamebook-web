@@ -24,6 +24,7 @@ function App() {
   const navigate = useNavigate();
   const isTitlePage = location.pathname === "/";
   const [isSolved, setIsSolved] = useState(false);
+  const [isSpelled, setIsSpelled] = useState(false);
 
   // util hooks
   const { musicPlay, volume, handleVolumeChange } = useAudio();
@@ -63,9 +64,10 @@ function App() {
               path="/:pageId"
               element={
                 <PageLayout
-                isDead={isDead}
+                  isDead={isDead}
                   setIsDead={setIsDead}
                   setIsSolved={setIsSolved}
+                  setIsSpelled={setIsSpelled}
                   isSolved={isSolved}
                   hasTextBeenHighlighted={hasTextBeenHighlighted}
                   setIsTextSelected={setIsTextSelected}
@@ -96,6 +98,7 @@ function App() {
                 <Notes
                   hasTextBeenHighlighted={hasTextBeenHighlighted}
                   isSolved={isSolved}
+                  isSpelled={isSpelled}
                 />
               </div>
               <div
