@@ -9,6 +9,7 @@ import LightPuzzle from "../LightPuzzle/LightPuzzle";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 import Dice from "../Dice/Dice";
 import Cube from "../Cube/Cube";
+import Sequence from "../Sequence/Sequence";
 
 export default function PageLayout({
   isDead,
@@ -28,7 +29,7 @@ export default function PageLayout({
   const [hasSpoken, setHasSpoken] = useState(false);
   const [feat, setFeat] = useState(false);
   const correctAnswer = ["root root", "route route", "rootroot", "routeroute"];
-  const alternateAnswer = ["passphrase", "pass phrase"];
+  const alternateAnswer = ["syntax", "sin tax"];
   const [name, setName] = useState("");
 
   const filter = new Filter();
@@ -69,7 +70,7 @@ export default function PageLayout({
     const value = e.target.value.trim();
 
     if (
-      pageContent.slide &
+      pageContent.form &
       (value === "Edoc'sv" ||
         value === "edoc'sv" ||
         value === "edocsv" ||
@@ -222,6 +223,14 @@ export default function PageLayout({
         </div>
       )}
 
+      {pageContent.portal && (
+        <div className="sequence puzzle ignore">
+          <Sequence
+          puzzleSolved={puzzleSolved}
+            setPuzzleSolved={setPuzzleSolved}
+          />
+        </div>
+      )}
       {pageContent.dice && (
         <div className="dice puzzle ignore">
           <Dice

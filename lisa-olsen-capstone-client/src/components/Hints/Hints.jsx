@@ -15,6 +15,7 @@ export default function Hints() {
               {location.pathname === "/page10" && <p>Purple first, red last.</p>}
               {location.pathname === "/page11" && <p>All that glitters is not gold.</p>}
               {location.pathname === "/page12" && <p>Sorry, I'm no good at these puzzles either.</p>}
+              {location.pathname === "/page13" && <p>Wait until the pattern of four completes.</p>}
               {location.pathname === "/page16" && <p>Perhaps if a mouse ran across the paper...</p>}
               {location.pathname === "/page26" && <p>I've heard feats of strength require a 6 to accomplish.</p>}
             </div>

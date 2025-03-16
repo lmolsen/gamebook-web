@@ -18,5 +18,15 @@
     "name": "Todd",
     "accomplishment": "Recovered the wizard's journal.",
     "id": "c41d3f82-39be-454d-b80b-56b13572fd02"
+  },
+  {
+    "name": "Sad",
+    "accomplishment": "Escaped the wizard's tower with your life.",
+    "id": "fa59d813-83d3-4293-99a6-182e209994bf"
+  },
+  {
+    "name": "Lisa",
+    "accomplishment": "Found the ultimate secret of the wizard's tower.",
+    "id": "d2959afb-e157-46c0-9c41-fdb2b7b86265"
   }
 ]

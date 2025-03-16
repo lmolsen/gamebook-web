@@ -196,20 +196,23 @@
     ]
   },
   "page13": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": ["You head for the right. You've definitely chosen the correct door to answer the riddle... probably. Coins have tails, right? And they fly through the air when you flip them? Right? Anyway, coin equals treasure. It just makes sense. As soon as you walk through the door, it slams shut behind you. Maybe you aren't great at riddles after all.",
+  "You are now in what appears to be a cozy drawing room. There are a few plush couches, a low coffee table, a wall-length mirror, and a horribly unstable portal. Huh. This doesn't look good. You try the door you entered, but it's shut fast. The only way out will be via the portal.",
+"There must be a way to stabilize it. Your eyes fall on a complicated-looking device on the coffee table. It's likely to be related to the portal. A row of buttons is blinking periodically. Maybe you have to press them in order?"],
+    "prompt": "What will you do?",
     "choices": [
       {
-        "text": "[Choice 1]",
-        "link": "/page14"
-      },
+        "text": "[Step through the portal as is -- how unstable can it be?]",
+        "link": "/page23"
+      }
+    ],
+    "portal": true,
+    "puzzleSolved": false,
+    "solvedText": "You've done it! The portal is stable.",
+    "solvedChoices": [
       {
-        "text": "[Choice 2]",
-        "link": "/page15"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page16"
+        "text": "[Escape through the portal.]",
+        "link": "/page20"
       }
     ]
   },
@@ -267,10 +270,6 @@
     "choices": [
       {
         "text": "[Continue on in frustration.]",
-        "link": "/page17"
-      },
-      {
-        "text": "[Choice 2]",
         "link": "/page12"
       }
     ],
@@ -309,7 +308,8 @@
     "accomplishment": "Found the wizard's treasure."
   },
   "page20": {
-    "text": [""],
+    "text": ["You step through the portal and instantly find yourself outside. You fall a short distance into the cursed patch of brambles that surrounds the tower. You struggle out, pulling thorns from your skin. You've escaped with your life, but with nothing else to show for your misadventure.",
+  "Maybe you'll try again tomorrow, but for now you just want to head back to the inn, tail between your legs. A hot meal and a warm bed sound good right about now. At least you have a story to tell, though you might need to embellish it a little to save face."],
     "prompt": "Congratulations! You survived.",
     "choices": [],
     "accomplishment": "Escaped the wizard's tower with your life."
@@ -337,7 +337,7 @@
     ]
   },
   "page22": {
-    "text": ["You stride through the center door. You've definitely chosen the correct door to answer the riddle... probably. Coins have tails, right? And they fly through the air when you flip them? Right? Anyway, coin equals treasure. It just makes sense.",
+    "text": ["You stride through the center door. Time flies without wings... an hourglass is the answer to the riddle, isn't it?",
   "Lost in thought, you don't notice the door closing behind you. You whirl around as you hear it slam shut. You try the handle. Locked. Of course. You shake your head and take a look around you.",
 "You're in some kind of laboratory. There are tables and shelves filled with equipment and bottles containing mysterious liquids and subtances. You notice what appears to be a cage with a blanket thrown over it. On top of the cage rests a journal. Flipping through it, you see that it contains pages and pages of notes on spells and magical experiments. This could be very valuable.",
 "You cast around for a means of escape. You manage to open the room's window, but it's a long way down. You're quite sure you'd fail to survive the fall into the thorny brambles. Poking around some more, you discover a metal pole in an alcove behind a curtain. It continues down through a hole in the floor, potentially all the way to the base of the tower. This could be your way out, though you'd need both hands to slide down it.",
@@ -360,22 +360,12 @@
     ]
   },
   "page23": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": ["You attempt to enter the portal, but are sent flying back by something like bolts of electricity. The floor beneath you starts to shake, and an ominous rumbling fills the air. The portal is growing, sending out zaps of lightning and warping the space around it. You cover your head as bits of the ceiling start to crash down around you.",
+  "Your last thought before the tower falls is that you wish you'd been a farmer, like your father. He always said that adventuring would get you killed. You hate it when he's right."],
+    "prompt": "You die.",
     "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page14"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page15"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page16"
-      }
-    ]
+    ],
+    "dead": true
   },
   "page24": {
     "text": ["You finish the spell with the final sequence of numbers. You watch the owlbear cub closely, waiting for it stir. After a moment, a purple fog begins to spill from the journal. Oh dear. Instead of lifting the spell, you seem to have activated it. You may not be as clever as you thought you were.",
