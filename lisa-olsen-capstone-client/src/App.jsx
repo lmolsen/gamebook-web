@@ -63,6 +63,7 @@ function App() {
               path="/:pageId"
               element={
                 <PageLayout
+                isDead={isDead}
                   setIsDead={setIsDead}
                   setIsSolved={setIsSolved}
                   isSolved={isSolved}
@@ -72,7 +73,7 @@ function App() {
                 />
               }
             />
-            <Route path="/walloffame" element={<WallOfFame />} />
+            <Route path="/wall-of-fame" element={<WallOfFame />} />
           </Routes>
           <div className="torch right"></div>
         </main>

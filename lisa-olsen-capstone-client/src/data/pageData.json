@@ -142,7 +142,7 @@
     "prompt": "",
     "choices": [],
     "drop": true,
-    "accomplishment": "You found the Seven-League Boots."
+    "accomplishment": "Found the Seven-League Boots."
   },
   "page10": {
     "text": [],
@@ -286,28 +286,28 @@
     "text": [],
     "prompt": "Congratulations! You can tell that the owlbear cub will make a wonderful companion for your adventures.",
     "choices": [],
-    "accomplishment": "You made a new friend."
+    "accomplishment": "Made a new friend."
   },
   "page18": {
-    "text": [],
-    "prompt": "Congratulations! You now have possession of the world's most powerful magical artifact. Your future is yours to decide.",
+    "text": ["You enter through the final door. In a glass case lies the fabled staff of the mad wizard. It is said to imbue the user with immense magical power. You open the case and grasp the hilt of the staff firmly, feeling arcane energy and knowledge course through you. With your newfound powers, you teleport to your favourite inn.",
+  "Your mind reels with the possibilities of this discovery. For now, you want a hot meal and a long rest. Changing the world can wait until morning. Not bad for an average thie... I mean adventurer!"],
+    "prompt": "Congratulations! You are now in possession of a powerful artifact. Your future is yours to decide.",
     "choices": [],
 
-    "accomplishment": "You found the ultimate secret of the wizard's tower.",
-    "solvedText": "You've done it! You're sure this will come in handy later.",
-    "solvedChoices": []
+    "accomplishment": "Found the ultimate secret of the wizard's tower."
   },
   "page19": {
-    "text": [],
-    "prompt": "Congratulations! This will make you rich beyond your wildest dreams.",
+    "text": ["You gather as much of the treasure as you can carry. Conveniently, the room has a few rucksacks that you can grab, as your own bag soon runs of of room. Stopping just before the point of over-encumberment, you waddle out of the room.",
+  "The tower seems to clear the way for you, unlocking doors so that you can retrace your steps all the way back out through the cellar. With this vast hoard of wealth, you can finally pay off your student debt! And have a little left over besides."],
+    "prompt": "Congratulations! You are now rich beyond your wildest dreams.",
     "choices": [],
-    "accomplishment": "You found the wizard's treasure."
+    "accomplishment": "Found the wizard's treasure."
   },
   "page20": {
     "text": [""],
     "prompt": "Congratulations! You survived.",
     "choices": [],
-    "accomplishment": "You escaped the wizard's tower with your life."
+    "accomplishment": "Escaped the wizard's tower with your life."
   },
   "page21": {
     "text": [

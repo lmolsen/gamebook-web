@@ -133,6 +133,34 @@
     outline: none;
 }
 
+.name {
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__input {
+        width: 20rem;
+        padding: 1rem;
+        outline: none;
+    }
+
+    &__button {
+        margin-top: 1rem;
+        width: 7rem;
+        padding: 0.75rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: white;
+
+        &:hover {
+            background-color: rgb(206, 175, 0);
+        }
+    }
+}
+
 ::selection {
     // background-color: rgba(245, 225, 184, 0.8); 
     background-color: #F3E0C2;

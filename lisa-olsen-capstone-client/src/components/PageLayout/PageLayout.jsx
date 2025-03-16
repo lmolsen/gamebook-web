@@ -1,6 +1,7 @@
 import "./PageLayout.scss";
-import { useLocation, useParams, Link } from "react-router-dom";
+import { useLocation, useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import pageData from "./../../data/pageData.json";
 import SlidingPuzzle from "../SlidingPuzzle/SlidingPuzzle";
 import { Filter } from "bad-words";
@@ -9,6 +10,7 @@ import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 import Dice from "../Dice/Dice";
 
 export default function PageLayout({
+  isDead,
   setIsDead,
   setIsSolved,
   isSolved,
@@ -24,11 +26,13 @@ export default function PageLayout({
   const [hasSpoken, setHasSpoken] = useState(false);
   const [feat, setFeat] = useState(false);
   const correctAnswer = ["root root", "route route", "rootroot", "routeroute"];
-  const alternateAnswer = ["passphrase", "pass phrase"]
+  const alternateAnswer = ["passphrase", "pass phrase"];
+  const [name, setName] = useState("");
 
   const filter = new Filter();
-
+  const baseUrl = import.meta.env.VITE_API_URL;
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setPuzzleSolved(false);
@@ -111,7 +115,7 @@ export default function PageLayout({
         setTranscript(cleanedTranscript);
       }
 
-      if  (correctAnswer.includes(result) || alternateAnswer.includes(result)) {
+      if (correctAnswer.includes(result) || alternateAnswer.includes(result)) {
         setPuzzleSolved(true);
       }
     };
@@ -119,6 +123,44 @@ export default function PageLayout({
     recognition.onend = () => setIsListening(false);
 
     recognition.start();
+  };
+
+  // posting
+  const postName = async () => {
+    const accomplishment = pageContent.accomplishment;
+    const newPost = {
+      name,
+      accomplishment,
+    };
+
+    try {
+    await axios.post(`${baseUrl}/wall-of-fame`, newPost);
+
+    } catch (error) {
+      console.error("There was a problem with posting your name.", error);
+    }
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!name) {
+      alert("Please enter your name.");
+      return; 
+    }
+  
+    if (filter.isProfane(name)) {
+      alert("Let's be adults here. Try again.");
+      return;
+    }
+
+    try {
+      await postName();
+      navigate("/wall-of-fame");
+      setName("");
+    } catch (error) {
+      console.error("There was a problem with submitting the form.", error);
+    }
   };
 
   if (!pageContent) {
@@ -244,19 +286,19 @@ export default function PageLayout({
       {pageContent.speak && puzzleSolved && (
         <div className="choices">
           {correctAnswer.includes(transcript) && (
-              <Link to="/page15">
-                <p className="page__choices page__choices--solved">
-                  [Proceed to the ultimate treasure room.]
-                </p>
-              </Link>
-            )  
-          }
-          {alternateAnswer.includes(transcript) &&
-            (     <Link to="/page9">
+            <Link to="/page15">
+              <p className="page__choices page__choices--solved">
+                [Proceed to the ultimate treasure room.]
+              </p>
+            </Link>
+          )}
+          {alternateAnswer.includes(transcript) && (
+            <Link to="/page9">
               <p className="page__choices page__choices--solved">
                 [Proceed to the treasure room.]
               </p>
-            </Link>) }
+            </Link>
+          )}
         </div>
       )}
 
@@ -275,6 +317,21 @@ export default function PageLayout({
           </p>
         </>
       )}
+
+      {pageContent.accomplishment && !isDead && (
+        <form className="name" onSubmit={handleFormSubmit}>
+          <input
+            className="name__input"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter your name for the wall of fame"
+          ></input>
+          <button className="name__button" type="Submit">
+            Submit
+          </button>
+        </form>
+      )}
+
       <ScrollIndicator />
     </div>
   );
