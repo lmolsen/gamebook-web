@@ -40,6 +40,8 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat }) {
       <p className="roll__text">
         {puzzleSolved
           ? "RAAAAHHH! You feel a surge of strength!"
+          : tries === 1 || tries === 2
+          ? "Ugh... it's so heavy."
           : tries < 3
           ? "Give it your best shot."
           : "Hurk! You think you've pulled something..."}
@@ -73,13 +75,13 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat }) {
         ></div>
       </div>
       {tries > 3 ||
-        ((tries === 3 && !puzzleSolved) && (
+        (tries === 3 && !puzzleSolved && (
           <p className="roll__text roll__text--appear">
             Sorry, you're too tired to try again.
           </p>
         ))}
       {tries > 3 ||
-        ((tries === 3 && !puzzleSolved) && (
+        (tries === 3 && !puzzleSolved && (
           <Link to="/page27">
             <p className="roll__choice">
               [Continue up the stairs without moving the sacks.]

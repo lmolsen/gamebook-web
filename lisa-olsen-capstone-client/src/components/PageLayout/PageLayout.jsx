@@ -23,16 +23,16 @@ export default function PageLayout({
   const [transcript, setTranscript] = useState("");
   const [hasSpoken, setHasSpoken] = useState(false);
   const [feat, setFeat] = useState(false);
+  const correctAnswer = ["root root", "route route", "rootroot", "routeroute"];
+  const alternateAnswer = ["passphrase", "pass phrase"]
 
   const filter = new Filter();
 
-  
   const location = useLocation();
 
   useEffect(() => {
     setPuzzleSolved(false);
   }, [location]);
-
 
   useEffect(() => {
     const handleSelection = () => {
@@ -54,14 +54,10 @@ export default function PageLayout({
   }, [setIsTextSelected]);
 
   useEffect(() => {
-    if (pageContent.dead) {
+    if (pageContent.dead || (pageContent.drop && !feat)) {
       setIsDead(true);
     }
   }, [setIsDead, pageContent]);
-
-  // const handlePuzzleSolve = () => {
-  //     setPuzzleSolved(true);
-  //   };
 
   const handleInput = (e) => {
     const value = e.target.value.trim();
@@ -115,12 +111,7 @@ export default function PageLayout({
         setTranscript(cleanedTranscript);
       }
 
-      if (
-        result === "route route" ||
-        result === "root root" ||
-        result === "routeroute" ||
-        result === "rootroot"
-      ) {
+      if  (correctAnswer.includes(result) || alternateAnswer.includes(result)) {
         setPuzzleSolved(true);
       }
     };
@@ -137,11 +128,15 @@ export default function PageLayout({
   return (
     <div className="page">
       <div className="story">
-        {pageContent.text.map((paragraph, index) => (
-          <p key={index} className="page__text">
-            {paragraph}
-          </p>
-        ))}
+        {pageContent.text && pageContent.text.length > 0 ? (
+          pageContent.text.map((paragraph, index) => (
+            <p key={index} className="page__text">
+              {paragraph}
+            </p>
+          ))
+        ) : (
+          <p>No content available for this page.</p>
+        )}
       </div>
 
       {pageContent.slide && (
@@ -171,18 +166,24 @@ export default function PageLayout({
         </div>
       )}
 
-{pageContent.maze&& (
+      {pageContent.maze && (
         <div className="maze puzzle ignore">
-      <LightPuzzle puzzleSolved={puzzleSolved} setPuzzleSolved={setPuzzleSolved}/>
+          <LightPuzzle
+            puzzleSolved={puzzleSolved}
+            setPuzzleSolved={setPuzzleSolved}
+          />
         </div>
       )}
 
-{pageContent.dice&& (
+      {pageContent.dice && (
         <div className="dice puzzle ignore">
-    <Dice puzzleSolved={puzzleSolved} setPuzzleSolved={setPuzzleSolved} setFeat={setFeat} />
+          <Dice
+            puzzleSolved={puzzleSolved}
+            setPuzzleSolved={setPuzzleSolved}
+            setFeat={setFeat}
+          />
         </div>
       )}
-
 
       {pageContent.speak && (
         <div className="speak puzzle ignore">
@@ -200,14 +201,13 @@ export default function PageLayout({
               : "Speak the passphrase"}
           </button>
           <p className="page__prompt">
-            <>
-              You have spoken:{" "}
-              {transcript
+            <>{`You have spoken: ${
+              transcript
                 ? (transcript.toLowerCase() === "route route"
                     ? "rootroot"
                     : transcript) + "."
-                : "..."}
-            </>
+                : "..."
+            }`}</>
           </p>
 
           {isSilent && !puzzleSolved && !hasSpoken && !transcript ? (
@@ -219,19 +219,62 @@ export default function PageLayout({
       )}
 
       {puzzleSolved && pageContent.solvedText && (
-        <p className="page__text page__text--solved">{pageContent.solvedText}</p>
+        <p className="page__text page__text--solved">
+          {pageContent.solvedText}
+        </p>
       )}
+
       <div className="choices">
         <p className="page__prompt">{pageContent.prompt}</p>
-        {(puzzleSolved ? pageContent.solvedChoices : pageContent.choices).map(
+        {(puzzleSolved ? pageContent.solvedChoices : pageContent.choices)?.map(
           (choice, index) => (
             <Link key={index} to={choice.link}>
-              <p className={`page__choices ${puzzleSolved ? "page__choices--solved" : ""} `}>{choice.text}</p>
+              <p
+                className={`page__choices ${
+                  puzzleSolved ? "page__choices--solved" : ""
+                } `}
+              >
+                {choice.text}
+              </p>
             </Link>
           )
         )}
       </div>
 
+      {pageContent.speak && puzzleSolved && (
+        <div className="choices">
+          {correctAnswer.includes(transcript) && (
+              <Link to="/page15">
+                <p className="page__choices page__choices--solved">
+                  [Proceed to the ultimate treasure room.]
+                </p>
+              </Link>
+            )  
+          }
+          {alternateAnswer.includes(transcript) &&
+            (     <Link to="/page9">
+              <p className="page__choices page__choices--solved">
+                [Proceed to the treasure room.]
+              </p>
+            </Link>) }
+        </div>
+      )}
+
+      {pageContent.drop && (
+        <>
+          <p className="page__text">
+            You fall a long way down, though it only takes a few moments.
+            {feat
+              ? " OW! You land in a pile of sacks. They're not exactly soft, but they're softer than the stone floor. You've survived the fall with magical boots in hand. Rubbing your sore tailbone, you head back out the way you came."
+              : " In the instant before you hit the ground, you realize you really should have moved that pile of sacks earlier. SPLAT!"}
+          </p>
+          <p className="page__prompt">
+            {feat
+              ? "Congratulations! From now on, you'll be travelling in style!"
+              : "You die."}
+          </p>
+        </>
+      )}
       <ScrollIndicator />
     </div>
   );

@@ -103,13 +103,15 @@
     "solvedChoices": [
       {
         "text": "[Open the door with the key.]",
-        "link": "/page9"
+        "link": "/page7"
       }
     ]
   },
   "page7": {
-    "text": ["You turn the key and push open the door, entering a medium-sized room filled with cobwebs. Torches flicker into life on the wall. It appears to be some kind of pantry, with dusty shelves lining the walls and sacks of flour or grains. In the center of the room you notice a square hole in the ceiling that goes up and up. At the far end of the room is an open door, beyond which you can see a staircase leading up.",
-  "As there is nothing much of interest, you start toward the door. However, you hesitate for a moment. Something is compelling you to move the sacks to the center of the room, beneath the hole."],
+    "text": [
+      "You turn the key and push open the door, entering a medium-sized room filled with cobwebs. Torches flicker into life on the wall. It appears to be some kind of pantry, with dusty shelves lining the walls and sacks of flour or grains. In the center of the room you notice a square hole in the ceiling that goes up and up. At the far end of the room is an open door, beyond which you can see a staircase leading up.",
+      "As there is nothing much of interest, you start toward the door. However, you hesitate for a moment. Something is compelling you to move the sacks to the center of the room, beneath the hole."
+    ],
     "prompt": "What will you do next?",
     "choices": [
       {
@@ -133,22 +135,14 @@
     "dead": true
   },
   "page9": {
-    "text": [],
-    "prompt": "What would you like to do next?",
-    "choices": [
-      {
-        "text": "[Choice 1]",
-        "link": "/page10"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page11"
-      },
-      {
-        "text": "[Choice 3]",
-        "link": "/page12"
-      }
-    ]
+    "text": [
+      "Pieces of gold and valubale trinkets litter the floor, but you have eyes only for what lies ahead. Before you is a pedestal upon which a pair of glowing boots sit. Could it be? Are these the fabled Seven-League Boots that allow the wearer to cover vast distances in a single stride?",
+      "You're not sure how much a 'league' is, but it sounds like a lot. You pick up the boots, managing to admire them for a moment before you feel your stomach drop. A split second later, the rest of you drops. It seems like you've fallen down a trap door."
+    ],
+    "prompt": "",
+    "choices": [],
+    "drop": true,
+    "accomplishment": "You found the Seven-League Boots."
   },
   "page10": {
     "text": [],
@@ -179,13 +173,14 @@
   },
   "page12": {
     "text": [
-      "Before you is a curious puzzle. You're sure solving it will reveal some secret."
+      "You walk through the side door, finding yourself in an empty room covered floor to ceiling in large stone tiles. You notice an exit further in and decide to peek your head through. It leads to a platform with more stairs and a locked door on the opposite side. It seems like the rooms on this floor of the tower are all connected in a circle.",
+      "On the wall before you is a curious arrangement of tiles. It seems like you can slide them to form some sort of image. You're sure solving the puzzle will reveal some secret."
     ],
     "prompt": "What will you do next?",
     "choices": [
       {
-        "text": "[Continue on - this puzzle is too difficult.]",
-        "link": "/page13"
+        "text": "[Continue on up the stairs - this puzzle is too difficult.]",
+        "link": "/page21"
       }
     ],
     "slide": true,
@@ -193,8 +188,8 @@
     "solvedText": "You did it! Upon seeing the symbol, a word enters your mind: Edoc'sv.",
     "solvedChoices": [
       {
-        "text": "[Move on to the next challenge.]",
-        "link": "/page16"
+        "text": "[Move on to the next challenge with this knowledge in mind.]",
+        "link": "/page21"
       }
     ]
   },
@@ -217,23 +212,25 @@
     ]
   },
   "page14": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": [
+      "You walk confidently through the door on the left, sure the comet graven above the door is the answer to the circular room's riddle.",
+      "You are in a wide but shallow room, with magically burning braziers on either side of a massive stone disc. Carved on the face of the disc is, well, a face. You imagine that the fearsome visage is that of the mad wizard. Its mouth hangs open, as if bidding you to speak."
+    ],
+    "prompt": "",
     "choices": [
       {
-        "text": "[Choice 1]",
+        "text": "[You don't know any passphrases -- go through the right door instead.]",
+        "link": "/page13"
+      },
+      {
+        "text": "[You don't know any passphrases -- go through the center door instead.]",
         "link": "/page13"
       }
     ],
     "speak": true,
     "puzzleSolved": false,
-    "solvedText": "You did it! The wall slides open to reveal a room filled with treasure.",
-    "solvedChoices": [
-      {
-        "text": "[Enter the treasure room.]",
-        "link": "/page15"
-      }
-    ]
+    "solvedText": "You did it! The disc slides to one side, revealing a room filled with treasure.",
+    "solvedChoices": []
   },
   "page15": {
     "text": [
@@ -260,7 +257,8 @@
   },
   "page16": {
     "text": [
-      "You spend the better part of an hour sifting through tomes and sheafs of parchment. Most of the writing is incomprehensible, penned in lost languages or depicting strange magic runes. Right as you're about to give up, you find a small scrap of paper with a promising word written across half of it: 'Passphrase:'.",
+      "You enter the study, ready to stumble across some fantastical magical discovery. As you enter, you notice another side door leading out of the room.",
+      "Instead, you spend the better part of an hour sifting through tomes and sheafs of parchment. Most of the writing is incomprehensible, penned in lost languages or depicting strange magic runes. Right as you're about to give up, you find a small scrap of paper with a promising word written across half of it: 'Passphrase:'.",
       "The other half of the paper is blank. You're sure there must be something written there. Perhaps in invisible ink? Unfortunately you can't make anything out in the low light of the dusty room. If only there were a way for you to get a highlight on the paper."
     ],
     "prompt": "What will you do next?",
@@ -271,7 +269,7 @@
       },
       {
         "text": "[Choice 2]",
-        "link": "/page18"
+        "link": "/page12"
       }
     ],
     "highlight": true,
@@ -280,7 +278,7 @@
     "solvedChoices": [
       {
         "text": "[Continue on happily.]",
-        "link": "/page14"
+        "link": "/page12"
       }
     ]
   },
@@ -312,20 +310,24 @@
     "accomplishment": "You escaped the wizard's tower with your life."
   },
   "page21": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+    "text": [
+      "Reaching the top of the stairs, you come to a large, circular room. It must take up most of this floor. The floor is covered with a luxurious carpet, rich with detail. Tapestries festoon the wall, and three doors are splayed across from you.",
+      "Above the door in the center is an engraving of an hourglass. Above the left door is the likeness of a comet, and above the right is what could be a coin. High on the wall you see words painted in a meticulous script.",
+      "'NO WINGS BUT TAIL HAVE I / STILL I TRAVEL THROUGH THE SKY.'"
+    ],
+    "prompt": "Which door will you enter?",
     "choices": [
       {
-        "text": "[Choice 1]",
+        "text": "[You take the door on the left.]",
         "link": "/page14"
       },
       {
-        "text": "[Choice 2]",
-        "link": "/page15"
+        "text": "[You enter the door in the center of the room.]",
+        "link": "/page22"
       },
       {
-        "text": "[Choice 3]",
-        "link": "/page16"
+        "text": "[You choose the door on the right.]",
+        "link": "/page13"
       }
     ]
   },
@@ -400,11 +402,13 @@
         "link": "/page16"
       }
     ]
-  },   "page26": {
-    "text": ["You roll up your sleeves in preparation for some heavy labour. You really are tired, though. Whether or not you manage this will be a roll of the dice."],
-    "prompt": "",
-    "choices": [
+  },
+  "page26": {
+    "text": [
+      "You roll up your sleeves in preparation for some heavy labour. You really are tired, though. Whether or not you manage this will be a roll of the dice."
     ],
+    "prompt": "",
+    "choices": [],
     "dice": true,
     "puzzleSolved": false,
     "solvedText": "Phew! It was a lot of work, but you managed it.",
@@ -414,21 +418,21 @@
         "link": "/page27"
       }
     ]
-  },   "page27": {
-    "text": [],
-    "prompt": "What would you like to do next?",
+  },
+  "page27": {
+    "text": [
+      "The stairs go up and up, spiralling around the inside of the tower. Eventually, you reach a platform. There is a door to either side of you.",
+      "The door to the left is open, revealing what seems to be a study, filled with rolls of parchment and stacks of books. To the right is a closed door, with no hint of what lies beyond."
+    ],
+    "prompt": "Which door will you choose?",
     "choices": [
       {
-        "text": "[Choice 1]",
-        "link": "/page14"
-      },
-      {
-        "text": "[Choice 2]",
-        "link": "/page15"
-      },
-      {
-        "text": "[Choice 3]",
+        "text": "[There's sure to be something of note in the wizard's study. Enter the open room.]",
         "link": "/page16"
+      },
+      {
+        "text": "[You're here to steal, not to study! Take the mystery door.]",
+        "link": "/page10"
       }
     ]
   }
