@@ -24,7 +24,7 @@
   "page2": {
     "text": [
       "You begrudgingly walk around the circumfrence of the tower, hacking at the brambles with your hatchet as you go. You curse as your clothes snag and the thorns scratch at your hands. Luckily, as you reach the back of the tower, you spot something through a gap in the  accursed shrubs.",
-      "It's a cellar door! You chop at the plants with renewed vigor. After a few minutes of work, the padlocked door is fully visible. You whack at the aged, rusted lock and it falls away easily. You throw the door open, revealing a staircase descending into the darkness of the earth."
+      "It's a cellar door! You chop at the plants with renewed vigor. After a few minutes of work, the padlocked door is fully visible. You whack at the aged, rusted lock and it falls away easily. Unfortunately, your hatchet breaks too. You drop the handle and throw the door open, revealing a staircase descending into the darkness of the earth."
     ],
     "prompt": "What will you do next?",
     "choices": [
@@ -144,8 +144,10 @@
     "accomplishment": "Earned the Seven-League Boots."
   },
   "page10": {
-    "text": ["You open the door, somewhat surprised that it's unlocked. You find yourself in an austere room with nothing but a large, rotating cube floating in the centre and an open exit past it. Eyeing the cube suspiciously, you edge along the wall until you reach the exit and the hallway beyond.",
-     "You walk down it a ways, eventually coming to a platform with a closed door on the opposite side and stairs leading up. Thus informed, you return to the room. The mysterious cube is covered in letters. It seems to whisper in your mind: 'passphrase'. I wonder what it spells?"],
+    "text": [
+      "You open the door, somewhat surprised that it's unlocked. You find yourself in an austere room with nothing but a large, rotating cube floating in the centre and an open exit past it. Eyeing the cube suspiciously, you edge along the wall until you reach the exit and the hallway beyond.",
+      "You walk down it a ways, eventually coming to a platform with a closed door on the opposite side and stairs leading up. Thus informed, you return to the room. The mysterious cube is covered in letters. It seems to whisper in your mind: 'passphrase'. I wonder what it spells?"
+    ],
     "prompt": "What would you like to do next?",
     "choices": [
       {
@@ -195,9 +197,11 @@
     ]
   },
   "page13": {
-    "text": ["You head for the right. You've definitely chosen the correct door to answer the riddle... probably. Coins have tails, right? And they fly through the air when you flip them? Right? Anyway, coin equals treasure. It just makes sense. As soon as you walk through the door, it slams shut behind you. Maybe you aren't great at riddles after all.",
-  "You are now in what appears to be a cozy drawing room. There are a few plush couches, a low coffee table, a wall-length mirror, and a horribly unstable portal. Huh. This doesn't look good. You try the door you entered, but it's shut fast. The only way out will be via the portal.",
-"There must be a way to stabilize it. Your eyes fall on a complicated-looking device on the coffee table. It's likely to be related to the portal. A row of buttons is blinking periodically. Maybe you have to press them in order?"],
+    "text": [
+      "You head for the right. You've definitely chosen the correct door to answer the riddle... probably. Coins have tails, right? And they fly through the air when you flip them? Right? Anyway, coin equals treasure. It just makes sense. As soon as you walk through the door, it slams shut behind you. Maybe you aren't great at riddles after all.",
+      "You are now in what appears to be a cozy drawing room. There are a few plush couches, a low coffee table, a wall-length mirror, and a horribly unstable portal. Huh. This doesn't look good. You try the door you entered, but it's shut fast. The only way out will be via the portal.",
+      "There must be a way to stabilize it. Your eyes fall on a complicated-looking device on the coffee table. It's likely to be related to the portal. A row of buttons is blinking periodically. Maybe you have to press them in order?"
+    ],
     "prompt": "What will you do?",
     "choices": [
       {
@@ -283,32 +287,40 @@
     ]
   },
   "page17": {
-    "text": ["You complete the spell, waiting breathlessly for the results. After a moment, the owlbear cub stirs with a feeble chirp. You've heard that owlbears are fierce creatures, not to be trifled with, but this one is just so darn cute. It blinks up at you with trust in its eyes.",
-  "Making up your mind to take it with you, you bundle it into your pack. With the cub inside, there's absolutely no room for the hefty journal. You'll need both hands free to slide safely down the pole, so you won't be able to take anything else with you. Oh well, there's nothing to be done for it.",
-"You grip the pole tightly and step into the hole, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.", 
-"From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pet the owlbear, who chirps happily. You can tell that this is the start of a long and wonderful friendship."],
+    "text": [
+      "You complete the spell, waiting breathlessly for the results. After a moment, the owlbear cub stirs with a feeble chirp. You've heard that owlbears are fierce creatures, not to be trifled with, but this one is just so darn cute. It blinks up at you with trust in its eyes.",
+      "Making up your mind to take it with you, you bundle it into your pack. With the cub inside, there's absolutely no room for the hefty journal. You'll need both hands free to slide safely down the pole, so you won't be able to take anything else with you. Oh well, there's nothing to be done for it.",
+      "You grip the pole tightly and step into the hole, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.",
+      "From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pet the owlbear, who chirps happily. You can tell that this is the start of a long and wonderful friendship."
+    ],
     "prompt": "Congratulations! You have a wonderful new companion for your adventures.",
     "choices": [],
     "accomplishment": "Made a new friend."
   },
   "page18": {
-    "text": ["You enter through the final door. In a glass case lies the fabled staff of the mad wizard. It is said to imbue the user with immense magical power. You open the case and grasp the hilt of the staff firmly, feeling arcane energy and knowledge course through you. With your newfound powers, you teleport to your favourite inn.",
-  "Your mind reels with the possibilities of this discovery. For now, you want a hot meal and a long rest. Changing the world can wait until morning. Not bad for an average thie... I mean adventurer!"],
+    "text": [
+      "You enter through the final door. In a glass case lies the fabled staff of the mad wizard. It is said to imbue the user with immense magical power. You open the case and grasp the hilt of the staff firmly, feeling arcane energy and knowledge course through you. With your newfound powers, you teleport to your favourite inn.",
+      "Your mind reels with the possibilities of this discovery. For now, you want a hot meal and a long rest. Changing the world can wait until morning. Not bad for an average thie... I mean adventurer!"
+    ],
     "prompt": "Congratulations! You are now in possession of a powerful artifact. Your future is yours to decide.",
     "choices": [],
 
     "accomplishment": "Found the ultimate secret of the wizard's tower."
   },
   "page19": {
-    "text": ["You gather as much of the treasure as you can carry. Conveniently, the room has a few rucksacks that you can grab, as your own bag soon runs of of room. Stopping just before the point of over-encumberment, you waddle out of the room.",
-  "The tower seems to clear the way for you, unlocking doors so that you can retrace your steps all the way back out through the cellar. With this vast hoard of wealth, you can finally pay off your student debt! And have a little left over besides."],
+    "text": [
+      "You gather as much of the treasure as you can carry. Conveniently, the room has a few rucksacks that you can grab, as your own bag soon runs of of room. Stopping just before the point of over-encumberment, you waddle out of the room.",
+      "The tower seems to clear the way for you, unlocking doors so that you can retrace your steps all the way back out through the cellar. With this vast hoard of wealth, you can finally pay off your student debt! And have a little left over besides."
+    ],
     "prompt": "Congratulations! You are now rich beyond your wildest dreams.",
     "choices": [],
     "accomplishment": "Discovered the wizard's treasure."
   },
   "page20": {
-    "text": ["You step through the portal and instantly find yourself outside. You fall a short distance into the cursed patch of brambles that surrounds the tower. You struggle out, pulling thorns from your skin. You've escaped with your life, but with nothing else to show for your misadventure.",
-  "Maybe you'll try again tomorrow, but for now you just want to head back to the inn, tail between your legs. A hot meal and a warm bed sound good right about now. At least you have a story to tell, though you might need to embellish it a little to save face."],
+    "text": [
+      "You step through the portal and instantly find yourself outside. You fall a short distance into the cursed patch of brambles that surrounds the tower. You struggle out, pulling thorns from your skin. You've escaped with your life, but with nothing else to show for your misadventure.",
+      "Maybe you'll try again tomorrow, but for now you just want to head back to the inn, tail between your legs. A hot meal and a warm bed sound good right about now. At least you have a story to tell, though you might need to embellish it a little to save face."
+    ],
     "prompt": "Congratulations! You survived.",
     "choices": [],
     "accomplishment": "Escaped the wizard's tower with your life."
@@ -336,12 +348,14 @@
     ]
   },
   "page22": {
-    "text": ["You stride through the center door. Time flies without wings... an hourglass is the answer to the riddle, isn't it?",
-  "Lost in thought, you don't notice the door closing behind you. You whirl around as you hear it slam shut. You try the handle. Locked. Of course. You shake your head and take a look around you.",
-"You're in some kind of laboratory. There are tables and shelves filled with equipment and bottles containing mysterious liquids and subtances. You notice what appears to be a cage with a blanket thrown over it. On top of the cage rests a journal. Flipping through it, you see that it contains pages and pages of notes on spells and magical experiments. This could be very valuable.",
-"You cast around for a means of escape. You manage to open the room's window, but it's a long way down. You're quite sure you'd fail to survive the fall into the thorny brambles. Poking around some more, you discover a metal pole in an alcove behind a curtain. It continues down through a hole in the floor, potentially all the way to the base of the tower. This could be your way out, though you'd need both hands to slide down it.",
-"Before you go, there's one more thing you're curious about. You peek under the blanket. You're shocked to see what appears to be a sleeping owlbear cub. How could it have survived all this time? Looking more closely at the journal's notes, you read about an experiment that can put creatures in a sort of magical stasis, wherein they do not require food or water. Underneath this passage are the steps to break the spell, though the last part is too smudged to read. If you can complete the sequence, you should be able to awaken the poor creature.",
-"The sequence reads as follows: 1 11 21 1211 111221..."],
+    "text": [
+      "You stride through the center door. Time flies without wings... an hourglass is the answer to the riddle, isn't it?",
+      "Lost in thought, you don't notice the door closing behind you. You whirl around as you hear it slam shut. You try the handle. Locked. Of course. You shake your head and take a look around you.",
+      "You're in some kind of laboratory. There are tables and shelves filled with equipment and bottles containing mysterious liquids and subtances. You notice what appears to be a cage with a blanket thrown over it. On top of the cage rests a journal. Flipping through it, you see that it contains pages and pages of notes on spells and magical experiments. This could be very valuable.",
+      "You cast around for a means of escape. You manage to open the room's window, but it's a long way down. You're quite sure you'd fail to survive the fall into the thorny brambles. Poking around some more, you discover a metal pole in an alcove behind a curtain. It continues down through a hole in the floor, potentially all the way to the base of the tower. This could be your way out, though you'd need both hands to slide down it.",
+      "Before you go, there's one more thing you're curious about. You peek under the blanket. You're shocked to see what appears to be a sleeping owlbear cub. How could it have survived all this time? Looking more closely at the journal's notes, you read about an experiment that can put creatures in a sort of magical stasis, wherein they do not require food or water. Underneath this passage are the steps to break the spell, though the last part is too smudged to read. If you can complete the sequence, you should be able to awaken the poor creature.",
+      "The sequence reads as follows: 1 11 21 1211 111221..."
+    ],
     "prompt": "What will you do next?",
     "choices": [
       {
@@ -359,29 +373,32 @@
     ]
   },
   "page23": {
-    "text": ["You attempt to enter the portal, but are sent flying back by something like bolts of electricity. The floor beneath you starts to shake, and an ominous rumbling fills the air. The portal is growing, sending out zaps of lightning and warping the space around it. You cover your head as bits of the ceiling start to crash down around you.",
-  "Your last thought before the tower falls is that you wish you'd been a farmer, like your father. He always said that adventuring would get you killed. You hate it when he's right."],
-    "prompt": "You die.",
-    "choices": [
+    "text": [
+      "You attempt to enter the portal, but are sent flying back by something like bolts of electricity. The floor beneath you starts to shake, and an ominous rumbling fills the air. The portal is growing, sending out zaps of lightning and warping the space around it. You cover your head as bits of the ceiling start to crash down around you.",
+      "Your last thought before the tower falls is that you wish you'd been a farmer, like your father. He always said that adventuring would get you killed. You hate it when he's right."
     ],
+    "prompt": "You die.",
+    "choices": [],
     "dead": true
   },
   "page24": {
-    "text": ["You finish the spell with the final sequence of numbers. You watch the owlbear cub closely, waiting for it stir. After a moment, a purple fog begins to spill from the journal. Oh dear. Instead of lifting the spell, you seem to have activated it. You may not be as clever as you thought you were.",
-  "Your eyelids grow heavy, and you sink slowly to the floor. It looks like you'll be stuck here, 'asleep', until the next adventurer stumbles across this room. Based on the thick layer of dust that coats the floor, that could be a very long time indeed. You fall into a magical slumber."],
-    "prompt": "You die... sort of.",
-    "choices": [
+    "text": [
+      "You finish the spell with the final sequence of numbers. You watch the owlbear cub closely, waiting for it stir. After a moment, a purple fog begins to spill from the journal. Oh dear. Instead of lifting the spell, you seem to have activated it. You may not be as clever as you thought you were.",
+      "Your eyelids grow heavy, and you sink slowly to the floor. It looks like you'll be stuck here, 'asleep', until the next adventurer stumbles across this room. Based on the thick layer of dust that coats the floor, that could be a very long time indeed. You fall into a magical slumber."
     ],
+    "prompt": "You die... sort of.",
+    "choices": [],
     "dead": true
   },
   "page25": {
-    "text": ["You think it's a bad idea to mess with magic spells and wild beasts. Instead, you grab the journal and various trinkets of a (hopefully) magical nature, stuffing them into your pack. It's not what you were hoping for, but the journal alone should fetch a hefty sum.",
-  "Laden with your prizes, you grip the pole tightly and step into the hole, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.",
-"From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pull out the journal, turning it over in your hands. You don't fancy yourself a wizard, but maybe you'll read through it before selling it, just in case there's anything useful in there.",
-"You'll decide what to do after a good meal and a long rest. Sliding the journal back into your pack, you start the long trek back to town. This will make a great story at the tavern."],
-    "prompt": "Congratulations! You recovered a valuable journal belonging to the mad wizard himself.",
-    "choices": [
+    "text": [
+      "You think it's a bad idea to mess with magic spells and wild beasts. Instead, you grab the journal and various trinkets of a (hopefully) magical nature, stuffing them into your pack. It's not what you were hoping for, but the journal alone should fetch a hefty sum.",
+      "Laden with your prizes, you grip the pole tightly and step into the hole, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.",
+      "From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pull out the journal, turning it over in your hands. You don't fancy yourself a wizard, but maybe you'll read through it before selling it, just in case there's anything useful in there.",
+      "You'll decide what to do after a good meal and a long rest. Sliding the journal back into your pack, you start the long trek back to town. This will make a great story at the tavern."
     ],
+    "prompt": "Congratulations! You recovered a valuable journal belonging to the mad wizard himself.",
+    "choices": [],
     "accomplishment": "Recovered the wizard's journal and fled the tower."
   },
   "page26": {

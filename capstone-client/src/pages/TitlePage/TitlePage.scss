@@ -1,45 +1,24 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
 .title-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
- user-select: none;
- -webkit-user-select: none;
- outline: none;
-}
+  height: 100%;
+  @include flex-full(column, center, center);
+  @include select-none;
 
-.text {
-    padding-top: 10rem;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 2rem;
+  &__header {
     width: 100%;
+    padding-top: 10rem;
+    @include flex-full(column, center, center);
   }
-
-  .paragraph {
+  
+  &__intro {
     margin-bottom: 2rem;
   }
   
-  .options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1.5rem;
+  &__link {
     padding-top: 2rem;
-  
-    &__text {
-        color: rgb(156, 156, 156);
-      &:hover {
-        font-weight: bold;
-        color: rgb(206, 175, 0);
-        cursor: pointer;
-      }
-    }
-  
+    @include flex-position(center, center);
   }
+}
+

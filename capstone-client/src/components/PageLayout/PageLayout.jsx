@@ -1,16 +1,20 @@
 import "./PageLayout.scss";
+
 import { useLocation, useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import pageData from "./../../data/pageData.json";
-import SlidingPuzzle from "../SlidingPuzzle/SlidingPuzzle";
 import { Filter } from "bad-words";
-import LightPuzzle from "../LightPuzzle/LightPuzzle";
+import { postName } from "../../utils/apiUtils";
+import { useTextSelection } from "../../utils/puzzleUtils";
+
+import rune from "../../assets/images/rune.png";
+import pageData from "./../../data/pageData.json";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
+
+import Slide from "../Slide/Slide";
+import Light from "../Light/Light";
 import Dice from "../Dice/Dice";
 import Cube from "../Cube/Cube";
 import Sequence from "../Sequence/Sequence";
-import rune from "../../assets/images/rune.png";
 
 export default function PageLayout({
   isDead,
@@ -18,8 +22,6 @@ export default function PageLayout({
   setIsSolved,
   isSolved,
   setIsSpelled,
-  setIsTextSelected,
-  setHasTextBeenHighlighted,
 }) {
   const { pageId } = useParams();
   const pageContent = pageData[pageId] || {};
@@ -34,9 +36,13 @@ export default function PageLayout({
   const [name, setName] = useState("");
 
   const filter = new Filter();
-  const baseUrl = import.meta.env.VITE_API_URL;
   const location = useLocation();
   const navigate = useNavigate();
+
+  const {
+    setIsTextSelected,
+    setHasTextBeenHighlighted,
+  } = useTextSelection();
 
   useEffect(() => {
     setPuzzleSolved(false);
@@ -136,21 +142,6 @@ export default function PageLayout({
     recognition.start();
   };
 
-  // posting
-  const postName = async () => {
-    const accomplishment = pageContent.accomplishment;
-    const newPost = {
-      name,
-      accomplishment,
-    };
-
-    try {
-      await axios.post(`${baseUrl}/wall-of-fame`, newPost);
-    } catch (error) {
-      console.error("There was a problem with posting your name.", error);
-    }
-  };
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -165,7 +156,8 @@ export default function PageLayout({
     }
 
     try {
-      await postName();
+      const accomplishment = pageContent.accomplishment;
+      await postName(accomplishment, name);
       navigate("/wall-of-fame");
       setName("");
     } catch (error) {
@@ -193,7 +185,7 @@ export default function PageLayout({
 
       {pageContent.slide && (
         <div className="puzzle ignore">
-          <SlidingPuzzle
+          <Slide
             setPuzzleSolved={setPuzzleSolved}
             setIsSolved={setIsSolved}
             isSolved={isSolved}
@@ -210,7 +202,7 @@ export default function PageLayout({
 
       {pageContent.form && (
         <div className="form puzzle ignore">
-         <img className="form__image" src={rune} alt="Magic rune" />
+          <img className="form__image" src={rune} alt="Magic rune" />
           <input
             onChange={handleInput}
             className="input"
@@ -221,7 +213,7 @@ export default function PageLayout({
 
       {pageContent.maze && (
         <div className="maze puzzle ignore">
-          <LightPuzzle
+          <Light
             puzzleSolved={puzzleSolved}
             setPuzzleSolved={setPuzzleSolved}
           />

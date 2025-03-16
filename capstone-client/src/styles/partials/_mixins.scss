@@ -1,0 +1,50 @@
+@use "./variables" as *;
+@use "./typography";
+
+//media queries
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+  
+  // flex
+  @mixin flex-full ($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
+
+  @mixin flex-position ($justify-content, $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
+  
+
+  @mixin flex-orientation ($flex-direction, $justify-content) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+  }
+
+  @mixin flex-alignment ($flex-direction, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+  }
+
+
+  // other
+  @mixin select-none {
+    user-select: none;
+    -webkit-user-select: none;
+    outline: none;
+  }

@@ -1,167 +1,36 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Verdana, sans-serif;
-  // scrollbar-gutter: stable both-edges;
-  text-decoration: none;
-  // overflow:hidden;
-}
-
-body {
-  background-color: black;
-  font-family: Verdana, sans-serif;
-}
+@use "./styles/partials/global";
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
 
 .main {
   height: calc(100vh - 10rem);
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   width: 60%;
+  @include flex-alignment(column, center);
   // overflow-y: scroll;
 }
 
 .screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.toolbar {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  user-select: none;
-  -webkit-user-select: none;
-  outline: none;
-}
-
-.drawer {
-  display: flex;
-
-}
-
-.hint-drawer {
-  width: 25%;
-  background-color: rgb(156, 156, 156);
-  color: black;
-  height: 5rem;
-  padding: 1rem;
-  align-content: center;
-}
-
-.notes-drawer {
-  width: 25%;
-  background-color:rgb(156, 156, 156);
-  color: black;
-  height: 5rem;
-  padding: 1rem;
-  align-content: center;
-}
-.audio-drawer {
-  width: 25%;
-  background-color:rgb(156, 156, 156);
-  color: black;
-  height: 5rem;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.spacer {
-  visibility: hidden;
-  width: 25%;
-  height: 5rem;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.visible {
-  visibility: visible;
-}
-
-.blocks {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.block {
-  color: white;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  height: 5rem;
-  border: 2px solid white;
-
-  &:hover {
-      background-color: white;
-      color: black;
-  }
-}
-
-.highlight {
-  animation: select 4s infinite linear;
-}
-
-.label {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.slider {
-  width: 80%;
-}
-
-@keyframes select {
-  0% {
-    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
-  }
-
-  50% {
-    box-shadow: inset 0px 0px 40px rgba(200, 200, 200, 0.8);
-  }
-
-  100% {
-    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
-  }
-}
-
-.restart {
-  cursor: pointer;
+  @include flex-full(column, center, center);
 }
 
 .torch {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
-  width: 60px;
-  height: 60px;
+  width: 3.75rem;
+  height: 3.75rem;
   background-color: rgba(255, 255, 255, 0.4);
   clip-path: polygon(50% 0%, 40% 30%, 38% 55%, 50% 75%, 62% 55%, 60% 30%);
   animation: flickerEffect 1.5s infinite alternate;
   z-index: 2;
 
-  &.left {
+  &--left {
       left: 10%;
   }
 
-  &.right {
+  &--right {
       right: 10%;
   }
-
-
 }
 
 @keyframes flickerEffect {

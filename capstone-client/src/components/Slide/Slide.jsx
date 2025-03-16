@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import puzzleImage from "./../../assets/images/rune-light.jpg";
-import "./SlidingPuzzle.scss";
+import "./Slide.scss";
 
-export default function SlidingPuzzle({ setPuzzleSolved, setIsSolved, isSolved }) {
+export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
   const GRID_SIZE = 3;
   const MISSING_TILE = 0;
   const IMAGE_URL = puzzleImage;

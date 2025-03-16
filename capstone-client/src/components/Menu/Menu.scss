@@ -1,0 +1,109 @@
+.toolbar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+}
+
+.drawer {
+  display: flex;
+}
+
+.hint-drawer {
+  width: 25%;
+  background-color: rgb(156, 156, 156);
+  color: black;
+  height: 5rem;
+  padding: 1rem;
+  align-content: center;
+}
+
+.notes-drawer {
+  width: 25%;
+  background-color: rgb(156, 156, 156);
+  color: black;
+  height: 5rem;
+  padding: 1rem;
+  align-content: center;
+}
+.audio-drawer {
+  width: 25%;
+  background-color: rgb(156, 156, 156);
+  color: black;
+  height: 5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spacer {
+  visibility: hidden;
+  width: 25%;
+  height: 5rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.blocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 5rem;
+  border: 2px solid white;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.highlight {
+  animation: select 4s infinite linear;
+}
+
+.label {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.slider {
+  width: 80%;
+}
+
+@keyframes select {
+  0% {
+    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
+  }
+
+  50% {
+    box-shadow: inset 0px 0px 40px rgba(200, 200, 200, 0.8);
+  }
+
+  100% {
+    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.restart {
+  cursor: pointer;
+}

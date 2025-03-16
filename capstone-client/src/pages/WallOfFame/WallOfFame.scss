@@ -1,39 +1,24 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
 .wall-of-fame {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     padding-top: 2rem;
     width: 100%;
-    user-select: none; 
-    -webkit-user-select: none;
-    outline: none;
-
-    &__title {
-        color: white;
-    }
+    @include flex-full(column, center, center);
+    @include select-none;
 
     &__entries {
         padding-top: 2rem;
         width: 80%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-direction: column;
         gap: 2rem;
+        @include flex-orientation(column, space-between);
     }
 
     &__entry {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @include flex-orientation(row, space-between);
     }
     
     &__name {
-        color: rgb(206, 175, 0);
-    }
-
-    &__accomplishment {
-        color: white;
+        color: $solved-color;
     }
 }

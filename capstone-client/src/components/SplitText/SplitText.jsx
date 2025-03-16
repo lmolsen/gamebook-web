@@ -9,7 +9,7 @@ export default function SplitText({ text }) {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const elements = containerRef.current.querySelectorAll("p, h1");
+    const elements = containerRef.current.querySelectorAll("h1, h2");
 
     elements.forEach((element) => {
       const { words } = splitText(element);

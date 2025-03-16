@@ -12,9 +12,10 @@ export const useTextSelection = () => {
   };
 
   return {
-    isTextSelected,
-    hasTextBeenHighlighted,
     handleTextSelection,
-    setIsTextSelected, setHasTextBeenHighlighted
+    isTextSelected,
+    setIsTextSelected, 
+    hasTextBeenHighlighted,
+    setHasTextBeenHighlighted
   };
 };

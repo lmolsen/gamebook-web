@@ -1,11 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
-import "./LightPuzzle.scss";
+import "./Light.scss";
 
-export default function LightPuzzle({
-  setPuzzleSolved,
-  puzzleSolved,
-}) {
+export default function Light ({ setPuzzleSolved, puzzleSolved }) {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
@@ -14,7 +11,7 @@ export default function LightPuzzle({
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
       const newX = Math.random() * (rect.width - 48 - 30) + 30;
-      const newY = Math.random() * (rect.height - 48- 30) + 30;
+      const newY = Math.random() * (rect.height - 48 - 30) + 30;
       setTargetPosition({ x: newX, y: newY });
     }
   }, []);
@@ -43,15 +40,12 @@ export default function LightPuzzle({
         onClick={() => setPuzzleSolved(true)}
         className={`key ${puzzleSolved ? "key--revealed" : ""}`}
         style={
-          puzzleSolved
-            ? {} 
-            : { left: targetPosition.x, top: targetPosition.y }
+          puzzleSolved ? {} : { left: targetPosition.x, top: targetPosition.y }
         }
         whileHover={!puzzleSolved ? { scale: 1.2 } : {}}
       >
         🔑
       </motion.div>
-
     </div>
   );
 }
