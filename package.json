@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "npm-run-all --parallel server client",
-    "server": "cd capstone-server && npm run dev",
-    "client": "cd capstone-client && npm run dev"
+    "server": "cd capstone-server && npm start",
+    "client": "cd capstone-client && npm start"
   }
 }
