@@ -1,39 +1,34 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
 .sequence {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  -webkit-user-select: none;
-  outline: none;
+  @include flex-full(column, center, center);
 
   &__nodes {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
+    gap: 1.25rem;
   }
 
   &__node {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
-    background-color: cyan;
+    background-color: $bright-color;
     transition: background-color 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    box-shadow: 0 0 10px cyan;
+    box-shadow: 0 0 0.625rem $bright-color;
 
     &--stabilized {
-      background-color: green;
+      background-color: $solved-color;
     }
     &--active {
-      background-color: red;
-      box-shadow: 0 0 15px red; 
+      background-color: $active-color;
+      box-shadow: 0 0 .9375rem  $active-color; 
     }
   }
 
 &__text {
-  color: white;
+  color:$light-color;
 }
 }

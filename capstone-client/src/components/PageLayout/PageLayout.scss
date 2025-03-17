@@ -24,18 +24,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include select-none;
   }
 
   &__text {
     color: white;
-    padding-top: 1rem;
+    padding-top: 1.25rem;
     text-indent: 1rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+
+  @include tablet {
     font-size: 1.5rem;
-    user-select: none;
-    -webkit-user-select: none;
-    outline: none;
-    // line-height: 2rem;
+    line-height: 1.85rem;
+  }
 
     &--solved {
       color: rgb(0, 192, 128);
@@ -43,28 +44,37 @@
     }
   }
 
+  &__riddle {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    font-family: "Caveat";
+  }
+
   &__prompt {
     margin-top: 2rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
-    @include select-none;
     @include flex-full(column, center, center);
+
+    @include tablet {
+      font-size: 1.25rem;
+    }
   }
 
   &__choices {
     width: 100%;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
     @include flex-full(column, center, center);
   }
 
   &__choice {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    color: rgb(156, 156, 156);
-    @include select-none;
+    color: $medium-color;
 
     &:hover {
-      font-weight: bold;
-      color: rgb(206, 175, 0);
+      color: $hover-color;
     }
 
     &--solved {
@@ -85,23 +95,21 @@
   padding: 0.5rem 1rem;
   border: 0.125rem outset $paper-color;
   background-color: $paper-color;
-  color: $dark-color;
+  color: $darkest-color;
   cursor: text;
   @include flex-position(flex-start, center);
   @include puzzle;
 
   &__text {
-    font-family: "Caveat";
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    @include handwriting;
+    @include select;
   }
 
   &__secret {
     color: $paper-color;
     margin-left: 1rem;
-    font-family: "Caveat";
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    @include handwriting;
+    @include select;
   }
 }
 
@@ -130,7 +138,7 @@
   @include puzzle;
 }
 
-.maze {
+.light {
   width: 100%;
   @include puzzle;
 }
@@ -141,13 +149,14 @@
   @include flex-alignment(column, center);
 
   &__image {
+    margin-top: 1rem;
     width: 10rem;
-    @include select-none;
   }
 
   &__input {
-    width: 100%;
-    padding: 1rem;
+    width: 16.5rem;
+    padding: 0.75rem 1rem;
+    margin: 1rem;
     outline: none;
   }
 }
@@ -157,10 +166,10 @@
   @include puzzle;
 
   &__button {
-    width: 10rem;
-    padding: 1rem 0;
-    &:not(.speak-button--disabled):hover {
-      background-color: $hover-color;
+    width: 9rem;
+
+    &:disabled {
+      background-color: $medium-color;
     }
   }
 }
@@ -168,13 +177,10 @@
 .name {
   padding-top: 2rem;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  @include flex-full(column, center, center);
 
   &__input {
-    width: 20rem;
+    width: 21.5rem;
     padding: 1rem;
     outline: none;
   }
@@ -183,20 +189,17 @@
     margin-top: 1rem;
     width: 7rem;
     padding: 0.75rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: white;
+    background-color: $light-color;
 
     &:hover {
-      background-color: rgb(206, 175, 0);
+      background-color: $hover-color;
     }
   }
 }
 
 ::selection {
-  // background-color: rgba(245, 225, 184, 0.8);
-  background-color: #f3e0c2;
-  color: #000;
+  background-color: $paper-color;
+  color: $darkest-color;
 }
 
 @keyframes fadeIn {

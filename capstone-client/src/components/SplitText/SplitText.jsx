@@ -27,5 +27,5 @@ export default function SplitText({ text }) {
     });
   }, []);
 
-  return <div className="container" ref={containerRef}>{text}</div>;
+  return <div className="split-container" ref={containerRef}>{text}</div>;
 }

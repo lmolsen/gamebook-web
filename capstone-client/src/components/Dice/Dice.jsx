@@ -29,7 +29,6 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat }) {
         if (finalNumber === 6) {
           setPuzzleSolved(true);
           setFeat(true);
-          console.log("Got it!");
         }
       }
     }, 100);

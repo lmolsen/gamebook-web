@@ -27,18 +27,18 @@ export default function Light ({ setPuzzleSolved, puzzleSolved }) {
   return (
     <div
       ref={containerRef}
-      className={`box ${puzzleSolved ? "box--squished" : ""}`}
+      className={`search ${puzzleSolved ? "search--squished" : ""}`}
       onMouseMove={handleMouseMove}
     >
       <motion.div
-        className="light"
+        className="search__light"
         animate={{ left: cursorPosition.x, top: cursorPosition.y }}
         transition={{ type: "tween", duration: 0.05 }}
       />
 
       <motion.div
         onClick={() => setPuzzleSolved(true)}
-        className={`key ${puzzleSolved ? "key--revealed" : ""}`}
+        className={`search__key ${puzzleSolved ? "search__key--revealed" : ""}`}
         style={
           puzzleSolved ? {} : { left: targetPosition.x, top: targetPosition.y }
         }

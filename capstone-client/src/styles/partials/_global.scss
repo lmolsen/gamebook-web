@@ -8,6 +8,7 @@
   box-sizing: border-box;
   font-family: Verdana, sans-serif;
   text-decoration: none;
+  @include select-none;
   // scrollbar-gutter: stable both-edges;
   // overflow:hidden;
 }
@@ -15,27 +16,65 @@
 button {
   text-transform: uppercase;
   font-weight: bold;
+  border: none;
+  color: $darkest-color;
+  background-color: $light-color;
+  min-height: 2.5rem;
+  min-width: 7rem;
+
+  &:hover {
+    background-color: $hover-color;
+  }
 }
 
 body {
   color: $light-color;
-  background-color: $dark-color;
+  background-color: $darkest-color;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
+
+  @include tablet {
+    font-size: 4rem;
+  }
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.25rem;
+   @include tablet {
+    font-size: 2rem;
+  }
 }
 
 a {
   color: $medium-color;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  line-height: 1rem;
   cursor: pointer;
+
   &:hover {
     font-weight: bold;
-    color: $hover-color;
+  }
+
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+input {
+  font-size: 1rem;
+  user-select: text;
+  -webkit-user-select: text; 
+  border: .125rem solid $medium-dark-color;
+  &:focus {
+    border: .125rem solid $hover-color;
+  }
+  &:disabled {
+    background-color: $medium-color;
+    color: $darkest-color;
+    font-weight: bold;
+    border: .125rem  solid $solved-color;
   }
 }

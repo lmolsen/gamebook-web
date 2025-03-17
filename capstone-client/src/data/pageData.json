@@ -19,7 +19,8 @@
         "text": "[Break down the front door.]",
         "link": "/page4"
       }
-    ]
+    ],
+    "symbol": "book"
   },
   "page2": {
     "text": [
@@ -36,7 +37,8 @@
         "text": "[Take the cautious approach. Feel your way down carefully.]",
         "link": "/page5"
       }
-    ]
+    ],
+    "symbol": "book"
   },
   "page3": {
     "text": [
@@ -46,7 +48,8 @@
     ],
     "prompt": "You die.",
     "choices": [],
-    "dead": true
+    "dead": true,
+    "symbol": "skull"
   },
   "page4": {
     "text": [
@@ -64,7 +67,8 @@
         "text": "[Risk the climb up the ivy.]",
         "link": "/page3"
       }
-    ]
+    ],
+    "symbol": "book"
   },
   "page5": {
     "text": [
@@ -82,7 +86,8 @@
         "text": "[Open the treasure chest, of course!]",
         "link": "/page11"
       }
-    ]
+    ],
+    "symbol": "book"
   },
   "page6": {
     "text": [
@@ -96,7 +101,7 @@
         "link": "/page8"
       }
     ],
-    "maze": true,
+    "light": true,
     "puzzleSolved": false,
     "solvedText": "You did it! You found the key.",
     "solvedChoices": [
@@ -104,7 +109,8 @@
         "text": "[Open the door with the key.]",
         "link": "/page7"
       }
-    ]
+    ],
+    "symbol": "brain"
   },
   "page7": {
     "text": [
@@ -121,7 +127,8 @@
         "text": "[You're tired from chopping brambles - continue up the stairs.]",
         "link": "/page27"
       }
-    ]
+    ],
+    "symbol": "book"
   },
   "page8": {
     "text": [
@@ -131,7 +138,8 @@
     ],
     "prompt": "You die.",
     "choices": [],
-    "dead": true
+    "dead": true,
+    "symbol": "skull"
   },
   "page9": {
     "text": [
@@ -141,7 +149,8 @@
     "prompt": "",
     "choices": [],
     "drop": true,
-    "accomplishment": "Earned the Seven-League Boots."
+    "accomplishment": "Earned the Seven-League Boots.",
+    "symbol": "treasure"
   },
   "page10": {
     "text": [
@@ -163,7 +172,8 @@
         "text": "[Swagger past the cube and up the stairs.]",
         "link": "/page21"
       }
-    ]
+    ],
+    "symbol": "brain"
   },
   "page11": {
     "text": [
@@ -172,7 +182,8 @@
     ],
     "prompt": "You die.",
     "choices": [],
-    "dead": true
+    "dead": true,
+    "symbol": "skull"
   },
   "page12": {
     "text": [
@@ -194,13 +205,14 @@
         "text": "[Move on to the next challenge with this knowledge in mind.]",
         "link": "/page21"
       }
-    ]
+    ],
+    "symbol": "brain"
   },
   "page13": {
     "text": [
       "You head for the right. You've definitely chosen the correct door to answer the riddle... probably. Coins have tails, right? And they fly through the air when you flip them? Right? Anyway, coin equals treasure. It just makes sense. As soon as you walk through the door, it slams shut behind you. Maybe you aren't great at riddles after all.",
       "You are now in what appears to be a cozy drawing room. There are a few plush couches, a low coffee table, a wall-length mirror, and a horribly unstable portal. Huh. This doesn't look good. You try the door you entered, but it's shut fast. The only way out will be via the portal.",
-      "There must be a way to stabilize it. Your eyes fall on a complicated-looking device on the coffee table. It's likely to be related to the portal. A row of buttons is blinking periodically. Maybe you have to press them in order?"
+      "There must be a way to stabilize it. Your eyes fall on a complicated-looking device on the coffee table. It's likely to be related to the portal. A row of buttons are blinking periodically. Maybe you have to press them in order?"
     ],
     "prompt": "What will you do?",
     "choices": [
@@ -217,7 +229,8 @@
         "text": "[Escape through the portal.]",
         "link": "/page20"
       }
-    ]
+    ],
+    "symbol": "brain"
   },
   "page14": {
     "text": [
@@ -238,7 +251,8 @@
     "speak": true,
     "puzzleSolved": false,
     "solvedText": "You did it! The disc slides to one side, revealing a room filled with treasure.",
-    "solvedChoices": []
+    "solvedChoices": [],
+    "symbol": "brain"
   },
   "page15": {
     "text": [
@@ -261,7 +275,8 @@
         "text": "[Enter the final chamber.]",
         "link": "/page18"
       }
-    ]
+    ],
+    "symbol": "brain"
   },
   "page16": {
     "text": [
@@ -284,7 +299,8 @@
         "text": "[Continue on happily.]",
         "link": "/page12"
       }
-    ]
+    ],
+    "symbol": "brain"
   },
   "page17": {
     "text": [
@@ -295,7 +311,8 @@
     ],
     "prompt": "Congratulations! You have a wonderful new companion for your adventures.",
     "choices": [],
-    "accomplishment": "Made a new friend."
+    "accomplishment": "Made a new friend.",
+    "symbol": "heart"
   },
   "page18": {
     "text": [
@@ -305,7 +322,8 @@
     "prompt": "Congratulations! You are now in possession of a powerful artifact. Your future is yours to decide.",
     "choices": [],
 
-    "accomplishment": "Found the ultimate secret of the wizard's tower."
+    "accomplishment": "Found the ultimate secret of the wizard's tower.",
+    "symbol": "treasure"
   },
   "page19": {
     "text": [
@@ -314,7 +332,8 @@
     ],
     "prompt": "Congratulations! You are now rich beyond your wildest dreams.",
     "choices": [],
-    "accomplishment": "Discovered the wizard's treasure."
+    "accomplishment": "Discovered the wizard's treasure.",
+    "symbol": "treasure"
   },
   "page20": {
     "text": [
@@ -323,13 +342,13 @@
     ],
     "prompt": "Congratulations! You survived.",
     "choices": [],
-    "accomplishment": "Escaped the wizard's tower with your life."
+    "accomplishment": "Escaped the wizard's tower with your life.",
+    "symbol": "heart"
   },
   "page21": {
     "text": [
       "Reaching the top of the stairs, you come to a large, circular room. The floor is covered with a luxurious carpet, rich with detail. Tapestries festoon the wall, and three doors are splayed across from you.",
-      "Above the door in the center is an engraving of an hourglass. Above the left door is the likeness of a comet, and above the right is what could be a coin. High on the wall you see words painted in a meticulous script.",
-      "'NO WINGS BUT TAIL HAVE I / YET STILL I TRAVEL THROUGH THE SKY.'"
+      "Above the door in the center is an engraving of an hourglass. Above the left door is the likeness of a comet, and above the right is what could be a coin. High on the wall you see words painted in a meticulous script."
     ],
     "prompt": "Which door will you enter?",
     "choices": [
@@ -345,7 +364,9 @@
         "text": "[You choose the door on the right.]",
         "link": "/page13"
       }
-    ]
+    ],
+    "riddle": true,
+    "symbol": "brain"
   },
   "page22": {
     "text": [
@@ -370,7 +391,8 @@
         "text": "[Forget about the owlbear - take the journal and leave.]",
         "link": "/page25"
       }
-    ]
+    ],
+    "symbol": "brain"
   },
   "page23": {
     "text": [
@@ -379,7 +401,8 @@
     ],
     "prompt": "You die.",
     "choices": [],
-    "dead": true
+    "dead": true,
+    "symbol": "skull"
   },
   "page24": {
     "text": [
@@ -388,7 +411,8 @@
     ],
     "prompt": "You die... sort of.",
     "choices": [],
-    "dead": true
+    "dead": true,
+    "symbol": "skull"
   },
   "page25": {
     "text": [
@@ -399,7 +423,8 @@
     ],
     "prompt": "Congratulations! You recovered a valuable journal belonging to the mad wizard himself.",
     "choices": [],
-    "accomplishment": "Recovered the wizard's journal and fled the tower."
+    "accomplishment": "Recovered the wizard's journal and fled the tower.",
+    "symbol": "treasure"
   },
   "page26": {
     "text": [
@@ -415,7 +440,8 @@
         "text": "[Continue up the stairs.]",
         "link": "/page27"
       }
-    ]
+    ],
+    "symbol": "brain"
   },
   "page27": {
     "text": [
@@ -432,6 +458,7 @@
         "text": "[You're here to steal, not to study! Take the mystery door.]",
         "link": "/page10"
       }
-    ]
+    ],
+    "symbol": "book"
   }
 }

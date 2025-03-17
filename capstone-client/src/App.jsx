@@ -8,6 +8,12 @@ import Menu from "./components/Menu/Menu";
 import WallOfFame from "./pages/WallOfFame/WallOfFame";
 import TextToSpeech from "./components/TextToSpeech/TextToSpeech";
 
+import skull from "./assets/images/skull.png";
+import heart from "./assets/images/heart.png";
+import brain from "./assets/images/brain.png";
+import book from "./assets/images/book.png";
+import treasure from "./assets/images/treasure.png";
+
 function App() {
   const location = useLocation();
   const isTitlePage = location.pathname === "/";
@@ -16,35 +22,65 @@ function App() {
   const [isSpelled, setIsSpelled] = useState(false);
   const [isDead, setIsDead] = useState(false);
   const [wasHighlighted, setWasHighlighted] = useState(false);
+  const [symbol, setSymbol] = useState(null);
+
+
+  const symbolImages = {
+    skull,
+    heart,
+    brain,
+    book,
+    treasure,
+  };
+
 
   return (
-      <div className="screen">
-        <main className="main">
-          <div className="torch torch--left"></div>
-          {!isTitlePage && <TextToSpeech />}
-          <Routes>
-            <Route path="/" element={<TitlePage />} />
-            <Route
-              path="/:pageId"
-              element={
-                <PageLayout
-                  isDead={isDead}
-                  setIsDead={setIsDead}
-                  isSolved={isSolved}
-                  setIsSolved={setIsSolved}
-                  setIsSpelled={setIsSpelled}
-                  setWasHighlighted={setWasHighlighted}
-                />
-              }
-            />
-            <Route path="/wall-of-fame" element={<WallOfFame />} />
-          </Routes>
-          <div className="torch torch--right"></div>
-        </main>
-        {!isTitlePage && (
-          <Menu wasHighlighted={wasHighlighted} isSolved={isSolved} isSpelled={isSpelled} isDead={isDead} />
+    <div className="screen">
+      <main className="main">
+        {symbol && (
+          <img
+            className="symbol symbol--left"
+            src={symbolImages[symbol] || book}
+            alt="Page symbol"
+          ></img>
         )}
-      </div>
+        {!isTitlePage && <TextToSpeech />}
+        <Routes>
+          <Route path="/" element={<TitlePage />} />
+          <Route
+            path="/:pageId"
+            element={
+              <PageLayout
+                isDead={isDead}
+                setIsDead={setIsDead}
+                isSolved={isSolved}
+                setIsSolved={setIsSolved}
+                setIsSpelled={setIsSpelled}
+                setWasHighlighted={setWasHighlighted}
+                setSymbol={setSymbol}
+                symbol={symbol}
+              />
+            }
+          />
+          <Route path="/wall-of-fame" element={<WallOfFame />} />
+        </Routes>
+        {symbol && (
+          <img
+            className="symbol symbol--right"
+            src={symbolImages[symbol] || book}
+            alt="Page symbol"
+          ></img>
+        )}
+      </main>
+      {!isTitlePage && (
+        <Menu
+          wasHighlighted={wasHighlighted}
+          isSolved={isSolved}
+          isSpelled={isSpelled}
+          isDead={isDead}
+        />
+      )}
+    </div>
   );
 }
 

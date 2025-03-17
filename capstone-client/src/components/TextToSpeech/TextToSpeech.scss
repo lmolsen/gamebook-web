@@ -1,13 +1,7 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
 .tts-button {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    min-height: 2.5rem;
-    width: 7rem;
-    background-color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    border:none;
-    &:hover {
-        background-color: rgb(206, 175, 0);
-    }
 }

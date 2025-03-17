@@ -1,9 +1,9 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.split-container {
     width: 100%;
+    @include flex-full (column, center, center);
 }
 
 .split-word {

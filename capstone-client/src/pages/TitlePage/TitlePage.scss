@@ -3,8 +3,8 @@
 
 .title-page {
   height: 100%;
+  text-align: center;
   @include flex-full(column, center, center);
-  @include select-none;
 
   &__header {
     width: 100%;
@@ -19,6 +19,12 @@
   &__link {
     padding-top: 2rem;
     @include flex-position(center, center);
+  }
+
+  &__text {
+    &:hover {
+      color: $hover-color;
+    }
   }
 }
 

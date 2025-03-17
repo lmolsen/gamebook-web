@@ -41,17 +41,17 @@
     align-items: $align-items;
   }
 
-
-  // other
-  @mixin select-none {
-    user-select: none;
-    -webkit-user-select: none;
-    outline: none;
+  // text
+  @mixin handwriting {
+    font-family: "Caveat";
+    font-size: 1.5rem;
+    line-height: 1.5rem;
   }
 
+  // styling
   @mixin drawer {
     background-color: $medium-color;
-    color: $dark-color;
+    color: $darkest-color;
     width: 25%;
     height: 5rem;
     padding: 0.5rem 1rem;
@@ -61,3 +61,17 @@
   @mixin puzzle {
     margin: 2rem 0;
   }
+
+  // functional
+  @mixin select-none {
+    user-select: none;
+    -webkit-user-select: none;
+    outline: none;
+  }
+
+  @mixin select {
+    user-select: text;
+    -webkit-user-select: text; 
+    caret-color: transparent; 
+  }
+

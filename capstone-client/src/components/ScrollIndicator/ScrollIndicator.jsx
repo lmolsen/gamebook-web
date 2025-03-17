@@ -12,7 +12,6 @@ export default function ScrollIndicator() {
       if (pageElement) {
         setIsScrollable(pageElement.scrollHeight > pageElement.clientHeight);
         checkIfAtBottom();
-        
       }
     };
 

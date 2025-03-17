@@ -4,60 +4,92 @@
 
 .main {
   height: calc(100vh - 11rem);
-  width: 60%;
+  width: 90%;
   @include flex-alignment(column, center);
-  // overflow-y: scroll;
+  @include desktop {
+    width: 60%;
+    // overflow-y: scroll;
+  }
 }
 
 .screen {
   @include flex-full(column, center, center);
 }
 
-.torch {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3.75rem;
-  height: 3.75rem;
-  background-color: rgba(255, 255, 255, 0.4);
-  clip-path: polygon(50% 0%, 40% 30%, 38% 55%, 50% 75%, 62% 55%, 60% 30%);
-  animation: flickerEffect 1.5s infinite alternate;
-  z-index: 2;
+.symbol {
+  display: none;
 
-  &--left {
+  @include desktop {
+    display: unset;
+    fill: $light-color;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6rem;
+    height: 6rem;
+    padding: 1rem;
+    animation: flickerEffect 2s infinite alternate-reverse;
+    &--left {
       left: 10%;
-  }
-
-  &--right {
+    }
+    &--right {
       right: 10%;
+    }
   }
 }
 
 @keyframes flickerEffect {
   0% {
-      background-color: rgba(255, 255, 255, 0.5);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3);
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.2) 40%,
+      rgba(0, 0, 0, 0.5) 65%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
   }
 
-  25% {
-      background-color: rgba(220, 220, 220, 0.6);
-      box-shadow: 0 0 45px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 255, 255, 0.4);
-      clip-path: polygon(55% 0%, 40% 30%, 38% 55%, 50% 75%, 62% 55%, 60% 30%);
+  20% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.22) 40%,
+      rgba(0, 0, 0, 0.48) 65%,
+      rgba(0, 0, 0, 0.88) 100%
+    );
   }
 
-  50% {
-      background-color: rgba(200, 200, 200, 0.4);
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
+  40% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.24) 40%,
+      rgba(0, 0, 0, 0.53) 65%,
+      rgba(0, 0, 0, 0.86) 100%
+    );
   }
 
-  75% {
-      background-color: rgba(220, 220, 220, 0.7);
-      box-shadow: 0 0 50px rgba(255, 255, 255, 0.7), 0 0 100px rgba(255, 255, 255, 0.5);
-      clip-path: polygon(45% 0%, 40% 30%, 38% 55%, 50% 75%, 62% 55%, 60% 30%);
+  60% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.21) 40%,
+      rgba(0, 0, 0, 0.51) 65%,
+      rgba(0, 0, 0, 0.87) 100%
+    );
+  }
+
+  80% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.23) 40%,
+      rgba(0, 0, 0, 0.52) 65%,
+      rgba(0, 0, 0, 0.86) 100%
+    );
   }
 
   100% {
-      background-color: rgba(255, 255, 255, 0.5);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3);
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.2) 40%,
+      rgba(0, 0, 0, 0.5) 65%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
   }
 }

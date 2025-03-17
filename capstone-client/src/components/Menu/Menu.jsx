@@ -2,8 +2,7 @@ import "./Menu.scss";
 import Hints from "./../Hints/Hints";
 import Notes from "./../Notes/Notes";
 import { useAudio } from "./../../utils/audioUtils";
-import { useToggles } from "./../../utils/toggleUtils";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Menu({
@@ -14,20 +13,19 @@ export default function Menu({
 }) {
   const navigate = useNavigate();
 
+  const [isHintVisible, setIsHintVisible] = useState(false);
+  const [areNotesVisible, setAreNotesVisible] = useState(false);
+  const [isAudioVisible, setIsAudioVisible] = useState(false);
+
+  const toggleHint = () => setIsHintVisible(prev => !prev);
+  const toggleNotes = () => setAreNotesVisible(prev => !prev);
+  const toggleAudio = () => setIsAudioVisible(prev => !prev);
+
   const { musicPlay, volume, handleVolumeChange } = useAudio();
 
   useEffect(() => {
     musicPlay();
   }, []);
-
-  const {
-    isHintVisible,
-    areNotesVisible,
-    isAudioVisible,
-    toggleHint,
-    toggleNotes,
-    toggleAudio,
-  } = useToggles();
 
   const handleRestart = () => {
     navigate("/");
@@ -39,14 +37,14 @@ export default function Menu({
       <div className="menu__drawers">
         <div className="menu__spacer"></div>
         <div
-          className={`menu__hint-drawer ${
+          className={`menu__drawer menu__drawer--hints ${
             isHintVisible ? "visible" : "hidden"
           }`}
         >
           <Hints />
         </div>
         <div
-          className={`menu__notes-drawer ${
+          className={`menu__drawer menu__drawer--notes ${
             areNotesVisible ? "visible" : "hidden"
           }`}
         >
@@ -57,7 +55,7 @@ export default function Menu({
           />
         </div>
         <div
-          className={`menu__audio-drawer ${
+          className={`menu__drawer menu__drawer--audio ${
             isAudioVisible ? "visible" : "hidden"
           }`}
         >
@@ -79,20 +77,20 @@ export default function Menu({
 
       <div className="menu__blocks">
         <div
-          className={`menu__block restart ${
+          className={`menu__block menu__block--restart ${
             isDead || location.pathname === "/wall-of-fame" ? "highlight" : ""
           }`}
           onClick={handleRestart}
         >
           Restart
         </div>
-        <div className="menu__block" onClick={toggleHint}>
+        <div className="menu__block menu__block--hints" onClick={toggleHint}>
           Hint
         </div>
-        <div className="menu__block " onClick={toggleNotes}>
+        <div className="menu__block menu__block--notes" onClick={toggleNotes}>
           Notes
         </div>
-        <div className="menu__block " onClick={toggleAudio}>
+        <div className="menu__block menu__block--audio" onClick={toggleAudio}>
           Audio
         </div>
       </div>

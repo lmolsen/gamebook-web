@@ -6,13 +6,12 @@ export default function Hints() {
 
         return (
             <div className="hints">
-              {/* Different hints for every page */}
               {location.pathname === "/page1" && <p>Tip: to challenge yourself, avoid looking at hints!</p>}
               {location.pathname === "/page2" && <p>Fools rush in.</p>}
               {location.pathname === "/page3" && <p>Use some common sense.</p>}
               {location.pathname === "/page4" && <p>You should listen to the narrator.</p>}
               {location.pathname === "/page5" && <p>All that glitters is not gold.</p>}
-              {location.pathname === "/page6" && <p>Search slowly, and be sure to click the key.</p>}
+              {location.pathname === "/page6" && <p>Search slowly and carefully.</p>}
               {location.pathname === "/page7" && <p>A job well done is its own reward.</p>}
               {location.pathname === "/page8" && <p>Patience is key.</p>}
               {location.pathname === "/page9" && <p>Hard work pays off!</p>}
@@ -34,6 +33,7 @@ export default function Hints() {
               {location.pathname === "/page25" && <p>What could go wrong, reading a magical madman's diary?</p>}
               {location.pathname === "/page26" && <p>I've heard feats of strength require a 6 to accomplish.</p>}
               {location.pathname === "/page27" && <p>I bet there's more puzzles to the left.</p>}
+              {location.pathname === "/wall-of-fame" && <p>Every successful ending has a different associated accomplishment.</p>}
             </div>
           );
         }

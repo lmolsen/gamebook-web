@@ -17,7 +17,6 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
   const solvedState = [1, 2, 3, 4, 5, 6, 7, 8, 0];
   const [grid, setGrid] = useState(generateGrid());
   const [imageVisible, setImageVisible] = useState(false);
-  const [moving, setMoving] = useState(false); // remove everywhere if not keeping box shadow
 
   const missingIndex = grid.indexOf(MISSING_TILE);
 
@@ -36,17 +35,13 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
   const handleMove = (index) => {
     if (!isMovable(index) || isSolved) return;
 
-    setMoving(true);
-
     const newGrid = [...grid];
     [newGrid[index], newGrid[missingIndex]] = [
       newGrid[missingIndex],
       newGrid[index],
     ];
+
     setGrid(newGrid);
-    setTimeout(() => {
-        setMoving(false);
-      }, 500);
   };
 
   useEffect(() => {
@@ -88,7 +83,7 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
               key={num}
               className={`sliding-puzzle__tile ${
                 num === MISSING_TILE ? "sliding-puzzle__tile--empty" : ""
-              } ${isSolved ? "sliding-puzzle__tile--solved" : ""} ${moving ? "sliding-puzzle__tile--moving" : ""}`}
+              } ${isSolved ? "sliding-puzzle__tile--solved" : ""}`}
               onClick={() => handleMove(index)}
               layout 
               transition={{ type: "spring", stiffness: 300, damping: 25 }}

@@ -21,10 +21,12 @@ export default function PageLayout({
   setIsSolved,
   isSolved,
   setIsSpelled,
-  setWasHighlighted
+  setWasHighlighted,
+  setSymbol,
 }) {
   const { pageId } = useParams();
   const pageContent = pageData[pageId] || {};
+
   const [puzzleSolved, setPuzzleSolved] = useState(pageContent.puzzleSolved);
   const [isListening, setIsListening] = useState(false);
   const [isSilent, setIsSilent] = useState(false);
@@ -41,6 +43,7 @@ export default function PageLayout({
 
   useEffect(() => {
     setPuzzleSolved(false);
+    setSymbol(pageContent.symbol);
   }, [location]);
 
   useEffect(() => {
@@ -52,7 +55,7 @@ export default function PageLayout({
         setPuzzleSolved(true);
         setWasHighlighted(true);
       } else {
-        setWasHighlighted(false);  
+        setWasHighlighted(false);
       }
     };
 
@@ -202,13 +205,14 @@ export default function PageLayout({
           <input
             onChange={handleInput}
             className="form__input"
-            placeholder="Write the name of the magic rune."
+            placeholder="Write the name of the rune."
+            disabled={puzzleSolved}
           ></input>
         </div>
       )}
 
-      {pageContent.maze && (
-        <div className="maze ignore">
+      {pageContent.light && (
+        <div className="light ignore">
           <Light
             puzzleSolved={puzzleSolved}
             setPuzzleSolved={setPuzzleSolved}
@@ -241,6 +245,7 @@ export default function PageLayout({
             placeholder="Enter the word on the cube."
             onChange={handleInput}
             className="cubic__input ignore"
+            disabled={puzzleSolved}
           ></input>
         </div>
       )}
@@ -248,17 +253,11 @@ export default function PageLayout({
       {pageContent.speak && (
         <div className="speak ignore">
           <button
-            className={`speak__button ${
-              puzzleSolved ? "speak__button--disabled" : ""
-            }`}
+            className="speak__button"
             onClick={startListening}
             disabled={isListening || puzzleSolved}
           >
-            {puzzleSolved
-              ? "Accepted"
-              : isListening
-              ? "Listening..."
-              : "Speak"}
+            {puzzleSolved ? "Accepted" : isListening ? "Listening..." : "Speak"}
           </button>
           <p className="page__result">
             {`You have spoken: ${
@@ -283,6 +282,12 @@ export default function PageLayout({
       {puzzleSolved && pageContent.solvedText && (
         <p className="page__text page__text--solved">
           {pageContent.solvedText}
+        </p>
+      )}
+
+      {pageContent.riddle && (
+        <p className="page__riddle">
+          "No wings but tail have I / Yet still I travel through the sky."
         </p>
       )}
 
@@ -344,8 +349,9 @@ export default function PageLayout({
             className="name__input ignore"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your name for the wall of fame"
+            placeholder="Enter your name for the Wall of Fame."
             maxLength={50}
+            disabled={puzzleSolved}
           ></input>
           <button className="name__button" type="Submit">
             Submit

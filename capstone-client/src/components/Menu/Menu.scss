@@ -6,46 +6,97 @@
   z-index: 20;
   margin-top: 1rem;
   @include flex-orientation(column, center);
-  @include select-none;
 
   &__blocks {
     @include flex-position(center, center);
   }
-  
+
   &__block {
     width: 25%;
     height: 5rem;
     border: 0.125rem solid $light-color;
     @include flex-position(center, center);
-  
+
     &:hover {
       background-color: $light-color;
-      color: $dark-color;
+      color: $darkest-color;
+    }
+
+    &--restart {
+      display: none;
+      cursor: pointer;
+
+      @include tablet {
+        display: unset;
+      }
+    }
+
+    &--hints {
+      width: 50%;
+      @include tablet {
+        width: 25%;
+      }
+    }
+
+    &--notes {
+      width: 50%;
+      @include tablet {
+        width: 25%;
+      }
+    }
+
+    &--audio {
+      display: none;
+
+      @include tablet {
+        display: unset;
+      }
     }
   }
 
   &__spacer {
-    visibility: hidden;
-    width: 25%;
-    height: 5rem;
+    @include tablet {
+      visibility: hidden;
+      width: 25%;
+      height: 5rem;
+    }
   }
 
   &__drawers {
     display: flex;
   }
 
-  &__hint-drawer {
+  &__drawer {
     @include drawer;
-  }
 
-  &__notes-drawer {
-    @include drawer;
-    background-color: $medium-dark-color;
+    &--hints {
+      width: 50%;
+      @include tablet {
+        width: 25%;
+      }
+    }
+
+    &--notes {
+      width: 50%;
+      background-color: $medium-dark-color;
+      @include tablet {
+        width: 25%;
+      }
+    }
+
+    &--audio {
+      display: none;
+
+      @include tablet {
+        display: unset;
+      }
+    }
   }
 
   &__label {
-    font-size: 0.75rem;
+    font-size: 0.9375rem;
     line-height: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   &__slider {
@@ -72,18 +123,14 @@
 
 @keyframes select {
   0% {
-    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 1.25rem rgba(255, 255, 255, 0.8);
   }
 
   50% {
-    box-shadow: inset 0px 0px 40px rgba(200, 200, 200, 0.8);
+    box-shadow: inset 0 0 2.5rem rgba(200, 200, 200, 0.8);
   }
 
   100% {
-    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 1.25rem rgba(255, 255, 255, 0.8);
   }
-}
-
-.restart {
-  cursor: pointer;
 }
