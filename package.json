@@ -3,5 +3,10 @@
     "bad-words": "^4.0.0",
     "motion-plus": "^0.1.5",
     "three": "^0.174.0"
-  }
+  },
+  "scripts": {
+  "start": "concurrently \"npm run server\" \"npm run client\"",
+  "server": "cd capstone-server && npm run dev", 
+  "client": "cd capstone-client && npm run dev"
+}
 }

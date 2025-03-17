@@ -15,7 +15,9 @@ const [musicFilePath, setMusicFilePath] = useState(
       audioRef.current.loop = true;
       audioRef.current.volume = volume / 100;
     }
-    audioRef.current.play();
+    // setTimeout(() => {
+      audioRef.current.play();
+    // }, 1000);
   };
 
   const musicStop = () => {
