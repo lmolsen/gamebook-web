@@ -47,7 +47,6 @@
       "As you're pondering this, you glance down. Bad idea. You suddenly feel a rush of vertigo and jerk backwards in surprise. Really bad idea. With your rapid movement, the ivy you're holding is ripped from the wall, and you have a moment to ponder your foolishness before the ground rushes up to meet you. This is what you get for ignoring basic safety procedures."
     ],
     "prompt": "You die.",
-    "choices": [],
     "dead": true,
     "symbol": "skull"
   },
@@ -110,7 +109,7 @@
         "link": "/page7"
       }
     ],
-    "symbol": "brain"
+    "symbol": "book"
   },
   "page7": {
     "text": [
@@ -137,7 +136,6 @@
       "Well, at least you didn't waste your time looking for that key!"
     ],
     "prompt": "You die.",
-    "choices": [],
     "dead": true,
     "symbol": "skull"
   },
@@ -146,11 +144,9 @@
       "Pieces of gold and valubale trinkets litter the floor, but you have eyes only for what lies ahead. Before you is a pedestal upon which a pair of glowing boots sit. Could it be? Are these the fabled Seven-League Boots that allow the wearer to cover vast distances in a single stride?",
       "You're not sure how much a 'league' is, but it sounds like a lot. You pick up the boots, managing to admire them for a moment before you feel your stomach drop. A split second later, the rest of you drops. It seems like you've fallen down a trap door."
     ],
-    "prompt": "",
-    "choices": [],
     "drop": true,
     "accomplishment": "Earned the Seven-League Boots.",
-    "symbol": "treasure"
+    "symbol": "skull"
   },
   "page10": {
     "text": [
@@ -181,7 +177,6 @@
       "Looking down at the blood that's slowly welling up, you take a moment to register the movement at the edge of your vision. The treasure chest has opened its lid to reveal rows of sharp teeth and a whipping tongue. Oh! A mimic. You can't believe you fell for that."
     ],
     "prompt": "You die.",
-    "choices": [],
     "dead": true,
     "symbol": "skull"
   },
@@ -245,13 +240,12 @@
       },
       {
         "text": "[You've got nothing - go through the center door instead.]",
-        "link": "/page13"
+        "link": "/page22"
       }
     ],
     "speak": true,
     "puzzleSolved": false,
     "solvedText": "You did it! The disc slides to one side, revealing a room filled with treasure.",
-    "solvedChoices": [],
     "symbol": "brain"
   },
   "page15": {
@@ -310,7 +304,6 @@
       "From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pet the owlbear, who chirps happily. You can tell that this is the start of a long and beautiful friendship."
     ],
     "prompt": "Congratulations! You have a wonderful new companion for your adventures.",
-    "choices": [],
     "accomplishment": "Made a new friend.",
     "symbol": "heart"
   },
@@ -320,7 +313,6 @@
       "Your mind reels with the possibilities of this discovery. For now, you want a hot meal and a long rest. Changing the world can wait until morning. Not bad for an average thie... I mean adventurer!"
     ],
     "prompt": "Congratulations! You are now in possession of a powerful artifact. Your future is yours to decide.",
-    "choices": [],
 
     "accomplishment": "Found the ultimate secret of the wizard's tower.",
     "symbol": "treasure"
@@ -331,7 +323,6 @@
       "The tower seems to clear the way for you, unlocking doors so that you can retrace your steps all the way back out through the cellar. With this vast hoard of wealth, you can finally pay off your student debt! And have a little left over besides."
     ],
     "prompt": "Congratulations! You are now rich beyond your wildest dreams.",
-    "choices": [],
     "accomplishment": "Discovered the wizard's treasure.",
     "symbol": "treasure"
   },
@@ -341,7 +332,6 @@
       "Maybe you'll try again tomorrow, but for now you just want to head back to the inn, tail between your legs. A hot meal and a warm bed sound good right about now. At least you have a story to tell, though you might need to embellish it a little to save face."
     ],
     "prompt": "Congratulations! You survived.",
-    "choices": [],
     "accomplishment": "Escaped the wizard's tower with your life.",
     "symbol": "heart"
   },
@@ -400,7 +390,6 @@
       "Your last thought before the tower falls is that you wish you'd been a farmer, like your father. He always said that adventuring would get you killed. You hate it when he's right."
     ],
     "prompt": "You die.",
-    "choices": [],
     "dead": true,
     "symbol": "skull"
   },
@@ -410,7 +399,6 @@
       "Your eyelids grow heavy, and you sink slowly to the floor. It looks like you'll be stuck here, 'asleep', until the next adventurer stumbles across this room. Based on the thick layer of dust that coats the floor, that could be a very long time indeed. You fall into a magical slumber."
     ],
     "prompt": "You die... sort of.",
-    "choices": [],
     "dead": true,
     "symbol": "skull"
   },
@@ -422,7 +410,6 @@
       "You'll decide what to do after a good meal and a long rest. Sliding the journal back into your pack, you start the long trek back to town. This will make a great story at the tavern."
     ],
     "prompt": "Congratulations! You recovered a valuable journal belonging to the mad wizard himself.",
-    "choices": [],
     "accomplishment": "Recovered the wizard's journal and fled the tower.",
     "symbol": "treasure"
   },
@@ -431,7 +418,6 @@
       "You roll up your sleeves in preparation for some heavy labour. You really are tired, though. Whether or not you manage this will be a roll of the dice."
     ],
     "prompt": "",
-    "choices": [],
     "dice": true,
     "puzzleSolved": false,
     "solvedText": "Phew! It was a lot of work, but you managed it.",
@@ -441,7 +427,7 @@
         "link": "/page27"
       }
     ],
-    "symbol": "brain"
+    "symbol": "book"
   },
   "page27": {
     "text": [

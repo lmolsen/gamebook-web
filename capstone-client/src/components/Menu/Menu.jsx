@@ -1,8 +1,7 @@
 import "./Menu.scss";
 import Hints from "./../Hints/Hints";
 import Notes from "./../Notes/Notes";
-import { useAudio } from "./../../utils/audioUtils";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Menu({

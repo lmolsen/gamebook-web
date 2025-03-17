@@ -3,12 +3,15 @@ import { useState, useRef, useEffect } from 'react';
 export const useAudio = () => {
   const [isAudioOn, setIsAudioOn] = useState(true); 
   const [volume, setVolume] = useState(50); 
+const [musicFilePath, setMusicFilePath] = useState(
+  "./src/assets/music/Video Dungeon Crawl.mp3"
+);
 
   const audioRef = useRef(null);
   
   const musicPlay = () => {
     if (!audioRef.current) {
-      audioRef.current = new Audio("./src/assets/music/fantasy-placeholder.mp3");
+      audioRef.current = new Audio(musicFilePath);
       audioRef.current.loop = true;
       audioRef.current.volume = volume / 100;
     }
@@ -18,6 +21,7 @@ export const useAudio = () => {
   const musicStop = () => {
     if (audioRef.current) {
       audioRef.current.pause();
+      audioRef.current = null;
     }
   };
 
@@ -27,7 +31,7 @@ export const useAudio = () => {
       setIsAudioOn(false);
     } else {
       if (!audioRef.current) {
-        audioRef.current = new Audio("./src/assets/music/fantasy-placeholder.mp3");
+        audioRef.current = new Audio(musicFilePath);
         audioRef.current.loop = true;
         audioRef.current.volume = volume / 100;
       }
@@ -35,6 +39,13 @@ export const useAudio = () => {
       setIsAudioOn(true);
     }
   };
+
+    useEffect(() => {
+      if (audioRef.current) {
+        musicStop();
+        musicPlay(); 
+      }
+    }, [musicFilePath]);
 
   const handleVolumeChange = (event) => {
     const newVolume = event.target.value;
@@ -53,11 +64,13 @@ export const useAudio = () => {
 
   return {
     musicPlay,
+    musicStop,
     volume,
     handleVolumeChange,
     toggleMusic,
     musicPlay,
-    isAudioOn
+    isAudioOn,
+    setMusicFilePath
   };
 };
 

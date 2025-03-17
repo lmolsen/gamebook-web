@@ -5,6 +5,7 @@ import "./Sequence.scss";
 export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   const [playerInput, setPlayerInput] = useState([]);
   const [click, setClick] = useState(0);
+  const [attempts, setAttempts] = useState(0);
   const sequenceRef = useRef([]);
   const puzzleSolvedRef = useRef(puzzleSolved);
 
@@ -13,8 +14,8 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   let timeOut = 5000;
 
   useEffect(() => {
-    if (puzzleSolved) return;
-
+    if (puzzleSolved || attempts >= 3) return;
+    console.log("test2");
     if (sequenceRef.current.length === 0) {
       const newSequence = Array.from({ length: 4 }, () =>
         Math.floor(Math.random() * 4)
@@ -27,15 +28,16 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
     return () => {
       clearTimeout();
     };
-  }, [puzzleSolved]);
+  }, [puzzleSolved, attempts]);
 
   useEffect(() => {
     puzzleSolvedRef.current = puzzleSolved;
   }, [puzzleSolved]);
 
   function startNewSequence() {
-    if (puzzleSolved) return;
+    if (puzzleSolved || attempts >= 3) return;
 
+    console.log("test1");
     setPlayerInput([]);
     let delay = 500;
 
@@ -53,7 +55,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   }
 
   function flashNode(index) {
-    if (puzzleSolvedRef.current) return;
+    if (puzzleSolvedRef.current || attempts >= 3) return;
 
     const element = document.getElementById(`node-${index}`);
     if (element) {
@@ -63,17 +65,23 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   }
 
   function handleClick(index) {
-    setClick(click+1);
-    if (puzzleSolved) return;
+    if (puzzleSolved || attempts >= 3) return; 
+    setClick(click + 1);
 
     timeOut += 5000;
     const newPlayerInput = [...playerInput, index];
     setPlayerInput(newPlayerInput);
 
-    if (
-      newPlayerInput[newPlayerInput.length - 1] !==
-      sequenceRef.current[newPlayerInput.length - 1]
-    ) {
+    const isCorrectSoFar = newPlayerInput.every(
+      (num, i) => num === sequenceRef.current[i]
+    );
+
+  if (!isCorrectSoFar) {
+      if (newPlayerInput.length >= 4) {
+        setAttempts(attempts + 1);
+        setClick(0);
+        setPlayerInput([]);
+      }
       return;
     }
 
@@ -84,7 +92,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
 
   function repeatSequence() {
     setClick(0);
-    if (puzzleSolved) {
+    if (puzzleSolved || attempts >= 3) {
       return;
     }
 
@@ -102,14 +110,25 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
           <motion.div
             key={index}
             id={`node-${index}`}
-            className={`sequence__node ${puzzleSolved ? "sequence__node--stabilized" : ""}`}
-            whileTap={{ scale: 0.8 }}
+            className={`sequence__node ${puzzleSolved ? "sequence__node--stabilized" : ""} ${attempts > 2 && !puzzleSolved ? "sequence__node--error" : ""}`}
+            whileTap={!puzzleSolved && attempts < 3 ? { scale: 0.8 } : {}}
             onClick={() => handleClick(index)}
           />
         ))}
       </div>
-      { click >= 4 && !puzzleSolved && (<div className="sequence__text">
-        That's not right...
+      <div className="sequence__counter">
+        <div
+          className={`sequence__try ${attempts >= 1 ? "sequence__try--filled" : ""}`}
+        ></div>
+        <div
+          className={`sequence__try ${attempts >= 2 ? "sequence__try--filled" : ""}`}
+        ></div>
+        <div
+          className={`sequence__try ${attempts >= 3 ? "sequence__try--filled" : ""}`}
+        ></div>
+      </div>
+      { attempts >= 3 && !puzzleSolved && (<div className="sequence__text">
+        Oh no, you're out of tries...
       </div> )}
     </div>
   );

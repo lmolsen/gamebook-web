@@ -8,7 +8,6 @@
   box-sizing: border-box;
   font-family: Verdana, sans-serif;
   text-decoration: none;
-  @include select-none;
   @include no-scrollbar;
   // scrollbar-gutter: stable both-edges;
   // overflow:hidden;
@@ -21,11 +20,8 @@ button {
   color: $darkest-color;
   background-color: $light-color;
   min-height: 2.5rem;
-  min-width: 6rem;
+  min-width: 7rem;
 
-  @include tablet {
-    min-width: 7rem;
-  }
 
   &:hover {
     background-color: $hover-color;
@@ -88,4 +84,9 @@ input {
     font-weight: bold;
     border: 0.125rem solid $solved-color;
   }
+}
+
+::selection {
+  background-color: $light-color;
+  color: $darkest-color;
 }

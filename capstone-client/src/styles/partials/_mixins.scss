@@ -49,31 +49,22 @@
   }
 
   // styling
-  @mixin drawer {
-    background-color: $medium-color;
-    color: $darkest-color;
-    width: 25%;
-    height: 5rem;
-    padding: 0.5rem 1rem;
-    align-content: center;
-  }
-
   @mixin puzzle {
     margin: 2rem 0;
   }
 
   // functional
-  @mixin select-none {
-    user-select: none;
-    -webkit-user-select: none;
-    outline: none;
-  }
+  // @mixin select-none {
+  //   user-select: none;
+  //   -webkit-user-select: none;
+  //   outline: none;
+  // }
 
-  @mixin select {
-    user-select: text;
-    -webkit-user-select: text; 
-    caret-color: transparent; 
-  }
+  // @mixin select {
+  //   user-select: text;
+  //   -webkit-user-select: text; 
+  //   caret-color: transparent; 
+  // }
 
 @mixin no-scrollbar {
   scrollbar-width: none;

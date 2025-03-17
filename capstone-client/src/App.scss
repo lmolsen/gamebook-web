@@ -6,6 +6,7 @@
   height: calc(100vh - 11rem);
   width: 90%;
   @include flex-alignment(column, center);
+
   @include desktop {
     width: 60%;
     // overflow-y: scroll;
@@ -53,7 +54,6 @@
     &:hover {
       background-color: transparent;
     }
-
   }
 }
 
@@ -76,9 +76,11 @@
     height: 6rem;
     padding: 1rem;
     animation: flickerEffect 2s infinite alternate-reverse;
+
     &--left {
       left: 10%;
     }
+
     &--right {
       right: 10%;
     }
@@ -89,6 +91,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(-360deg);
   }
@@ -96,56 +99,44 @@
 
 @keyframes flickerEffect {
   0% {
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.2) 40%,
-      rgba(0, 0, 0, 0.5) 65%,
-      rgba(0, 0, 0, 0.85) 100%
-    );
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.2) 40%,
+        rgba(0, 0, 0, 0.5) 65%,
+        rgba(0, 0, 0, 0.85) 100%);
   }
 
   20% {
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.22) 40%,
-      rgba(0, 0, 0, 0.48) 65%,
-      rgba(0, 0, 0, 0.88) 100%
-    );
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.22) 40%,
+        rgba(0, 0, 0, 0.48) 65%,
+        rgba(0, 0, 0, 0.88) 100%);
   }
 
   40% {
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.24) 40%,
-      rgba(0, 0, 0, 0.53) 65%,
-      rgba(0, 0, 0, 0.86) 100%
-    );
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.24) 40%,
+        rgba(0, 0, 0, 0.53) 65%,
+        rgba(0, 0, 0, 0.86) 100%);
   }
 
   60% {
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.21) 40%,
-      rgba(0, 0, 0, 0.51) 65%,
-      rgba(0, 0, 0, 0.87) 100%
-    );
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.21) 40%,
+        rgba(0, 0, 0, 0.51) 65%,
+        rgba(0, 0, 0, 0.87) 100%);
   }
 
   80% {
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.23) 40%,
-      rgba(0, 0, 0, 0.52) 65%,
-      rgba(0, 0, 0, 0.86) 100%
-    );
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.23) 40%,
+        rgba(0, 0, 0, 0.52) 65%,
+        rgba(0, 0, 0, 0.86) 100%);
   }
 
   100% {
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.2) 40%,
-      rgba(0, 0, 0, 0.5) 65%,
-      rgba(0, 0, 0, 0.85) 100%
-    );
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.2) 40%,
+        rgba(0, 0, 0, 0.5) 65%,
+        rgba(0, 0, 0, 0.85) 100%);
   }
 }

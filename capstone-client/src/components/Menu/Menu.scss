@@ -8,6 +8,7 @@
   bottom: 0;
   position: sticky;
   caret-color: transparent; 
+  pointer-events: none;
   @include flex-orientation(column, center);
 
   &__blocks {
@@ -16,9 +17,14 @@
 
   &__block {
     width: 25%;
-    height: 5rem;
+    height: 4rem;
     border: 0.125rem solid $light-color;
+    pointer-events: auto;
     @include flex-position(center, center);
+
+    @include tablet {
+      height: 5rem;
+    }
 
     &:hover {
       background-color: $light-color;
@@ -70,7 +76,17 @@
   }
 
   &__drawer {
-    @include drawer;
+    background-color: $medium-color;
+    color: $darkest-color;
+    width: 25%;
+    height: 4rem;
+    padding: 0.5rem 1rem;
+    align-content: center;
+    pointer-events: auto;
+
+    @include tablet {
+      height: 5rem;
+    }
 
     &--hints {
       width: 50%;
@@ -82,6 +98,7 @@
     &--notes {
       width: 50%;
       background-color: $medium-dark-color;
+
       @include tablet {
         width: 25%;
       }
@@ -104,11 +121,6 @@
 
   &__slider {
     width: 80%;
-  }
-
-  &__audio-drawer {
-    @include drawer;
-    @include flex-full(column, center, center);
   }
 }
 
