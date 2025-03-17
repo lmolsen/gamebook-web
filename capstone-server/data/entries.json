@@ -8,20 +8,5 @@
     "id": "8f86c7f4-bd18-4e4a-9328-a54a189dd5ba",
     "name": "Drizzt Do'Urden",
     "accomplishment": "Became a legend."
-  },
-  {
-    "name": "Katie Lagace",
-    "accomplishment": "Escaped the wizard's tower with your life.",
-    "id": "852c6306-793d-4b4a-b1d4-1bdde2a9a3e2"
-  },
-  {
-    "name": "Loisa",
-    "accomplishment": "Escaped the wizard's tower with your life.",
-    "id": "6f9f9dbd-11df-498b-b163-1050929daa06"
-  },
-  {
-    "name": "Lisa",
-    "accomplishment": "Found the ultimate secret of the wizard's tower.",
-    "id": "c6546de7-3999-4425-8428-0a3e7fd8d85a"
   }
 ]
