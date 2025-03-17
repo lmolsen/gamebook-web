@@ -1,6 +1,7 @@
 import "./WallOfFame.scss";
 import React, { useState, useEffect } from "react";
 import { fetchWallOfFame } from "../../utils/apiUtils";
+import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 
 export default function WallOfFame() {
   const [wallOfFame, setWallOfFame] = useState([]);
@@ -27,6 +28,7 @@ export default function WallOfFame() {
           ))
         )}
       </div>
+      <ScrollIndicator />
     </div>
   );
 }

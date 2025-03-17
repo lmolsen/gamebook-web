@@ -10,6 +10,8 @@ export default function Menu({
   isSpelled,
   isDead,
   wasHighlighted,
+  volume,
+  handleVolumeChange
 }) {
   const navigate = useNavigate();
 
@@ -20,13 +22,7 @@ export default function Menu({
   const toggleHint = () => setIsHintVisible(prev => !prev);
   const toggleNotes = () => setAreNotesVisible(prev => !prev);
   const toggleAudio = () => setIsAudioVisible(prev => !prev);
-
-  const { musicPlay, volume, handleVolumeChange } = useAudio();
-
-  useEffect(() => {
-    musicPlay();
-  }, []);
-
+  
   const handleRestart = () => {
     navigate("/");
     window.location.reload();

@@ -12,8 +12,55 @@
   }
 }
 
+.header {
+  width: 100%;
+  top: 0;
+  position: sticky;
+  background-color: $darkest-color;
+  @include flex-full(row, space-evenly, center);
+
+  &__restart {
+    background-color: transparent;
+    min-width: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+
+    &--spinning {
+      animation: spin 4s linear infinite;
+    }
+  }
+
+  &__audio {
+    background-color: transparent;
+    min-width: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+  }
+}
+
 .screen {
-  @include flex-full(column, center, center);
+  height: 100vh;
+  // overflow-y: hidden;
+  @include flex-full(column, flex-start, center);
 }
 
 .symbol {
@@ -35,6 +82,15 @@
     &--right {
       right: 10%;
     }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }
 

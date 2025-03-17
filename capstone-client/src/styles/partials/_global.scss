@@ -9,6 +9,7 @@
   font-family: Verdana, sans-serif;
   text-decoration: none;
   @include select-none;
+  @include no-scrollbar;
   // scrollbar-gutter: stable both-edges;
   // overflow:hidden;
 }
@@ -20,7 +21,11 @@ button {
   color: $darkest-color;
   background-color: $light-color;
   min-height: 2.5rem;
-  min-width: 7rem;
+  min-width: 6rem;
+
+  @include tablet {
+    min-width: 7rem;
+  }
 
   &:hover {
     background-color: $hover-color;
@@ -42,7 +47,7 @@ h1 {
 
 h2 {
   font-size: 1.25rem;
-   @include tablet {
+  @include tablet {
     font-size: 2rem;
   }
 }
@@ -50,7 +55,7 @@ h2 {
 a {
   color: $medium-color;
   font-size: 1rem;
-  line-height: 1rem;
+  line-height: 1.5rem;
   cursor: pointer;
 
   &:hover {
@@ -64,17 +69,23 @@ a {
 }
 
 input {
-  font-size: 1rem;
+  font-size: 0.75rem;
   user-select: text;
-  -webkit-user-select: text; 
-  border: .125rem solid $medium-dark-color;
-  &:focus {
-    border: .125rem solid $hover-color;
+  -webkit-user-select: text;
+  border: 0.125rem solid $medium-dark-color;
+
+  @include tablet {
+    font-size: 1rem;
   }
+
+  &:focus {
+    border: 0.125rem solid $hover-color;
+  }
+
   &:disabled {
     background-color: $medium-color;
     color: $darkest-color;
     font-weight: bold;
-    border: .125rem  solid $solved-color;
+    border: 0.125rem solid $solved-color;
   }
 }

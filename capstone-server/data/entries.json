@@ -8,40 +8,5 @@
     "id": "8f86c7f4-bd18-4e4a-9328-a54a189dd5ba",
     "name": "Drizzt Do'Urden",
     "accomplishment": "Became a legend."
-  },
-  {
-    "name": "Katie",
-    "accomplishment": "Escaped the wizard's tower with your life.",
-    "id": "6d5af8e7-4602-4552-9ecc-1479699e05ef"
-  },
-  {
-    "name": "Katie the GREAT",
-    "accomplishment": "Discovered the wizard's treasure.",
-    "id": "9d0fff49-8c96-460c-88a2-3e33c52bf6ff"
-  },
-  {
-    "name": "Lisa",
-    "accomplishment": "Made a new friend.",
-    "id": "8b0ede82-60f8-4bae-848a-9c69e3940d5a"
-  },
-  {
-    "name": "Lisa Olsen",
-    "accomplishment": "Escaped the wizard's tower with your life.",
-    "id": "ca43262d-bfc3-40db-9a56-ca46a33bce68"
-  },
-  {
-    "name": "Test",
-    "accomplishment": "Escaped the wizard's tower with your life.",
-    "id": "ac417f34-d94e-4e69-b062-ceb0fde4a867"
-  },
-  {
-    "name": "Check",
-    "accomplishment": "Made a new friend.",
-    "id": "ed0270b6-d243-4654-9824-95bb3a0c561f"
-  },
-  {
-    "name": "Lisa Champion of Everythang",
-    "accomplishment": "Recovered the wizard's journal and fled the tower.",
-    "id": "bd0cb7bc-53d7-448c-ab5c-115b3a6bad5b"
   }
 ]

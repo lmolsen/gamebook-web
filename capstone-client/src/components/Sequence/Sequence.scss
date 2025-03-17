@@ -11,13 +11,18 @@
   }
 
   &__node {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     background-color: $bright-color;
     transition: background-color 0.3s, box-shadow 0.3s;
     cursor: pointer;
     box-shadow: 0 0 0.625rem $bright-color;
+
+    @include tablet {
+      width: 5rem;
+      height: 5rem;
+    }
 
     &--stabilized {
       background-color: $solved-color;

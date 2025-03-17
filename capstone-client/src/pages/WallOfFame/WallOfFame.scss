@@ -2,22 +2,43 @@
 @use "./../../styles/partials/mixins" as *;
 
 .wall-of-fame {
+  padding-top: 2rem;
+  width: 100%;
+  height: calc(100vh - 11rem);
+  overflow-y: scroll;
+  @include no-scrollbar;
+  @include flex-full(column, flex-start, center);
+
+  @include tablet {
+    height: auto;
+    justify-content: center;
+  }
+
+  &__entries {
     padding-top: 2rem;
-    width: 100%;
-    @include flex-full(column, center, center);
+    gap: 2rem;
+    width: 90%;
+    @include flex-orientation(column, space-between);
 
-    &__entries {
-        padding-top: 2rem;
-        width: 80%;
-        gap: 2rem;
-        @include flex-orientation(column, space-between);
+    @include tablet {
     }
 
-    &__entry {
-        @include flex-orientation(row, space-between);
+    @include tablet {
+      width: 80%;
     }
-    
-    &__name {
-        color: $solved-color;
+  }
+
+  &__entry {
+    @include flex-orientation(column, space-between);
+    gap: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 0;
     }
+  }
+
+  &__name {
+    color: $solved-color;
+  }
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./ScrollIndicator.scss";
 
 export default function ScrollIndicator() {
@@ -6,7 +7,7 @@ export default function ScrollIndicator() {
   const [atBottom, setAtBottom] = useState(false);
 
   useEffect(() => {
-    const pageElement = document.querySelector(".page");
+    const pageElement = document.querySelector(".page, .wall-of-fame");
 
     const checkScrollable = () => {
       if (pageElement) {
@@ -17,7 +18,10 @@ export default function ScrollIndicator() {
 
     const checkIfAtBottom = () => {
       if (pageElement) {
-        setAtBottom(pageElement.scrollTop + pageElement.clientHeight >= pageElement.scrollHeight - 1);
+        setAtBottom(
+          pageElement.scrollTop + pageElement.clientHeight >=
+            pageElement.scrollHeight - 1
+        );
       }
     };
 
@@ -51,8 +55,14 @@ export default function ScrollIndicator() {
     <>
       {isScrollable && !atBottom && (
         <div className="scroll">
-          <div className="scroll__indicator"><p className="scroll__text">Choices below</p>
-            ⌄</div>
+          <div className="scroll__indicator">
+            <p className="scroll__text">
+              {location.pathname === "/wall-of-fame"
+                ? "More below"
+                : "Choices below"}
+            </p>
+            ⌄
+          </div>
         </div>
       )}
     </>

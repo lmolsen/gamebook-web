@@ -5,6 +5,9 @@
   width: 100vw;
   z-index: 20;
   margin-top: 1rem;
+  bottom: 0;
+  position: sticky;
+  caret-color: transparent; 
   @include flex-orientation(column, center);
 
   &__blocks {
@@ -27,7 +30,7 @@
       cursor: pointer;
 
       @include tablet {
-        display: unset;
+        display: flex;
       }
     }
 
@@ -49,7 +52,7 @@
       display: none;
 
       @include tablet {
-        display: unset;
+        display: flex;
       }
     }
   }
@@ -88,7 +91,7 @@
       display: none;
 
       @include tablet {
-        display: unset;
+        @include flex-alignment(column, center);
       }
     }
   }
