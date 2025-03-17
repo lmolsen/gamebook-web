@@ -16,6 +16,9 @@ import treasure from "./assets/images/treasure.png";
 import restart from "./assets/icons/restart.png";
 import audioOn from "./assets/icons/audio-on.png";
 import audioOff from "./assets/icons/audio-off.png";
+
+import mainSong from "./assets/music/Video Dungeon Crawl.mp3"
+
 import { useAudio } from "./utils/audioUtils";
 
 function App() {
@@ -49,7 +52,7 @@ function App() {
     } else if (symbol === "treasure") {
       setMusicFilePath("./src/assets/music/Overworld.mp3");
     } else {
-      setMusicFilePath("./src/assets/music/Video Dungeon Crawl.mp3");
+      setMusicFilePath(mainSong);
     }
   }, [symbol]);
 
