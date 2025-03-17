@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import mainSong from "./assets/music/Video Dungeon Crawl.mp3";
+import mainSong from "../assets/music/Video Dungeon Crawl.mp3";
 
 export const useAudio = () => {
   const [isAudioOn, setIsAudioOn] = useState(true);
