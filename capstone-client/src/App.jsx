@@ -18,6 +18,11 @@ import audioOn from "./assets/icons/audio-on.png";
 import audioOff from "./assets/icons/audio-off.png";
 
 import mainSong from "./assets/music/Video Dungeon Crawl.mp3"
+import fastSong from "./assets/music/Video Dungeon Boss.mp3";
+import happySong from "./assets/music/Bit Quest.mp3";
+import treasureSong from "./assets/music/Overworld.mp3";
+import deathSong from "./assets/music/Amazing Grace 2011.mp3";
+
 
 import { useAudio } from "./utils/audioUtils";
 
@@ -44,13 +49,13 @@ function App() {
 
   useEffect(() => {
     if (symbol === "brain") {
-      setMusicFilePath("./src/assets/music/Video Dungeon Boss.mp3");
+      setMusicFilePath(fastSong);
     } else if (symbol === "skull") {
-      setMusicFilePath("./src/assets/music/Amazing Grace 2011.mp3");
+      setMusicFilePath(deathSong);
     } else if (symbol === "heart") {
-      setMusicFilePath("./src/assets/music/Bit Quest.mp3");
+      setMusicFilePath(happySong);
     } else if (symbol === "treasure") {
-      setMusicFilePath("./src/assets/music/Overworld.mp3");
+      setMusicFilePath(treasureSong);
     } else {
       setMusicFilePath(mainSong);
     }
