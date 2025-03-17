@@ -6,7 +6,7 @@
     "three": "^0.174.0"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "npm-run-all --parallel server client",
     "server": "cd capstone-server && npm run dev",
     "client": "cd capstone-client && npm run dev"
   }
