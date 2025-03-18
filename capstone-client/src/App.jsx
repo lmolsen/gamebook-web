@@ -1,5 +1,11 @@
 import "./App.scss";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+  Link,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import TitlePage from "./pages/TitlePage/TitlePage";
@@ -17,14 +23,14 @@ import restart from "./assets/icons/restart.png";
 import audioOn from "./assets/icons/audio-on.png";
 import audioOff from "./assets/icons/audio-off.png";
 
-import mainSong from "./assets/music/Video Dungeon Crawl.mp3"
+import mainSong from "./assets/music/Video Dungeon Crawl.mp3";
 import fastSong from "./assets/music/Video Dungeon Boss.mp3";
 import happySong from "./assets/music/Bit Quest.mp3";
 import treasureSong from "./assets/music/Overworld.mp3";
 import deathSong from "./assets/music/Amazing Grace 2011.mp3";
 
-
 import { useAudio } from "./utils/audioUtils";
+import Credits from "./pages/Credits/Credits";
 
 function App() {
   const location = useLocation();
@@ -87,7 +93,9 @@ function App() {
           <button className="header__restart" onClick={handleRestart}>
             <img
               className={`header__icon ${
-                isDead ? "header__icon--spinning" : ""
+                isDead || location.pathname === "/wall-of-fame"
+                  ? "header__icon--spinning"
+                  : ""
               }`}
               src={restart}
               alt="Restart icon"
@@ -106,13 +114,15 @@ function App() {
         )}
       </header>
       <main className="main">
-        {symbol && location.pathname != "/wall-of-fame" && (
-          <img
-            className="symbol symbol--left"
-            src={symbolImages[symbol] || book}
-            alt="Page symbol"
-          ></img>
-        )}
+        {symbol &&
+          location.pathname != "/wall-of-fame" &&
+          location.pathname != "/credits" && (
+            <img
+              className="symbol symbol--left"
+              src={symbolImages[symbol] || book}
+              alt="Page symbol"
+            ></img>
+          )}
         <Routes>
           <Route path="/" element={<TitlePage />} />
           <Route
@@ -131,15 +141,24 @@ function App() {
               />
             }
           />
+          <Route path="/credits" element={<Credits />} />
           <Route path="/wall-of-fame" element={<WallOfFame />} />
         </Routes>
-        {symbol && location.pathname != "/wall-of-fame" && (
-          <img
-            className="symbol symbol--right"
-            src={symbolImages[symbol] || book}
-            alt="Page symbol"
-          ></img>
-        )}
+        {symbol &&
+          location.pathname != "/wall-of-fame" &&
+          location.pathname != "/credits" && (
+            <img
+              className="symbol symbol--right"
+              src={symbolImages[symbol] || book}
+              alt="Page symbol"
+            ></img>
+          )}
+
+        {(isDead || location.pathname === "/wall-of-fame") && location.pathname != "/credits" && 
+            <Link className="credits-link" to="/credits">
+              [Credits]
+            </Link>
+          }
       </main>
       {!isTitlePage && (
         <Menu

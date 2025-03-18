@@ -6,7 +6,7 @@ export default function ScrollIndicator() {
   const [atBottom, setAtBottom] = useState(false);
 
   useEffect(() => {
-    const pageElement = document.querySelector(".page, .wall-of-fame");
+    const pageElement = document.querySelector(".page, .wall-of-fame, .credits");
 
     const checkScrollable = () => {
       if (pageElement) {
@@ -53,7 +53,7 @@ export default function ScrollIndicator() {
   return (
     <>
       {isScrollable && !atBottom && (
-        <div className="scroll">
+        <div className="scroll ignore">
           <div className="scroll__indicator">
             <p className="scroll__text">
               {location.pathname === "/wall-of-fame"

@@ -1,0 +1,64 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.credits {
+    padding-top: 2rem;
+    width: 100%;
+    height: calc(100vh - 11rem);
+    overflow-y: scroll;
+    @include no-scrollbar;
+    @include flex-full(column, flex-start, center);
+
+    @include tablet {
+        height: auto;
+        justify-content: center;
+    }
+
+    &__creator {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        gap: 1rem;
+        width: 90%;
+        @include flex-orientation(column, space-between);
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__name {
+        color: $solved-color;
+    }
+
+    &__block {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        gap: 1rem;
+        width: 90%;
+        @include flex-full(column, center, flex-start);
+
+        @include tablet {
+            align-items: center;
+        }
+    }
+
+    &__license {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        width: 100%;
+
+        @include tablet {
+            width: auto;
+        }
+    }
+
+    &__logo {
+        height: 4rem;
+        width: 4rem;
+        fill: $light-color;
+    }
+
+    &__pause {
+        color: $darkest-color;
+    }
+}

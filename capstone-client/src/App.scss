@@ -87,6 +87,15 @@
   }
 }
 
+.credits-link {
+  padding-top: 5rem;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+// animations
 @keyframes spin {
   0% {
     transform: rotate(0deg);

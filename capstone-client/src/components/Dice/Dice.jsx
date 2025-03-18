@@ -38,7 +38,7 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat }) {
     <div className="roll" onClick={rollDice}>
       <p className="roll__text">
         {puzzleSolved
-          ? "RAAAAHHH! You feel a surge of strength!"
+          ? "RAH! You feel a surge of strength!"
           : tries === 1 || tries === 2
           ? "Ugh... it's so heavy."
           : tries < 3
@@ -58,7 +58,7 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat }) {
         }}
         transition={{ duration: 0.5 }}
       >
-        <div className="roll__face">
+        <div className="roll__face ignore">
           <span className="roll__number">{number}</span>
         </div>
       </motion.div>

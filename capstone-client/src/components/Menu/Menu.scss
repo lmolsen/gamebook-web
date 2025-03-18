@@ -12,6 +12,7 @@
   @include flex-orientation(column, center);
 
   &__blocks {
+    background-color: $darkest-color;
     @include flex-position(center, center);
   }
 

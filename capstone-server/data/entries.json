@@ -8,5 +8,15 @@
     "id": "8f86c7f4-bd18-4e4a-9328-a54a189dd5ba",
     "name": "Drizzt Do'Urden",
     "accomplishment": "Became a legend."
+  },
+  {
+    "name": "Hello!",
+    "accomplishment": "Found the ultimate secret of the wizard's tower.",
+    "id": "f21dde5d-cd64-4ed4-bd35-26924ad900cf"
+  },
+  {
+    "name": "Lisa",
+    "accomplishment": "Recovered the wizard's journal and fled the tower.",
+    "id": "30cece87-98cc-4296-bb91-fc643f97722d"
   }
 ]

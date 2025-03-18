@@ -365,7 +365,7 @@ export default function StoryPage({
         </form>
       )}
 
-      <ScrollIndicator />
+      <ScrollIndicator/>
     </div>
   );
 }

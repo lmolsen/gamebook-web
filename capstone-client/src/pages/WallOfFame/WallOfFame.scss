@@ -21,9 +21,6 @@
     @include flex-orientation(column, space-between);
 
     @include tablet {
-    }
-
-    @include tablet {
       width: 80%;
     }
   }

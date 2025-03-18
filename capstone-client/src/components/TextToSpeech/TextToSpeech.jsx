@@ -15,9 +15,11 @@ export default function TextToSpeech( ) {
 
     speechSynthesis.cancel();
 
-    const pageElements = document.querySelectorAll(".page > *:not(.ignore), .wall-of-fame");
+    const pageElements = document.querySelectorAll(".page > *:not(.ignore), .wall-of-fame, .credits");
 
     const text = [...pageElements].map((element) => element.innerText.trim()).join(" ");
+
+    console.log(text);
 
     if (!text) {
       console.warn("No text found.");

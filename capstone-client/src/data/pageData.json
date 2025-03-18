@@ -30,11 +30,11 @@
     "prompt": "What will you do next?",
     "choices": [
       {
-        "text": "[There's no time to lose. Rush down the stairs!]",
+        "text": "[There's no time to lose - rush down the stairs!]",
         "link": "/page6"
       },
       {
-        "text": "[Take the cautious approach. Feel your way down carefully.]",
+        "text": "[Take the cautious approach - feel your way down carefully.]",
         "link": "/page5"
       }
     ],
@@ -415,7 +415,7 @@
   },
   "page26": {
     "text": [
-      "You roll up your sleeves in preparation for some heavy labour. You really are tired, though. Whether or not you manage this will be a roll of the dice."
+      "You roll up your sleeves in preparation for some heavy labour. You really are tired though. Whether or not you manage this will be a roll of the dice."
     ],
     "prompt": "",
     "dice": true,

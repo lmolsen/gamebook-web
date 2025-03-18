@@ -3,7 +3,7 @@
 
 .scroll {
   position: fixed;
-  bottom: 6.25rem;
+  bottom: 4.25rem;
   left: 50%;
   transform: translateX(-50%);
   width: 6rem;
@@ -11,6 +11,10 @@
   opacity: 0.8;
   pointer-events: none;
   @include flex-position(center, center);
+
+  @include tablet {
+      bottom: 6.25rem;
+  }
 
   &__indicator {
     width: fit-content;

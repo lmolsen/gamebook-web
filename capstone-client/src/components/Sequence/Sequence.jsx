@@ -15,7 +15,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
 
   useEffect(() => {
     if (puzzleSolved || attempts >= 3) return;
-    console.log("test2");
+
     if (sequenceRef.current.length === 0) {
       const newSequence = Array.from({ length: 4 }, () =>
         Math.floor(Math.random() * 4)
@@ -37,7 +37,6 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   function startNewSequence() {
     if (puzzleSolved || attempts >= 3) return;
 
-    console.log("test1");
     setPlayerInput([]);
     let delay = 500;
 
