@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { animate, frame } from 'motion/react';
+import { animate, frame } from 'motion';
 import './Cube.scss'; 
 import S from '../../assets/images/S.png';
 import Y from '../../assets/images/Y.png';
@@ -44,15 +44,6 @@ export default function Cube (){
 
 
     const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture }));
-
-    // const materials = [
-    //   new THREE.MeshPhongMaterial({ color: 0xff0000 }), // front face (red)
-    //   new THREE.MeshPhongMaterial({ color: 0x00ff00 }), // back face (green)
-    //   new THREE.MeshPhongMaterial({ color: 0x0000ff }), // top face (blue)
-    //   new THREE.MeshPhongMaterial({ color: 0xffff00 }), // bottom face (yellow)
-    //   new THREE.MeshPhongMaterial({ color: 0x00ffff }), // right face (cyan)
-    //   new THREE.MeshPhongMaterial({ color: 0xff00ff }), // left face (magenta)
-    // ];
 
     const cube = new THREE.Mesh(geometry, materials);
 

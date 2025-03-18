@@ -1,8 +1,8 @@
 import "./Menu.scss";
 import Hints from "./../Hints/Hints";
 import Notes from "./../Notes/Notes";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Menu({
   isSolved,
@@ -10,22 +10,38 @@ export default function Menu({
   isDead,
   wasHighlighted,
   volume,
-  handleVolumeChange
+  handleVolumeChange,
 }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [isHintVisible, setIsHintVisible] = useState(false);
   const [areNotesVisible, setAreNotesVisible] = useState(false);
   const [isAudioVisible, setIsAudioVisible] = useState(false);
+  const [noteHighlight, setNoteHighlight]= useState(false);
 
-  const toggleHint = () => setIsHintVisible(prev => !prev);
-  const toggleNotes = () => setAreNotesVisible(prev => !prev);
-  const toggleAudio = () => setIsAudioVisible(prev => !prev);
-  
+  const toggleHint = () => setIsHintVisible((prev) => !prev);
+  const toggleNotes = () => 
+    { 
+      setAreNotesVisible((prev) => !prev);
+         setNoteHighlight(false);
+    }
+  const toggleAudio = () => setIsAudioVisible((prev) => !prev);
+
   const handleRestart = () => {
     navigate("/");
     window.location.reload();
   };
+
+  useEffect(() => {
+    if (isSolved || isSpelled || wasHighlighted) {
+        setNoteHighlight(true);
+    }
+  }, [isSolved, isSpelled, wasHighlighted]);
+
+  // useEffect(()=> {
+  //        setNoteHighlight(false);
+  // }, [location])
 
   return (
     <div className="menu">
@@ -82,7 +98,12 @@ export default function Menu({
         <div className="menu__block menu__block--hints" onClick={toggleHint}>
           Hint
         </div>
-        <div className="menu__block menu__block--notes" onClick={toggleNotes}>
+        <div
+          className={`menu__block menu__block--notes ${
+            noteHighlight ? "highlight" : ""
+          }`}
+          onClick={toggleNotes}
+        >
           Notes
         </div>
         <div className="menu__block menu__block--audio" onClick={toggleAudio}>
