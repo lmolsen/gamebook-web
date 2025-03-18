@@ -1,12 +1,7 @@
 import "./App.scss";
-import {
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-  Link,
-} from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import handleRestart from "./utils/restartUtils";
 
 import TitlePage from "./pages/TitlePage/TitlePage";
 import StoryPage from "./pages/StoryPage/StoryPage";
@@ -37,12 +32,25 @@ function App() {
   const navigate = useNavigate();
   const isTitlePage = location.pathname === "/";
 
-  const [isSolved, setIsSolved] = useState(false);
-  const [isSpelled, setIsSpelled] = useState(false);
   const [isDead, setIsDead] = useState(false);
+  const [noteHighlight, setNoteHighlight] = useState(false);
   const [_isHighlighted, setIsHighlighted] = useState(false);
-  const [wasHighlighted, setWasHighlighted] = useState(false);
   const [symbol, setSymbol] = useState(null);
+
+  const [wasHighlighted, setWasHighlighted] = useState(() => {
+    const storedValue = sessionStorage.getItem("wasHighlighted");
+    return storedValue ? JSON.parse(storedValue) : false;
+  });
+
+  const [isSolved, setIsSolved] = useState(() => {
+    const storedValue = sessionStorage.getItem("isSolved");
+    return storedValue ? JSON.parse(storedValue) : false;
+  });
+
+  const [isSpelled, setIsSpelled] = useState(() => {
+    const storedValue = sessionStorage.getItem("isSpelled");
+    return storedValue ? JSON.parse(storedValue) : false;
+  });
 
   const {
     musicPlay,
@@ -51,7 +59,22 @@ function App() {
     toggleMusic,
     isAudioOn,
     setMusicFilePath,
+    musicStop,
   } = useAudio();
+
+  useEffect(() => {
+    sessionStorage.setItem("wasHighlighted", JSON.stringify(wasHighlighted));
+    sessionStorage.setItem("isSolved", JSON.stringify(isSolved));
+    sessionStorage.setItem("isSpelled", JSON.stringify(isSpelled));
+  }, [wasHighlighted, isSolved, isSpelled, location]);
+
+  useEffect(() => {
+    if (symbol != "skull") {
+      setIsDead(false);
+    } else {
+      setIsDead(true);
+    }
+  }, [symbol, location]);
 
   useEffect(() => {
     if (symbol === "brain") {
@@ -74,23 +97,43 @@ function App() {
     book,
     treasure,
   };
-  
+
   useEffect(() => {
     if (location.pathname === "/page1") {
       musicPlay();
     }
   }, [location]);
 
-  const handleRestart = () => {
-    navigate("/");
-    window.location.reload();
+  // const handleRestart = () => {
+  //   navigate("/");
+  //   // window.location.reload();
+  //  musicStop();
+  //  setSymbol(false);
+  //  setIsDead(false);
+  //   sessionStorage.clear();
+  //         setIsSpelled(false);
+  //             setIsSolved(false);
+  //             setWasHighlighted(false);
+  // };
+
+  const restartGame = () => {
+    handleRestart(
+      setIsSolved,
+      setIsSpelled,
+      setIsDead,
+      setSymbol,
+      setWasHighlighted,
+      setNoteHighlight,
+      musicStop
+    );
+    navigate("/"); // Navigate to the home page
   };
 
   return (
     <div className="screen">
       <header className="header">
         {!isTitlePage && (
-          <button className="header__restart" onClick={handleRestart}>
+          <button className="header__restart" onClick={restartGame}>
             <img
               className={`header__icon ${
                 isDead || location.pathname === "/wall-of-fame"
@@ -137,7 +180,6 @@ function App() {
                 setIsHighlighted={setIsHighlighted}
                 setWasHighlighted={setWasHighlighted}
                 setSymbol={setSymbol}
-                symbol={symbol}
               />
             }
           />
@@ -153,21 +195,26 @@ function App() {
               alt="Page symbol"
             ></img>
           )}
-
-        {(isDead || location.pathname === "/wall-of-fame") && location.pathname != "/credits" && 
-            <Link className="credits-link" to="/credits">
-              [Credits]
-            </Link>
-          }
       </main>
       {!isTitlePage && (
         <Menu
           wasHighlighted={wasHighlighted}
+          setWasHighlighted={setWasHighlighted}
+          noteHighlight={noteHighlight}
+          setNoteHighlight={setNoteHighlight}
           isSolved={isSolved}
+          setIsSolved={setIsSolved}
           isSpelled={isSpelled}
+          setIsSpelled={setIsSpelled}
           isDead={isDead}
+          setIsDead={setIsDead}
+          symbol={symbol}
+          setSymbol={setSymbol}
+          isAudioOn={isAudioOn}
           volume={volume}
           handleVolumeChange={handleVolumeChange}
+          musicStop={musicStop}
+          toggleMusic={toggleMusic}
         />
       )}
     </div>

@@ -7,7 +7,7 @@
   margin-top: 1rem;
   bottom: 0;
   position: sticky;
-  caret-color: transparent; 
+  caret-color: transparent;
   pointer-events: none;
   @include flex-orientation(column, center);
 
@@ -43,6 +43,7 @@
 
     &--hints {
       width: 50%;
+
       @include tablet {
         width: 25%;
       }
@@ -50,6 +51,7 @@
 
     &--notes {
       width: 50%;
+
       @include tablet {
         width: 25%;
       }
@@ -91,6 +93,7 @@
 
     &--hints {
       width: 50%;
+
       @include tablet {
         width: 25%;
       }
@@ -120,8 +123,28 @@
     margin-bottom: 0.5rem;
   }
 
-  &__slider {
+  &__volume {
     width: 80%;
+  }
+
+  &__audio {
+    background-color: transparent;
+    min-width: 1rem;
+    min-height: 1rem;
+    padding-top: 0.25rem;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+
+    &:hover {
+      filter: invert(1) brightness(0);
+    }
   }
 }
 

@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import "./Dice.scss";
 
-export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat }) {
-  const [number, setNumber] = useState(1);
+export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat, feat }) {
+  const [number, setNumber] = useState(() => (feat ? 6 : 1));
   const [rolling, setRolling] = useState(false);
-  const [tries, setTries] = useState(0);
+  const [tries, setTries] = useState(() => {
+    const storedTries = sessionStorage.getItem("diceTries");
+    return storedTries ? JSON.parse(storedTries) : 0;
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem("diceTries", JSON.stringify(tries));
+  }, [tries]);
 
   const rollDice = () => {
     if (tries >= 3 || rolling || number === 6) return;
@@ -29,6 +36,9 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat }) {
         if (finalNumber === 6) {
           setPuzzleSolved(true);
           setFeat(true);
+        } else {
+          setPuzzleSolved(false);
+          setFeat(false);
         }
       }
     }, 100);

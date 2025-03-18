@@ -28,13 +28,32 @@ export default function StoryPage({
   const { pageId } = useParams();
   const pageContent = pageData[pageId] || {};
 
-  const [puzzleSolved, setPuzzleSolved] = useState(pageContent.puzzleSolved);
+  const [name, setName] = useState("");
   const [isListening, setIsListening] = useState(false);
   const [isSilent, setIsSilent] = useState(false);
-  const [transcript, setTranscript] = useState("");
   const [hasSpoken, setHasSpoken] = useState(false);
-  const [feat, setFeat] = useState(false);
-  const [name, setName] = useState("");
+  const [transcript, setTranscript] = useState(() => {
+    const savedTranscript = sessionStorage.getItem(`transcript`);
+    return savedTranscript ? savedTranscript : "";
+  });
+
+  const [feat, setFeat] = useState(() => {
+    const storedValue = sessionStorage.getItem("feat");
+    return storedValue ? JSON.parse(storedValue) : false;
+  });
+
+  const hasPuzzle = pageContent.puzzle;
+
+  const [puzzleSolved, setPuzzleSolved] = useState(() => {
+    if (hasPuzzle) {
+      const storedPuzzleState = sessionStorage.getItem(
+        `puzzleSolved-${pageId}`
+      );
+      return storedPuzzleState ? JSON.parse(storedPuzzleState) : false;
+    }
+    return false;
+  });
+
   const correctAnswer = ["root root", "route route", "rootroot", "routeroute"];
   const alternateAnswer = ["syntax", "sin tax", "send text", "send tax"];
 
@@ -43,12 +62,40 @@ export default function StoryPage({
   const navigate = useNavigate();
 
   useEffect(() => {
-    setPuzzleSolved(false);
+    if (hasPuzzle) {
+      const storedPuzzleState = sessionStorage.getItem(
+        `puzzleSolved-${pageId}`
+      );
+      const puzzleSolvedFromStorage = storedPuzzleState
+        ? JSON.parse(storedPuzzleState)
+        : false;
+      setPuzzleSolved(puzzleSolvedFromStorage);
+    }
+
     setSymbol(pageContent.symbol);
     if (feat && location.pathname === "/page9") {
       setSymbol("treasure");
     }
   }, [location]);
+
+  useEffect(() => {
+    if (transcript) {
+      sessionStorage.setItem(`transcript`, transcript);
+    }
+  }, [transcript, pageId]);
+
+  useEffect(() => {
+    sessionStorage.setItem("feat", JSON.stringify(feat));
+  }, [feat]);
+
+  useEffect(() => {
+    if (hasPuzzle) {
+      sessionStorage.setItem(
+        `puzzleSolved-${pageId}`,
+        JSON.stringify(puzzleSolved)
+      );
+    }
+  }, [puzzleSolved, pageId, hasPuzzle]);
 
   useEffect(() => {
     const handleSelection = () => {
@@ -210,7 +257,11 @@ export default function StoryPage({
           <input
             onChange={handleInput}
             className="form__input"
-            placeholder="Write the name of the rune."
+            placeholder={
+              !puzzleSolved
+                ? "Write the name of the rune."
+                : "Rune name: Edoc'sv"
+            }
             disabled={puzzleSolved}
           ></input>
         </div>
@@ -239,6 +290,7 @@ export default function StoryPage({
             puzzleSolved={puzzleSolved}
             setPuzzleSolved={setPuzzleSolved}
             setFeat={setFeat}
+            feat={feat}
           />
         </div>
       )}
@@ -247,7 +299,11 @@ export default function StoryPage({
         <div className="cubic">
           <Cube />
           <input
-            placeholder="Enter the word on the cube."
+            placeholder={
+              !puzzleSolved
+                ? "Enter the word on the cube."
+                : "Passphrase: syntax"
+            }
             onChange={handleInput}
             className="cubic__input ignore"
             disabled={puzzleSolved}
@@ -296,17 +352,17 @@ export default function StoryPage({
         </p>
       )}
 
-      {pageContent.prompt && (
+      {(pageContent.prompt || pageContent.dice) && (
         <div className="page__choices">
           <p className="page__prompt">{pageContent.prompt}</p>
-          {(puzzleSolved
+          {(puzzleSolved && hasPuzzle
             ? pageContent.solvedChoices
             : pageContent.choices
           )?.map((choice, index) => (
             <Link key={index} to={choice.link}>
               <p
                 className={`page__choice ${
-                  puzzleSolved ? "page__choice--solved" : ""
+                  hasPuzzle && puzzleSolved ? "page__choice--solved" : ""
                 } `}
               >
                 {choice.text}
@@ -359,13 +415,19 @@ export default function StoryPage({
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your name for the Wall of Fame."
             maxLength={50}
-            disabled={puzzleSolved}
           ></input>
           <button className="name__button ignore" type="Submit">
             Submit
           </button>
         </form>
       )}
+
+      {(isDead || location.pathname === "/wall-of-fame") &&
+        location.pathname != "/credits" && (
+          <Link className="credits-link" to="/credits">
+            [Credits]
+          </Link>
+        )}
 
       <ScrollIndicator />
     </div>

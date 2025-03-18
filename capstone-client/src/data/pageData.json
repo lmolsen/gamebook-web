@@ -101,7 +101,7 @@
       }
     ],
     "light": true,
-    "puzzleSolved": false,
+    "puzzle": true,
     "solvedText": "You did it! You found the key.",
     "solvedChoices": [
       {
@@ -161,7 +161,7 @@
       }
     ],
     "cube": true,
-    "puzzleSolved": false,
+    "puzzle": true,
     "solvedText": "Yes! You knew your English teacher was wrong to fail you. Take that, Mrs. Inkpen!",
     "solvedChoices": [
       {
@@ -193,7 +193,7 @@
       }
     ],
     "slide": true,
-    "puzzleSolved": false,
+    "puzzle": true,
     "solvedText": "You did it! Upon seeing the symbol, a word enters your mind: Edoc'sv.",
     "solvedChoices": [
       {
@@ -217,7 +217,7 @@
       }
     ],
     "portal": true,
-    "puzzleSolved": false,
+    "puzzle": true,
     "solvedText": "You've done it! The portal is stable.",
     "solvedChoices": [
       {
@@ -244,7 +244,7 @@
       }
     ],
     "speak": true,
-    "puzzleSolved": false,
+    "puzzle": true,
     "solvedText": "You did it! The disc slides to one side, revealing a room filled with treasure.",
     "symbol": "brain"
   },
@@ -262,7 +262,7 @@
       }
     ],
     "form": true,
-    "puzzleSolved": false,
+    "puzzle": true,
     "solvedText": "You did it! The door opens slowly.",
     "solvedChoices": [
       {
@@ -286,7 +286,7 @@
       }
     ],
     "highlight": true,
-    "puzzleSolved": false,
+    "puzzle": true,
     "solvedText": "You've done it! You're sure this will come in handy later.",
     "solvedChoices": [
       {
@@ -419,7 +419,7 @@
     ],
     "prompt": "",
     "dice": true,
-    "puzzleSolved": false,
+    "puzzle": true,
     "solvedText": "Phew! It was a lot of work, but you managed it.",
     "solvedChoices": [
       {

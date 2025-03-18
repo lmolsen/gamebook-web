@@ -5,16 +5,24 @@ import "./Sequence.scss";
 export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   const [playerInput, setPlayerInput] = useState([]);
   const [click, setClick] = useState(0);
-  const [attempts, setAttempts] = useState(0);
+  const [tries, setTries] = useState(() => {
+    const storedTries = sessionStorage.getItem("sequenceTries");
+    return storedTries ? JSON.parse(storedTries) : 0;
+  });
+
   const sequenceRef = useRef([]);
   const puzzleSolvedRef = useRef(puzzleSolved);
+
+  useEffect(() => {
+    sessionStorage.setItem("sequenceTries", JSON.stringify(tries));
+  }, [tries]);
 
   const nodes = [0, 1, 2, 3];
 
   let timeOut = 5000;
 
   useEffect(() => {
-    if (puzzleSolved || attempts >= 3) return;
+    if (puzzleSolved || tries >= 3) return;
 
     if (sequenceRef.current.length === 0) {
       const newSequence = Array.from({ length: 4 }, () =>
@@ -28,14 +36,14 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
     return () => {
       clearTimeout();
     };
-  }, [puzzleSolved, attempts]);
+  }, [puzzleSolved, tries]);
 
   useEffect(() => {
     puzzleSolvedRef.current = puzzleSolved;
   }, [puzzleSolved]);
 
   function startNewSequence() {
-    if (puzzleSolved || attempts >= 3) return;
+    if (puzzleSolved || tries >= 3) return;
 
     setPlayerInput([]);
     let delay = 500;
@@ -54,7 +62,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   }
 
   function flashNode(index) {
-    if (puzzleSolvedRef.current || attempts >= 3) return;
+    if (puzzleSolvedRef.current || tries >= 3) return;
 
     const element = document.getElementById(`node-${index}`);
     if (element) {
@@ -64,7 +72,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   }
 
   function handleClick(index) {
-    if (puzzleSolved || attempts >= 3) return; 
+    if (puzzleSolved || tries >= 3) return;
     setClick(click + 1);
 
     timeOut += 5000;
@@ -75,9 +83,9 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
       (num, i) => num === sequenceRef.current[i]
     );
 
-  if (!isCorrectSoFar) {
+    if (!isCorrectSoFar) {
       if (newPlayerInput.length >= 4) {
-        setAttempts(attempts + 1);
+        setTries(tries + 1);
         setClick(0);
         setPlayerInput([]);
       }
@@ -86,12 +94,12 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
 
     if (newPlayerInput.length === sequenceRef.current.length) {
       setPuzzleSolved(true);
-    } 
+    }
   }
 
   function repeatSequence() {
     setClick(0);
-    if (puzzleSolved || attempts >= 3) {
+    if (puzzleSolved || tries >= 3) {
       return;
     }
 
@@ -109,26 +117,34 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
           <motion.div
             key={index}
             id={`node-${index}`}
-            className={`sequence__node ${puzzleSolved ? "sequence__node--stabilized" : ""} ${attempts > 2 && !puzzleSolved ? "sequence__node--error" : ""}`}
-            whileTap={!puzzleSolved && attempts < 3 ? { scale: 0.8 } : {}}
+            className={`sequence__node ${
+              puzzleSolved ? "sequence__node--stabilized" : ""
+            } ${tries > 2 && !puzzleSolved ? "sequence__node--error" : ""}`}
+            whileTap={!puzzleSolved && tries < 3 ? { scale: 0.8 } : {}}
             onClick={() => handleClick(index)}
           />
         ))}
       </div>
       <div className="sequence__counter">
         <div
-          className={`sequence__try ${attempts >= 1 ? "sequence__try--filled" : ""}`}
+          className={`sequence__try ${
+            tries >= 1 ? "sequence__try--filled" : ""
+          }`}
         ></div>
         <div
-          className={`sequence__try ${attempts >= 2 ? "sequence__try--filled" : ""}`}
+          className={`sequence__try ${
+            tries >= 2 ? "sequence__try--filled" : ""
+          }`}
         ></div>
         <div
-          className={`sequence__try ${attempts >= 3 ? "sequence__try--filled" : ""}`}
+          className={`sequence__try ${
+            tries >= 3 ? "sequence__try--filled" : ""
+          }`}
         ></div>
       </div>
-      { attempts >= 3 && !puzzleSolved && (<div className="sequence__text">
-        Oh no, you're out of tries...
-      </div> )}
+      {tries >= 3 && !puzzleSolved && (
+        <div className="sequence__text">Oh no, you're out of tries...</div>
+      )}
     </div>
   );
 }
