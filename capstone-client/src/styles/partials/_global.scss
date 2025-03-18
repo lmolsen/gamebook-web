@@ -23,14 +23,27 @@ button {
   min-width: 7rem;
 
 
-  &:hover {
-    background-color: $hover-color;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      background-color: $hover-color;
+    }
   }
 }
 
 body {
   color: $light-color;
   background-color: $darkest-color;
+
+  &::selection {
+    background-color: $light-color;
+    color: $darkest-color;
+  }
 }
 
 h1 {
@@ -43,6 +56,7 @@ h1 {
 
 h2 {
   font-size: 1.25rem;
+
   @include tablet {
     font-size: 2rem;
   }
@@ -54,8 +68,16 @@ a {
   line-height: 1.5rem;
   cursor: pointer;
 
-  &:hover {
-    font-weight: bold;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      font-weight: bold;
+    }
   }
 
   @include tablet {
@@ -84,9 +106,4 @@ input {
     font-weight: bold;
     border: 0.125rem solid $solved-color;
   }
-}
-
-::selection {
-  background-color: $light-color;
-  color: $darkest-color;
 }

@@ -10,7 +10,7 @@ export default function Menu({
   isDead,
   wasHighlighted,
   volume,
-  handleVolumeChange,
+  handleVolumeChange
 }) {
   const navigate = useNavigate();
   const location = useLocation();

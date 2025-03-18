@@ -34,9 +34,9 @@ export default function StoryPage({
   const [transcript, setTranscript] = useState("");
   const [hasSpoken, setHasSpoken] = useState(false);
   const [feat, setFeat] = useState(false);
+  const [name, setName] = useState("");
   const correctAnswer = ["root root", "route route", "rootroot", "routeroute"];
   const alternateAnswer = ["syntax", "sin tax", "send text", "send tax"];
-  const [name, setName] = useState("");
 
   const filter = new Filter();
   const location = useLocation();
@@ -59,8 +59,7 @@ export default function StoryPage({
         setPuzzleSolved(true);
         setIsHighlighted(true);
         setWasHighlighted(true);
-      } 
-      else {
+      } else {
         setIsHighlighted(false);
       }
     };
@@ -297,10 +296,13 @@ export default function StoryPage({
         </p>
       )}
 
-      <div className="page__choices">
-        <p className="page__prompt">{pageContent.prompt}</p>
-        {(puzzleSolved ? pageContent.solvedChoices : pageContent.choices)?.map(
-          (choice, index) => (
+      {pageContent.prompt && (
+        <div className="page__choices">
+          <p className="page__prompt">{pageContent.prompt}</p>
+          {(puzzleSolved
+            ? pageContent.solvedChoices
+            : pageContent.choices
+          )?.map((choice, index) => (
             <Link key={index} to={choice.link}>
               <p
                 className={`page__choice ${
@@ -310,9 +312,9 @@ export default function StoryPage({
                 {choice.text}
               </p>
             </Link>
-          )
-        )}
-      </div>
+          ))}
+        </div>
+      )}
 
       {pageContent.speak && puzzleSolved && (
         <div className="page__choices">
@@ -365,7 +367,7 @@ export default function StoryPage({
         </form>
       )}
 
-      <ScrollIndicator/>
+      <ScrollIndicator />
     </div>
   );
 }

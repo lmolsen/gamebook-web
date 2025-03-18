@@ -74,7 +74,7 @@ function App() {
     book,
     treasure,
   };
-
+  
   useEffect(() => {
     if (location.pathname === "/page1") {
       musicPlay();
@@ -82,8 +82,8 @@ function App() {
   }, [location]);
 
   const handleRestart = () => {
-     window.location.reload();
     navigate("/");
+    window.location.reload();
   };
 
   return (

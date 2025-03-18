@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 
 export default function Hints() {
     const location = useLocation();
+    const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
 
         return (
             <div className="hints">
@@ -11,7 +13,7 @@ export default function Hints() {
               {location.pathname === "/page3" && <p className="hints__text">Use some common sense.</p>}
               {location.pathname === "/page4" && <p className="hints__text">You should listen to the narrator.</p>}
               {location.pathname === "/page5" && <p className="hints__text">All that glitters is not gold.</p>}
-              {location.pathname === "/page6" && <p className="hints__text">Search slowly and the light will reveal the key.</p>}
+             {location.pathname === "/page6" && (<p className="hints__text"> {!isTouchDevice ? "Search slowly and the light will reveal the key." : "Tap wildly until you find the key!"}</p>)}
               {location.pathname === "/page7" && <p className="hints__text">A job well done is its own reward.</p>}
               {location.pathname === "/page8" && <p className="hints__text">Patience is key.</p>}
               {location.pathname === "/page9" && <p className="hints__text">Hard work pays off!</p>}
@@ -21,7 +23,7 @@ export default function Hints() {
               {location.pathname === "/page13" && <p className="hints__text">Wait until the pattern of four completes.</p>}
               {location.pathname === "/page14" && <p className="hints__text">Have you learned any passphrases?</p>}
               {location.pathname === "/page15" && <p className="hints__text">Did you solve the sliding puzzle? Check your notes.</p>}
-              {location.pathname === "/page16" && <p className="hints__text">Perhaps if a mouse ran across the paper...</p>}
+              {location.pathname === "/page16" && (<p className="hints__text">{!isTouchDevice ? "Perhaps if a mouse ran across the paper..." : "Maybe a long touch will do the trick..."}</p>)}
               {location.pathname === "/page17" && <p className="hints__text">Aww. What will you call them?</p>}
               {location.pathname === "/page18" && <p className="hints__text">Don't go mad with power now.</p>}
               {location.pathname === "/page19" && <p className="hints__text">I suggest investing most of it.</p>}

@@ -29,14 +29,15 @@
     font-size: 1rem;
     line-height: 1.25rem;
 
-  @include tablet {
-    font-size: 1.5rem;
-    line-height: 1.85rem;
-  }
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 1.85rem;
+    }
 
     &--solved {
       color: rgb(0, 192, 128);
       animation: fadeIn 0.2s ease-in forwards;
+      text-indent: 0;
     }
   }
 
@@ -73,9 +74,22 @@
 
   &__choice {
     color: $medium-color;
+    line-height: 1.25rem;
 
-    &:hover {
-      color: $hover-color;
+    @include tablet {
+      line-height: 1.85rem;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: $hover-color;
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        color: $hover-color;
+      }
     }
 
     &--solved {
@@ -103,6 +117,11 @@
   @include flex-position(flex-start, center);
   @include puzzle;
 
+  &::selection {
+    background-color: $paper-color;
+    color: $darkest-color;
+  }
+
   &__text {
     @include handwriting;
   }
@@ -111,11 +130,6 @@
     color: $paper-color;
     margin-left: 1rem;
     @include handwriting;
-
-    &::selection {
-        background-color: $paper-color;
-        color: $darkest-color;
-      }
   }
 }
 
@@ -137,6 +151,7 @@
     width: 13.5rem;
     padding: 1rem;
     outline: none;
+
     @include tablet {
       width: 16.5rem;
     }
@@ -208,8 +223,16 @@
     padding: 0.75rem;
     background-color: $light-color;
 
-    &:hover {
-      background-color: $hover-color;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        background-color: $hover-color;
+      }
     }
   }
 }
@@ -218,6 +241,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
