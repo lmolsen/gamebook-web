@@ -338,7 +338,7 @@ export default function StoryPage({
           <p className="page__text">
             You fall a long way down, though it only takes a few moments.
             {feat
-              ? " OW! You land in a pile of sacks. They're not exactly soft, but they're softer than the stone floor. You've survived the fall with magical boots in hand. Rubbing your sore tailbone, you head back out the way you came."
+              ? " OW! You land on a pile of sacks. They're not exactly soft, but they're softer than the stone floor. You've survived the fall with magical boots in hand. Rubbing your sore tailbone, you head back out the way you came."
               : " In the instant before you hit the ground, you realize you really should have moved that pile of sacks earlier. SPLAT!"}
           </p>
           <p className="page__prompt">
@@ -359,7 +359,7 @@ export default function StoryPage({
             maxLength={50}
             disabled={puzzleSolved}
           ></input>
-          <button className="name__button" type="Submit">
+          <button className="name__button ignore" type="Submit">
             Submit
           </button>
         </form>

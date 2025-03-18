@@ -53,7 +53,7 @@
   "page4": {
     "text": [
       "You attempt to force the door open through sheer stubbornness. Neither kicking the door nor slamming your shoulder repeatedly into the solid wood causes it to yield. You attempt to hack at the door with your hatchet, but only manage to chip off a few splinters of wood.",
-      " Exhausted and sore, you consider your options. You expect that the door can only be opened by uttering the correct magic phrase. In desperation, you try what your mother always said was the magic word ('Please') and something you once heard in a story ('Open sesame!'). Neither works, and you're left standing sheepishly before the unopened portal.",
+      " Exhausted and sore, you consider your options. You expect that the door can only be opened by uttering the correct magic phrase. In desperation, you try what your mother always said was the magic word ('Please', apparently) and something you once heard in a story ('Open sesame!'). Neither works, and you're left standing sheepishly before the unopened portal.",
       "I told you that wouldn't work."
     ],
     "prompt": "Which path will you choose?",
@@ -141,8 +141,8 @@
   },
   "page9": {
     "text": [
-      "Pieces of gold and valubale trinkets litter the floor, but you have eyes only for what lies ahead. Before you is a pedestal upon which a pair of glowing boots sit. Could it be? Are these the fabled Seven-League Boots that allow the wearer to cover vast distances in a single stride?",
-      "You're not sure how much a 'league' is, but it sounds like a lot. You pick up the boots, managing to admire them for a moment before you feel your stomach drop. A split second later, the rest of you drops. It seems like you've fallen down a trap door."
+      "Pieces of gold and valuable trinkets litter the floor, but you have eyes only for what lies ahead. Before you is a pedestal upon which a pair of glowing boots sit. Could it be? Are these the fabled Seven-League Boots that allow the wearer to cover vast distances in a single stride?",
+      "You're not sure how much a league is, but it sounds like a lot. You pick up the boots, managing to admire them for a moment before you feel your stomach drop. A split second later, the rest of you drops. It seems like you've fallen down a trap door."
     ],
     "drop": true,
     "accomplishment": "Earned the Seven-League Boots.",
@@ -332,7 +332,7 @@
       "Maybe you'll try again tomorrow, but for now you just want to head back to the inn, tail between your legs. A hot meal and a warm bed sound good right about now. At least you have a story to tell, though you might need to embellish it a little to save face."
     ],
     "prompt": "Congratulations! You survived.",
-    "accomplishment": "Escaped the wizard's tower with your life.",
+    "accomplishment": "Escaped the wizard's tower with their life.",
     "symbol": "heart"
   },
   "page21": {

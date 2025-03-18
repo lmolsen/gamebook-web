@@ -38,7 +38,7 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat }) {
     <div className="roll" onClick={rollDice}>
       <p className="roll__text">
         {puzzleSolved
-          ? "RAH! You feel a surge of strength!"
+          ? "RAAAH! You feel a surge of strength!"
           : tries === 1 || tries === 2
           ? "Ugh... it's so heavy."
           : tries < 3

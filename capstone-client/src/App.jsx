@@ -82,8 +82,8 @@ function App() {
   }, [location]);
 
   const handleRestart = () => {
+     window.location.reload();
     navigate("/");
-    window.location.reload();
   };
 
   return (

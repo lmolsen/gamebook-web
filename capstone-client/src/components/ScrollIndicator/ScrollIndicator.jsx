@@ -55,11 +55,7 @@ export default function ScrollIndicator() {
       {isScrollable && !atBottom && (
         <div className="scroll ignore">
           <div className="scroll__indicator">
-            <p className="scroll__text">
-              {location.pathname === "/wall-of-fame"
-                ? "More below"
-                : "Choices below"}
-            </p>
+            <p className="scroll__text">More below</p>
             ⌄
           </div>
         </div>
