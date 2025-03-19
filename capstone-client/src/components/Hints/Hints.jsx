@@ -36,7 +36,7 @@ export default function Hints() {
               {location.pathname === "/page26" && <p className="hints__text">I've heard feats of strength require a 6 to accomplish.</p>}
               {location.pathname === "/page27" && <p className="hints__text">I bet there's more puzzles to the left.</p>}
               {location.pathname === "/wall-of-fame" && <p className="hints__text">Every successful ending has a different associated accomplishment.</p>}
-              {location.pathname === "/credits" && <p className="hints__text">Check out my github for the code!</p>}
+              {location.pathname === "/credits" && <p className="hints__text">Check out my GitHub for the code repos and full attributions!</p>}
             </div>
           );
         }
