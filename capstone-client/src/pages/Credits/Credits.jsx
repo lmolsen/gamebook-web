@@ -8,29 +8,31 @@ export default function Credits() {
         Credits<span className="credits__pause">.</span>
       </h1>
       <div className="credits__creator">
+        <p className="credits__type">
+          Programmer, Writer, Designer, Foley Artist, etc.
+        </p>
         <p className="credits__name">
           Lisa Olsen<span className="credits__pause">.</span>
         </p>
-        <p className="credits__text">Programmer, Writer, Designer, etc.</p>
       </div>
       <h2 className="credits__title">
         Music<span className="credits__pause">.</span>
       </h2>
       <div className="credits__block">
-        <p className="credits__name">
+        <p className="credits__type">
           "Video Dungeon Crawl", "Video Dungeon Boss", "Bit Quest", "Overworld",
           "Amazing Grace 2011"<span className="credits__pause">.</span>
         </p>
-        <p className="credits__text">Kevin MacLeod (incompetech.com)</p>
+        <p className="credits__name">Kevin MacLeod (incompetech.com)</p>
       </div>
       <h2 className="credits__title">
         Icons<span className="credits__pause">.</span>
       </h2>
       <div className="credits__block">
-        <p className="credits__name">
+        <p className="credits__type">
           Freepik Flaticon<span className="credits__pause">.</span>
         </p>
-        <p className="credits__text"> https://www.flaticon.com/</p>
+        <p className="credits__text"> flaticon.com</p>
       </div>
       <a
         className="credits__link"

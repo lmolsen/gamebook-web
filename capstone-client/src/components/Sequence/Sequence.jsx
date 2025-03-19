@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
+
+import beepSound from "./../../assets/sounds/beep.wav";
+import successSound from "./../../assets/sounds/success.wav";
+import failSound from "./../../assets/sounds/fail.wav";
+
 import "./Sequence.scss";
 
 export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
@@ -74,6 +79,8 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   function handleClick(index) {
     if (puzzleSolved || tries >= 3) return;
     setClick(click + 1);
+    let beepAudio = new Audio(beepSound); 
+    beepAudio.play();
 
     timeOut += 5000;
     const newPlayerInput = [...playerInput, index];
@@ -88,12 +95,21 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
         setTries(tries + 1);
         setClick(0);
         setPlayerInput([]);
+
+         setTimeout(() => {
+        let failAudio = new Audio(failSound);
+        failAudio.play();
+      }, 300);
       }
       return;
     }
 
     if (newPlayerInput.length === sequenceRef.current.length) {
       setPuzzleSolved(true);
+      setTimeout(() => {
+        let successAudio = new Audio(successSound);
+        successAudio.play();
+      }, 300);
     }
   }
 
@@ -143,7 +159,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
         ></div>
       </div>
       {tries >= 3 && !puzzleSolved && (
-        <div className="sequence__text">Oh no, you're out of tries...</div>
+        <div className="sequence__text">Oh no, you're out of tries... </div>
       )}
     </div>
   );

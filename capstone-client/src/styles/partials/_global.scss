@@ -107,3 +107,16 @@ input {
     border: 0.125rem solid $solved-color;
   }
 }
+
+
+.credits-direct {
+  padding-top: 5rem;
+
+  &__link {
+    line-height: 1.5;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}

@@ -2,44 +2,23 @@ import { useState, useRef, useEffect } from "react";
 import mainSong from "../assets/music/Video Dungeon Crawl.mp3";
 
 export const useAudio = () => {
-  const [isAudioOn, setIsAudioOn] = useState(true);
-  const [volume, setVolume] = useState(50);
+  const [isAudioOn, setIsAudioOn] = useState(() => {
+    return JSON.parse(sessionStorage.getItem("isAudioOn")) ?? true;
+  });
+  const [volume, setVolume] = useState(() => {
+    return JSON.parse(sessionStorage.getItem("volume")) ?? 50;
+  });
   const [musicFilePath, setMusicFilePath] = useState(mainSong);
 
   const audioRef = useRef(null);
 
-  const musicPlay = () => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(musicFilePath);
-      audioRef.current.loop = true;
-      audioRef.current.volume = volume / 100;
-    }
-    // setTimeout(() => {
-    audioRef.current.play();
-    // }, 1000);
-  };
+  useEffect(() => {
+    sessionStorage.setItem("isAudioOn", JSON.stringify(isAudioOn));
+  }, [isAudioOn]);
 
-  const musicStop = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current = null;
-    }
-  };
-
-  const toggleMusic = () => {
-    if (isAudioOn) {
-      musicStop();
-      setIsAudioOn(false);
-    } else {
-      if (!audioRef.current) {
-        audioRef.current = new Audio(musicFilePath);
-        audioRef.current.loop = true;
-        audioRef.current.volume = volume / 100;
-      }
-      musicPlay();
-      setIsAudioOn(true);
-    }
-  };
+  useEffect(() => {
+    sessionStorage.setItem("volume", JSON.stringify(volume));
+  }, [volume]);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -47,6 +26,49 @@ export const useAudio = () => {
       musicPlay();
     }
   }, [musicFilePath]);
+
+  const musicPlay = () => {
+    if (isAudioOn) {
+      if (!audioRef.current) {
+        audioRef.current = new Audio(musicFilePath);
+        audioRef.current.loop = true;
+        audioRef.current.volume = volume / 100;
+      }
+      audioRef.current.play();
+      setIsAudioOn(true);
+    }
+  };
+
+  const musicStop = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
+      // setIsAudioOn(true);
+    }
+  };
+
+  const musicPause = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      setIsAudioOn(false);
+    }
+  };
+
+  const toggleMusic = () => {
+    if (isAudioOn) {
+      musicPause();
+    } else {
+      if (!audioRef.current) {
+        audioRef.current = new Audio(musicFilePath);
+        audioRef.current.loop = true;
+        audioRef.current.volume = volume / 100;
+        audioRef.current.play();
+      } else {
+        audioRef.current.play();
+      }
+      setIsAudioOn(true);
+    }
+  };
 
   const handleVolumeChange = (event) => {
     const newVolume = event.target.value;
@@ -63,6 +85,7 @@ export const useAudio = () => {
   }, [volume]);
 
   return {
+    audioRef,
     musicPlay,
     musicStop,
     volume,
@@ -71,5 +94,6 @@ export const useAudio = () => {
     musicPlay,
     isAudioOn,
     setMusicFilePath,
+    musicPause,
   };
 };

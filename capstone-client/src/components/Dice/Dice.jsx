@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+
+import rollSound from "./../../assets/sounds/dice.wav";
+
 import "./Dice.scss";
 
 export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat, feat }) {
@@ -17,6 +20,10 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat, feat }) {
 
   const rollDice = () => {
     if (tries >= 3 || rolling || number === 6) return;
+
+    let rollAudio = new Audio(rollSound);
+    rollAudio.volume = 1;
+    rollAudio.play();
 
     setRolling(true);
     setTries(tries + 1);

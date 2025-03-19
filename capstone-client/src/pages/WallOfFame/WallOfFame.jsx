@@ -1,5 +1,6 @@
 import "./WallOfFame.scss";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { fetchWallOfFame } from "../../utils/apiUtils";
 import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 
@@ -27,6 +28,11 @@ export default function WallOfFame() {
             </div>
           ))
         )}
+      </div>
+      <div className="credits-direct">
+        <Link className="credits-direct__link" to="/credits">
+          [Credits]
+        </Link>
       </div>
       <ScrollIndicator />
     </div>

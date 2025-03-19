@@ -59,7 +59,7 @@ function App() {
     toggleMusic,
     isAudioOn,
     setMusicFilePath,
-    musicStop,
+    musicStop
   } = useAudio();
 
   useEffect(() => {
@@ -85,6 +85,7 @@ function App() {
       setMusicFilePath(happySong);
     } else if (symbol === "treasure") {
       setMusicFilePath(treasureSong);
+
     } else {
       setMusicFilePath(mainSong);
     }
@@ -99,22 +100,10 @@ function App() {
   };
 
   useEffect(() => {
-    if (location.pathname === "/page1") {
+    if (location.pathname != "/") {
       musicPlay();
     }
   }, [location]);
-
-  // const handleRestart = () => {
-  //   navigate("/");
-  //   // window.location.reload();
-  //  musicStop();
-  //  setSymbol(false);
-  //  setIsDead(false);
-  //   sessionStorage.clear();
-  //         setIsSpelled(false);
-  //             setIsSolved(false);
-  //             setWasHighlighted(false);
-  // };
 
   const restartGame = () => {
     handleRestart(
@@ -126,7 +115,7 @@ function App() {
       setNoteHighlight,
       musicStop
     );
-    navigate("/"); // Navigate to the home page
+    navigate("/");
   };
 
   return (

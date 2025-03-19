@@ -91,7 +91,7 @@
   "page6": {
     "text": [
       "You rush eagerly down the stairs, but soon find yourself stumbling blindly through the dark. After what seems like hours of wandering, you encounter what feels like a door. You fumble for the doorknob, and feel your hand knock into something. You hear it drop to the floor with a metallic clink.",
-      "You scramble to grab it, sure it's a key, but in your rush you kick it further down the hall. You can't see anything; you'll have to crawl along the floor and try to find it via touch."
+      "You scramble to grab it, sure it's a key, but in your rush you kick it further down the corridor. You can't see anything; you'll have to crawl along the floor and try to find it via touch."
     ],
     "prompt": "What will you do next?",
     "choices": [

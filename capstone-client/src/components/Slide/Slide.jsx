@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import puzzleImage from "./../../assets/images/rune-light.jpg";
+import stoneSound from "./../../assets/sounds/stone-bass.wav";
 import "./Slide.scss";
 
 export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
@@ -35,6 +36,8 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
   const handleMove = (index) => {
     if (!isMovable(index) || isSolved) return;
 
+    const audio = new Audio(stoneSound);
+    audio.play();
     const newGrid = [...grid];
     [newGrid[index], newGrid[missingIndex]] = [
       newGrid[missingIndex],
@@ -59,6 +62,8 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
   }, [grid]);
 
   const reshuffle = () => {
+        const audio = new Audio(stoneSound);
+        audio.play();
     setGrid(generateGrid());
     setIsSolved(false);
   };

@@ -6,6 +6,12 @@ import { Filter } from "bad-words";
 import { postName } from "../../utils/apiUtils";
 
 import rune from "../../assets/images/rune.png";
+import chirpSound from "./../../assets/sounds/owlbear.wav";
+import coinSound from "./../../assets/sounds/coins.wav";
+import whooshSound from "./../../assets/sounds/whoosh.wav";
+import crunchSound from "./../../assets/sounds/crunch.wav";
+import fallSound from "./../../assets/sounds/fall.wav";
+import gasSound from "./../../assets/sounds/gas.wav";
 import pageData from "../../data/pageData.json";
 import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 
@@ -89,6 +95,47 @@ export default function StoryPage({
   }, [feat]);
 
   useEffect(() => {
+    let audioList = [];
+
+    if (location.pathname === "/page17") {
+      let chirpAudio = new Audio(chirpSound);
+      chirpAudio.play();
+      audioList.push(chirpAudio);
+    } else if (location.pathname === "/page3") {
+      let fallAudio = new Audio(fallSound);
+      fallAudio.play();
+      audioList.push(fallAudio);
+    } else if (location.pathname === "/page5") {
+      let whooshAudio = new Audio(whooshSound);
+      whooshAudio.play();
+      audioList.push(whooshAudio);
+    } else if (location.pathname === "/page11") {
+      let crunchAudio = new Audio(crunchSound);
+      crunchAudio.play();
+      audioList.push(crunchAudio);
+    } else if (location.pathname === "/page19") {
+      let coinAudio = new Audio(coinSound);
+      coinAudio.play();
+      audioList.push(coinAudio);
+    } else if (location.pathname === "/page24") {
+      let gasAudio = new Audio(gasSound);
+      gasAudio.volume = 0.6;
+      gasAudio.play();
+      audioList.push(gasAudio);
+    }
+    return () => {
+      audioList.forEach((audio) => {
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+
+      audioList = [];
+    };
+  }, [location]);
+
+  useEffect(() => {
     if (hasPuzzle) {
       sessionStorage.setItem(
         `puzzleSolved-${pageId}`,
@@ -134,10 +181,7 @@ export default function StoryPage({
         value === "Edocsv")
     ) {
       setPuzzleSolved(true);
-    } else if (
-      pageContent.cube &
-      (value === "syntax" || value === "Syntax" || value === "send tax")
-    ) {
+    } else if (pageContent.cube && ["syntax"].includes(value.toLowerCase())) {
       setPuzzleSolved(true);
       setIsSpelled(true);
     }
@@ -422,12 +466,13 @@ export default function StoryPage({
         </form>
       )}
 
-      {(isDead || location.pathname === "/wall-of-fame") &&
-        location.pathname != "/credits" && (
+      {isDead && location.pathname != "/credits" && (
+        <div className="credits-direct">
           <Link className="credits-link" to="/credits">
             [Credits]
           </Link>
-        )}
+        </div>
+      )}
 
       <ScrollIndicator />
     </div>
