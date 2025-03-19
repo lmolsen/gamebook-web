@@ -72,13 +72,13 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
   };
 
   // // FOR TESTING
-  const autoSolve = () => {
-    setGrid(solvedState);
-    setIsSolved(true);
-    setTimeout(() => {
-      setImageVisible(true);
-    }, 200);
-  };
+  // const autoSolve = () => {
+  //   setGrid(solvedState);
+  //   setIsSolved(true);
+  //   setTimeout(() => {
+  //     setImageVisible(true);
+  //   }, 200);
+  // };
 
     useEffect(() => {
       sessionStorage.setItem("imageVisible", JSON.stringify(imageVisible));
@@ -118,13 +118,13 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
 
       {!isSolved && (
         <>
-          <button
+          {/* <button
             className="sliding-puzzle__button"
             onClick={autoSolve}
             disabled={isSolved}
           >
             Auto-solve
-          </button>
+          </button> */}
           <button
             className="sliding-puzzle__button"
             onClick={reshuffle}
