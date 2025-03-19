@@ -125,7 +125,9 @@ function App() {
           <button className="header__restart" onClick={restartGame}>
             <img
               className={`header__icon ${
-                isDead || location.pathname === "/wall-of-fame"
+                isDead ||
+                location.pathname === "/wall-of-fame" ||
+                location.pathname === "/credits"
                   ? "header__icon--spinning"
                   : ""
               }`}

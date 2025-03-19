@@ -17,7 +17,10 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
 
   const solvedState = [1, 2, 3, 4, 5, 6, 7, 8, 0];
   const [grid, setGrid] = useState(generateGrid());
-  const [imageVisible, setImageVisible] = useState(false);
+  const [imageVisible, setImageVisible] = useState(() => {
+    const savedVisibility = sessionStorage.getItem("imageVisible");
+    return savedVisibility !== null ? JSON.parse(savedVisibility) : false;
+  });
 
   const missingIndex = grid.indexOf(MISSING_TILE);
 
@@ -68,13 +71,18 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
     setIsSolved(false);
   };
 
-  // const autoSolve = () => {
-  //   setGrid(solvedState);
-  //   setIsSolved(true);
-  //   setTimeout(() => {
-  //     setImageVisible(true);
-  //   }, 200);
-  // };
+  // // FOR TESTING
+  const autoSolve = () => {
+    setGrid(solvedState);
+    setIsSolved(true);
+    setTimeout(() => {
+      setImageVisible(true);
+    }, 200);
+  };
+
+    useEffect(() => {
+      sessionStorage.setItem("imageVisible", JSON.stringify(imageVisible));
+    }, [imageVisible]);
 
   return (
     <div className="sliding-puzzle">
@@ -110,13 +118,13 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
 
       {!isSolved && (
         <>
-          {/* <button
+          <button
             className="sliding-puzzle__button"
             onClick={autoSolve}
             disabled={isSolved}
           >
             Auto-solve
-          </button> */}
+          </button>
           <button
             className="sliding-puzzle__button"
             onClick={reshuffle}

@@ -35,6 +35,7 @@ export default function StoryPage({
   const pageContent = pageData[pageId] || {};
 
   const [name, setName] = useState("");
+  const [isInvalid, setIsInvalid] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [isSilent, setIsSilent] = useState(false);
   const [hasSpoken, setHasSpoken] = useState(false);
@@ -171,20 +172,42 @@ export default function StoryPage({
   }, [setIsDead, pageContent]);
 
   const handleInput = (e) => {
-    const value = e.target.value.trim();
+    // const value = e.target.value.trim();
+      const value = e.target.value
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
 
-    if (
-      pageContent.form &
-      (value === "Edoc'sv" ||
-        value === "edoc'sv" ||
-        value === "edocsv" ||
-        value === "Edocsv")
-    ) {
-      setPuzzleSolved(true);
-    } else if (pageContent.cube && ["syntax"].includes(value.toLowerCase())) {
-      setPuzzleSolved(true);
-      setIsSpelled(true);
-    }
+     const validRuneAnswers = ["edocsv"];
+     const validCubeAnswers = ["syntax"];
+
+       let isCorrect = false;
+
+ if (pageContent.rune) {
+   isCorrect = validRuneAnswers.includes(value);
+ } else if (pageContent.cube) {
+   isCorrect = validCubeAnswers.includes(value);
+ }
+
+   if (isCorrect) {
+     setPuzzleSolved(true);
+     setIsInvalid(false);
+     if (pageContent.cube) setIsSpelled(true);
+   } else {
+     setIsInvalid(true);
+   }
+    // if (
+    //   pageContent.form &
+    //   (value === "Edoc'sv" ||
+    //     value === "edoc'sv" ||
+    //     value === "edocsv" ||
+    //     value === "Edocsv")
+    // ) {
+    //   setPuzzleSolved(true);
+    // } else if (pageContent.cube && ["syntax"].includes(value.toLowerCase())) {
+    //   setPuzzleSolved(true);
+    //   setIsSpelled(true);
+    // }
   };
 
   const startListening = () => {
@@ -263,6 +286,63 @@ export default function StoryPage({
     return <div>Page not found</div>;
   }
 
+  // // test codde
+  // const keywords = [
+  //   "climbing",
+  //   "checking",
+  //   "foolishness",
+  //   "darkness",
+  //   "key",
+  //   "chest",
+  //   "mimic",
+  //   "hole",
+  //   "sacks",
+  //   "dice",
+  //   "study",
+  //   "letters",
+  //   "hourglass",
+  //   "comet",
+  //   "coin",
+  //   "highlight",
+  //   "slide",
+  //   "speak",
+  //   "press",
+  //   "stubbornness",
+  //   "closed",
+  //   "gap",
+  //   "killed",
+  //   "sequence",
+  //   "owlbear",
+  //   "slumber",
+  //   "friendship",
+  //   "journal",
+  //   "boots",
+  //   "embellish",
+  //   "secret",
+  //   "symbol",
+  //   "staff"
+  // ];
+
+  // const highlightKeywords = (text) => {
+  //   const keywordRegex = new RegExp(`\\b(${keywords.join("|")})\\b`, "gi");
+
+  //   return text.replace(keywordRegex, (match) => {
+  //     return `<span class="keyword">${match}</span>`;
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   const paragraphs = document.querySelectorAll(".page__text");
+
+  //   paragraphs.forEach((paragraph) => {
+  //     const text = paragraph.innerText;
+  //     const highlightedText = highlightKeywords(text);
+  //     paragraph.innerHTML = highlightedText;
+  //   });
+  // }, [pageContent.text]);
+
+  // //
+
   return (
     <div className="page">
       <div className="page__story">
@@ -295,12 +375,12 @@ export default function StoryPage({
         </div>
       )}
 
-      {pageContent.form && (
-        <div className="form ignore">
-          <img className="form__image" src={rune} alt="Magic rune" />
+      {pageContent.rune && (
+        <div className="rune ignore">
+          <img className="rune__image" src={rune} alt="Magic rune" />
           <input
             onChange={handleInput}
-            className="form__input"
+            className={`rune__input ${isInvalid ? "invalid" : ""}`}
             placeholder={
               !puzzleSolved
                 ? "Write the name of the rune."
@@ -349,7 +429,7 @@ export default function StoryPage({
                 : "Passphrase: syntax"
             }
             onChange={handleInput}
-            className="cubic__input ignore"
+            className={`cubic__input ignore ${isInvalid ? "invalid" : ""}`}
             disabled={puzzleSolved}
           ></input>
         </div>

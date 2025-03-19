@@ -19,8 +19,6 @@ export default function TextToSpeech( ) {
 
     const text = [...pageElements].map((element) => element.innerText.trim()).join(" ");
 
-    console.log(text);
-
     if (!text) {
       console.warn("No text found.");
       return;

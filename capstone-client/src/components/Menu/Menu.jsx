@@ -59,7 +59,6 @@ export default function Menu({
   }, [isSolved, isSpelled, wasHighlighted]);
 
   useEffect(() => {
-    console.log(symbol);
     if (symbol === "heart" || symbol === "treasure" || symbol === "skull") {
       setNoteHighlight(false);
     }

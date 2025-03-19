@@ -120,3 +120,11 @@ input {
     }
   }
 }
+
+.invalid {
+  border: .125rem solid $active-color;
+
+  &:focus {
+    border: .125rem solid $active-color;
+  }
+}

@@ -43,7 +43,7 @@
   "page3": {
     "text": [
       "You roll your shoulders in preparation for the climb. The ivy stretches all the way up the tower, and you can see that it curls into some windows set high above you. You never did very well in gym class, but you feel a surge of unearned confidence. You're the main character, after all.",
-      "Setting the balls of your feet against the side of the tower, you grasp a fistful of ivy in both hands and lean back to test your weight. Some tendrils come loose, but most of it holds. Thus assured, you slowly begin to pull yourself up. It's difficult work, but eventually you reach one of the windows. Through the glass, you can see a closed latch, but it doesn't look particularly sturdy. You're sure you can break in.",
+      "Setting the balls of your feet against the side of the tower, you grasp a fistful of ivy in both hands and lean back to test your weight. Some tendrils come loose, but most of it holds. Thus assured, you slowly begin to pull yourself up. It's difficult work, but eventually you reach one of the windows. Through the glass, you can see a shut latch, but it doesn't look particularly sturdy. You're sure you can break in.",
       "As you're pondering this, you glance down. Bad idea. You suddenly feel a rush of vertigo and jerk backwards in surprise. Really bad idea. With your rapid movement, the ivy you're holding is ripped from the wall, and you have a moment to ponder your foolishness before the ground rushes up to meet you. This is what you get for ignoring basic safety procedures."
     ],
     "prompt": "You die.",
@@ -151,7 +151,7 @@
   "page10": {
     "text": [
       "You open the door, somewhat surprised that it's unlocked. You find yourself in an austere room with nothing but a large, rotating cube floating in the centre and an open exit past it. Eyeing the cube suspiciously, you edge along the wall until you reach the exit and the hallway beyond.",
-      "You walk down it a ways, eventually coming to a platform with a closed door on the opposite side and stairs leading up. Thus informed, you return to the room. The mysterious cube is covered in letters. It seems to whisper in your mind: 'passphrase'. I wonder what it spells?"
+      "You walk down it a ways, eventually coming to a platform with a locked door on the opposite side and stairs leading up. Thus informed, you return to the room. The mysterious cube is covered in letters. It seems to whisper in your mind: 'passphrase'. I wonder what it spells?"
     ],
     "prompt": "What would you like to do next?",
     "choices": [
@@ -261,7 +261,7 @@
         "link": "/page19"
       }
     ],
-    "form": true,
+    "rune": true,
     "puzzle": true,
     "solvedText": "You did it! The door opens slowly.",
     "solvedChoices": [
@@ -300,7 +300,7 @@
     "text": [
       "You complete the spell, waiting breathlessly for the results. After a moment, the owlbear cub stirs with a feeble chirp. You've heard that owlbears are fierce creatures, not to be trifled with, but this one is just so darn cute. It blinks up at you with trust in its eyes.",
       "Making up your mind to take it with you, you bundle it into your pack. With the cub inside, there's absolutely no room for the hefty journal. You'll need both hands free to slide safely down the pole, so you won't be able to take anything else with you. Oh well, there's nothing to be done for it.",
-      "You grip the pole tightly and step into the hole, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.",
+      "You grip the pole tightly and step into the gap, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.",
       "From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pet the owlbear, who chirps happily. You can tell that this is the start of a long and beautiful friendship."
     ],
     "prompt": "Congratulations! You have a wonderful new companion for your adventures.",

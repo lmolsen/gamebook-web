@@ -93,6 +93,8 @@
 
     &--hints {
       width: 50%;
+      overflow-y: scroll;
+      @include no-scrollbar;
 
       @include tablet {
         width: 25%;
@@ -102,6 +104,8 @@
     &--notes {
       width: 50%;
       background-color: $medium-dark-color;
+      overflow-y: scroll;
+      @include no-scrollbar;
 
       @include tablet {
         width: 25%;

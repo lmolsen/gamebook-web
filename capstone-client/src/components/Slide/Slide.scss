@@ -28,6 +28,7 @@
 
     &--solved {
       pointer-events: none;
+      transition: opacity 3s ease-out;
     }
   }
 
@@ -39,7 +40,7 @@
     position: absolute;
     width: 19rem;
     height: 19rem;
-    background-image: url("./../../assets/images/puzzle-light.jpg");
+    background-image: url("./../../assets/images/rune-light.jpg");
     pointer-events: none;
     z-index: 10;
     opacity: 0;

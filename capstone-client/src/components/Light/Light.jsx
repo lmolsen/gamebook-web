@@ -36,7 +36,7 @@ export default function Light({ setPuzzleSolved, puzzleSolved }) {
   const handleFind = () => {
     setPuzzleSolved(true);
     let findAudio = new Audio(findSound);
-    keyAudio.volume = 1;
+    findAudio.volume = 1;
     findAudio.play();
   };
 

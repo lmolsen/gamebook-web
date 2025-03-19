@@ -167,7 +167,7 @@
   @include puzzle;
 }
 
-.form {
+.rune {
   width: 30%;
   gap: 1rem;
   @include flex-alignment(column, center);
@@ -245,4 +245,9 @@
   to {
     opacity: 1;
   }
+}
+
+.keyword {
+  color: $solved-color;
+  // font-weight: bold;
 }
