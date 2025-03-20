@@ -5,8 +5,8 @@ import Hints from "./../Hints/Hints";
 import Notes from "./../Notes/Notes";
 import handleRestart from "./../../utils/restartUtils";
 
-import audioOn from "./../../assets/icons/audio-on.png";
-import audioOff from "./../../assets/icons/audio-off.png";
+import audioPlay from "./../../assets/icons/play-music.png";
+import audioPause from "./../../assets/icons/pause-music.png";
 
 import "./Menu.scss";
 
@@ -110,7 +110,7 @@ export default function Menu({
           <button className="menu__audio" onClick={toggleMusic}>
             <img
               className="menu__icon"
-              src={isMusicOn ? audioOn : audioOff}
+              src={isMusicOn ? audioPause : audioPlay}
               alt="Audio icon"
             />
           </button>

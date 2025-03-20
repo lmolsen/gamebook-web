@@ -15,8 +15,8 @@ import brain from "./assets/images/brain.png";
 import book from "./assets/images/book.png";
 import treasure from "./assets/images/treasure.png";
 import restart from "./assets/icons/restart.png";
-import audioOn from "./assets/icons/audio-on.png";
-import audioOff from "./assets/icons/audio-off.png";
+import audioPlay from "./assets/icons/play-music.png";
+import audioPause from "./assets/icons/pause-music.png";
 
 import mainSong from "./assets/music/Video Dungeon Crawl.mp3";
 import fastSong from "./assets/music/Video Dungeon Boss.mp3";
@@ -144,8 +144,8 @@ function App() {
         {!isTitlePage && (
           <button className="header__audio" onClick={toggleMusic}>
             <img
-              className="header__icon"
-              src={isMusicOn ? audioOn : audioOff}
+              className="header__icon header__icon--audio"
+              src={isMusicOn ? audioPause : audioPlay}
               alt="Audio icon"
             />
           </button>

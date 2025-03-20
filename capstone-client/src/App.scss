@@ -38,6 +38,11 @@
     width: 2rem;
     height: 2rem;
 
+    &--audio {
+    width: 2.25rem;
+      height: 2.25rem;
+    }
+
     &--spinning {
       animation: spin 4s linear infinite;
     }

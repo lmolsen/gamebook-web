@@ -3,8 +3,8 @@
 ## Credits
 
 ### Icons
-- <a href="https://www.flaticon.com/free-icons/mute" title="mute icons">Mute icons created by Dave Gandy - Flaticon</a>
-- <a href="https://www.flaticon.com/free-icons/speaker" title="speaker icons">Speaker icons created by Freepik - Flaticon</a>
+- <a href="https://www.flaticon.com/free-icons/pause-circle" title="pause circle icons">Pause circle icons created by iconading - Flaticon</a>
+- <a href="https://www.flaticon.com/free-icons/video" title="video icons">Video icons created by Freepik - Flaticon</a>
 - <a href="https://www.flaticon.com/free-icons/restart" title="restart icons">Restart icons created by Freepik - Flaticon</a>
 - <a href="https://www.flaticon.com/free-icons/skull" title="skull icons">Skull icons created by juicy_fish - Flaticon</a>
 - <a href="https://www.flaticon.com/free-icons/chest" title="chest icons">Chest icons created by Smashicons - Flaticon</a>
