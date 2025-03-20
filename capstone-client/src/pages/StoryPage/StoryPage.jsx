@@ -44,6 +44,7 @@ export default function StoryPage({
   setIsSpelled,
   setIsHighlighted,
   setWasHighlighted,
+  wasHighlighted,
   setSymbol,
 }) {
   const { pageId } = useParams();
@@ -244,12 +245,12 @@ export default function StoryPage({
   }, [setIsHighlighted]);
 
   useEffect(() => {
-    if (puzzleSolved && pageId === "page16") {
+    if (wasHighlighted && pageId === "page16") {
       let wordAudio = new Audio(doubleSound);
       wordAudio.volume = 1;
       wordAudio.play();
     }
-  }, [puzzleSolved, pageId]);
+  }, [wasHighlighted, pageId]);
 
   useEffect(() => {
     if (pageContent.dead || (pageContent.drop && !feat)) {

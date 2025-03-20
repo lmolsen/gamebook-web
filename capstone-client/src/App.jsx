@@ -168,6 +168,7 @@ function App() {
                 isSolved={isSolved}
                 setIsSolved={setIsSolved}
                 setIsSpelled={setIsSpelled}
+                wasHighlighted={wasHighlighted}
                 setIsHighlighted={setIsHighlighted}
                 setWasHighlighted={setWasHighlighted}
                 setSymbol={setSymbol}

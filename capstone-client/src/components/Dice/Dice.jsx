@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 
 import rollSound from "./../../assets/sounds/dice.wav";
-import featSound from "./../../assets/sounds/ding.wav";
+import featSound from "./../../assets/sounds/exercise.wav";
 
 import "./Dice.scss";
 
