@@ -29,8 +29,8 @@ export default function WallOfFame() {
           ))
         )}
       </div>
-      <div className="credits-direct">
-        <Link className="credits-direct__link" to="/credits">
+      <div className="credits-path">
+        <Link className="credits-path__link" to="/credits">
           [Credits]
         </Link>
       </div>

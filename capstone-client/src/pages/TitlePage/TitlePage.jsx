@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import SplitText from "../../components/SplitText/SplitText";
 
 export default function TitlePage({ musicPlay }) {
-
   const text = (
     <div className="title-page__header">
       <h1 className="title-page__intro">Welcome to Gamebook Web.</h1>
-      <h2 className="title-page__intro">Are you ready to begin your adventure?</h2>
+      <h2 className="title-page__intro">
+        Are you ready to begin your adventure?
+      </h2>
     </div>
   );
 

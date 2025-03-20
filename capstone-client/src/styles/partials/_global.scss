@@ -9,8 +9,6 @@
   font-family: Verdana, sans-serif;
   text-decoration: none;
   @include no-scrollbar;
-  // scrollbar-gutter: stable both-edges;
-  // overflow:hidden;
 }
 
 button {
@@ -21,7 +19,6 @@ button {
   background-color: $light-color;
   min-height: 2.5rem;
   min-width: 7rem;
-
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -88,8 +85,6 @@ a {
 
 input {
   font-size: 0.75rem;
-  user-select: text;
-  -webkit-user-select: text;
   border: 0.125rem solid $medium-dark-color;
 
   @include tablet {
@@ -109,7 +104,7 @@ input {
 }
 
 
-.credits-direct {
+.credits-path {
   padding-top: 5rem;
 
   &__link {

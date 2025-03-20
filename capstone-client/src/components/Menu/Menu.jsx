@@ -1,11 +1,14 @@
-import "./Menu.scss";
-import Hints from "./../Hints/Hints";
-import Notes from "./../Notes/Notes";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
+import Hints from "./../Hints/Hints";
+import Notes from "./../Notes/Notes";
 import handleRestart from "./../../utils/restartUtils";
+
 import audioOn from "./../../assets/icons/audio-on.png";
 import audioOff from "./../../assets/icons/audio-off.png";
+
+import "./Menu.scss";
 
 export default function Menu({
   isSolved,
@@ -22,7 +25,7 @@ export default function Menu({
   volume,
   handleVolumeChange,
   musicStop,
-  toggleMusic
+  toggleMusic,
 }) {
   const navigate = useNavigate();
   const location = useLocation();
@@ -94,24 +97,23 @@ export default function Menu({
           <label className="menu__label" htmlFor="music">
             Music volume:
           </label>
-     
-            <input
-              className="menu__volume"
-              id="music"
-              name="music"
-              type="range"
-              min="0"
-              max="100"
-              value={volume}
-              onChange={handleVolumeChange}
+          <input
+            className="menu__volume"
+            id="music"
+            name="music"
+            type="range"
+            min="0"
+            max="100"
+            value={volume}
+            onChange={handleVolumeChange}
+          />
+          <button className="menu__audio" onClick={toggleMusic}>
+            <img
+              className="menu__icon"
+              src={isAudioOn ? audioOn : audioOff}
+              alt="Audio icon"
             />
-           <button className="menu__audio" onClick={toggleMusic}>
-                <img
-                  className="menu__icon"
-                  src={isAudioOn ? audioOn : audioOff}
-                  alt="Audio icon"
-                />
-              </button>
+          </button>
         </div>
       </div>
 

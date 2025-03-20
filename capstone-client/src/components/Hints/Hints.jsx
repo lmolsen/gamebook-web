@@ -1,10 +1,10 @@
-import "./Hints.scss"
 import { useLocation } from "react-router-dom";
+
+import "./Hints.scss";
 
 export default function Hints() {
     const location = useLocation();
     const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-
 
         return (
             <div className="hints">
@@ -13,7 +13,7 @@ export default function Hints() {
               {location.pathname === "/page3" && <p className="hints__text">Use some common sense.</p>}
               {location.pathname === "/page4" && <p className="hints__text">You should listen to the narrator.</p>}
               {location.pathname === "/page5" && <p className="hints__text">All that glitters is not gold.</p>}
-             {location.pathname === "/page6" && (<p className="hints__text"> {!isTouchDevice ? "Search slowly and the light will reveal the key." : "Tap wildly until you find the key!"}</p>)}
+              {location.pathname === "/page6" && (<p className="hints__text"> {!isTouchDevice ? "Search slowly and the light will reveal the key." : "Tap wildly until you find the key!"}</p>)}
               {location.pathname === "/page7" && <p className="hints__text">A job well done is its own reward.</p>}
               {location.pathname === "/page8" && <p className="hints__text">Patience is key.</p>}
               {location.pathname === "/page9" && <p className="hints__text">Hard work pays off!</p>}

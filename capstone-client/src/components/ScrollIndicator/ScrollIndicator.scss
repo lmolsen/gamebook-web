@@ -16,7 +16,7 @@
   @include flex-position(center, center);
 
   @include tablet {
-      bottom: 6.25rem;
+    bottom: 6.25rem;
   }
 
   &__indicator {
@@ -34,9 +34,11 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(8px);
   }
+
   100% {
     transform: translateY(0);
   }

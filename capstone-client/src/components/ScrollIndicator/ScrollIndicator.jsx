@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import "./ScrollIndicator.scss";
 
 export default function ScrollIndicator() {
@@ -6,7 +7,9 @@ export default function ScrollIndicator() {
   const [atBottom, setAtBottom] = useState(false);
 
   useEffect(() => {
-    const pageElement = document.querySelector(".page, .wall-of-fame, .credits");
+    const pageElement = document.querySelector(
+      ".page, .wall-of-fame, .credits"
+    );
 
     const checkScrollable = () => {
       if (pageElement) {
@@ -55,8 +58,7 @@ export default function ScrollIndicator() {
       {isScrollable && !atBottom && (
         <div className="scroll ignore">
           <div className="scroll__indicator">
-            <p className="scroll__text">More below</p>
-            ⌄
+            <p className="scroll__text">More below</p>⌄
           </div>
         </div>
       )}

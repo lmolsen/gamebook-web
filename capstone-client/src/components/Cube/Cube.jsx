@@ -1,21 +1,22 @@
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import { animate, frame } from 'motion';
-import './Cube.scss'; 
-import S from '../../assets/images/S.png';
-import Y from '../../assets/images/Y.png';
-import N from '../../assets/images/N.png';
-import T from '../../assets/images/T.png';
-import A from '../../assets/images/A.png';
-import X from '../../assets/images/X.png';
+import React, { useEffect, useRef } from "react";
+import * as THREE from "three";
+import { animate, frame } from "motion";
 
+import S from "../../assets/images/S.png";
+import Y from "../../assets/images/Y.png";
+import N from "../../assets/images/N.png";
+import T from "../../assets/images/T.png";
+import A from "../../assets/images/A.png";
+import X from "../../assets/images/X.png";
 
-export default function Cube (){
+import "./Cube.scss";
+
+export default function Cube() {
   const containerRef = useRef(null);
 
   useEffect(() => {
     const scene = new THREE.Scene();
-    scene.background = null; 
+    scene.background = null;
 
     const container = containerRef.current;
     const camera = new THREE.PerspectiveCamera(
@@ -31,7 +32,6 @@ export default function Cube (){
 
     const geometry = new THREE.BoxGeometry();
 
-
     const textureLoader = new THREE.TextureLoader();
     const textures = [
       textureLoader.load(S),
@@ -42,8 +42,9 @@ export default function Cube (){
       textureLoader.load(X),
     ];
 
-
-    const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture }));
+    const materials = textures.map(
+      (texture) => new THREE.MeshBasicMaterial({ map: texture })
+    );
 
     const cube = new THREE.Mesh(geometry, materials);
 
@@ -57,23 +58,23 @@ export default function Cube (){
     camera.position.z = 5;
 
     function rad(degrees) {
-        return degrees * (Math.PI / 180);
-      }
+      return degrees * (Math.PI / 180);
+    }
 
     frame.render(() => {
       renderer.render(scene, camera);
     }, true);
 
     animate(
-        cube.rotation,
-        {  y: rad(720), z: rad(360) },
-        { duration: 10, repeat: Infinity, ease: "linear" }
-    )
-    
+      cube.rotation,
+      { y: rad(720), z: rad(360) },
+      { duration: 10, repeat: Infinity, ease: "linear" }
+    );
+
     return () => {
       container.removeChild(renderer.domElement);
     };
   }, []);
 
   return <div ref={containerRef} className="cube"></div>;
-};
+}

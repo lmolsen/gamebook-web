@@ -274,7 +274,7 @@
   },
   "page16": {
     "text": [
-      "You enter the study, ready to stumble across some fantastical magical discovery. As you enter, you notice another side door leading out of the room.",
+      "You enter the study, taking note of the side door beside the massive writing desk. You ready yourself to stumble across some fantastical magical discovery.",
       "Instead, you spend the better part of an hour sifting through tomes and sheafs of parchment. Most of the writing is incomprehensible, penned in lost languages or depicting strange magic runes. Right as you're about to give up, you find a small scrap of paper with a promising word written across half of it: 'Passphrase:'.",
       "The other half of the paper is blank. You're sure there must be something written there. Perhaps in invisible ink? Unfortunately, you can't make anything out in the low light of the dusty room. If only there were a way for you to get a highlight on the paper."
     ],
@@ -320,7 +320,7 @@
   "page19": {
     "text": [
       "You gather as much of the treasure as you can carry. Conveniently, the room has a few rucksacks that you can grab, as your own bag soon runs of room. Stopping just before the point of over-encumberment, you waddle out of the room.",
-      "The tower seems to clear the way for you, unlocking doors so that you can retrace your steps all the way back out through the cellar. With this vast hoard of wealth, you can finally pay off your student debt! And have a little left over besides."
+      "The tower seems to clear the way for you, unlocking doors so that you can retrace your steps all the way back out through the cellar. With this vast hoard of wealth, you can finally pay off your bard college debt! And have a little left over besides."
     ],
     "prompt": "Congratulations! You are now rich beyond your wildest dreams.",
     "accomplishment": "Discovered the wizard's treasure.",

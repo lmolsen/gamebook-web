@@ -35,11 +35,13 @@
     gap: 0.5rem;
     color: $light-color;
   }
+
   &__try {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
     border: 0.125rem solid $light-color;
+
     &--filled {
       background-color: $light-color;
     }
@@ -78,6 +80,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

@@ -1,6 +1,7 @@
 import { animate, stagger } from "motion";
 import { splitText } from "motion-plus";
 import { useEffect, useRef } from "react";
+
 import "./SplitText.scss";
 
 export default function SplitText({ text }) {
@@ -13,7 +14,7 @@ export default function SplitText({ text }) {
 
     elements.forEach((element) => {
       const { words } = splitText(element);
-      
+
       animate(
         words,
         { opacity: [0, 1], y: [10, 0] },
@@ -27,5 +28,9 @@ export default function SplitText({ text }) {
     });
   }, []);
 
-  return <div className="split-container" ref={containerRef}>{text}</div>;
+  return (
+    <div className="split-container" ref={containerRef}>
+      {text}
+    </div>
+  );
 }

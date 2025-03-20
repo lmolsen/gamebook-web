@@ -1,8 +1,9 @@
-import "./TextToSpeech.scss";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-export default function TextToSpeech( ) {
+import "./TextToSpeech.scss";
+
+export default function TextToSpeech() {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const location = useLocation();
 
@@ -15,9 +16,13 @@ export default function TextToSpeech( ) {
 
     speechSynthesis.cancel();
 
-    const pageElements = document.querySelectorAll(".page > *:not(.ignore), .wall-of-fame, .credits");
+    const pageElements = document.querySelectorAll(
+      ".page > *:not(.ignore), .wall-of-fame, .credits"
+    );
 
-    const text = [...pageElements].map((element) => element.innerText.trim()).join(" ");
+    const text = [...pageElements]
+      .map((element) => element.innerText.trim())
+      .join(" ");
 
     if (!text) {
       console.warn("No text found.");
@@ -26,7 +31,7 @@ export default function TextToSpeech( ) {
 
     let sentences = text.split(/(?<=[.!?]\s*|\])\s+/);
 
-    const readText = (sentenceIndex = 0, optionIndex=1) => {
+    const readText = (sentenceIndex = 0, optionIndex = 1) => {
       if (sentenceIndex >= sentences.length) {
         setIsSpeaking(false);
         return;
@@ -34,7 +39,7 @@ export default function TextToSpeech( ) {
 
       const sentence = sentences[sentenceIndex];
       const isChoice = sentence.includes("[");
-      const pauseDuration = isChoice ? 500 : 0;  
+      const pauseDuration = isChoice ? 500 : 0;
 
       const speech = new SpeechSynthesisUtterance(sentence);
 
@@ -45,31 +50,31 @@ export default function TextToSpeech( ) {
       }
 
       const voices = speechSynthesis.getVoices();
-      speech.voice = voices.find((v) => v.name === "Google UK English Male") || voices[0];
+      speech.voice =
+        voices.find((v) => v.name === "Google UK English Male") || voices[0];
 
       speech.onend = () => {
         setTimeout(() => {
-    
-          readText(sentenceIndex + 1,  isChoice ? optionIndex + 1 : optionIndex); 
-        }, pauseDuration);  
+          readText(sentenceIndex + 1, isChoice ? optionIndex + 1 : optionIndex);
+        }, pauseDuration);
       };
 
       if (voices.length === 0) {
         setTimeout(() => {
-          readText(sentenceIndex); 
+          readText(sentenceIndex);
         }, 100);
       } else {
-        speechSynthesis.speak(speech);  
+        speechSynthesis.speak(speech);
       }
     };
 
     setIsSpeaking(true);
-    readText();  
+    readText();
   };
 
   useEffect(() => {
     return () => {
-        if (isSpeaking) {
+      if (isSpeaking) {
         speechSynthesis.cancel();
         setIsSpeaking(false);
       }
@@ -82,4 +87,3 @@ export default function TextToSpeech( ) {
     </button>
   );
 }
-

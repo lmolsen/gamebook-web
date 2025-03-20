@@ -9,7 +9,6 @@
 
   @include desktop {
     width: 60%;
-    // overflow-y: scroll;
   }
 }
 
@@ -59,7 +58,6 @@
 
 .screen {
   height: 100vh;
-  // overflow-y: hidden;
   @include flex-full(column, flex-start, center);
 }
 

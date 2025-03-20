@@ -1,11 +1,10 @@
-import "./StoryPage.scss";
-
 import { useLocation, useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { Filter } from "bad-words";
 import { postName } from "../../utils/apiUtils";
 
 import rune from "../../assets/images/rune.png";
+
 import chirpSound from "./../../assets/sounds/owlbear.wav";
 import coinSound from "./../../assets/sounds/coins.wav";
 import paperSound from "./../../assets/sounds/paper.wav";
@@ -28,14 +27,17 @@ import towerSound from "./../../assets/sounds/tower-fall.wav";
 import discSound from "./../../assets/sounds/stone-slide.wav";
 import lockSound from "./../../assets/sounds/lock.wav";
 import stepsSound from "./../../assets/sounds/footsteps.wav";
-import pageData from "../../data/pageData.json";
-import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 
+import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 import Slide from "../../components/Slide/Slide";
 import Light from "../../components/Light/Light";
 import Dice from "../../components/Dice/Dice";
 import Cube from "../../components/Cube/Cube";
 import Sequence from "../../components/Sequence/Sequence";
+
+import pageData from "../../data/pageData.json";
+
+import "./StoryPage.scss";
 
 export default function StoryPage({
   isDead,
@@ -615,7 +617,7 @@ export default function StoryPage({
       )}
 
       {isDead && location.pathname != "/credits" && (
-        <div className="credits-direct">
+        <div className="credits-path">
           <Link className="credits-link" to="/credits">
             [Credits]
           </Link>

@@ -30,12 +30,13 @@ import Credits from "./pages/Credits/Credits";
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
+
   const isTitlePage = location.pathname === "/";
 
   const [isDead, setIsDead] = useState(false);
+  const [symbol, setSymbol] = useState(null);
   const [noteHighlight, setNoteHighlight] = useState(false);
   const [_isHighlighted, setIsHighlighted] = useState(false);
-  const [symbol, setSymbol] = useState(null);
 
   const [wasHighlighted, setWasHighlighted] = useState(() => {
     const storedValue = sessionStorage.getItem("wasHighlighted");
@@ -59,7 +60,7 @@ function App() {
     toggleMusic,
     isAudioOn,
     setMusicFilePath,
-    musicStop
+    musicStop,
   } = useAudio();
 
   useEffect(() => {
@@ -85,7 +86,6 @@ function App() {
       setMusicFilePath(happySong);
     } else if (symbol === "treasure") {
       setMusicFilePath(treasureSong);
-
     } else {
       setMusicFilePath(mainSong);
     }

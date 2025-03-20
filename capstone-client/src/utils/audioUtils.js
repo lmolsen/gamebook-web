@@ -43,7 +43,6 @@ export const useAudio = () => {
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current = null;
-      // setIsAudioOn(true);
     }
   };
 

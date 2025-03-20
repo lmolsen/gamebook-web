@@ -7,7 +7,7 @@ export default function Credits() {
       <h1 className="credits__title">
         Credits<span className="credits__pause">.</span>
       </h1>
-      <div className="credits__creator">
+      <div className="credits__block">
         <p className="credits__type">
           Programmer, Writer, Designer, Foley Artist, etc.
         </p>

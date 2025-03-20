@@ -11,11 +11,11 @@
     padding-top: 10rem;
     @include flex-full(column, center, center);
   }
-  
+
   &__intro {
     margin-bottom: 2rem;
   }
-  
+
   &__link {
     padding-top: 2rem;
     @include flex-position(center, center);
@@ -27,4 +27,3 @@
     }
   }
 }
-

@@ -79,7 +79,7 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat, feat }) {
         }}
         transition={{ duration: 0.5 }}
       >
-        <div className="roll__face ignore">
+        <div className="roll__face">
           <span className="roll__number">{number}</span>
         </div>
       </motion.div>

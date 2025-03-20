@@ -79,7 +79,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
   function handleClick(index) {
     if (puzzleSolved || tries >= 3) return;
     setClick(click + 1);
-    let beepAudio = new Audio(beepSound); 
+    let beepAudio = new Audio(beepSound);
     beepAudio.play();
 
     timeOut += 5000;
@@ -96,10 +96,10 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
         setClick(0);
         setPlayerInput([]);
 
-         setTimeout(() => {
-        let failAudio = new Audio(failSound);
-        failAudio.play();
-      }, 300);
+        setTimeout(() => {
+          let failAudio = new Audio(failSound);
+          failAudio.play();
+        }, 300);
       }
       return;
     }

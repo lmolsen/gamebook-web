@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
+
 import puzzleImage from "./../../assets/images/rune-light.jpg";
 import stoneSound from "./../../assets/sounds/stone-bass.wav";
 import dingSound from "./../../assets/sounds/ding.wav";
+
 import "./Slide.scss";
 
 export default function Slide({ setPuzzleSolved, setIsSolved, isSolved }) {
@@ -75,7 +77,7 @@ export default function Slide({ setPuzzleSolved, setIsSolved, isSolved }) {
     setIsSolved(false);
   };
 
-  // // FOR TESTING
+  // // KEEP FOR TESTING
   // const autoSolve = () => {
   //   setGrid(solvedState);
   //   setIsSolved(true);

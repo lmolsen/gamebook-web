@@ -17,18 +17,16 @@
 
   &__light {
     @media (pointer: fine) {
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(0, 0, 0, 0) 80%
-    );
-    border-radius: 50%;
-    pointer-events: none;
-    mix-blend-mode: screen;
-    transform: translate(-50%, -50%);
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      background: radial-gradient(circle,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(73, 22, 22, 0) 80%);
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: screen; // keep for if bg is changed from pure black
+      transform: translate(-50%, -50%);
     }
   }
 

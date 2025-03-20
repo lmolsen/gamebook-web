@@ -3,73 +3,74 @@
 
 //media queries
 @mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
-      @content;
-    }
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
   }
-  
-  @mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
-      @content;
-    }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
   }
-  
-  // flex
-  @mixin flex-full ($flex-direction, $justify-content, $align-items) {
-    display: flex;
-    flex-direction: $flex-direction;
-    justify-content: $justify-content;
-    align-items: $align-items;
-  }
+}
 
-  @mixin flex-position ($justify-content, $align-items) {
-    display: flex;
-    justify-content: $justify-content;
-    align-items: $align-items;
-  }
-  
+// flex
+@mixin flex-full ($flex-direction, $justify-content, $align-items) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
 
-  @mixin flex-orientation ($flex-direction, $justify-content) {
-    display: flex;
-    flex-direction: $flex-direction;
-    justify-content: $justify-content;
-  }
+@mixin flex-position ($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
 
-  @mixin flex-alignment ($flex-direction, $align-items) {
-    display: flex;
-    flex-direction: $flex-direction;
-    align-items: $align-items;
-  }
 
-  // text
-  @mixin handwriting {
-    font-family: "Caveat";
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-  }
+@mixin flex-orientation ($flex-direction, $justify-content) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+}
 
-  // styling
-  @mixin puzzle {
-    margin: 2rem 0;
-  }
+@mixin flex-alignment ($flex-direction, $align-items) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+}
 
-  // functional
-  // @mixin select-none {
-  //   user-select: none;
-  //   -webkit-user-select: none;
-  //   outline: none;
-  // }
+// text
+@mixin handwriting {
+  font-family: "Caveat";
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
 
-  // @mixin select {
-  //   user-select: text;
-  //   -webkit-user-select: text; 
-  //   caret-color: transparent; 
-  // }
+// styling
+@mixin puzzle {
+  margin: 2rem 0;
+}
 
+// functional
 @mixin no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
 }
+
+// @mixin select-none {
+//   user-select: none;
+//   -webkit-user-select: none;
+//   outline: none;
+// }
+
+// @mixin select {
+//   user-select: text;
+//   -webkit-user-select: text; 
+//   caret-color: transparent; 
+// }

@@ -14,25 +14,9 @@
         justify-content: center;
     }
 
-    &__creator {
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-        gap: 1rem;
-        width: 90%;
-        @include flex-full(column, center, flex-start);
-
-        @include tablet {
-            align-items: center;
-        }
-    }
-
-    &__type {
-        color: $solved-color;
-    }
-
     &__block {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
         gap: 1rem;
         width: 90%;
         @include flex-full(column, center, flex-start);
@@ -41,6 +25,10 @@
             align-items: center;
             text-align: center;
         }
+    }
+
+    &__type {
+        color: $solved-color;
     }
 
     &__license {
