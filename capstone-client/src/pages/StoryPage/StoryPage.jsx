@@ -2,31 +2,14 @@ import { useLocation, useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { Filter } from "bad-words";
 import { postName } from "../../utils/apiUtils";
+import { playPageSound, cleanupAudio } from "./../../utils/soundEffectUtils";
 
-import rune from "../../assets/images/rune.png";
-
-import chirpSound from "./../../assets/sounds/owlbear.wav";
-import coinSound from "./../../assets/sounds/coins.wav";
-import paperSound from "./../../assets/sounds/paper.wav";
-import teleportSound from "./../../assets/sounds/teleport.wav";
 import doubleSound from "./../../assets/sounds/double.wav";
 import singleSound from "./../../assets/sounds/single.wav";
 import openSound from "./../../assets/sounds/open-door.wav";
-import whooshSound from "./../../assets/sounds/whoosh.wav";
-import crunchSound from "./../../assets/sounds/crunch.wav";
-import portalSound from "./../../assets/sounds/portal.wav";
-import fallSound from "./../../assets/sounds/fall.wav";
-import splatSound from "./../../assets/sounds/splat.wav";
-import safeSound from "./../../assets/sounds/safe.wav";
-import gasSound from "./../../assets/sounds/gas.wav";
-import brambleSound from "./../../assets/sounds/brambles.wav";
-import labSound from "./../../assets/sounds/wubwub.wav";
-import bangSound from "./../../assets/sounds/bang.wav";
-import poleSound from "./../../assets/sounds/pole.wav";
-import towerSound from "./../../assets/sounds/tower-fall.wav";
 import discSound from "./../../assets/sounds/stone-slide.wav";
-import lockSound from "./../../assets/sounds/lock.wav";
-import stepsSound from "./../../assets/sounds/footsteps.wav";
+
+import rune from "../../assets/images/rune.png";
 
 import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 import Slide from "../../components/Slide/Slide";
@@ -53,7 +36,7 @@ export default function StoryPage({
   const { pageId } = useParams();
   const pageContent = pageData[pageId] || {};
 
-  const doorAudioRef = useRef(null);
+  const effectAudioRef = useRef(null);
 
   const [name, setName] = useState("");
   const [isInvalid, setIsInvalid] = useState(false);
@@ -82,220 +65,13 @@ export default function StoryPage({
     return false;
   });
 
-  const correctAnswer = ["root root", "route route", "rootroot", "routeroute"];
-  const alternateAnswer = ["syntax", "sin tax", "send text", "send tax"];
-
   const filter = new Filter();
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (hasPuzzle) {
-      const storedPuzzleState = sessionStorage.getItem(
-        `puzzleSolved-${pageId}`
-      );
-      const puzzleSolvedFromStorage = storedPuzzleState
-        ? JSON.parse(storedPuzzleState)
-        : false;
-      setPuzzleSolved(puzzleSolvedFromStorage);
-    }
-
-    setSymbol(pageContent.symbol);
-    if (feat && location.pathname === "/page9") {
-      setSymbol("treasure");
-    }
-  }, [location]);
-
-  useEffect(() => {
-    if (transcript) {
-      sessionStorage.setItem(`transcript`, transcript);
-    }
-  }, [transcript, pageId]);
-
-  useEffect(() => {
-    sessionStorage.setItem("feat", JSON.stringify(feat));
-  }, [feat]);
-
-  useEffect(() => {
-    let audioList = [];
-
-    if (location.pathname === "/page17") {
-      let chirpAudio = new Audio(chirpSound);
-      chirpAudio.play();
-      audioList.push(chirpAudio);
-    } else if (location.pathname === "/page2") {
-      let lockAudio = new Audio(lockSound);
-      lockAudio.volume = 0.9;
-      lockAudio.play();
-      audioList.push(lockAudio);
-    } else if (location.pathname === "/page3") {
-      let fallAudio = new Audio(fallSound);
-      fallAudio.play();
-      audioList.push(fallAudio);
-    } else if (location.pathname === "/page4") {
-      let bangAudio = new Audio(bangSound);
-      bangAudio.volume = 0.8;
-      bangAudio.play();
-      audioList.push(bangAudio);
-    } else if (location.pathname === "/page5") {
-      let whooshAudio = new Audio(whooshSound);
-      whooshAudio.play();
-      audioList.push(whooshAudio);
-    } else if (location.pathname === "/page9") {
-      if (!feat) {
-        let splatAudio = new Audio(splatSound);
-        splatAudio.play();
-        audioList.push(splatAudio);
-      } else {
-        let safeAudio = new Audio(safeSound);
-        safeAudio.play();
-        audioList.push(safeAudio);
-      }
-    } else if (location.pathname === "/page11") {
-      let crunchAudio = new Audio(crunchSound);
-      crunchAudio.play();
-      audioList.push(crunchAudio);
-    } else if (location.pathname === "/page13") {
-      let portalAudio = new Audio(portalSound);
-      portalAudio.play();
-      audioList.push(portalAudio);
-    } else if (location.pathname === "/page16") {
-      let paperAudio = new Audio(paperSound);
-      paperAudio.play();
-      audioList.push(paperAudio);
-    } else if (location.pathname === "/page18") {
-      let teleportAudio = new Audio(teleportSound);
-      teleportAudio.play();
-      audioList.push(teleportAudio);
-    } else if (location.pathname === "/page19") {
-      let coinAudio = new Audio(coinSound);
-      coinAudio.play();
-      audioList.push(coinAudio);
-    } else if (location.pathname === "/page20") {
-      let bramblesAudio = new Audio(brambleSound);
-      bramblesAudio.play();
-      audioList.push(bramblesAudio);
-    } else if (location.pathname === "/page22") {
-      let labAudio = new Audio(labSound);
-      labAudio.play();
-      audioList.push(labAudio);
-    } else if (location.pathname === "/page23") {
-      let towerAudio = new Audio(towerSound);
-      towerAudio.play();
-      audioList.push(towerAudio);
-    } else if (location.pathname === "/page24") {
-      let gasAudio = new Audio(gasSound);
-      gasAudio.volume = 0.6;
-      gasAudio.play();
-      audioList.push(gasAudio);
-    } else if (location.pathname === "/page25") {
-      let poleAudio = new Audio(poleSound);
-      poleAudio.play();
-      audioList.push(poleAudio);
-    } else if (
-      location.pathname === "/page21" ||
-      location.pathname === "/page27"
-    ) {
-      let stepsAudio = new Audio(stepsSound);
-      stepsAudio.play();
-      audioList.push(stepsAudio);
-    }
-    return () => {
-      audioList.forEach((audio) => {
-        if (audio) {
-          audio.pause();
-          audio.currentTime = 0;
-        }
-      });
-
-      if (doorAudioRef.current) {
-        doorAudioRef.current.pause();
-        doorAudioRef.current.currentTime = 0;
-        doorAudioRef.current = null;
-      }
-
-      audioList = [];
-    };
-  }, [location]);
-
-  useEffect(() => {
-    if (hasPuzzle) {
-      sessionStorage.setItem(
-        `puzzleSolved-${pageId}`,
-        JSON.stringify(puzzleSolved)
-      );
-    }
-  }, [puzzleSolved, pageId, hasPuzzle]);
-
-  useEffect(() => {
-    const handleSelection = () => {
-      const selection = window.getSelection();
-      const selectedText = selection ? selection.toString() : "";
-
-      if (selectedText.includes("rootroot")) {
-        setPuzzleSolved(true);
-        setIsHighlighted(true);
-        setWasHighlighted(true);
-      } else {
-        setIsHighlighted(false);
-      }
-    };
-
-    document.addEventListener("selectionchange", handleSelection);
-
-    return () =>
-      document.removeEventListener("selectionchange", handleSelection);
-  }, [setIsHighlighted]);
-
-  useEffect(() => {
-    if (wasHighlighted && pageId === "page16") {
-      let wordAudio = new Audio(doubleSound);
-      wordAudio.volume = 1;
-      wordAudio.play();
-    }
-  }, [wasHighlighted, pageId]);
-
-  useEffect(() => {
-    if (pageContent.dead || (pageContent.drop && !feat)) {
-      setIsDead(true);
-    }
-  }, [setIsDead, pageContent]);
-
-  const handleInput = (e) => {
-    const value = e.target.value
-      .trim()
-      .toLowerCase()
-      .replace(/[^a-z0-9]/g, "");
-
-    const validRuneAnswers = ["edocsv"];
-    const validCubeAnswers = ["syntax"];
-
-    let isCorrect = false;
-
-    if (pageContent.rune) {
-      isCorrect = validRuneAnswers.includes(value);
-    } else if (pageContent.cube) {
-      isCorrect = validCubeAnswers.includes(value);
-    }
-
-    if (isCorrect) {
-      setPuzzleSolved(true);
-      setIsInvalid(false);
-      if (pageContent.cube) {
-        setIsSpelled(true);
-        let cubeAudio = new Audio(singleSound);
-        cubeAudio.volume = 1;
-        cubeAudio.play();
-      }
-      if (pageContent.rune) {
-        let symbolAudio = new Audio(openSound);
-        symbolAudio.volume = 1;
-        symbolAudio.play();
-      }
-    } else {
-      setIsInvalid(true);
-    }
-  };
+  // SPEAK speech recognition
+  const correctAnswer = ["root root", "route route", "rootroot", "routeroute"];
+  const alternateAnswer = ["syntax", "sin tax", "send text", "send tax"];
 
   const startListening = () => {
     const SpeechRecognition =
@@ -337,10 +113,10 @@ export default function StoryPage({
 
       if (correctAnswer.includes(result) || alternateAnswer.includes(result)) {
         setPuzzleSolved(true);
-        const doorAudio = new Audio(discSound);
-        doorAudio.volume = 0.8;
-        doorAudio.play();
-        doorAudioRef.current = doorAudio;
+        const discAudio = new Audio(discSound);
+        discAudio.volume = 0.8;
+        discAudio.play();
+        effectAudioRef.current = discAudio;
       }
     };
 
@@ -349,6 +125,134 @@ export default function StoryPage({
     recognition.start();
   };
 
+  useEffect(() => {
+    if (transcript) {
+      sessionStorage.setItem(`transcript`, transcript);
+    }
+  }, [transcript, pageId]);
+
+  // PUZZLE solved and feat states
+  useEffect(() => {
+    if (hasPuzzle) {
+      const storedPuzzleState = sessionStorage.getItem(
+        `puzzleSolved-${pageId}`
+      );
+      const puzzleSolvedFromStorage = storedPuzzleState
+        ? JSON.parse(storedPuzzleState)
+        : false;
+      setPuzzleSolved(puzzleSolvedFromStorage);
+    }
+
+    setSymbol(pageContent.symbol);
+    if (feat && location.pathname === "/page9") {
+      setSymbol("treasure");
+    }
+  }, [location]);
+
+  useEffect(() => {
+    sessionStorage.setItem("feat", JSON.stringify(feat));
+  }, [feat]);
+
+  // SOUND EFFECTS for page entry and cleanup for conditional
+  useEffect(() => {
+    const audioList = playPageSound(location.pathname, feat);
+
+    return () => {
+      cleanupAudio(audioList);
+
+      if (effectAudioRef.current) {
+        effectAudioRef.current.pause();
+        effectAudioRef.current.currentTime = 0;
+        effectAudioRef.current = null;
+      }
+    };
+  }, [location]);
+
+  useEffect(() => {
+    if (hasPuzzle) {
+      sessionStorage.setItem(
+        `puzzleSolved-${pageId}`,
+        JSON.stringify(puzzleSolved)
+      );
+    }
+  }, [puzzleSolved, pageId, hasPuzzle]);
+
+  // HIGHLIGHT selection
+  useEffect(() => {
+    const handleSelection = () => {
+      const selection = window.getSelection();
+      const selectedText = selection ? selection.toString() : "";
+
+      if (selectedText.includes("rootroot")) {
+        setPuzzleSolved(true);
+        setIsHighlighted(true);
+        setWasHighlighted(true);
+      } else {
+        setIsHighlighted(false);
+      }
+    };
+
+    document.addEventListener("selectionchange", handleSelection);
+
+    return () =>
+      document.removeEventListener("selectionchange", handleSelection);
+  }, [setIsHighlighted]);
+
+  useEffect(() => {
+    if (wasHighlighted && pageId === "page16") {
+      let wordAudio = new Audio(doubleSound);
+      wordAudio.volume = 1;
+      wordAudio.play();
+      effectAudioRef.current = wordAudio;
+    }
+  }, [wasHighlighted, pageId]);
+
+  useEffect(() => {
+    if (pageContent.dead || (pageContent.drop && !feat)) {
+      setIsDead(true);
+    }
+  }, [setIsDead, pageContent]);
+
+  // CUBE & RUNE text input handling
+  const handleInput = (e) => {
+    const value = e.target.value
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, "");
+
+    const validRuneAnswers = ["edocsv"];
+    const validCubeAnswers = ["syntax"];
+
+    let isCorrect = false;
+
+    if (pageContent.rune) {
+      isCorrect = validRuneAnswers.includes(value);
+    } else if (pageContent.cube) {
+      isCorrect = validCubeAnswers.includes(value);
+    }
+
+    if (isCorrect) {
+      setPuzzleSolved(true);
+      setIsInvalid(false);
+      if (pageContent.cube) {
+        setIsSpelled(true);
+        let cubeAudio = new Audio(singleSound);
+        cubeAudio.volume = 1;
+        cubeAudio.play();
+        effectAudioRef.current = cubeAudio;
+      }
+      if (pageContent.rune) {
+        let runeAudio = new Audio(openSound);
+        runeAudio.volume = 1;
+        runeAudio.play();
+        effectAudioRef.current = runeAudio;
+      }
+    } else {
+      setIsInvalid(true);
+    }
+  };
+
+  // WALL OF FAME form submission
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -372,11 +276,7 @@ export default function StoryPage({
     }
   };
 
-  if (!pageContent) {
-    return <div>Page not found</div>;
-  }
-
-  // FADE IN ANIMATION
+  // FADE IN animation
   useEffect(() => {
     const hasAlreadyRun = sessionStorage.getItem(
       `animationCompleted-${pageId}`
@@ -411,6 +311,11 @@ export default function StoryPage({
     }
   }, [location]);
 
+  // Check for lacking page content
+  if (!pageContent) {
+    return <div>Page content not found.</div>;
+  }
+
   return (
     <div className="page">
       <div className="page__story">
@@ -431,6 +336,7 @@ export default function StoryPage({
             setPuzzleSolved={setPuzzleSolved}
             setIsSolved={setIsSolved}
             isSolved={isSolved}
+            effectAudioRef={effectAudioRef}
           />
         </div>
       )}
@@ -448,6 +354,7 @@ export default function StoryPage({
           <img className="rune__image" src={rune} alt="Magic rune" />
           <input
             onChange={handleInput}
+            name="rune"
             className={`rune__input ${isInvalid ? "invalid" : ""}`}
             placeholder={
               !puzzleSolved
@@ -464,6 +371,7 @@ export default function StoryPage({
           <Light
             puzzleSolved={puzzleSolved}
             setPuzzleSolved={setPuzzleSolved}
+            effectAudioRef={effectAudioRef}
           />
         </div>
       )}
@@ -473,6 +381,7 @@ export default function StoryPage({
           <Sequence
             puzzleSolved={puzzleSolved}
             setPuzzleSolved={setPuzzleSolved}
+            effectAudioRef={effectAudioRef}
           />
         </div>
       )}
@@ -483,6 +392,7 @@ export default function StoryPage({
             setPuzzleSolved={setPuzzleSolved}
             setFeat={setFeat}
             feat={feat}
+            effectAudioRef={effectAudioRef}
           />
         </div>
       )}
@@ -497,6 +407,7 @@ export default function StoryPage({
                 : "Passphrase: syntax"
             }
             onChange={handleInput}
+            name="cube"
             className={`cubic__input ${isInvalid ? "invalid" : ""}`}
             disabled={puzzleSolved}
           ></input>
@@ -606,6 +517,7 @@ export default function StoryPage({
           <input
             className="name__input"
             value={name}
+            name="name"
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your name for the Wall of Fame."
             maxLength={50}
@@ -618,7 +530,7 @@ export default function StoryPage({
 
       {isDead && location.pathname != "/credits" && (
         <div className="credits-path">
-          <Link className="credits-link" to="/credits">
+          <Link className="credits-path__link" to="/credits">
             [Credits]
           </Link>
         </div>

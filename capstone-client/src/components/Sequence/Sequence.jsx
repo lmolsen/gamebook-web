@@ -7,7 +7,11 @@ import failSound from "./../../assets/sounds/fail.wav";
 
 import "./Sequence.scss";
 
-export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
+export default function Sequence({
+  puzzleSolved,
+  setPuzzleSolved,
+  effectAudioRef,
+}) {
   const [playerInput, setPlayerInput] = useState([]);
   const [click, setClick] = useState(0);
   const [tries, setTries] = useState(() => {
@@ -81,6 +85,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
     setClick(click + 1);
     let beepAudio = new Audio(beepSound);
     beepAudio.play();
+    effectAudioRef.current = beepAudio;
 
     timeOut += 5000;
     const newPlayerInput = [...playerInput, index];
@@ -99,6 +104,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
         setTimeout(() => {
           let failAudio = new Audio(failSound);
           failAudio.play();
+          effectAudioRef.current = failAudio;
         }, 300);
       }
       return;
@@ -109,6 +115,7 @@ export default function Sequence({ puzzleSolved, setPuzzleSolved }) {
       setTimeout(() => {
         let successAudio = new Audio(successSound);
         successAudio.play();
+        effectAudioRef.current = successAudio;
       }, 300);
     }
   }

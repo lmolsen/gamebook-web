@@ -24,7 +24,7 @@ import happySong from "./assets/music/Bit Quest.mp3";
 import treasureSong from "./assets/music/Overworld.mp3";
 import deathSong from "./assets/music/Amazing Grace 2011.mp3";
 
-import { useAudio } from "./utils/audioUtils";
+import { useMusic } from "./utils/musicUtils";
 import Credits from "./pages/Credits/Credits";
 
 function App() {
@@ -58,10 +58,10 @@ function App() {
     volume,
     handleVolumeChange,
     toggleMusic,
-    isAudioOn,
+    isMusicOn,
     setMusicFilePath,
     musicStop,
-  } = useAudio();
+  } = useMusic();
 
   useEffect(() => {
     sessionStorage.setItem("wasHighlighted", JSON.stringify(wasHighlighted));
@@ -141,7 +141,7 @@ function App() {
           <button className="header__audio" onClick={toggleMusic}>
             <img
               className="header__icon"
-              src={isAudioOn ? audioOn : audioOff}
+              src={isMusicOn ? audioOn : audioOff}
               alt="Audio icon"
             />
           </button>
@@ -202,7 +202,7 @@ function App() {
           setIsDead={setIsDead}
           symbol={symbol}
           setSymbol={setSymbol}
-          isAudioOn={isAudioOn}
+          isMusicOn={isMusicOn}
           volume={volume}
           handleVolumeChange={handleVolumeChange}
           musicStop={musicStop}

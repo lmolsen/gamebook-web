@@ -7,7 +7,13 @@ import featSound from "./../../assets/sounds/exercise.wav";
 
 import "./Dice.scss";
 
-export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat, feat }) {
+export default function Dice({
+  puzzleSolved,
+  setPuzzleSolved,
+  setFeat,
+  feat,
+  effectAudioRef,
+}) {
   const [number, setNumber] = useState(() => (feat ? 6 : 1));
   const [rolling, setRolling] = useState(false);
   const [tries, setTries] = useState(() => {
@@ -25,6 +31,7 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat, feat }) {
     let rollAudio = new Audio(rollSound);
     rollAudio.volume = 1;
     rollAudio.play();
+    effectAudioRef.current = rollAudio;
 
     setRolling(true);
     setTries(tries + 1);
@@ -47,6 +54,7 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat, feat }) {
           let featAudio = new Audio(featSound);
           featAudio.volume = 0.8;
           featAudio.play();
+          effectAudioRef.current = featAudio;
         } else {
           setPuzzleSolved(false);
           setFeat(false);

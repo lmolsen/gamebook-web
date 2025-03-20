@@ -21,7 +21,7 @@ export default function Menu({
   setSymbol,
   wasHighlighted,
   setWasHighlighted,
-  isAudioOn,
+  isMusicOn,
   volume,
   handleVolumeChange,
   musicStop,
@@ -110,7 +110,7 @@ export default function Menu({
           <button className="menu__audio" onClick={toggleMusic}>
             <img
               className="menu__icon"
-              src={isAudioOn ? audioOn : audioOff}
+              src={isMusicOn ? audioOn : audioOff}
               alt="Audio icon"
             />
           </button>

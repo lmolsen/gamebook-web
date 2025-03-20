@@ -6,7 +6,11 @@ import findSound from "./../../assets/sounds/key-found.wav";
 
 import "./Light.scss";
 
-export default function Light({ setPuzzleSolved, puzzleSolved }) {
+export default function Light({
+  setPuzzleSolved,
+  puzzleSolved,
+  effectAudioRef,
+}) {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
@@ -16,6 +20,7 @@ export default function Light({ setPuzzleSolved, puzzleSolved }) {
       let keyAudio = new Audio(keySound);
       keyAudio.volume = 1;
       keyAudio.play();
+      effectAudioRef.current = keyAudio;
     }
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
@@ -38,6 +43,7 @@ export default function Light({ setPuzzleSolved, puzzleSolved }) {
     let findAudio = new Audio(findSound);
     findAudio.volume = 1;
     findAudio.play();
+    effectAudioRef.current = findAudio;
   };
 
   return (

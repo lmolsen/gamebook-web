@@ -7,10 +7,18 @@ import dingSound from "./../../assets/sounds/ding.wav";
 
 import "./Slide.scss";
 
-export default function Slide({ setPuzzleSolved, setIsSolved, isSolved }) {
+export default function Slide({
+  setPuzzleSolved,
+  setIsSolved,
+  isSolved,
+  effectAudioRef,
+}) {
   const GRID_SIZE = 3;
   const MISSING_TILE = 0;
   const IMAGE_URL = puzzleImage;
+
+  const stoneAudio = new Audio(stoneSound); // Declare once
+  stoneAudio.volume = 1;
 
   const generateGrid = () => {
     let numbers = [...Array(GRID_SIZE * GRID_SIZE).keys()];
@@ -42,8 +50,9 @@ export default function Slide({ setPuzzleSolved, setIsSolved, isSolved }) {
   const handleMove = (index) => {
     if (!isMovable(index) || isSolved) return;
 
-    const audio = new Audio(stoneSound);
-    audio.play();
+    stoneAudio.play();
+    effectAudioRef.current = stoneAudio;
+
     const newGrid = [...grid];
     [newGrid[index], newGrid[missingIndex]] = [
       newGrid[missingIndex],
@@ -63,6 +72,7 @@ export default function Slide({ setPuzzleSolved, setIsSolved, isSolved }) {
           let orderedAudio = new Audio(dingSound);
           orderedAudio.volume = 1;
           orderedAudio.play();
+          effectAudioRef.current = orderedAudio;
         }, 200);
       }
     };
@@ -71,8 +81,9 @@ export default function Slide({ setPuzzleSolved, setIsSolved, isSolved }) {
   }, [grid]);
 
   const reshuffle = () => {
-    const audio = new Audio(stoneSound);
-    audio.play();
+    stoneAudio.play();
+    effectAudioRef.current = stoneAudio;
+
     setGrid(generateGrid());
     setIsSolved(false);
   };

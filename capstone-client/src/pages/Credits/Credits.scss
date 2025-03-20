@@ -31,19 +31,9 @@
         color: $solved-color;
     }
 
-    &__license {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        width: 100%;
-
-        @include tablet {
-            width: auto;
-        }
-    }
-
     &__logo {
-        height: 4rem;
-        width: 4rem;
+        height: 3rem;
+        width: 3rem;
         fill: $light-color;
     }
 
