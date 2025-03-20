@@ -18,5 +18,15 @@
     "name": "3owlsand1bear",
     "accomplishment": "Escaped the wizard's tower with their life.",
     "id": "1f9beabb-103d-4531-8d3d-b53fe24fc130"
+  },
+  {
+    "name": "Testing",
+    "accomplishment": "Found the ultimate secret of the wizard's tower.",
+    "id": "272a63cf-ff54-4948-8c42-2949cc6c8701"
+  },
+  {
+    "name": "Bigguns",
+    "accomplishment": "Recovered the wizard's journal and fled the tower.",
+    "id": "8f247ed0-81ef-4f13-8df8-e252c4c26eaf"
   }
 ]

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 
 import rollSound from "./../../assets/sounds/dice.wav";
+import featSound from "./../../assets/sounds/ding.wav";
 
 import "./Dice.scss";
 
@@ -40,9 +41,12 @@ export default function Dice({ puzzleSolved, setPuzzleSolved, setFeat, feat }) {
         clearInterval(interval);
         setRolling(false);
 
-        if (finalNumber === 6) {
+        if (finalNumber === 6 || finalNumber === 5) {
           setPuzzleSolved(true);
           setFeat(true);
+          let featAudio = new Audio(featSound);
+          featAudio.volume = 0.8;
+          featAudio.play();
         } else {
           setPuzzleSolved(false);
           setFeat(false);

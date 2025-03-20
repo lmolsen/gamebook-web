@@ -360,8 +360,7 @@
   },
   "page22": {
     "text": [
-      "You stride through the center door. Time flies without wings... an hourglass is the answer to the riddle, isn't it?",
-      "Lost in thought, you don't notice the door closing behind you. You whirl around as you hear it slam shut. You try the handle. Locked. Of course. You shake your head and take a look around you.",
+      "You stride through the center door. Time flies without wings... an hourglass is the answer to the riddle, isn't it? Lost in thought, you don't notice the door closing behind you. You whirl around as you hear it slam shut. You try the handle. Locked. Of course. You shake your head and take a look around you.",
       "You're in some kind of laboratory. There are tables and shelves filled with equipment and bottles containing mysterious liquids and substances. You notice what appears to be a cage with a blanket thrown over it. On top of the cage rests a journal. Flipping through it, you see that it contains pages and pages of notes on spells and magical experiments. This could be very valuable.",
       "You cast around for a means of escape. You manage to open the room's window, but it's a long way down. You're quite sure you'd fail to survive the fall into the thorny brambles. Poking around some more, you discover a metal pole in an alcove behind a curtain. It continues down through a hole in the floor, potentially all the way to the base of the tower. This could be your way out, though you'd need both hands to slide down it.",
       "Before you go, there's one more thing you're curious about. You peek under the blanket. You're shocked to see what appears to be a sleeping owlbear cub. How could it have survived all this time? Looking more closely at the journal's notes, you read about an experiment that can put creatures in a sort of magical stasis, wherein they do not require food or water. Underneath this passage are the steps to break the spell, though the last part is too smudged to read. If you can complete the sequence, you should be able to awaken the poor creature.",
@@ -420,7 +419,7 @@
     "prompt": "",
     "dice": true,
     "puzzle": true,
-    "solvedText": "Phew! It was a lot of work, but you managed it.",
+    "solvedText": "Phew! It was a lot of work, but you managed to stack the sacks.",
     "solvedChoices": [
       {
         "text": "[Continue up the stairs.]",

@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import puzzleImage from "./../../assets/images/rune-light.jpg";
 import stoneSound from "./../../assets/sounds/stone-bass.wav";
+import dingSound from "./../../assets/sounds/ding.wav";
 import "./Slide.scss";
 
-export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
+export default function Slide({ setPuzzleSolved, setIsSolved, isSolved }) {
   const GRID_SIZE = 3;
   const MISSING_TILE = 0;
   const IMAGE_URL = puzzleImage;
@@ -57,6 +58,9 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
         setPuzzleSolved(true);
         setTimeout(() => {
           setImageVisible(true);
+          let orderedAudio = new Audio(dingSound);
+          orderedAudio.volume = 1;
+          orderedAudio.play();
         }, 200);
       }
     };
@@ -65,8 +69,8 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
   }, [grid]);
 
   const reshuffle = () => {
-        const audio = new Audio(stoneSound);
-        audio.play();
+    const audio = new Audio(stoneSound);
+    audio.play();
     setGrid(generateGrid());
     setIsSolved(false);
   };
@@ -80,9 +84,9 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
   //   }, 200);
   // };
 
-    useEffect(() => {
-      sessionStorage.setItem("imageVisible", JSON.stringify(imageVisible));
-    }, [imageVisible]);
+  useEffect(() => {
+    sessionStorage.setItem("imageVisible", JSON.stringify(imageVisible));
+  }, [imageVisible]);
 
   return (
     <div className="sliding-puzzle">
@@ -98,10 +102,11 @@ export default function Slide ({ setPuzzleSolved, setIsSolved, isSolved }) {
                 num === MISSING_TILE ? "sliding-puzzle__tile--empty" : ""
               } ${isSolved ? "sliding-puzzle__tile--solved" : ""}`}
               onClick={() => handleMove(index)}
-              layout 
+              layout
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               style={{
-                backgroundImage: num !== MISSING_TILE ? `url(${IMAGE_URL})` : "none",
+                backgroundImage:
+                  num !== MISSING_TILE ? `url(${IMAGE_URL})` : "none",
                 backgroundPosition: `${-col * 6.25}rem ${-row * 6.25}rem`,
               }}
             />
