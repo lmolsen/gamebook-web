@@ -78,6 +78,10 @@ function App() {
   }, [symbol, location]);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
+
+  useEffect(() => {
     if (symbol === "brain") {
       setMusicFilePath(fastSong);
     } else if (symbol === "skull") {

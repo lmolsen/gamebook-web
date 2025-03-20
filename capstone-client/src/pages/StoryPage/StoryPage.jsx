@@ -316,6 +316,14 @@ export default function StoryPage({
     return <div>Page content not found.</div>;
   }
 
+  // scroll to top of page
+    useEffect(() => {
+      const page = document.querySelector(".page");
+      page.scrollTo({ top: 0, behavior: "smooth" });
+
+    }, [location]);
+
+
   return (
     <div className="page">
       <div className="page__story">
