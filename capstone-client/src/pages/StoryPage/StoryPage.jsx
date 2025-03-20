@@ -12,6 +12,7 @@ import paperSound from "./../../assets/sounds/paper.wav";
 import teleportSound from "./../../assets/sounds/teleport.wav";
 import doubleSound from "./../../assets/sounds/double.wav";
 import singleSound from "./../../assets/sounds/single.wav";
+import openSound from "./../../assets/sounds/open-door.wav";
 import whooshSound from "./../../assets/sounds/whoosh.wav";
 import crunchSound from "./../../assets/sounds/crunch.wav";
 import portalSound from "./../../assets/sounds/portal.wav";
@@ -285,7 +286,7 @@ export default function StoryPage({
         cubeAudio.play();
       }
       if (pageContent.rune) {
-        let symbolAudio = new Audio(singleSound);
+        let symbolAudio = new Audio(openSound);
         symbolAudio.volume = 1;
         symbolAudio.play();
       }
@@ -335,7 +336,7 @@ export default function StoryPage({
       if (correctAnswer.includes(result) || alternateAnswer.includes(result)) {
         setPuzzleSolved(true);
         const doorAudio = new Audio(discSound);
-        doorAudio.volume = 1.0;
+        doorAudio.volume = 0.8;
         doorAudio.play();
         doorAudioRef.current = doorAudio;
       }
