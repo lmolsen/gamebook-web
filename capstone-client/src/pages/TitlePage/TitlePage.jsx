@@ -1,5 +1,5 @@
 import "./TitlePage.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SplitText from "../../components/SplitText/SplitText";
 
@@ -23,6 +23,17 @@ export default function TitlePage() {
     setIsFadeInOn(newState);
     sessionStorage.setItem("isFadeInOn", JSON.stringify(newState));
   };
+
+  useEffect(() => {
+    const storedState = sessionStorage.getItem("isFadeInOn");
+
+    if (storedState === null) {
+      sessionStorage.setItem("isFadeInOn", "true");
+      setIsFadeInOn(true);
+    } else {
+      setIsFadeInOn(storedState === "true");
+    }
+  }, []);
 
   return (
     <div className="title-page">
