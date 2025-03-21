@@ -1,4 +1,4 @@
-# Gamebook Web 📖
+# Gamebook Web
 
 <details>
   <summary>Table of Contents</summary>
@@ -17,7 +17,7 @@ Gamebook Web is a text-based gamebook with interactive puzzles and branching nar
 ## <a id="features">Features</a>
 - Custom sound effects and writing
 - Branching narrative based on player choices
-- Story pages built from a template page with different information pulled from a JSON file based on the URL endpoints
+- Story pages built from a template with information pulled from a JSON file based on URL endpoint
 - Page-specific hints and auto-filled notes on completion of certain puzzles
 - Puzzles and interactive elements using React's Motion library
 - Session storage to persist your game state until restart or tab close
