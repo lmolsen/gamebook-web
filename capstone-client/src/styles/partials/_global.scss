@@ -101,6 +101,11 @@ input {
     font-weight: bold;
     border: 0.125rem solid $solved-color;
   }
+
+  &::selection {
+    background-color: $medium-color;
+    color: $light-color;
+  }
 }
 
 
