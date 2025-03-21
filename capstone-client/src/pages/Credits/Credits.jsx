@@ -37,7 +37,7 @@ export default function Credits() {
       <a
         className="credits__link"
         target="_blank"
-        href="https://github.com/lmolsen/lisa-olsen-capstone/tree/develop/capstone-client"
+        href="https://github.com/lmolsen/lisa-olsen-capstone/tree/main/capstone-client"
       >
         <svg
           className="credits__logo"
