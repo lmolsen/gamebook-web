@@ -98,18 +98,19 @@ The Wall of Fame in mobile view, with a record of users who have achieved good e
   ```bash
   cd capstone-server
   ```
-**3. Install the dependencies for each**
 
+**3. Create .env files in  client**
+- Create a *.env* file with the required information (see *.env.sample*).
+
+**4. Install the dependencies for each**
   ```bash
   npm install
   ```
 
-**4. Start for the dev servers for each**
-
+**5. Start for the dev servers for each**
   ```bash
   npm run dev
   ```
+  
 **Notes:**
-
 - Ensure you have node.js installed.
-- Create a *.env* file with the required information in your copy of the repo (see *.env.sample*).
