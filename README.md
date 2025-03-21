@@ -51,7 +51,7 @@ Gamebook Web is a text-based gamebook with interactive puzzles and branching nar
 - Writing, sound effects, and other images were created by me.
 
 
-## <a id="setup">Screenshots</a>
+## <a id="screenshots">Screenshots</a>
 The title page welcoming the user.
 ![](./images/title-page.png)
 
