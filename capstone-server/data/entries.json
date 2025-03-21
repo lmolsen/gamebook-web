@@ -23,5 +23,10 @@
     "name": "Potato Potato",
     "accomplishment": "Recovered the wizard's journal and fled the tower.",
     "id": "dfe26ded-1aca-48ff-adb1-bf23b0bda7c1"
+  },
+  {
+    "name": "Lisa Olsen",
+    "accomplishment": "Earned the Seven-League Boots.",
+    "id": "14447e11-ce9b-4510-b7da-ab868a7fda13"
   }
 ]
