@@ -18,7 +18,7 @@ Gamebook Web is a text-based gamebook with interactive puzzles and branching nar
 - Scrolling: If there is more text below the viewport, it will be indicated by "More below" in the bottom centre of the screen. Use your mouse's scroll wheel (or swipe on mobile) to scroll down to see more text or options.
 
 ## Assets
-- See full attributions for music and icons here: [Client Repo](https://github.com/lmolsen/lisa-olsen-capstone/tree/develop/capstone-client).
+- See full attributions for music and icons here: [Client Repo](https://github.com/lmolsen/lisa-olsen-capstone/tree/main/capstone-client).
 - Writing, sound effects, and other images were created by me.
 
 ## Features
