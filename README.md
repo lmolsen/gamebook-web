@@ -53,27 +53,35 @@ Gamebook Web is a text-based gamebook with interactive puzzles and branching nar
 
 ## <a id="screenshots">Screenshots</a>
 The title page welcoming the user.
+
 ![](./images/title-page.png)
 
 An example of a text-only story page.
+
 ![](./images/page-1.png)
 
 An example of a bad ending.
+
 ![](./images/bad-ending.png)
 
 An example of a puzzle with the associated hint.
+
 ![](./images/note-page.png)
 
 An example of a Motion-based puzzle.
+
 ![](./images/cube-puzzle.png)
 
 The puzzle solved with a matching auto-filled note (answer redacted).
+
 ![](./images/cube-puzzle-solved.png)
 
 A page with a speech recognition element, showing the button hover color.
+
 ![](./images/speech-recognition.png)
 
 An example of a good ending, showing the audio drawer with music controls open.
+
 ![](./images/good-ending.png)
 
 The Wall of Fame in mobile view, with a record of users who have achieved good endings, and the credits page in mobile view, with hover over the Narrate button.
@@ -99,8 +107,12 @@ The Wall of Fame in mobile view, with a record of users who have achieved good e
   cd capstone-server
   ```
 
-**3. Create .env files in  client**
-- Create a *.env* file with the required information (see *.env.sample*).
+**3. Create .env file in  client**
+- Create a *.env* file in the client directory with the required information.
+
+  ```bash
+  VITE_API_URL=http://<your-localhost>:<port>
+  ```
 
 **4. Install the dependencies for each**
   ```bash
@@ -111,6 +123,6 @@ The Wall of Fame in mobile view, with a record of users who have achieved good e
   ```bash
   npm run dev
   ```
-  
+
 **Notes:**
 - Ensure you have node.js installed.
