@@ -76,7 +76,7 @@
     right: 0;
     bottom: 0;
     background-color: $medium-color;
-    transition: 0.4s;
+    transition: background-color 0.4s;
     border-radius: 2.125rem;
 
     &::before {

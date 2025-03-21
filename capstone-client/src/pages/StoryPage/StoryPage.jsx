@@ -357,7 +357,14 @@ export default function StoryPage({
       {pageContent.highlight && (
         <div className="paper select ignore">
           <p className="paper__text">
-            Passphrase:<span className="paper__secret">rootroot</span>
+            Passphrase:
+            <span
+              className={`paper__secret ${
+                wasHighlighted ? "paper__secret--revealed" : ""
+              }`}
+            >
+              rootroot
+            </span>
           </p>
         </div>
       )}

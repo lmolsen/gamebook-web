@@ -130,6 +130,10 @@
     color: $paper-color;
     margin-left: 1rem;
     @include handwriting;
+
+    &--revealed {
+      color: $darkest-color;
+    }
   }
 }
 
