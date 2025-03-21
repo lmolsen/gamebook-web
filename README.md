@@ -75,12 +75,9 @@ A page with a speech recognition element, showing the button hover color.
 An example of a good ending, showing the audio drawer with music controls open.
 ![](./images/good-ending.png)
 
-The Wall of Fame in mobile view, with a record of users who have achieved good endings.
-![](./images/mobile-wall-of-fame.png)
-
-The credits page in mobile view, with hover over the Narrate button.
-![](./images/mobile-credits.png)
-
+The Wall of Fame in mobile view, with a record of users who have achieved good endings, and the credits page in mobile view, with hover over the Narrate button.
+| ![](./images/mobile-wall-of-fame.png) | ![](./images/mobile-credits.png) |
+|---------------------------------------|----------------------------------|
 
 ##  <a id="setup">Set Up</a>
 
