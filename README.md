@@ -61,14 +61,14 @@ An example of a text-only story page.
 An example of a bad ending.
 ![](./images/bad-ending.png)
 
-An example of a puzzle.
+An example of a puzzle with the associated hint.
+![](./images/note-page.png)
+
+An example of a Motion-based puzzle.
 ![](./images/cube-puzzle.png)
 
-An example of the puzzle solved with a matching auto-filled note (answer redacted).
+The puzzle solved with a matching auto-filled note (answer redacted).
 ![](./images/cube-puzzle-solved.png)
-
-An example of a puzzle with the associated hint.
-![](./images/searchlight-puzzle.png)
 
 A page with a speech recognition element, showing the button hover color.
 ![](./images/speech-recognition.png)
