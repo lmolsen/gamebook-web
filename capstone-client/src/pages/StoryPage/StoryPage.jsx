@@ -114,7 +114,7 @@ export default function StoryPage({
       if (correctAnswer.includes(result) || alternateAnswer.includes(result)) {
         setPuzzleSolved(true);
         const discAudio = new Audio(discSound);
-        discAudio.volume = 0.8;
+        discAudio.volume = 0.7;
         discAudio.play();
         effectAudioRef.current = discAudio;
       }
