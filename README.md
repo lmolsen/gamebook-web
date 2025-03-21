@@ -52,34 +52,34 @@ Gamebook Web is a text-based gamebook with interactive puzzles and branching nar
 
 ## <a id="setup">Screenshots</a>
 The title page welcoming the user.
-![](./images/title-page.jpg)
+![](./images/title-page.png)
 
 An example of a text-only story page.
-![](./images/page-1.jpg)
+![](./images/page-1.png)
 
 An example of a bad ending.
-![](./images/bad-ending.jpg)
+![](./images/bad-ending.png)
 
 An example of a puzzle.
-![](./images/cube-puzzle.jpg)
+![](./images/cube-puzzle.png)
 
 An example of the puzzle solved with a matching auto-filled note (answer redacted).
-![](./images/cube-puzzle-solved.jpg)
+![](./images/cube-puzzle-solved.png)
 
 An example of a puzzle with the associated hint.
-![](./images/searchlight-puzzle.jpg)
+![](./images/searchlight-puzzle.png)
 
 A page with a speech recognition element, showing the button hover color.
-![](./images/speech-recognition.jpg)
+![](./images/speech-recognition.png)
 
 An example of a good ending, showing the audio drawer with music controls open.
-![](./images/good-ending.jpg)
+![](./images/good-ending.png)
 
 The Wall of Fame in mobile view, with a record of users who have achieved good endings.
-![](./images/mobile-wall-of-fame.jpg)
+![](./images/mobile-wall-of-fame.png)
 
 The credits page in mobile view, with hover over the Narrate button.
-![](./images/mobile-credits.jpg)
+![](./images/mobile-credits.png)
 
 
 ##  <a id="setup">Set Up</a>
