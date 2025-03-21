@@ -60,19 +60,19 @@ My app provides a fun, free, and not overly time-intensive experience that doesn
 ### Mockups
 
 Visuals are from a proof of concept.
-![](./images/landing-page.jpg)
+![](./images/proposal/landing-page.jpg)
 
-![](./images/landing-page-hover.jpg)
+![](./images/proposal/landing-page-hover.jpg)
 
-![](./images/drawers.jpg)
+![](./images/proposal/drawers.jpg)
 
-![](./images/story-page-example.jpg)
+![](./images/proposal/story-page-example.jpg)
 
-![](./images/simple-puzzle.jpg)
+![](./images/proposal/simple-puzzle.jpg)
 
-![](./images/simple-puzzle-solved.jpg)
+![](./images/proposal/simple-puzzle-solved.jpg)
 
-![](./images/wall-of-fame.jpg)
+![](./images/proposal/wall-of-fame.jpg)
 
 ### Data
 
@@ -85,7 +85,7 @@ Visuals are from a proof of concept.
 - Each puzzle that imparts information upon completion has an associated note
 - Music starts once the user enters the first story page, and the volume can be changed via audio controls
 
-![](./images/flowchart.jpg) 
+![](./images/proposal/flowchart.jpg) 
 
 ### Endpoints
 

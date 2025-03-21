@@ -1,9 +1,37 @@
-# Gamebook Web
+# Gamebook Web 📖
 
-## Overview
+<details>
+  <summary>Table of Contents</summary>
+  
+  1. [Overview](#overview)
+  2. [Features](#features)
+  3. [UI](#ui)
+  4. [Assets](#assets)
+  5. [Screenshots](#screenshots)
+  6. [Set Up](#setup)
+</details>
+
+## <a id="overview">Overview</a>
 Gamebook Web is a text-based gamebook with interactive puzzles and branching narratives. It has mobile responsive design, but is optimized for desktop.  
 
-## UI
+## <a id="features">Features</a>
+- Custom sound effects and writing
+- Branching narrative based on player choices
+- Story pages built from a template page with information dynamically filled in from a JSON file based on the URL endpoints
+- Page-specific hints and auto-filled notes on completion of certain puzzles
+- Puzzles and interactive elements using React's Motion library
+- Session storage to persist your game state until restart or tab close
+- TTS narration using Web Speech API
+- Speech recognition using Web Speech API
+- Dynamic value text input fields
+- Bad word filter for text submission and speech recognition using bad-words library
+- Music and symbols that change based on page location
+- Music volume and pause/play controls
+- Toggleable text fade-in animation 
+- Server-side Wall of Fame where players who get a successful ending can post their name and an ending-associated accomplishment is applied for them
+
+
+##  <a id="ui">UI</a>
 ### Title Page
 - Click [Begin] to start the story.
 - Click the toggle switch to toggle "Text Fade In" (default on). With this on, text will fade in one paragraph at a time. With this off, all text will be available immediately on each page.
@@ -17,22 +45,73 @@ Gamebook Web is a text-based gamebook with interactive puzzles and branching nar
 - Choices: Choices are indicated by [square brackets]. Click on a choice to be taken to the corresponding story page. Note that some choices only become available after you complete a puzzle on the page.
 - Scrolling: If there is more text below the viewport, it will be indicated by "More below" in the bottom centre of the screen. Use your mouse's scroll wheel (or swipe on mobile) to scroll down to see more text or options.
 
-## Assets
+##  <a id="assets">Assets</a>
 - See full attributions for music and icons here: [Client Repo](https://github.com/lmolsen/lisa-olsen-capstone/tree/main/capstone-client).
 - Writing, sound effects, and other images were created by me.
 
-## Features
-- Custom sound effects and writing
-- Branching narrative based on player choices
-- Story pages are from a template page with information dynamically filled in from a JSON file based on the URL endpoints
-- Page-specific hints and auto-filled notes on completion of certain puzzles
-- Puzzles and interactive elements using React's Motion library
-- Session storage to persist your game state until restart or tab close
-- TTS narration using Web Speech API
-- Speech recognition using Web Speech API
-- Dynamic value text input fields
-- Bad word filter for text submission and speech recognition using bad-words library
-- Music and symbols change based on page location
-- Music volume and pause/play controls
-- Toggleable text fade-in animation 
-- Server-side Wall of Fame where players who get a successful ending can post their name and an ending-associated accomplishment is applied for them
+
+## <a id="setup">Screenshots</a>
+The title page welcoming the user.
+![](./images/title-page.jpg)
+
+An example of a text-only story page.
+![](./images/page-1.jpg)
+
+An example of a bad ending.
+![](./images/bad-ending.jpg)
+
+An example of a puzzle.
+![](./images/cube-puzzle.jpg)
+
+An example of the puzzle solved with a matching auto-filled note (answer redacted).
+![](./images/cube-puzzle-solved.jpg)
+
+An example of a puzzle with the associated hint.
+![](./images/searchlight-puzzle.jpg)
+
+A page with a speech recognition element, showing the button hover color.
+![](./images/speech-recognition.jpg)
+
+An example of a good ending, showing the audio drawer with music controls open.
+![](./images/good-ending.jpg)
+
+The Wall of Fame in mobile view, with a record of users who have achieved good endings.
+![](./images/mobile-wall-of-fame.jpg)
+
+The credits page in mobile view, with hover over the Narrate button.
+![](./images/mobile-credits.jpg)
+
+
+##  <a id="setup">Set Up</a>
+
+**1. Clone the repository**
+  ```bash
+  git clone https://github.com/lmolsen/lisa-olsen-capstone.git
+  ```
+  
+**2. Navigate to each directory on different terminals**
+
+- **Client**
+  ```bash
+  cd capstone-client
+  ```
+
+- **Server**
+  ```bash
+  cd capstone-server
+  ```
+**3. Install the dependencies for each**
+
+  ```bash
+  npm install
+  ```
+
+**4. Start for the dev servers for each**
+
+  ```bash
+  npm run dev
+  ```
+**Notes:**
+
+- Ensure you have node.js installed.
+- Create a *.env* file with the required information in your copy of the repo (see *.env.sample*).
