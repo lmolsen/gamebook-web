@@ -29,11 +29,17 @@
 
   &__toggle {
     gap: 2rem;
-    position: relative;
-    width: 3.75rem;
-    height: 2.125rem;
+    bottom: 5rem;
+    position: fixed;
+    width: 2.75rem;
+    height: 1.5rem;
     margin-top: 2rem;
     @include flex-alignment(column, center);
+
+    @include tablet {
+      width: 3.75rem;
+      height: 2.125rem;
+    }
 
     &:hover {
       .title-page__label-text {
@@ -52,7 +58,11 @@
         background-color: $solved-color;
 
         &::before {
-          transform: translateX(1.625rem);
+          transform: translateX(1.25rem);
+
+          @include tablet {
+            transform: translateX(1.625rem);
+          }
         }
       }
     }
@@ -72,19 +82,25 @@
     &::before {
       position: absolute;
       content: "";
-      height: 1.625rem;
-      width: 1.625rem;
-      border-radius: 50%;
+      height: 1rem;
+      width: 1rem;
       left: 0.25rem;
       bottom: 0.25rem;
+      border-radius: 50%;
       background-color: $light-color;
-      transition: 0.4s;
+      transition: transform 0.4s;
+
+      @include tablet {
+        height: 1.625rem;
+        width: 1.625rem;
+        left: 0.25rem;
+        bottom: 0.25rem;
+      }
     }
   }
 
   &__label-text {
     font-size: 0.75rem;
-    margin-top: 0.75rem;
     opacity: 0;
     width: 5.5rem;
     height: 4rem;
@@ -92,6 +108,9 @@
     padding: 0.25rem;
     border-radius: 0.25rem;
     border: 0.0625rem solid $light-color;
-    // background-color: $dark-color;
+
+    @include tablet {
+      margin-top: 0.75rem;
+    }
   }
 }

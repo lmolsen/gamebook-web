@@ -31,7 +31,7 @@ export default function StoryPage({
   setIsHighlighted,
   setWasHighlighted,
   wasHighlighted,
-  setSymbol
+  setSymbol,
 }) {
   const { pageId } = useParams();
   const pageContent = pageData[pageId] || {};
@@ -289,34 +289,34 @@ export default function StoryPage({
       `animationCompleted-${pageId}`
     );
 
-    if (!hasAlreadyRun) {
-      const texts = document.querySelectorAll(".page__text");
-      const totalTextElements = texts.length;
+    if (hasAlreadyRun) return;
 
-      texts.forEach((text) => {
-        text.classList.remove("animate");
-        setTimeout(() => text.classList.add("animate"), 0);
-      });
+    const texts = document.querySelectorAll(".page__text");
+    const totalTextElements = texts.length;
 
-      const totalDelay = totalTextElements * 1000;
+    texts.forEach((text) => {
+      text.classList.remove("animate");
+      setTimeout(() => text.classList.add("animate"), 0);
+    });
 
-      const pageElements = document.querySelectorAll(".select");
+    const totalDelay = totalTextElements * 1000;
 
-      pageElements.forEach((element) => {
-        element.classList.remove("animate");
-        element.classList.add("disable");
-        element.style.opacity = 0;
-        setTimeout(() => {
-          element.classList.add("animate");
-        }, totalDelay);
+    const pageElements = document.querySelectorAll(".select");
 
-        setTimeout(() => {
-          element.classList.remove("disable");
-        }, totalDelay + 1800);
-      });
-      sessionStorage.setItem(`animationCompleted-${pageId}`, "true");
-    }
-  }, [location]);
+    pageElements.forEach((element) => {
+      element.classList.remove("animate");
+      element.classList.add("disable");
+      element.style.opacity = 0;
+      setTimeout(() => {
+        element.classList.add("animate");
+      }, totalDelay);
+
+      setTimeout(() => {
+        element.classList.remove("disable");
+      }, totalDelay + 1800);
+    });
+    sessionStorage.setItem(`animationCompleted-${pageId}`, "true");
+  }, [location, pageId]);
 
   // Check for lacking page content
   if (!pageContent) {
