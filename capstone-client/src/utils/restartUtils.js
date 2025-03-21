@@ -15,6 +15,8 @@ export default function handleRestart(
   setWasHighlighted(false);
   musicStop();
   const savedIsAudioOn = sessionStorage.getItem("isMusicOn");
+  const savedIsFadeInOn = sessionStorage.getItem("isFadeInOn");
   sessionStorage.clear();
   sessionStorage.setItem("isMusicOn", savedIsAudioOn);
+  sessionStorage.setItem("isFadeInOn", savedIsFadeInOn);
 }

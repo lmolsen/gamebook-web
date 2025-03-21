@@ -31,7 +31,7 @@ export default function StoryPage({
   setIsHighlighted,
   setWasHighlighted,
   wasHighlighted,
-  setSymbol,
+  setSymbol
 }) {
   const { pageId } = useParams();
   const pageContent = pageData[pageId] || {};
@@ -114,7 +114,7 @@ export default function StoryPage({
       if (correctAnswer.includes(result) || alternateAnswer.includes(result)) {
         setPuzzleSolved(true);
         const discAudio = new Audio(discSound);
-        discAudio.volume = 0.7;
+        discAudio.volume = 0.8;
         discAudio.play();
         effectAudioRef.current = discAudio;
       }
@@ -278,6 +278,13 @@ export default function StoryPage({
 
   // FADE IN animation
   useEffect(() => {
+    const storedState = sessionStorage.getItem("isFadeInOn");
+
+    const isSessionFadeInOn =
+      storedState !== null ? JSON.parse(storedState) : true;
+
+    if (!isSessionFadeInOn) return;
+
     const hasAlreadyRun = sessionStorage.getItem(
       `animationCompleted-${pageId}`
     );
@@ -317,12 +324,10 @@ export default function StoryPage({
   }
 
   // scroll to top of page
-    useEffect(() => {
-      const page = document.querySelector(".page");
-      page.scrollTo({ top: 0, behavior: "smooth" });
-
-    }, [location]);
-
+  useEffect(() => {
+    const page = document.querySelector(".page");
+    page.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
 
   return (
     <div className="page">

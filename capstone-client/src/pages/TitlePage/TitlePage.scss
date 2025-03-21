@@ -26,4 +26,72 @@
       color: $hover-color;
     }
   }
+
+  &__toggle {
+    gap: 2rem;
+    position: relative;
+    width: 3.75rem;
+    height: 2.125rem;
+    margin-top: 2rem;
+    @include flex-alignment(column, center);
+
+    &:hover {
+      .title-page__label-text {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked {
+      +.title-page__slider {
+        background-color: $solved-color;
+
+        &::before {
+          transform: translateX(1.625rem);
+        }
+      }
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $medium-color;
+    transition: 0.4s;
+    border-radius: 2.125rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 1.625rem;
+      width: 1.625rem;
+      border-radius: 50%;
+      left: 0.25rem;
+      bottom: 0.25rem;
+      background-color: $light-color;
+      transition: 0.4s;
+    }
+  }
+
+  &__label-text {
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+    opacity: 0;
+    width: 5.5rem;
+    height: 4rem;
+    transition: opacity 0.3s ease;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid $light-color;
+    // background-color: $dark-color;
+  }
 }

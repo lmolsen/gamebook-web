@@ -107,6 +107,11 @@ function App() {
     if (location.pathname != "/") {
       musicPlay();
     }
+
+    if (location.pathname === "/")
+    {
+      musicStop();
+    }
   }, [location]);
 
   const restartGame = () => {
@@ -162,7 +167,12 @@ function App() {
             ></img>
           )}
         <Routes>
-          <Route path="/" element={<TitlePage />} />
+          <Route
+            path="/"
+            element={
+              <TitlePage />
+            }
+          />
           <Route
             path="/:pageId"
             element={
