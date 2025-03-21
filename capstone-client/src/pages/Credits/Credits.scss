@@ -1,0 +1,43 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.credits {
+    padding-top: 2rem;
+    width: 100%;
+    height: calc(100vh - 11rem);
+    overflow-y: scroll;
+    @include no-scrollbar;
+    @include flex-full(column, flex-start, center);
+
+    @include tablet {
+        height: auto;
+        justify-content: center;
+    }
+
+    &__block {
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
+        gap: 1rem;
+        width: 90%;
+        @include flex-full(column, center, flex-start);
+
+        @include tablet {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__type {
+        color: $solved-color;
+    }
+
+    &__logo {
+        height: 3rem;
+        width: 3rem;
+        fill: $light-color;
+    }
+
+    &__pause {
+        color: $darkest-color;
+    }
+}

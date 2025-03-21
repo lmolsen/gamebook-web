@@ -1,0 +1,51 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.search {
+  position: relative;
+  width: 100%;
+  height: 25rem;
+  background-color: $darkest-color;
+  overflow: hidden;
+  cursor: none;
+  border: 0.0625rem solid $light-color;
+  @include flex-position(center, center);
+
+  &--squished {
+    height: 10rem;
+  }
+
+  &__light {
+    @media (pointer: fine) {
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      background: radial-gradient(circle,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(73, 22, 22, 0) 80%);
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: screen; // keep for if bg is changed from pure black
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__key {
+    font-size: 2.5rem;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    position: absolute;
+
+    @include tablet {
+      font-size: 3rem;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--revealed {
+      opacity: 1;
+    }
+  }
+}

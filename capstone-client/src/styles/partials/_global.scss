@@ -1,0 +1,125 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+  text-decoration: none;
+  @include no-scrollbar;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  color: $darkest-color;
+  background-color: $light-color;
+  min-height: 2.5rem;
+  min-width: 7rem;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      background-color: $hover-color;
+    }
+  }
+}
+
+body {
+  color: $light-color;
+  background-color: $darkest-color;
+
+  &::selection {
+    background-color: $light-color;
+    color: $darkest-color;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+
+  @include tablet {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-size: 1.25rem;
+
+  @include tablet {
+    font-size: 2rem;
+  }
+}
+
+a {
+  color: $medium-color;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  cursor: pointer;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      font-weight: bold;
+    }
+  }
+
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+input {
+  font-size: 0.75rem;
+  border: 0.125rem solid $medium-dark-color;
+
+  @include tablet {
+    font-size: 1rem;
+  }
+
+  &:focus {
+    border: 0.125rem solid $hover-color;
+  }
+
+  &:disabled {
+    background-color: $medium-color;
+    color: $darkest-color;
+    font-weight: bold;
+    border: 0.125rem solid $solved-color;
+  }
+}
+
+
+.credits-path {
+  padding-top: 5rem;
+
+  &__link {
+    line-height: 1.5;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+.invalid {
+  border: .125rem solid $active-color;
+
+  &:focus {
+    border: .125rem solid $active-color;
+  }
+}

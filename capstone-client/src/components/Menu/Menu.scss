@@ -1,0 +1,179 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.menu {
+  width: 100vw;
+  z-index: 20;
+  margin-top: 1rem;
+  bottom: 0;
+  position: sticky;
+  caret-color: transparent;
+  pointer-events: none;
+  @include flex-orientation(column, center);
+
+  &__blocks {
+    background-color: $darkest-color;
+    @include flex-position(center, center);
+  }
+
+  &__block {
+    width: 25%;
+    height: 4rem;
+    border: 0.125rem solid $light-color;
+    pointer-events: auto;
+    @include flex-position(center, center);
+
+    @include tablet {
+      height: 5rem;
+    }
+
+    &:hover {
+      background-color: $light-color;
+      color: $darkest-color;
+    }
+
+    &--restart {
+      display: none;
+      cursor: pointer;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+
+    &--hints {
+      width: 50%;
+
+      @include tablet {
+        width: 25%;
+      }
+    }
+
+    &--notes {
+      width: 50%;
+
+      @include tablet {
+        width: 25%;
+      }
+    }
+
+    &--audio {
+      display: none;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__spacer {
+    @include tablet {
+      visibility: hidden;
+      width: 25%;
+      height: 5rem;
+    }
+  }
+
+  &__drawers {
+    display: flex;
+  }
+
+  &__drawer {
+    background-color: $medium-color;
+    color: $darkest-color;
+    width: 25%;
+    height: 4rem;
+    padding: 0.5rem 1rem;
+    align-content: center;
+    pointer-events: auto;
+
+    @include tablet {
+      height: 5rem;
+    }
+
+    &--hints {
+      width: 50%;
+      overflow-y: scroll;
+      @include no-scrollbar;
+
+      @include tablet {
+        width: 25%;
+      }
+    }
+
+    &--notes {
+      width: 50%;
+      background-color: $medium-dark-color;
+      overflow-y: scroll;
+      @include no-scrollbar;
+
+      @include tablet {
+        width: 25%;
+      }
+    }
+
+    &--audio {
+      display: none;
+
+      @include tablet {
+        @include flex-alignment(column, center);
+      }
+    }
+  }
+
+  &__label {
+    font-size: .8125rem;
+    line-height: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__volume {
+    width: 80%;
+  }
+
+  &__audio {
+    background-color: transparent;
+    min-width: 1rem;
+    min-height: 1rem;
+    padding-top: 0.25rem;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+
+    &:hover {
+      filter: invert(1) brightness(0);
+    }
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.highlight {
+  animation: select 4s infinite linear;
+}
+
+@keyframes select {
+  0% {
+    box-shadow: inset 0 0 1.25rem rgba(255, 255, 255, 0.8);
+  }
+
+  50% {
+    box-shadow: inset 0 0 2.5rem rgba(200, 200, 200, 0.8);
+  }
+
+  100% {
+    box-shadow: inset 0 0 1.25rem rgba(255, 255, 255, 0.8);
+  }
+}

@@ -1,0 +1,147 @@
+@use "./styles/partials/global";
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
+.main {
+  height: calc(100vh - 11rem);
+  width: 90%;
+  @include flex-alignment(column, center);
+
+  @include desktop {
+    width: 60%;
+  }
+}
+
+.header {
+  width: 100%;
+  z-index: 20;
+  top: 0;
+  position: sticky;
+  background-color: $darkest-color;
+  @include flex-full(row, space-evenly, center);
+
+  &__restart {
+    background-color: transparent;
+    min-width: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+
+    &--audio {
+    width: 2.25rem;
+      height: 2.25rem;
+    }
+
+    &--spinning {
+      animation: spin 4s linear infinite;
+    }
+  }
+
+  &__audio {
+    background-color: transparent;
+    min-width: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.screen {
+  height: 100vh;
+  @include flex-full(column, flex-start, center);
+}
+
+.symbol {
+  display: none;
+
+  @include desktop {
+    display: unset;
+    fill: $light-color;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6rem;
+    height: 6rem;
+    padding: 1rem;
+    animation: flickerEffect 2s infinite alternate-reverse;
+
+    &--left {
+      left: 10%;
+    }
+
+    &--right {
+      right: 10%;
+    }
+  }
+}
+
+// animations
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes flickerEffect {
+  0% {
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.2) 40%,
+        rgba(0, 0, 0, 0.5) 65%,
+        rgba(0, 0, 0, 0.85) 100%);
+  }
+
+  20% {
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.22) 40%,
+        rgba(0, 0, 0, 0.48) 65%,
+        rgba(0, 0, 0, 0.88) 100%);
+  }
+
+  40% {
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.24) 40%,
+        rgba(0, 0, 0, 0.53) 65%,
+        rgba(0, 0, 0, 0.86) 100%);
+  }
+
+  60% {
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.21) 40%,
+        rgba(0, 0, 0, 0.51) 65%,
+        rgba(0, 0, 0, 0.87) 100%);
+  }
+
+  80% {
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.23) 40%,
+        rgba(0, 0, 0, 0.52) 65%,
+        rgba(0, 0, 0, 0.86) 100%);
+  }
+
+  100% {
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.2) 40%,
+        rgba(0, 0, 0, 0.5) 65%,
+        rgba(0, 0, 0, 0.85) 100%);
+  }
+}

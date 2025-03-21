@@ -1,0 +1,53 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.sliding-puzzle {
+  @include flex-full (column, center, center);
+
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 6.25rem);
+    grid-template-rows: repeat(3, 6.25rem);
+    gap: 0.125rem;
+    width: 19rem;
+    height: 19rem;
+    background-color: $darker-color;
+  }
+
+  &__tile {
+    width: 6.25rem;
+    height: 6.25rem;
+    background-size: 18.75rem 18.75rem;
+    cursor: pointer;
+    transition: background-position 0.3s ease;
+
+    &--empty {
+      background: none;
+    }
+
+    &--solved {
+      pointer-events: none;
+      transition: opacity 3s ease-out;
+    }
+  }
+
+  &__button {
+    margin-top: 1.5rem;
+  }
+
+  &__image {
+    position: absolute;
+    width: 19rem;
+    height: 19rem;
+    background-image: url("./../../assets/images/rune-light.jpg");
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+
+    &--visible {
+      opacity: 1;
+    }
+  }
+}

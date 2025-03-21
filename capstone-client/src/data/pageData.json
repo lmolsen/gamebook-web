@@ -1,0 +1,450 @@
+{
+  "page1": {
+    "text": [
+      "You stand before the entrance to the mad wizard's tower. You are an adventurer, the latest in a long line of treasure hunters who seek the priceless magical relics said to be housed within the spire. Some might call you a thief, but you take umbrage with that. Really, you're doing a public service by removing potentially dangerous artifacts.",
+      "The tower is tall and cylindrical, going up for many stories before ending in a pointed roof. The once-vibrant facade is now dark and choked with clinging ivy. Thick, thorny brambles circle the foot of the tower. The door in front of you is solid oak with no discernible handle or locking mechanism. Lacking in explosives as you are, you'd be unable to force your way through. ",
+      "You see only two paths available to you: climbing the ivy or checking for hidden entrances amongst the brambles."
+    ],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Check for hidden entrances.]",
+        "link": "/page2"
+      },
+      {
+        "text": "[Risk the climb up the ivy.]",
+        "link": "/page3"
+      },
+      {
+        "text": "[Break down the front door.]",
+        "link": "/page4"
+      }
+    ],
+    "symbol": "book"
+  },
+  "page2": {
+    "text": [
+      "You begrudgingly walk around the circumference of the tower, hacking at the brambles with your hatchet as you go. You curse as your clothes snag and the thorns scratch at your hands. Luckily, as you reach the back of the tower, you spot something through a gap in the accursed shrubs.",
+      "It's a cellar door! You chop at the plants with renewed vigor. After a few minutes of work, the padlocked door is fully visible. You whack at the aged, rusted lock and it falls away easily. Unfortunately, your hatchet breaks too. You drop the handle and throw the door open, revealing a staircase descending into the darkness of the earth."
+    ],
+    "prompt": "What will you do next?",
+    "choices": [
+      {
+        "text": "[There's no time to lose - rush down the stairs!]",
+        "link": "/page6"
+      },
+      {
+        "text": "[Take the cautious approach - feel your way down carefully.]",
+        "link": "/page5"
+      }
+    ],
+    "symbol": "book"
+  },
+  "page3": {
+    "text": [
+      "You roll your shoulders in preparation for the climb. The ivy stretches all the way up the tower, and you can see that it curls into some windows set high above you. You never did very well in gym class, but you feel a surge of unearned confidence. You're the main character, after all.",
+      "Setting the balls of your feet against the side of the tower, you grasp a fistful of ivy in both hands and lean back to test your weight. Some tendrils come loose, but most of it holds. Thus assured, you slowly begin to pull yourself up. It's difficult work, but eventually you reach one of the windows. Through the glass, you can see a shut latch, but it doesn't look particularly sturdy. You're sure you can break in.",
+      "As you're pondering this, you glance down. Bad idea. You suddenly feel a rush of vertigo and jerk backwards in surprise. Really bad idea. With your rapid movement, the ivy you're holding is ripped from the wall, and you have a moment to ponder your foolishness before the ground rushes up to meet you. This is what you get for ignoring basic safety procedures."
+    ],
+    "prompt": "You die.",
+    "dead": true,
+    "symbol": "skull"
+  },
+  "page4": {
+    "text": [
+      "You attempt to force the door open through sheer stubbornness. Neither kicking the door nor slamming your shoulder repeatedly into the solid wood causes it to yield. You attempt to hack at the door with your hatchet, but only manage to chip off a few splinters of wood.",
+      " Exhausted and sore, you consider your options. You expect that the door can only be opened by uttering the correct magic phrase. In desperation, you try what your mother always said was the magic word ('Please', apparently) and something you once heard in a story ('Open sesame!'). Neither works, and you're left standing sheepishly before the unopened portal.",
+      "I told you that wouldn't work."
+    ],
+    "prompt": "Which path will you choose?",
+    "choices": [
+      {
+        "text": "[Check for hidden entrances.]",
+        "link": "/page2"
+      },
+      {
+        "text": "[Risk the climb up the ivy.]",
+        "link": "/page3"
+      }
+    ],
+    "symbol": "book"
+  },
+  "page5": {
+    "text": [
+      "You start down carefully, running your hand along the wall so as not to lose your bearings. The light from above is quickly swallowed up. Soon, it is pitch black.",
+      "Luckily, your hand soon runs over what feels like a torch mounted on the wall. You grasp it firmly, and as if by magic (or rather, definitely by magic), the torch bursts into flames. You feel much more confident with the light to guide you. Soon, you find yourself in a corridor with a door to your left and a small opening on the right, through which you can see what appears to be a small storage room. ",
+      "You place your torch in a sconce by the door. With delight, you note that there is a key in the doorknob. With even greater delight, you spy what appears to be a chest in the room across from it. Sturdy and decked in gold trimmings, the chest practically screams 'TREASURE'! Past your excitement, you register the dark stain that spreads on the floor around the chest."
+    ],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Ignore the chest and go through the door.]",
+        "link": "/page7"
+      },
+      {
+        "text": "[Open the treasure chest, of course!]",
+        "link": "/page11"
+      }
+    ],
+    "symbol": "book"
+  },
+  "page6": {
+    "text": [
+      "You rush eagerly down the stairs, but soon find yourself stumbling blindly through the dark. After what seems like hours of wandering, you encounter what feels like a door. You fumble for the doorknob, and feel your hand knock into something. You hear it drop to the floor with a metallic clink.",
+      "You scramble to grab it, sure it's a key, but in your rush you kick it further down the corridor. You can't see anything; you'll have to crawl along the floor and try to find it via touch."
+    ],
+    "prompt": "What will you do next?",
+    "choices": [
+      {
+        "text": "[This is hopeless - search for another way out.]",
+        "link": "/page8"
+      }
+    ],
+    "light": true,
+    "puzzle": true,
+    "solvedText": "You did it! You found the key.",
+    "solvedChoices": [
+      {
+        "text": "[Open the door with the key.]",
+        "link": "/page7"
+      }
+    ],
+    "symbol": "book"
+  },
+  "page7": {
+    "text": [
+      "You turn the key and push open the door, entering a medium-sized room filled with cobwebs. Torches flicker into life on the wall. It appears to be some kind of pantry, with dusty shelves lining the walls and sacks of flour or grains. In the center of the room you notice a square hole in the ceiling that goes up and up. At the far end of the room is an open door, beyond which you can see a staircase leading up.",
+      "As there is nothing much of interest, you start toward the door. However, you hesitate for a moment. Something is compelling you to move the sacks to the center of the room, beneath the hole."
+    ],
+    "prompt": "What will you do next?",
+    "choices": [
+      {
+        "text": "[Try to move the heavy sacks into a pile in the center of the room.]",
+        "link": "/page26"
+      },
+      {
+        "text": "[You're tired from chopping brambles - continue up the stairs.]",
+        "link": "/page27"
+      }
+    ],
+    "symbol": "book"
+  },
+  "page8": {
+    "text": [
+      "You abandon your fruitless search for the key and continue down the corridor. Though you try to keep your bearings in the dark, you find yourself turning corners again and again, hopelessly lost.",
+      "You wander for hours, then days. You begin to hear things you're not entirely sure are really there. Eventually, you sink to the ground and can no longer find the strength to rise. You succumb to your thirst and exhaustion, alone in the darkness.",
+      "Well, at least you didn't waste your time looking for that key!"
+    ],
+    "prompt": "You die.",
+    "dead": true,
+    "symbol": "skull"
+  },
+  "page9": {
+    "text": [
+      "Pieces of gold and valuable trinkets litter the floor, but you have eyes only for what lies ahead. Before you is a pedestal upon which a pair of glowing boots sit. Could it be? Are these the fabled Seven-League Boots that allow the wearer to cover vast distances in a single stride?",
+      "You're not sure how much a league is, but it sounds like a lot. You pick up the boots, managing to admire them for a moment before you feel your stomach drop. A split second later, the rest of you drops. It seems like you've fallen down a trap door."
+    ],
+    "drop": true,
+    "accomplishment": "Earned the Seven-League Boots.",
+    "symbol": "skull"
+  },
+  "page10": {
+    "text": [
+      "You open the door, somewhat surprised that it's unlocked. You find yourself in an austere room with nothing but a large, rotating cube floating in the centre and an open exit past it. Eyeing the cube suspiciously, you edge along the wall until you reach the exit and the hallway beyond.",
+      "You walk down it a ways, eventually coming to a platform with a locked door on the opposite side and stairs leading up. Thus informed, you return to the room. The mysterious cube is covered in letters. It seems to whisper in your mind: 'passphrase'. I wonder what it spells?"
+    ],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[I hate spelling - leave and go up the stairs.]",
+        "link": "/page21"
+      }
+    ],
+    "cube": true,
+    "puzzle": true,
+    "solvedText": "Yes! You knew your English teacher was wrong to fail you. Take that, Mrs. Inkpen!",
+    "solvedChoices": [
+      {
+        "text": "[Swagger past the cube and up the stairs.]",
+        "link": "/page21"
+      }
+    ],
+    "symbol": "brain"
+  },
+  "page11": {
+    "text": [
+      "You reach for the treasure chest, ignoring the prickly feeling on the back of your neck, and work your thumbs under the lid on either side. At that moment, you draw back with a hiss of pain. Something sharp has pricked your fingers.",
+      "Looking down at the blood that's slowly welling up, you take a moment to register the movement at the edge of your vision. The treasure chest has opened its lid to reveal rows of sharp teeth and a whipping tongue. Oh! A mimic. You can't believe you fell for that."
+    ],
+    "prompt": "You die.",
+    "dead": true,
+    "symbol": "skull"
+  },
+  "page12": {
+    "text": [
+      "You walk through the side door, finding yourself in an empty room covered floor to ceiling in large stone tiles. You notice an exit further in and decide to peek your head through. It leads to a platform with more stairs and a locked door on the opposite side. It seems like the rooms on this floor of the tower are all connected in a circle.",
+      "On the wall before you is a curious arrangement of tiles. It seems like you can slide them to form some sort of image. You're sure solving the puzzle will reveal some secret."
+    ],
+    "prompt": "What will you do next?",
+    "choices": [
+      {
+        "text": "[Continue on up the stairs - this puzzle is too difficult.]",
+        "link": "/page21"
+      }
+    ],
+    "slide": true,
+    "puzzle": true,
+    "solvedText": "You did it! Upon seeing the symbol, a word enters your mind: Edoc'sv.",
+    "solvedChoices": [
+      {
+        "text": "[Move on to the next challenge with this knowledge in mind.]",
+        "link": "/page21"
+      }
+    ],
+    "symbol": "brain"
+  },
+  "page13": {
+    "text": [
+      "You head for the right. You've definitely chosen the correct door to answer the riddle... probably. Coins have tails, right? And they fly through the air when you flip them? Right? Anyway, coin equals treasure. It just makes sense. As soon as you walk through the door, it slams shut behind you. Maybe you aren't great at riddles after all.",
+      "You are now in what appears to be a cozy drawing room. There are a few plush couches, a low coffee table, a wall-length mirror, and a horribly unstable portal. Huh. This doesn't look good. You try the door you entered, but it's shut fast. The only way out will be via the portal.",
+      "There must be a way to stabilize it. Your eyes fall on a complicated-looking device on the coffee table. It's likely to be related to the portal. A row of buttons are blinking periodically. Maybe you have to press them in order?"
+    ],
+    "prompt": "What will you do?",
+    "choices": [
+      {
+        "text": "[Step through the portal as is - how unstable can it be?]",
+        "link": "/page23"
+      }
+    ],
+    "portal": true,
+    "puzzle": true,
+    "solvedText": "You've done it! The portal is stable.",
+    "solvedChoices": [
+      {
+        "text": "[Escape through the portal.]",
+        "link": "/page20"
+      }
+    ],
+    "symbol": "brain"
+  },
+  "page14": {
+    "text": [
+      "You walk confidently through the door on the left, sure the comet graven above the door is the answer to the circular room's riddle.",
+      "You are in a wide but shallow room, with magically burning braziers on either side of a massive stone disc. Carved on the face of the disc is, well, a face. You imagine that the fearsome visage is that of the mad wizard. Its mouth hangs open, as if bidding you to speak."
+    ],
+    "prompt": "What will you do?",
+    "choices": [
+      {
+        "text": "[You're drawing a blank - go through the right door instead.]",
+        "link": "/page13"
+      },
+      {
+        "text": "[You've got nothing - go through the center door instead.]",
+        "link": "/page22"
+      }
+    ],
+    "speak": true,
+    "puzzle": true,
+    "solvedText": "You did it! The disc slides to one side, revealing a room filled with treasure.",
+    "symbol": "brain"
+  },
+  "page15": {
+    "text": [
+      "You marvel at the glittering riches laid out before you. There's enough here to make you wealthier than any merchant, but your eyes can't help but be drawn to the gold-encrusted door at the back of the room.",
+      "The door to the inner treasure chamber. You can only imagine what would be worth defending more than this hoard of treasure. It won't be that simple to enter, however. You see no handle or lock, and the door holds fast against your attempts to push it open.",
+      "You look closer at the curious symbol on the door. Something tickles the back of your mind. What's the name of this glyph...?"
+    ],
+    "prompt": "What would you like to do next?",
+    "choices": [
+      {
+        "text": "[Take the treasure - it's enough for you.]",
+        "link": "/page19"
+      }
+    ],
+    "rune": true,
+    "puzzle": true,
+    "solvedText": "You did it! The door opens slowly.",
+    "solvedChoices": [
+      {
+        "text": "[Enter the final chamber.]",
+        "link": "/page18"
+      }
+    ],
+    "symbol": "brain"
+  },
+  "page16": {
+    "text": [
+      "You enter the study, taking note of the side door beside the massive writing desk. You ready yourself to stumble across some fantastical magical discovery.",
+      "Instead, you spend the better part of an hour sifting through tomes and sheafs of parchment. Most of the writing is incomprehensible, penned in lost languages or depicting strange magic runes. Right as you're about to give up, you find a small scrap of paper with a promising word written across half of it: 'Passphrase:'.",
+      "The other half of the paper is blank. You're sure there must be something written there. Perhaps in invisible ink? Unfortunately, you can't make anything out in the low light of the dusty room. If only there were a way for you to get a highlight on the paper."
+    ],
+    "prompt": "What will you do next?",
+    "choices": [
+      {
+        "text": "[Continue on in frustration.]",
+        "link": "/page12"
+      }
+    ],
+    "highlight": true,
+    "puzzle": true,
+    "solvedText": "You've done it! You're sure this will come in handy later.",
+    "solvedChoices": [
+      {
+        "text": "[Continue on happily.]",
+        "link": "/page12"
+      }
+    ],
+    "symbol": "brain"
+  },
+  "page17": {
+    "text": [
+      "You complete the spell, waiting breathlessly for the results. After a moment, the owlbear cub stirs with a feeble chirp. You've heard that owlbears are fierce creatures, not to be trifled with, but this one is just so darn cute. It blinks up at you with trust in its eyes.",
+      "Making up your mind to take it with you, you bundle it into your pack. With the cub inside, there's absolutely no room for the hefty journal. You'll need both hands free to slide safely down the pole, so you won't be able to take anything else with you. Oh well, there's nothing to be done for it.",
+      "You grip the pole tightly and step into the gap, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.",
+      "From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pet the owlbear, who chirps happily. You can tell that this is the start of a long and beautiful friendship."
+    ],
+    "prompt": "Congratulations! You have a wonderful new companion for your adventures.",
+    "accomplishment": "Made a new friend.",
+    "symbol": "heart"
+  },
+  "page18": {
+    "text": [
+      "You enter through the final door. In a glass case lies the fabled staff of the mad wizard. It is said to imbue the user with immense magical power. You open the case and grasp the hilt of the staff firmly, feeling arcane energy and knowledge course through you. With your newfound powers, you teleport to your favourite inn.",
+      "Your mind reels with the possibilities of this discovery. For now, you want a hot meal and a long rest. Changing the world can wait until morning. Not bad for an average thie... I mean adventurer!"
+    ],
+    "prompt": "Congratulations! You are now in possession of a powerful artifact. Your future is yours to decide.",
+
+    "accomplishment": "Found the ultimate secret of the wizard's tower.",
+    "symbol": "treasure"
+  },
+  "page19": {
+    "text": [
+      "You gather as much of the treasure as you can carry. Conveniently, the room has a few rucksacks that you can grab, as your own bag soon runs of room. Stopping just before the point of over-encumberment, you waddle out of the room.",
+      "The tower seems to clear the way for you, unlocking doors so that you can retrace your steps all the way back out through the cellar. With this vast hoard of wealth, you can finally pay off your bard college debt! And have a little left over besides."
+    ],
+    "prompt": "Congratulations! You are now rich beyond your wildest dreams.",
+    "accomplishment": "Discovered the wizard's treasure.",
+    "symbol": "treasure"
+  },
+  "page20": {
+    "text": [
+      "You step through the portal and instantly find yourself outside. You fall a short distance into the cursed patch of brambles that surrounds the tower. You struggle out, pulling thorns from your skin. You've escaped with your life, but with nothing else to show for your misadventure.",
+      "Maybe you'll try again tomorrow, but for now you just want to head back to the inn, tail between your legs. A hot meal and a warm bed sound good right about now. At least you have a story to tell, though you might need to embellish it a little to save face."
+    ],
+    "prompt": "Congratulations! You survived.",
+    "accomplishment": "Escaped the wizard's tower with their life.",
+    "symbol": "heart"
+  },
+  "page21": {
+    "text": [
+      "Reaching the top of the stairs, you come to a large, circular room. The floor is covered with a luxurious carpet, rich with detail. Tapestries festoon the wall, and three doors are splayed across from you.",
+      "Above the door in the center is an engraving of an hourglass. Above the left door is the likeness of a comet, and above the right is what could be a coin. High on the wall you see words painted in a meticulous script."
+    ],
+    "prompt": "Which door will you enter?",
+    "choices": [
+      {
+        "text": "[You take the door on the left.]",
+        "link": "/page14"
+      },
+      {
+        "text": "[You enter the door in the center of the room.]",
+        "link": "/page22"
+      },
+      {
+        "text": "[You choose the door on the right.]",
+        "link": "/page13"
+      }
+    ],
+    "riddle": true,
+    "symbol": "brain"
+  },
+  "page22": {
+    "text": [
+      "You stride through the center door. Time flies without wings... an hourglass is the answer to the riddle, isn't it? Lost in thought, you don't notice the door closing behind you. You whirl around as you hear it slam shut. You try the handle. Locked. Of course. You shake your head and take a look around you.",
+      "You're in some kind of laboratory. There are tables and shelves filled with equipment and bottles containing mysterious liquids and substances. You notice what appears to be a cage with a blanket thrown over it. On top of the cage rests a journal. Flipping through it, you see that it contains pages and pages of notes on spells and magical experiments. This could be very valuable.",
+      "You cast around for a means of escape. You manage to open the room's window, but it's a long way down. You're quite sure you'd fail to survive the fall into the thorny brambles. Poking around some more, you discover a metal pole in an alcove behind a curtain. It continues down through a hole in the floor, potentially all the way to the base of the tower. This could be your way out, though you'd need both hands to slide down it.",
+      "Before you go, there's one more thing you're curious about. You peek under the blanket. You're shocked to see what appears to be a sleeping owlbear cub. How could it have survived all this time? Looking more closely at the journal's notes, you read about an experiment that can put creatures in a sort of magical stasis, wherein they do not require food or water. Underneath this passage are the steps to break the spell, though the last part is too smudged to read. If you can complete the sequence, you should be able to awaken the poor creature.",
+      "The sequence reads as follows: 1 11 21 1211 111221..."
+    ],
+    "prompt": "What will you do next?",
+    "choices": [
+      {
+        "text": "[Complete the sequence - the answer is 13112211.]",
+        "link": "/page24"
+      },
+      {
+        "text": "[Complete the sequence - the answer is 312211.]",
+        "link": "/page17"
+      },
+      {
+        "text": "[Forget about the owlbear - take the journal and leave.]",
+        "link": "/page25"
+      }
+    ],
+    "symbol": "brain"
+  },
+  "page23": {
+    "text": [
+      "You attempt to enter the portal, but are sent flying back by something like bolts of electricity. The floor beneath you starts to shake, and an ominous rumbling fills the air. The portal is growing, sending out zaps of lightning and warping the space around it. You cover your head as bits of the ceiling start to crash down around you.",
+      "Your last thought before the tower falls is that you wish you'd been a farmer, like your father. He always said that adventuring would get you killed. You hate it when he's right."
+    ],
+    "prompt": "You die.",
+    "dead": true,
+    "symbol": "skull"
+  },
+  "page24": {
+    "text": [
+      "You finish the spell with the final sequence of numbers. You watch the owlbear cub closely, waiting for it stir. After a moment, a purple fog begins to spill from the journal. Oh dear. Instead of lifting the spell, you seem to have activated it. You may not be as clever as you thought you were.",
+      "Your eyelids grow heavy, and you sink slowly to the floor. It looks like you'll be stuck here, 'asleep', until the next adventurer stumbles across this room. Based on the thick layer of dust that coats the floor, that could be a very long time indeed. You fall into a magical slumber."
+    ],
+    "prompt": "You die... sort of.",
+    "dead": true,
+    "symbol": "skull"
+  },
+  "page25": {
+    "text": [
+      "You think it's a bad idea to mess with magic spells and wild beasts. Instead, you grab the journal and various trinkets of a (hopefully) magical nature, stuffing them into your pack. It's not what you were hoping for, but the journal alone should fetch a hefty sum.",
+      "Laden with your prizes, you grip the pole tightly and step into the hole, allowing yourself to slide down. Slowing your descent chafes your hands, but you manage to land safely at the bottom. You find yourself on the ground floor of the tower. You sense something ominous, and decide it's time to leave.",
+      "From this side, you're able to push open the front door with ease. You step out into the fresh air and remove your pack. You pull out the journal, turning it over in your hands. You don't fancy yourself a wizard, but maybe you'll read through it before selling it, just in case there's anything useful in there.",
+      "You'll decide what to do after a good meal and a long rest. Sliding the journal back into your pack, you start the long trek back to town. This will make a great story at the tavern."
+    ],
+    "prompt": "Congratulations! You recovered a valuable journal belonging to the mad wizard himself.",
+    "accomplishment": "Recovered the wizard's journal and fled the tower.",
+    "symbol": "treasure"
+  },
+  "page26": {
+    "text": [
+      "You roll up your sleeves in preparation for some heavy labour.", 
+      "You really are tired though. Whether or not you manage this will be a roll of the dice."
+    ],
+    "prompt": "",
+    "dice": true,
+    "puzzle": true,
+    "solvedText": "Phew! It was a lot of work, but you managed to stack the sacks.",
+    "solvedChoices": [
+      {
+        "text": "[Continue up the stairs.]",
+        "link": "/page27"
+      }
+    ],
+    "symbol": "book"
+  },
+  "page27": {
+    "text": [
+      "The stairs go up and up, spiralling around the inside of the tower. Eventually, you reach a platform. There is a door to either side of you.",
+      "The door to the left is open, revealing what seems to be a study, filled with rolls of parchment and stacks of books. To the right is a closed door, with no hint of what lies beyond."
+    ],
+    "prompt": "Which door will you choose?",
+    "choices": [
+      {
+        "text": "[There's sure to be something of note in the wizard's study. Enter the open room.]",
+        "link": "/page16"
+      },
+      {
+        "text": "[You're here to steal, not to study! Take the mystery door.]",
+        "link": "/page10"
+      }
+    ],
+    "symbol": "book"
+  }
+}
