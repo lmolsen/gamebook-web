@@ -39,7 +39,7 @@ Gamebook Web is a text-based gamebook with interactive puzzles and branching nar
 
 ### Story Pages
 - Narrate: Not into reading? Press the "Narrate" button at the top of the screen to activate TTS (text-to-speech).
-- Restart: Click to bring you back to the beginning and reset your game state. On desktop, it's the "Restart" in the bottom menu. On mobile, it's the refresh icon on the top left of the screen.
+- Restart: Click to bring you back to the beginning and reset your game state. On desktop, it's the "Restart" in the bottom menu. On mobile, it's the restart icon on the top left of the screen.
 - Hints: Open the hints drawer in the bottom menu to see page-specific hints or information. Avoid clicking this to challenge yourself!
 - Notes: Open the notes drawer in the bottom menu to see any information you've collected that you might need for later. These notes autofill and indicate words you may need to type or speak.
 - Audio: On desktop, click the "Audio" drawer in the bottom menu to control the music volume with a slider or turn it on and off with the speaker icon. On mobile, turn the music on and off with the speaker icon at the top of the screen. Note that there are no controls for narrate/sound effect volume at this time - please use your system or device settings.

@@ -30,14 +30,17 @@ export default function Credits() {
       </h2>
       <div className="credits__block">
         <p className="credits__type">
-          Freepik Flaticon<span className="credits__pause">.</span>
+          Pause, Play, Restart, Skull, Chest, Heart, Brain, Book <span className="credits__pause">.</span>
         </p>
-        <p className="credits__text"> flaticon.com</p>
+        <p className="credits__text">
+          iconading, Freepik, juicy_fish, Smashicons, Karyative
+          (flaticon.com)
+        </p>
       </div>
       <a
         className="credits__link"
         target="_blank"
-        href="https://github.com/lmolsen/lisa-olsen-capstone/tree/main/capstone-client"
+        href="https://github.com/lmolsen/lisa-olsen-capstone/"
       >
         <svg
           className="credits__logo"

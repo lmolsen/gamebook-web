@@ -1,6 +1,6 @@
 # Gamebook Web Client
 
-## Credits
+## Attributions
 
 ### Icons
 - <a href="https://www.flaticon.com/free-icons/pause-circle" title="pause circle icons">Pause circle icons created by iconading - Flaticon</a>
