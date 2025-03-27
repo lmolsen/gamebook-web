@@ -18,5 +18,15 @@
     "name": "3owlsAnd1bear",
     "accomplishment": "Escaped the wizard's tower with their life.",
     "id": "1f9beabb-103d-4531-8d3d-b53fe24fc130"
-  }
+  },
+  {
+    "name": "Joseph",
+    "accomplishment": "Made a new friend",
+    "id": "c2dc4804-5714-48a9-a3e4-38dd2894a538"
+  },
+    {
+      "name": "Michie",
+      "accomplishment": "Escaped the wizard's tower with their life.",
+      "id": "c2dc9804-5614-48a9-a3e4-38dd2874a538"
+    }
 ]
