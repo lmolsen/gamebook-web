@@ -111,7 +111,7 @@ The Wall of Fame in mobile view, with a record of users who have achieved good e
 - Create a *.env* file in the client directory with the required information.
 
   ```bash
-  VITE_API_URL=http://<your-localhost>:<port>
+  VITE_API_URL=http://localhost:<port>
   ```
 
 **4. Install the dependencies for each**

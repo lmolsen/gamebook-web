@@ -62,7 +62,7 @@ export default function Light({
         onClick={handleFind}
         className={`search__key ${puzzleSolved ? "search__key--revealed" : ""}`}
         style={
-        puzzleSolved ? {} : { left: targetPosition.x, top: targetPosition.y } 
+          puzzleSolved ? {} : { left: targetPosition.x, top: targetPosition.y }
         }
         whileHover={!puzzleSolved ? { scale: 1.2 } : {}}
       >
