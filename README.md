@@ -92,19 +92,19 @@ The Wall of Fame in mobile view, with a record of users who have achieved good e
 
 **1. Clone the repository**
   ```bash
-  git clone https://github.com/lmolsen/lisa-olsen-capstone.git
+  git clone https://github.com/lmolsen/gamebook-web.git
   ```
   
 **2. Navigate to each directory on different terminals**
 
 - **Client**
   ```bash
-  cd capstone-client
+  cd client
   ```
 
 - **Server**
   ```bash
-  cd capstone-server
+  cd server
   ```
 
 **3. Create .env file in  client**
