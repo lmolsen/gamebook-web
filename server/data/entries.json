@@ -5,11 +5,6 @@
     "id": "6be619d5-de2c-4f62-ac1b-bd2e36d71ab9"
   },
   {
-    "name": "Gale of Waterdeep",
-    "accomplishment": "Defeated the Netherbrain.",
-    "id": "8f86c7f4-bd18-4e4a-9328-a54a189dd5ba"
-  },
-  {
     "name": "Wizard Man",
     "accomplishment": "Found the ultimate secret of the wizard's tower.",
     "id": "03847d3d-098f-4e7d-8a59-0702116c98c7"
@@ -24,9 +19,9 @@
     "accomplishment": "Made a new friend",
     "id": "c2dc4804-5714-48a9-a3e4-38dd2894a538"
   },
-    {
-      "name": "Michie",
-      "accomplishment": "Escaped the wizard's tower with their life.",
-      "id": "c2dc9804-5614-48a9-a3e4-38dd2874a538"
-    }
+  {
+    "name": "Michie",
+    "accomplishment": "Escaped the wizard's tower with their life.",
+    "id": "c2dc9804-5614-48a9-a3e4-38dd2874a538"
+  }
 ]
