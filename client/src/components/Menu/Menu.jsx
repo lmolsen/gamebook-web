@@ -120,7 +120,7 @@ export default function Menu({
       <div className="menu__blocks">
         <div
           className={`menu__block menu__block--restart ${
-            isDead || location.pathname === "/wall-of-fame" ? "highlight" : ""
+            isDead || location.pathname === "/wall-of-fame" || location.pathname === "/credits" ? "highlight" : ""
           }`}
           onClick={restartGame}
         >

@@ -16,12 +16,37 @@
   },
   {
     "name": "Joseph",
-    "accomplishment": "Made a new friend",
+    "accomplishment": "Made a new friend.",
     "id": "c2dc4804-5714-48a9-a3e4-38dd2894a538"
   },
   {
     "name": "Michie",
     "accomplishment": "Escaped the wizard's tower with their life.",
     "id": "c2dc9804-5614-48a9-a3e4-38dd2874a538"
+  },
+  {
+    "name": "Midé",
+    "accomplishment": "Found the ultimate secret of the wizard's tower.",
+    "id": "6e636d99-b0e9-487b-b3b6-86fd698473e9"
+  },
+  {
+    "name": "Gus+Abby",
+    "accomplishment": "Escaped the wizard's tower with their life.",
+    "id": "1a503e4c-69da-427a-a8e3-f8135c059440"
+  },
+  {
+    "name": "Patrick",
+    "accomplishment": "Escaped the wizard's tower with their life.",
+    "id": "acbb4f3d-fdb5-4ea7-9314-d7ed90193a8a"
+  },
+  {
+    "name": "Blinky",
+    "accomplishment": "Earned the Seven-League Boots.",
+    "id": "2422193a-7ffd-4d07-9154-ef7ade026a8e"
+  },
+  {
+    "name": "Taito",
+    "accomplishment": "Recovered the wizard's journal and fled the tower.",
+    "id": "e1a5304d-eaf6-4b05-8a82-ea3c49bdbd22"
   }
 ]
