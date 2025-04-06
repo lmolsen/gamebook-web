@@ -6,28 +6,10 @@ import "./TextToSpeech.scss";
 export default function TextToSpeech() {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-    const [availableVoices, setAvailableVoices] = useState([]);
   const location = useLocation();
 
   let sentenceQueue = [];
   let currentSentenceIndex = 0;
-
-   const loadVoices = () => {
-     const voices = speechSynthesis.getVoices();
-     if (voices.length > 0) {
-       setAvailableVoices(voices);
-     } else {
-       setTimeout(loadVoices, 100); 
-     }
-   };
-
-   useEffect(() => {
-     loadVoices();
-     speechSynthesis.onvoiceschanged = loadVoices; 
-     return () => {
-       speechSynthesis.onvoiceschanged = null;
-     };
-   }, []);
 
   const speak = () => {
     if (isSpeaking && !isPaused) {
@@ -79,20 +61,16 @@ export default function TextToSpeech() {
         isChoice ? `Option ${optionIndex}, ${sentence}` : sentence
       );
 
-    const voices =
-      availableVoices.length > 0
-        ? availableVoices
-        : speechSynthesis.getVoices();
+      const voices = speechSynthesis.getVoices();
 
       speech.voice =
-        voices.find((v) => v.name === "Google UK English Male") ||
-        voices.find((v) => v.name === "English (UK) Male") || // Android
-        voices.find((v) => v.name === "Daniel") || // iOS
-        voices[0];
-
-              if (!speech.voice) {
-                console.warn("No suitable voice found");
-              }
+        voices.find((v) => v.name === "Google UK English Male") || voices[0];
+      if (voices.length === 0) {
+        setTimeout(() => {
+          readText(sentenceIndex, optionIndex);
+        }, 100);
+        return;
+      }
 
       speech.onend = () => {
         setTimeout(() => {
@@ -114,6 +92,12 @@ export default function TextToSpeech() {
     setIsSpeaking(false);
     setIsPaused(false);
   }, [location]);
+
+  useEffect(() => {
+    return () => {
+      speechSynthesis.cancel();
+    };
+  }, []);
 
   return (
     <button className="tts-button" onClick={speak}>
