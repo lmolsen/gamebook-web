@@ -6,6 +6,7 @@ import "./TextToSpeech.scss";
 export default function TextToSpeech() {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+    const [availableVoices, setAvailableVoices] = useState([]);
   const location = useLocation();
 
   let sentenceQueue = [];
