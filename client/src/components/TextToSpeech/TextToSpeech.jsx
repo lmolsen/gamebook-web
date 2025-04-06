@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
 import "./TextToSpeech.scss";
 
 export default function TextToSpeech() {
@@ -7,59 +8,22 @@ export default function TextToSpeech() {
   const [isPaused, setIsPaused] = useState(false);
   const location = useLocation();
 
-  const sentenceQueueRef = useRef([]);
-  const currentSentenceIndexRef = useRef(0);
-  const isChoiceRef = useRef(false);
-  const optionIndexRef = useRef(1);
-  const speakingRef = useRef(false);
+  let sentenceQueue = [];
+  let currentSentenceIndex = 0;
 
-  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-
-  const readText = () => {
-    const sentences = sentenceQueueRef.current;
-    const i = currentSentenceIndexRef.current;
-
-    if (i >= sentences.length) {
-      setIsSpeaking(false);
-      speakingRef.current = false;
+  const speak = () => {
+    if (isSpeaking && !isPaused) {
+      speechSynthesis.pause();
+      setIsPaused(true);
       return;
     }
 
-    const sentence = sentences[i];
-    const isChoice = sentence.includes("[");
-    const pauseDuration = isChoice ? 500 : 0;
-
-    isChoiceRef.current = isChoice;
-
-    const speech = new SpeechSynthesisUtterance(
-      isChoice ? `Option ${optionIndexRef.current}, ${sentence}` : sentence
-    );
-
-    const voices = speechSynthesis.getVoices();
-    speech.voice =
-      voices.find((v) => v.name === "Google UK English Male") || voices[0];
-
-    if (voices.length === 0) {
-      // Retry if voices aren't ready yet
-      setTimeout(readText, 100);
+    if (isPaused) {
+      speechSynthesis.resume();
+      setIsPaused(false);
       return;
     }
 
-    speech.onend = () => {
-      speakingRef.current = false;
-      currentSentenceIndexRef.current += 1;
-      if (isChoice) optionIndexRef.current += 1;
-
-      if (!isPaused) {
-        setTimeout(() => readText(), pauseDuration);
-      }
-    };
-
-    speakingRef.current = true;
-    speechSynthesis.speak(speech);
-  };
-
-  const startSpeech = () => {
     speechSynthesis.cancel();
     setIsSpeaking(true);
     setIsPaused(false);
@@ -78,47 +42,49 @@ export default function TextToSpeech() {
       return;
     }
 
-    const sentences = text.split(/(?<=[.!?\]])\s+/); // better sentence split
-    sentenceQueueRef.current = sentences;
-    currentSentenceIndexRef.current = 0;
-    optionIndexRef.current = 1;
+    let sentences = text.split(/(?<=[.!?]\s*|\])\s+/);
+
+    sentenceQueue = sentences;
+    currentSentenceIndex = 0;
+
+    const readText = (sentenceIndex = 0, optionIndex = 1) => {
+      if (sentenceIndex >= sentenceQueue.length) {
+        setIsSpeaking(false);
+        return;
+      }
+
+      const sentence = sentenceQueue[sentenceIndex];
+      const isChoice = sentence.includes("[");
+      const pauseDuration = isChoice ? 500 : 0;
+
+      const speech = new SpeechSynthesisUtterance(
+        isChoice ? `Option ${optionIndex}, ${sentence}` : sentence
+      );
+
+      const voices = speechSynthesis.getVoices();
+
+      speech.voice =
+        voices.find((v) => v.name === "Google UK English Male") || voices[0];
+      if (voices.length === 0) {
+        setTimeout(() => {
+          readText(sentenceIndex, optionIndex);
+        }, 100);
+        return;
+      }
+
+      speech.onend = () => {
+        setTimeout(() => {
+          if (!isPaused) {
+            currentSentenceIndex = sentenceIndex + 1;
+            readText(currentSentenceIndex, isChoice ? optionIndex + 1 : optionIndex);
+          }
+        }, pauseDuration);
+      };
+
+      speechSynthesis.speak(speech);
+    };
 
     readText();
-  };
-
-  const pauseSpeech = () => {
-    if (isMobile) {
-      setIsPaused(true);
-      setIsSpeaking(true);
-      speechSynthesis.cancel(); // cancel current utterance
-      speakingRef.current = false;
-    } else {
-      speechSynthesis.pause();
-      setIsPaused(true);
-    }
-  };
-
-  const resumeSpeech = () => {
-    if (isMobile) {
-      setIsPaused(false);
-      setIsSpeaking(true);
-      if (!speakingRef.current) {
-        readText(); // resume manually
-      }
-    } else {
-      speechSynthesis.resume();
-      setIsPaused(false);
-    }
-  };
-
-  const toggleSpeech = () => {
-    if (!isSpeaking) {
-      startSpeech();
-    } else if (!isPaused) {
-      pauseSpeech();
-    } else {
-      resumeSpeech();
-    }
   };
 
   useEffect(() => {
@@ -134,7 +100,7 @@ export default function TextToSpeech() {
   }, []);
 
   return (
-    <button className="tts-button" onClick={toggleSpeech}>
+    <button className="tts-button" onClick={speak}>
       {isSpeaking ? (isPaused ? "Resume" : "Pause") : "Narrate"}
     </button>
   );
