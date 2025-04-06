@@ -6,31 +6,10 @@ import "./TextToSpeech.scss";
 export default function TextToSpeech() {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [availableVoices, setAvailableVoices] = useState([]);
   const location = useLocation();
 
   let sentenceQueue = [];
   let currentSentenceIndex = 0;
-
-  useEffect(() => {
-    const loadVoices = () => {
-      const voices = speechSynthesis.getVoices();
-      const maleVoice = voices.find((v) => v.name === "Google UK English Male");
-
-      if (maleVoice) {
-        setAvailableVoices([maleVoice]);
-      } else if (voices.length > 0) {
-        setTimeout(loadVoices, 100);
-      }
-    };
-
-    speechSynthesis.onvoiceschanged = loadVoices;
-    loadVoices(); 
-
-    return () => {
-      speechSynthesis.onvoiceschanged = null;
-    };
-  }, []);
 
   const speak = () => {
     if (isSpeaking && !isPaused) {
@@ -82,26 +61,17 @@ export default function TextToSpeech() {
         isChoice ? `Option ${optionIndex}, ${sentence}` : sentence
       );
 
-      // const voices = speechSynthesis.getVoices();
+      const voices = speechSynthesis.getVoices();
 
-      // speech.voice = speech.voice = availableVoices.find(v => v.name === "Google UK English Male") || availableVoices[0];
+      speech.voice =
+        voices.find((v) => v.name === "Google UK English Male") ||
+        voices.find((v) => v.name === "English (UK) Male") || // Android
+        voices.find((v) => v.name === "Daniel") || // iOS
+        voices[0];
 
-           speech.voice =
-             availableVoices.length > 0 ? availableVoices[0] : null;
-
-           if (!speech.voice) {
-             console.warn("No valid voice available. Retrying...");
-             setTimeout(() => readText(sentenceIndex, optionIndex), 100);
-             return;
-           }
-
-      //   voices.find((v) => v.name === "Google UK English Male") || voices[0];
-      // if (voices.length === 0) {
-      //   setTimeout(() => {
-      //     readText(sentenceIndex, optionIndex);
-      //   }, 100);
-      //   return;
-      // }
+              if (!speech.voice) {
+                console.warn("No suitable voice found");
+              }
 
       speech.onend = () => {
         setTimeout(() => {
