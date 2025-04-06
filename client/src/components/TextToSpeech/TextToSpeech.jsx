@@ -6,10 +6,27 @@ import "./TextToSpeech.scss";
 export default function TextToSpeech() {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [availableVoices, setAvailableVoices] = useState([]);
   const location = useLocation();
 
   let sentenceQueue = [];
   let currentSentenceIndex = 0;
+
+  useEffect(() => {
+    const loadVoices = () => {
+      const voices = speechSynthesis.getVoices();
+      if (voices.length) {
+        setAvailableVoices(voices);
+      }
+    };
+
+    speechSynthesis.onvoiceschanged = loadVoices;
+    loadVoices(); 
+
+    return () => {
+      speechSynthesis.onvoiceschanged = null;
+    };
+  }, []);
 
   const speak = () => {
     if (isSpeaking && !isPaused) {
@@ -61,16 +78,17 @@ export default function TextToSpeech() {
         isChoice ? `Option ${optionIndex}, ${sentence}` : sentence
       );
 
-      const voices = speechSynthesis.getVoices();
+      // const voices = speechSynthesis.getVoices();
 
-      speech.voice =
-        voices.find((v) => v.name === "Google UK English Male") || voices[0];
-      if (voices.length === 0) {
-        setTimeout(() => {
-          readText(sentenceIndex, optionIndex);
-        }, 100);
-        return;
-      }
+      speech.voice = speech.voice = availableVoices.find(v => v.name === "Google UK English Male") || availableVoices[0];
+
+      //   voices.find((v) => v.name === "Google UK English Male") || voices[0];
+      // if (voices.length === 0) {
+      //   setTimeout(() => {
+      //     readText(sentenceIndex, optionIndex);
+      //   }, 100);
+      //   return;
+      // }
 
       speech.onend = () => {
         setTimeout(() => {
