@@ -11,6 +11,23 @@ export default function TextToSpeech() {
   let sentenceQueue = [];
   let currentSentenceIndex = 0;
 
+   const loadVoices = () => {
+     const voices = speechSynthesis.getVoices();
+     if (voices.length > 0) {
+       setAvailableVoices(voices);
+     } else {
+       setTimeout(loadVoices, 100); 
+     }
+   };
+
+   useEffect(() => {
+     loadVoices();
+     speechSynthesis.onvoiceschanged = loadVoices; 
+     return () => {
+       speechSynthesis.onvoiceschanged = null;
+     };
+   }, []);
+
   const speak = () => {
     if (isSpeaking && !isPaused) {
       speechSynthesis.pause();
@@ -61,7 +78,10 @@ export default function TextToSpeech() {
         isChoice ? `Option ${optionIndex}, ${sentence}` : sentence
       );
 
-      const voices = speechSynthesis.getVoices();
+    const voices =
+      availableVoices.length > 0
+        ? availableVoices
+        : speechSynthesis.getVoices();
 
       speech.voice =
         voices.find((v) => v.name === "Google UK English Male") ||
