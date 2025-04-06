@@ -15,8 +15,12 @@ export default function TextToSpeech() {
   useEffect(() => {
     const loadVoices = () => {
       const voices = speechSynthesis.getVoices();
-      if (voices.length) {
-        setAvailableVoices(voices);
+      const maleVoice = voices.find((v) => v.name === "Google UK English Male");
+
+      if (maleVoice) {
+        setAvailableVoices([maleVoice]);
+      } else if (voices.length > 0) {
+        setTimeout(loadVoices, 100);
       }
     };
 
@@ -80,7 +84,16 @@ export default function TextToSpeech() {
 
       // const voices = speechSynthesis.getVoices();
 
-      speech.voice = speech.voice = availableVoices.find(v => v.name === "Google UK English Male") || availableVoices[0];
+      // speech.voice = speech.voice = availableVoices.find(v => v.name === "Google UK English Male") || availableVoices[0];
+
+           speech.voice =
+             availableVoices.length > 0 ? availableVoices[0] : null;
+
+           if (!speech.voice) {
+             console.warn("No valid voice available. Retrying...");
+             setTimeout(() => readText(sentenceIndex, optionIndex), 100);
+             return;
+           }
 
       //   voices.find((v) => v.name === "Google UK English Male") || voices[0];
       // if (voices.length === 0) {
