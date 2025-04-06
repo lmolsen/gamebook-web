@@ -12,10 +12,10 @@
 </details>
 
 ## <a id="overview">Overview</a>
-Gamebook Web is a text-based gamebook with interactive puzzles and branching narratives. It has mobile responsive design, but is optimized for desktop. Play it here: [https://gamebook-web.netlify.app/](https://gamebook-web.netlify.app/)
+Gamebook Web is a text-based gamebook with interactive puzzles and branching narratives. It has mobile responsive design, but is optimized for desktop. Some features of Web Speech API may not work properly on mobile devices or certain browsers. Play it here: [https://gamebook-web.netlify.app/](https://gamebook-web.netlify.app/)
 
 ## <a id="features">Features</a>
-- Custom sound effects and writing
+- Original sound effects and writing
 - Branching narrative based on player choices
 - Story pages built from a template with information pulled from a JSON file based on URL endpoint
 - Page-specific hints and auto-filled notes on completion of certain puzzles

@@ -17,13 +17,30 @@ export default function Slide({
   const MISSING_TILE = 0;
   const IMAGE_URL = puzzleImage;
 
-  const stoneAudio = new Audio(stoneSound); // Declare once
+  const stoneAudio = new Audio(stoneSound);
   stoneAudio.volume = 1;
 
   const generateGrid = () => {
-    let numbers = [...Array(GRID_SIZE * GRID_SIZE).keys()];
-    numbers.sort(() => Math.random() - 0.5);
+    let numbers;
+    do {
+      numbers = [...Array(GRID_SIZE * GRID_SIZE).keys()];
+      numbers.sort(() => Math.random() - 0.5);
+    } while (!isSolvable(numbers));
     return numbers;
+  };
+
+  const isSolvable = (tiles) => {
+    const inversionCount = tiles.reduce((invCount, current, i) => {
+      if (current === MISSING_TILE) return invCount;
+      for (let j = i + 1; j < tiles.length; j++) {
+        if (tiles[j] !== MISSING_TILE && tiles[j] < current) {
+          invCount++;
+        }
+      }
+      return invCount;
+    }, 0);
+
+    return inversionCount % 2 === 0;
   };
 
   const solvedState = [1, 2, 3, 4, 5, 6, 7, 8, 0];
