@@ -53,5 +53,10 @@
     "name": "David",
     "accomplishment": "Found the ultimate secret of the wizard's tower.",
     "id": "e1a5304d-eaf6-4b05-8b82-ea3c49bdbd29"
+  },
+  {
+    "name": "Pawmi",
+    "accomplishment": "Made a new friend.",
+    "id": "eb0f0d70-468c-41e7-abbe-c4456716fc2a"
   }
 ]
