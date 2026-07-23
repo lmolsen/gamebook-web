@@ -446,9 +446,11 @@ export default function StoryPage({
           <p className="page__result">
             {`You have spoken: ${
               transcript
-                ? transcript.toLowerCase() === "route route"
+                // ? transcript.toLowerCase() === "route route"
+                ? correctAnswer.includes(transcript.toLowerCase().trim())
                   ? "rootroot."
-                  : transcript.toLowerCase() === "send text"
+                 // : transcript.toLowerCase() === "send text"
+                  : alternateAnswer.includes(transcript.toLowerCase().trim())
                   ? "syntax."
                   : transcript + ". Nothing happens."
                 : "..."
